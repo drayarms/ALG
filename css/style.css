@@ -1,0 +1,441 @@
+a{
+	text-decoration:none;
+	color:blue;/*Always blue visited or not*/
+}
+
+
+/*.sub_menu:hover{color:#2d73b9}
+
+.sub_menu_parent:hover{background-color:rgba(255,255,255,0.86);}
+
+.main_menu:hover{background-color:rgba(255,255,255,0.86);color:#2d73b9}*/
+
+
+ul {
+	list-style-type: none; 
+}
+
+
+a img {
+	border: none;
+}
+
+
+/*Document should fill entire browser window and be stretchable*/
+html{
+	/*min-height:100%;*/
+	height:100%;
+}
+
+
+.body{
+	width:100%;
+	height:100%;
+    margin:0px;
+    background: #none;
+	overflow-x:hidden;
+
+}
+
+/*.clear{background-color: #0000ff;
+  width:100%;
+  height:3px;
+  border:none;
+  clear:both;
+  display:block; 
+  line-height:0%;
+}*/
+
+.content{
+	background-color : none;
+	margin:0px auto;
+	min-height:0px;
+	/*min height set in dimensions.js should be document height - header height*/
+	width:100%;
+	
+	/*position:relative;*/
+	top:0px;
+	border:1px dotted blue;
+	overflow-x:hidden;
+	
+
+}
+
+.content #attorney_panel{
+	background-color:#ffffff;
+	width:100%;
+	margin:auto;
+}
+
+.content #attorney_panel #attorney_photo_container{
+	/*float:left;*/
+	/*width:40%;*/
+	/*height:95%;*/
+	overflow:hidden;
+	/*border:1px solid red;*/
+}
+
+.content #attorney_panel #law_office_details{
+	/*height:95%;*/
+	/*border:1px solid red;*/
+	overflow:hidden;/*Prevents child elements from causing grandparents to strech.*/
+}
+
+.content #attorney_panel #law_office_details h1{
+	position:relative;top:8%;
+	padding:0;
+	margin:0;/*Padding and margin set to 0 to prevent spaces in ancestors*/
+	line-height:1.8;
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+	font-weight:390;
+	color: rgb(51, 51, 51);	
+}
+
+.content #attorney_panel #law_office_details h2{
+	position:relative;top:8%;
+	padding:0;
+	margin:0;/*Padding and margin set to 0 to prevent spaces in ancestors*/
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+	font-weight:190;
+	/*color: rgb(230, 184, 0);*/
+	color: rgb(204, 163, 0);	
+}
+
+.content #attorney_panel #law_office_details h5{
+	position:relative;top:8%;
+	padding:0;
+	margin:0;/*Padding and margin set to 0 to prevent spaces in ancestors*/
+	line-height:1.8;
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+	font-weight:190;
+	color: rgb(51, 51, 51);	
+}
+
+.content #contact_panel{
+	background-color:#001a33;
+	width:100%;
+	margin:auto;
+}
+
+.content #mission_statement_panel_container{
+	/*margin:auto;*/
+	/*border:1px solid red;*/
+}
+
+.content #mission_statement_panel_container #mission_statement_panel{
+	overflow:hidden;
+	background-color:#ffffff;
+}
+
+.content #mission_statement_panel_container #mission_statement_panel h1{
+	text-align:center;
+	width: fit-content;
+	margin:auto;
+	margin-top:0%;
+	line-height:1.8;
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+	font-weight:190;
+	color: rgb(204, 163, 0);
+	/*border:1px dotted green;*/
+}
+
+.content #mission_statement_panel_container #mission_statement_panel h2{
+	text-align:center;
+	width: fit-content;
+	margin:auto;	
+	margin-top:8%;
+	line-height:1.8;
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+	font-weight:190;
+	color: rgb(51, 51, 51);	
+		
+}
+
+.content #mission_statement_panel_container #mission_statement_panel h3 a{
+	text-align:center;
+	width: fit-content;
+	margin:auto;	
+	margin-top:8%;
+	line-height:1.8;
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+	font-weight:190;
+	color: rgb(51, 51, 51);
+	text-decoration: underline;
+	padding-left:5%;
+	padding-right:5%;	
+}
+
+.content #mission_statement_panel_container #mission_statement_panel h5{	
+	text-align:center;
+	width: fit-content;
+	margin:auto;	
+	margin-top:7%;
+	line-height:1.8;
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+	font-weight:190;
+	color: rgb(51, 51, 51);		
+	/*border:1px dotted blue;*/
+	padding-left:5%;
+	padding-right:5%;
+}
+
+.content .specialties_panel{
+	margin:auto;
+}
+
+.content .specialties_panel .specialty_box{
+
+}
+
+/*.content_proper{
+	background-color:green;
+	width:100%;
+	margin:0px auto;
+	position:relative;top:250px;
+	min-height:400px;/*Min height so it is stretchable and no scrollbars*/
+}*/
+
+
+/*Desktop footer*/
+.footer{background-color :none;
+	margin:0px auto;
+	/*position:relative;
+	top:0px;*/
+	/*height:240px;*/
+	min-height:0px; 
+	width:100%;
+	/*border-top:1px solid rgba(255,250,250,0.5);*/
+	/*position:relative;
+	top:0px;*/
+	border:1px solid red;
+}
+
+.footer .footer_lower_half{
+	margin:0px auto;
+	width:100%;
+	min-height:100px;
+	/*background-color:#f2f2f2;*/
+	background-color:#ffffff;
+}
+
+.footer .footer_upper_half{
+	margin:0px auto;
+	width:100%;
+	min-height:100px;
+	/*background-color:#e6e6e6;*/	
+	background-color:#f2f2f2;
+}
+
+.footer .footer_upper_half .specialties_statements{
+	width:100%;
+	margin:auto;
+	border:1px dotted blue;
+}
+
+.footer .footer_upper_half .specialties_statements .specialty_statement{
+	width:60%;
+	margin:auto;
+	/*border:1px dotted red;*/
+	display:none;
+}
+
+.footer .footer_upper_half .specialties_statements .specialty_statement .specialty_statement_heading{
+	/*border:1px dotted red;*/
+	/*position:relative;top:20%;*/
+	text-align:center;
+	padding-top:25px;
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+	font-weight:190;
+	color: rgb(230, 184, 0);	
+}
+
+.footer .footer_upper_half .specialties_statements .specialty_statement .specialty_statement_text{
+	/*border:1px dotted red;*/
+	/*position:relative;top:20%;*/
+	text-align:center;
+	line-height:1.8;
+	padding-top:25px;
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;		
+	font-weight:190;
+	color: rgb(51, 51, 51);
+}
+
+
+
+/*Desktop header*/
+.header{/*background-color : none;*/
+	margin:0px auto;
+	/*height:27%; *230px;*/
+	/*width:100%;*/
+	/*min-width:0px;*/
+	/*border:none;*/
+	/*border:2px solid green;*/
+	overflow:none;
+}
+
+.header .inner_header{
+	/*height:100%;*/
+	width:60%;*/
+	margin:0px auto;
+	/*margin-top:1.5%;*/
+	/*background-color:black;*/
+	/*border:1px dotted red;*/
+}
+
+
+.header .inner_header .header_banner{
+	float:left;
+}
+
+.header .inner_header .header_banner .header_banner_right_box{
+	position:relative;top:20%;
+	float:right;
+	width:70%;
+	/*border:1px solid green;*/
+}
+
+.header .inner_header .header_banner .header_banner_text{
+	/*border:1px dotted red;*/
+	/*position:relative;top:20%;*/
+	text-align:right;
+	padding-right:30px;
+	padding-top:5px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: rgba(204, 163, 0, 1.0);
+}
+
+.header .inner_header .header_banner .phone_num{
+	font-size:large;
+}
+
+
+.header .inner_header .logo_box{
+	background-color:#ffffff;
+	float:left;
+}
+
+.header .inner_header .logo_box .logo_circle{
+	background-color:none;
+	margin:auto;
+	width:88%;
+	height:96%;
+	border-radius: 50%;
+	overflow:hidden;
+}
+
+.header .inner_header .menu_bar{
+	float:left;
+}
+
+.header .inner_header .menu_bar div{
+	float:left;
+}
+
+.header .inner_header .menu_bar a{
+	/*padding-right:30px;*/
+	/*padding-top:5px;*/
+	font-family: Arial, Helvetica, sans-serif;
+	color:rgb(0, 26, 51);
+	font-size:18px;
+	font-weight:bold;
+	/*color:rgb(0, 13, 26);*/
+}
+
+/*.header .outer_inner_header{
+	height:100%;
+	width:100%;
+	margin:0px auto;
+}*/
+
+.header.stick{
+	position: fixed;
+	top: 0;
+	z-index: 100;
+}
+
+.homepage_background_image{
+	
+	/*Width and height set in dimenstions.js*/
+}
+
+
+.social_media_left_panel{
+	width:50px;
+	height:180px;
+	position:fixed;top:20%;
+	z-index:+1;
+	/*background-color:#ffffff;*/
+	border:1px solid green;
+}
+
+#homepage_background_container{
+	/*Houses the background animation plus other elements in the foreground*/
+	background-color:none;
+	margin:0px auto;
+	/*min-height:0px;*/
+	/*height:950px;*/
+	/*width:100%;*/
+	z-index:-1;
+	overflow:hidden;
+	/*border:3px dotted black;*/
+	/*Top positioning set in dimensions.js*/
+	/*position:absolute;top:0px;*/
+}
+
+#homepage_background_container img{
+	display:none;
+}
+
+#homepage_foreground{
+	background-color:none;
+	min-height:450px;/*Min height so it is stretchable and no scrollbars*/
+	/*Width set in dimensions.js*/
+	margin:0px auto;
+	position:relative;top:200px;
+	border: 1px solid red;
+}
+
+/*#header-nav .header-nav-list .nav-down-img{
+  
+  cursor:pointer;
+}
+
+#header-nav .header-nav-list .nav-up-img{
+  cursor:pointer;
+}*/
+
+/*Desktop main btw header and footer*/
+
+/*#left-sidebar{
+  float:left;
+  min-height:1px;
+  width:24%;
+  -moz-border-radius: 5px; 
+  border-radius:5px;
+  border:none;
+  position:relative;
+  left:5px;
+  background:none;
+}*/
+
+
+	
+
+/*#right-sidebar{
+  float:left;
+  min-height:1px;
+  width:20%;-moz-border-radius: 5px; 
+  border-radius:5px;border:none;
+  position:relative;
+  left:10px;
+  background:none;
+}*/
+
+#bar1{
+	height:20px;
+	background:green;
+}
+#bar2{
+	height:20px;
+	background:yellow;
+}
