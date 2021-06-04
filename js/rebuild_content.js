@@ -37,6 +37,7 @@ function color_specialty_boxes(){
 
 
 function rebuild_mission_statement_panel(resize_level, window_width){
+	//
 	//Content
 	//Set min height for class content	
 	//document_height = $(document).height();
