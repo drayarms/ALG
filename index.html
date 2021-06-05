@@ -17,7 +17,7 @@
 		<script type="text/javascript" src="js/set_resized_header_properties.js"></script>
 		<script type="text/javascript" src="js/rebuild_content.js"></script>
 		<script type="text/javascript" src="js/set_resized_content_properties.js"></script>		
-		<script type="text/javascript" src="js/set_homepage_background_image_dimensions.js"></script>
+		<script type="text/javascript" src="js/set_logo_image.js"></script>
 		<script type="text/javascript" src="js/rebuild_elements.js"></script>
 		<script type="text/javascript" src="js/dimensions.js"></script>
 		<script type="text/javascript" src="js/window_resize.js"></script>
@@ -28,9 +28,9 @@
 	
 	<body class = "body">
 	
-		<div id = "homepage_background_container">
+		<!--<div id = "homepage_background_container">
 			<img class = "homepage_background_image" src="images/background_images/stockphoto3.jpg" alt="">
-		</div>	
+		</div>-->
 	
 		<div class = "social_media_left_panel">
 		</div>
@@ -57,13 +57,22 @@
 					<div class ="menu_faqs"> <a href="index.html">FAQS</a> </div>
 					<div class = "menu_testimonials"> <a href="index.html">Testimonials</a> </div>
 					<div class = "menu_contact"> <a href="index.html">Contact Us</a> </div>
-				</div>
+				</div>			
 			</div>
+			
+			<div id = "homepage_background_image_container" style = "">
+				<img class = "homepage_background_image" src="images/background_images/stockphoto3.jpg" alt="">
+			</div>			
 		</div>
 		
 		
 		<div class = "content"> 
-			<div id = "mission_statement_panel_container" style = "">
+		
+			<!--<div id = "homepage_background_image_container" style = "">
+				<img class = "homepage_background_image" src="images/background_images/stockphoto3.jpg" alt="">
+			</div>-->
+		
+			<div id = "mission_statement_panel_container" style = "border:1px dotted blue">
 				<div id = "mission_statement_panel">
 					<h2>Complex Cases. Exceptional Results.</h2>
 					<h1>A Tradition of Success.</h1>
@@ -77,7 +86,7 @@
 					<h3><a href="index.html" >Request a Case Review</a></h3>
 				</div>
 			</div>
-			<div class = "specialties_panel" style = "border:1px solid green">
+			<div class = "specialties_panel" style = "border:1px solid green; position:relative;top:0px">
 				<div class = "specialty_box specialty_box1" style = "">
 				</div>
 				<div class = "specialty_box specialty_box2" style = "">
@@ -128,7 +137,7 @@
 		<div class = "footer">
 			<div class = "footer_upper_half">
 				<div class = "specialties_statements">
-					<div class = "specialty_statement">
+					<div class = "specialty_statement displayed">
 						<h1 class = "specialty_statement_heading" style = "">Business Transactions</h1>
 						<h5 class = "specialty_statement_text" style = "">
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -151,7 +160,7 @@
 							non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.							
 						</h5>
 					</div>
-					<div class = "specialty_statement">
+					<div class = "specialty_statement undisplayed" style = "display:none">
 						<h1 class = "specialty_statement_heading">Real Estate</h1>
 						<h5 class = "specialty_statement_text">
 							Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
@@ -180,7 +189,7 @@
 							eum fugiat quo voluptas nulla pariatur?							
 						</h5>						
 					</div>
-					<div class = "specialty_statement">
+					<div class = "specialty_statement undisplayed" style = "display:none">
 						<h1 class = "specialty_statement_heading">Immigration</h1>
 						<h5 class = "specialty_statement_text">
 							At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis

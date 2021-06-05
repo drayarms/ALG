@@ -9,7 +9,7 @@ var onresize = function(e) {
 	//console.log("current window w "+current_window_width);
 	//console.log("window width "+window_width);
 	//console.log("target width "+e.target.innerWidth);//outerWidth);
-	set_homepage_background_image_dimensions(current_window_width);//, $(".header").width());//Same dimension as window width
+	//set_homepage_background_image_dimensions(current_window_width);//, $(".header").width());//Same dimension as window width
 	
 	//header_width_to_window_width_ratio = $(".header").width()/$(".body").width();
 	//console.log(header_width_to_window_width_ratio);

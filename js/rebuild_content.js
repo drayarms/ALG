@@ -1,18 +1,61 @@
+function show_statement(i){
+	$(".specialty_statement").eq(i).addClass("displayed");
+	$(".specialty_statement").eq(i).removeClass("undisplayed");
+	//Make sure aggregate of fadeIn and fadeOut time doesn't exceed interval between each timer
+	$(".specialty_statement").eq(i).fadeIn(1600);	
+}
+
 function rotate_specialty_statement_text(){
 	//console.log(specialty_text_time);
-	//Make sure aggregate of fadeIn and fadeOut time doesn't exceed interval between each timer
+	
 	var prev_specialty_text_time = specialty_text_time - 1;
 	if (prev_specialty_text_time == -1){
 		prev_specialty_text_time = specialty_statement_count - 1;
 	}
 	//console.log("now "+specialty_text_time+" prev "+prev_specialty_text_time);
-	$(".specialty_statement").eq(specialty_text_time).fadeOut(400);
-	$(".specialty_statement").eq(specialty_text_time).fadeIn(400);
+	//$(".specialty_statement").eq(specialty_text_time).fadeOut(400);
+	//$(".specialty_statement").eq(specialty_text_time).fadeIn(400);
+	
+	for(i = 0; i < specialty_statement_count; i++){
+		
+		if(i == specialty_text_time){//Your turn
+			if(! $(".specialty_statement").eq(i).hasClass("displayed")){//Your turn but not displayed
+			
+				//Remove previous guy
+				$(".specialty_statement").eq(prev_specialty_text_time).removeClass("displayed");
+				$(".specialty_statement").eq(prev_specialty_text_time).addClass("undisplayed");
+				//Make sure aggregate of fadeIn and fadeOut time doesn't exceed interval between each timer
+				$(".specialty_statement").eq(prev_specialty_text_time).hide();//fadeOut(1000);
+				
+				//Then show current guy
+				window.setTimeout(show_statement(i), 600);//Set timeout time must be greater than fadeout time
+
+			}			
+		}		
+		
+		/*if(i != specialty_text_time){//If not your turn
+			if($(".specialty_statement").eq(i).hasClass("displayed")){//Not your turn but displayed
+				$(".specialty_statement").eq(i).removeClass("displayed");
+				$(".specialty_statement").eq(i).addClass("undisplayed");
+				//Make sure aggregate of fadeIn and fadeOut time doesn't exceed interval between each timer
+				$(".specialty_statement").eq(i).fadeOut(1000);
+			}		
+		}else{//Your turn
+			if(! $(".specialty_statement").eq(i).hasClass("displayed")){//Your turn but not displayed
+				$(".specialty_statement").eq(i).addClass("displayed");
+				$(".specialty_statement").eq(i).removeClass("undisplayed");
+				//Make sure aggregate of fadeIn and fadeOut time doesn't exceed interval between each timer
+				$(".specialty_statement").eq(i).fadeIn(1000);
+			}			
+		}*/
+	}
+	
 	specialty_text_time++;
 	if(specialty_text_time%specialty_statement_count == 0){
 		specialty_text_time = 0;//Reset
 	}
 }
+
 
 $("document").ready(function(){
 	$(".specialty_box").hover(
@@ -23,9 +66,8 @@ $("document").ready(function(){
 	});
 	
 	//Timer for rotating specialty statement text
-	$(".specialty_statement").eq(specialty_text_time).fadeIn(400);
 	specialty_statement_count = $(".specialty_statement").length;
-	window.setInterval(rotate_specialty_statement_text, 4000);
+	window.setInterval(rotate_specialty_statement_text, 4000);//Run func every 4 secs
 });
 
 
@@ -33,6 +75,57 @@ function color_specialty_boxes(){
 	$(".specialty_box1").css("background-image", "linear-gradient(to bottom, "+theme_gold2+","+theme_gold1+")");	
 	$(".specialty_box2").css("background-image", "linear-gradient(to bottom, "+theme_darkblue2+","+theme_darkblue1+")");
 	$(".specialty_box3").css("background-image", "linear-gradient(to bottom, "+theme_gold2+","+theme_gold1+")");
+}
+
+
+
+function rebuild_bg_img(resize_level, window_width){//Use pictures that are not too wide. Narrow is ok but screen proportions is ideal
+	var bg_img_container_width = window_width;	
+	var bg_img_container_height;
+	var new_bg_img_width;
+	var new_bg_img_height;
+	
+	if(resize_level <= 2){
+		bg_img_container_height = max_bg_img_container_height;
+		new_bg_img_width = max_bg_img_container_width;
+		new_bg_img_height = original_bg_img_height*max_container_to_bg_img_ratio;			
+	}else{
+		bg_img_container_height = window_width*0.75;
+		width_ratio = bg_img_container_width/original_bg_img_width;
+		height_ratio = bg_img_container_height/original_bg_img_height;
+		var effective_ratio = width_ratio;
+		if(height_ratio > width_ratio){
+			effective_ratio = height_ratio;
+		}
+		new_bg_img_width = original_bg_img_width*effective_ratio;
+		new_bg_img_height = original_bg_img_height*effective_ratio;
+	}
+	
+	$("#homepage_background_image_container").css("width", bg_img_container_width + "px");
+	$("#homepage_background_image_container").css("height", bg_img_container_height + "px");
+	$(".homepage_background_image").css("width", new_bg_img_width + "px");
+	$(".homepage_background_image").css("height", new_bg_img_height + "px");	
+	
+	if(resize_level <= 2){
+		
+		$(".homepage_background_image").css({
+			position: "absolute",
+			top: (($(".header").height())*-1) + "px"
+		});	
+		$(".homepage_background_image").css("z-index", -1);
+		
+		$(".homepage_background_image").fadeIn(1500);
+	}else{
+		
+		$(".homepage_background_image").css({
+			position: "relative",
+			top: "0px"
+		});	
+		
+		$(".homepage_background_image").css("z-index", 1);
+		$(".homepage_background_image").show();
+	}
+	centralize_element_horizontally($(".homepage_background_image"));
 }
 
 
@@ -187,6 +280,7 @@ function rebuild_content(resize_level, window_width){
 	});	
 	*/
 
+	rebuild_bg_img(resize_level, window_width);
 	rebuild_mission_statement_panel(resize_level, window_width);
 	rebuild_specialties_panel(resize_level, window_width);
 	

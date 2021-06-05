@@ -66,6 +66,14 @@ $(document).ready(function(){
 	logo_box_fixed_height = header_inner_fixed_height*0.75;
 	//alert(inner_header_fixed_width);
 	
+	
+	original_bg_img_width = $(".homepage_background_image").width();
+	original_bg_img_height = $(".homepage_background_image").height();
+	max_bg_img_container_width = screen_width;//Use pictures that are not too wide. Narrow is ok but screen proportions is ideal	
+	max_bg_img_container_height = max_bg_img_container_width*0.5;
+	max_container_to_bg_img_ratio = max_bg_img_container_width/original_bg_img_width;
+	//Height will always depend on how much the width has been streched/compressed. So use ideally pics that aren't too wide
+	
 	//specialties_panel_max_width = ;
 	//attorney_panel_combined_children_max_width = ;
 
@@ -99,7 +107,7 @@ $(document).ready(function(){
 	
 	//Set homepage background image width and other properties
 	//set_header_properties();//See restructure header func
-	set_homepage_background_image_dimensions(window_width_original);
+	//set_homepage_background_image_dimensions(window_width_original);
 	rebuild_elements(prev_window_width, window_width_original, header_width);//Initially build header
 	set_logo_image();
 
