@@ -16,10 +16,10 @@ var onresize = function(e) {
 	//console.log("b4 "+current_window_width);
 	//console.log("prev "+(prev_window_width-scroll_width)+" curr "+(e.target.innerWidth - scroll_width))
 
-	header_width = current_window_width*window_to_header_width_ratio;
+	//header_width = current_window_width*window_to_header_width_ratio;
 	//console.log("header w "+header_width);
 	//console.log("from resize header inner fixed w "+header_inner_fixed_width);
-	rebuild_elements(prev_window_width, current_window_width, header_width);
+	rebuild_elements(prev_window_width, current_window_width);
 	prev_window_width = current_window_width;
 	//console.log("after "+current_window_width);
 }

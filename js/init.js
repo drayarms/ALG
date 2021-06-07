@@ -8,6 +8,11 @@ var window_width_original = window.innerWidth - scroll_width;// = $(window).widt
 var prev_window_width = window_width_original;
 var header_max_width;//Width of header when page is maximized
 //var header_inner_fixed_width;
+var max_bg_img_position_type = "absolute";
+var background_scroll_factor = 0.44;//0.63;
+//var background_scroll_disp;	
+var should_scroll_background_image;
+var prev_window_top;
 var resize_threshold1;
 var resize_threshold2;
 var resize_threshold3;
@@ -16,8 +21,15 @@ var logo_box_fixed_height;
 var header_banner_fixed_height;
 var header_fixed_height;
 var header_inner_fixed_height;	
+var menu_bar_width;
+var menu_bar_height;
+var menu_bar_item_height;
+var menu_bar_item_width;
+var menu_bar_height; 
 //var specialties_panel_max_width;
 //var attorney_panel_combined_children_max_width;
+var specialties_panel_width_to_window_width_ratio;
+var header_inner_width_to_window_width_ratio;
 var window_to_header_width_ratio = 0.999;
 var header_width_to_header_inner_width_ratio = 0.6;
 var	max_bg_img_container_width;
@@ -27,6 +39,7 @@ var original_bg_img_width;
 var original_bg_img_height;
 var specialty_text_time = 0;
 var specialty_statement_count;
+
 //console.log("original b4 "+prev_window_width);
 //alert(scroll_width);
 //alert("device pixel ratio: "+window.devicePixelRatio);
@@ -51,8 +64,10 @@ const theme_darkblue2 = "rgba(0, 38, 77, 1.0)";//#00264d
 const theme_darkblue2_hex = "#00264d";
 //var theme_darkblue = "rgba(0, 64, 128, 1.0)";//#004080
 //var theme_darkblue = "rgba(0, 89, 179, 1.0)";//#0059b3
-const menu_highlight_color = "rgb(38, 115, 38)";//#267326
-const menu_highlight_color_hex = "#267326";
+const menu_highlight_color = "rgb(186, 45, 139)";//#ba2d8b
+const menu_highlight_color_hex = "#ba2d8b";
+//const menu_highlight_color = "rgb(38, 115, 38)";//#267326
+//const menu_highlight_color_hex = "#267326";
 var menu_hover_color;
 
 
@@ -61,3 +76,225 @@ var menu_hover_color;
 /*
 min window  |resize threshold 3| intermediate window B|resize threshold 2| intermediate window A |resize threshold 1| max window
 */
+
+
+
+
+
+
+
+	$(window).scroll(function() {
+		window.sessionStorage.scrollTop = $(this).scrollTop();//Remember the current scroll position even across sessions(refreshes)
+		var window_top = window.sessionStorage.scrollTop;//$(this).scrollTop();
+		//console.log("current session scroll top: "+window.sessionStorage.scrollTop);
+		//var window_top = $(window).scrollTop();
+		//delta_window_top = window_top - original_window_top;
+		//original_window_top = window_top;
+		
+		//new_homepage_background_container_offset += delta_window_top;
+		
+		//console.log("scroll top "+window_top)
+		//console.log("delta window top "+delta_window_top);
+		//console.log("div top "+div_top+" window top "+window_top);
+		
+		var background_scroll_disp = window_top - prev_window_top;// - window_top;
+		//console.log("on scroll background scroll disp "+background_scroll_disp);
+		current_homepage_background_image_container_top = $("#homepage_background_image_container").offset().top;
+		var y_displacement = current_homepage_background_image_container_top + (background_scroll_disp*background_scroll_factor);
+		
+		
+		//console.log("top "+window_top+" prev "+prev_window_top+" diff"+background_scroll_disp);
+		//console.log("curr top "+current_homepage_background_image_container_top);
+		//console.log("header height "+$(".inner_header").height());
+		//console.log("y disp "+y_displacement);
+		//if(window_top > prev_window_top){
+			//console.log("scrolling downwards");
+			//y_displacement = current_homepage_background_image_container_top + background_scroll_disp;
+		//}else{
+			//console.log("scrolling upwards");
+			//y_displacement = current_homepage_background_image_container_top - background_scroll_disp;
+		//}
+		
+		 
+		if(should_scroll_background_image){
+			$("#homepage_background_image_container").css({
+				position: max_bg_img_position_type,
+				top: y_displacement + "px"//Move image by a fraction of page move in opposite direction
+				//top: (new_homepage_background_container_offset*background_scroll_factor) + "px"//Move image by a fraction of page move in opposite direction
+			});
+		}
+		//prev_background_img_top = $("#homepage_background_image_container").offset().top;//*Also reset this when element is rebuilt
+		//prev_window_top = window_top;
+		//window.sessionStorage.scrollTop = $(this).scrollTop();//Remember the current scroll position even across sessions(refreshes)
+		prev_window_top = window_top;
+	});
+	
+
+
+
+$(document).ready(function(){
+	
+	//alert("window width "+$(window).width()+" document width "+$(document).width()+" screen width "+window.screen.width)
+	//var div_top = $(".header").offset().top;
+	//var original_window_top = $(window).scrollTop();
+	//prev_window_top = $(window).scrollTop();
+	//var delta_window_top = 0;
+	
+	
+	if (window.sessionStorage.scrollTop != "undefined") {//Forcibly maintains scrool position across sessions
+		console.log("defined")
+		$(window).scrollTop(window.sessionStorage.scrollTop);//Set scroll top to saved session scroll top value
+		//$(window).scrollTop = window.sessionStorage.scrollTop;
+	}//else{
+		//console.log("undefined")
+	//}
+	//window.scrollTo(window, 0, window.sessionStorage.scrollTop);
+	//window.scrollTop = 0;//window.sessionStorage.scrollTop;
+	 //window.scroll(0, window.sessionStorage.scrollTop);
+	///console.log("scroll top "+original_window_top)
+	console.log("on document ready, session scroll top: "+window.sessionStorage.scrollTop+ " scroll top:"+$(window).scrollTop());
+	/*$("#homepage_background_container").css({
+		position: "absolute",
+		top: (original_window_top*background_scroll_factor) + "px"//Move image by a fraction of page move in opposite direction
+	});	*/
+
+
+	//var original_homepage_background_container_offset = $("#homepage_background_container").offset().top;
+	//var new_homepage_background_container_offset = original_homepage_background_container_offset;
+	//console.log("initial top "+$(window).scrollTop())
+
+	//alert(original_window_top)
+	//console.log(div_top)
+
+
+
+	//$("#bar1").css("width", screen_width*0.5 + "px");
+	//$("#bar2").css("width", window_width +"px");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	//Header dimensions
+	//Header dimensions
+	header_max_width = screen_width*window_to_header_width_ratio;//Width of maximized header
+	header_width_original = window_width_original*window_to_header_width_ratio;//Width of resized header
+	header_inner_width_fixed = header_max_width*header_width_to_header_inner_width_ratio;//Should remain constant as long as page isn't shrunken enough
+	//header_inner_fixed_width = header_inner_width;
+	resize_threshold1 = header_inner_width_fixed;
+	resize_threshold2 = header_max_width*0.45;
+	resize_threshold3 = header_max_width*0.38;
+	//console.log("from dimensions header inner fixed width "+header_inner_fixed_width);
+	header_fixed_height = screen_width*0.104;//0.13;
+	header_inner_fixed_height = header_fixed_height;//header_fixed_height*0.8;	
+	
+	logo_box_fixed_width = resize_threshold1*0.15;
+	logo_box_fixed_height = header_inner_fixed_height*0.75;
+	//alert(inner_header_fixed_width);
+	
+	
+	original_bg_img_width = $(".homepage_background_image").width();
+	original_bg_img_height = $(".homepage_background_image").height();
+	max_bg_img_container_width = screen_width;//Use pictures that are not too wide. Narrow is ok but screen proportions is ideal	
+	max_bg_img_container_height = max_bg_img_container_width*0.5;
+	max_container_to_bg_img_ratio = max_bg_img_container_width/original_bg_img_width;
+	//Height will always depend on how much the width has been streched/compressed. So use ideally pics that aren't too wide
+	
+	//specialties_panel_max_width = ;
+	//attorney_panel_combined_children_max_width = ;
+
+	
+	//Set top position for homepage background container
+	//$("#homepage_background_container").css({
+        //position: "absolute",
+        //top: (header_height*-1) + "px",
+        //left: (pos.left + width) + "px"
+    //});
+	//Sister elements should also be moved by same dimension
+	/*$(".content_proper").css({
+        position: "relative",
+        top: (header_height*-1) + "px"
+    });
+	$("#homepage_foreground").css({
+        position: "relative",
+        top: (header_height*-3) + "px"
+    });	*/
+	
+	//Set min height for class content	
+	//document_height = $(document).height();
+	//header_height = $(".header").height();
+	//alert(header_height);
+	//content_min_height = document_height - header_height;
+	//$(".content").css("min-height", content_min_height + "px");	
+
+	
+	//Set homepage foreground width
+	//$("#homepage_foreground").css("width", (window_width*0.7) + "px");
+	
+	//Set homepage background image width and other properties
+	//set_header_properties();//See restructure header func
+	//set_homepage_background_image_dimensions(window_width_original);
+	rebuild_elements(prev_window_width, window_width_original);//Initially build header
+	set_logo_image();
+
+//$(".header").css("width", old_header_width0 + "px");
+//$(".header").css("margin-left", (1.01*(window_width-old_header_width0)/2)+"px");
+
+//old_header_width0 = $(".header").width();//Will be new header width instead of letting css determine	
+	
+	//rebuild_elements(window_width, $(".header").width());
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	$(".specialty_box").hover(
+	function(){
+		$(this).css("opacity", "0.75");
+	},function() {
+		$(this).css("opacity", "1.0");
+	});
+	
+	//Timer for rotating specialty statement text
+	specialty_statement_count = $(".specialty_statement").length;
+	window.setInterval(rotate_specialty_statement_text, 4000);//Run func every 4 secs
+	
+
+	$(".menu_bar a").hover(
+	function(){
+		menu_hover_color = $(this).css("color");
+		$(this).css("color",menu_highlight_color);
+		if(page_size == "shrunken"){
+			//$(this).parent().css("background-color", theme_darkblue2_hex);
+			$(this).parent().css("border", "1px solid #ffffff");
+			//$(this).parent().css("opacity", "0.75");
+		}
+	},function() {
+		$(this).css("color",menu_hover_color);
+		if(page_size == "shrunken"){
+			//$(this).parent().css("background-color", "none");
+			$(this).parent().css("border", "1px solid"+menu_highlight_color_hex);
+			//$(this).parent().css("opacity", "1.0");
+		}
+	});	
+	
+	
+});
+
+

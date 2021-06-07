@@ -257,6 +257,7 @@ html{
 	margin:auto;
 	/*border:1px dotted red;*/
 	/*display:none;*/
+	height:500px;
 }
 
 .footer .footer_upper_half .specialties_statements .specialty_statement .specialty_statement_heading{
@@ -296,11 +297,11 @@ html{
 
 .header .inner_header{
 	/*height:100%;*/
-	width:60%;*/
-	margin:0px auto;
+	/*width:60%;*/
+	/*margin:auto;*/
 	/*margin-top:1.5%;*/
 	/*background-color:black;*/
-	/*border:1px dotted red;*/
+	border:1px dotted red;
 }
 
 
