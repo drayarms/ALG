@@ -274,11 +274,16 @@ function rebuild_attorney_panel(resize_level, window_width){
 	//attorney_panel_height = window_width_original*0.45;//0.35;
 	var attorney_panel_height = screen_width*0.45;//0.35;
 	$("#attorney_panel").css("min-height", attorney_panel_height+"px");
+	var attorney_photo_container_width;
 	
 		//Attorney photo container
 	//attorney_photo_container_width = window_width_original*0.4;
-	attorney_photo_container_width = screen_width*0.38;
-	attorney_photo_container_height = attorney_panel_height*0.95;
+	if(resize_level == 1){
+		attorney_photo_container_width = screen_width*0.38;
+	}else{
+		attorney_photo_container_width = window_width*0.95;
+	}
+	var attorney_photo_container_height = attorney_panel_height*0.95;
 	$("#attorney_photo_container").css("width", attorney_photo_container_width+"px");
 	$("#attorney_photo_container").css("height", attorney_photo_container_height+"px");
 	$("#attorney_photo_container").css("float", "left");
