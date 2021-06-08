@@ -19,13 +19,24 @@ function rotate_specialty_statement_text(){
 	for(i = 0; i < specialty_statement_count; i++){
 		
 		if(i == specialty_text_time){//Your turn
+			//Remove all others
+			for(j = 0; j < specialty_statement_count; j++){
+				if(j != i){
+					$(".specialty_statement").eq(j).removeClass("displayed");
+					$(".specialty_statement").eq(j).addClass("undisplayed");
+					//Make sure aggregate of fadeIn and fadeOut time doesn't exceed interval between each timer
+					$(".specialty_statement").eq(j).hide();//fadeOut(1000);
+				}
+			}
+		
 			if(! $(".specialty_statement").eq(i).hasClass("displayed")){//Your turn but not displayed
 			
 				//Remove previous guy
-				$(".specialty_statement").eq(prev_specialty_text_time).removeClass("displayed");
-				$(".specialty_statement").eq(prev_specialty_text_time).addClass("undisplayed");
+				//$(".specialty_statement").eq(prev_specialty_text_time).removeClass("displayed");
+				//$(".specialty_statement").eq(prev_specialty_text_time).addClass("undisplayed");
+				
 				//Make sure aggregate of fadeIn and fadeOut time doesn't exceed interval between each timer
-				$(".specialty_statement").eq(prev_specialty_text_time).hide();//fadeOut(1000);
+				//$(".specialty_statement").eq(prev_specialty_text_time).hide();//fadeOut(1000);
 				
 				//Then show current guy
 				window.setTimeout(show_statement(i), 600);//Set timeout time must be greater than fadeout time
@@ -50,6 +61,7 @@ function rotate_specialty_statement_text(){
 		}*/
 	}
 	
+	//console.log("specialty txt time "+specialty_text_time);
 	//console.log("in timer session scroll top: "+window.sessionStorage.scrollTop+ " scroll top:"+$(window).scrollTop());
 	specialty_text_time++;
 	if(specialty_text_time%specialty_statement_count == 0){
@@ -57,6 +69,58 @@ function rotate_specialty_statement_text(){
 	}
 }
 
+
+function show_bg_img(i){
+	$(".homepage_background_image").eq(i).addClass("displayed");
+	$(".homepage_background_image").eq(i).removeClass("undisplayed");
+	//Make sure aggregate of fadeIn and fadeOut time doesn't exceed interval between each timer
+	$(".homepage_background_image").eq(i).fadeIn(1600);	
+}
+
+
+function rotate_bg_img(){
+	
+	var prev_bg_img_time = bg_img_time - 1;
+	if (prev_bg_img_time == -1){
+		prev_bg_img_time = homepage_background_image_count - 1;
+	}
+
+	
+	for(i = 0; i < homepage_background_image_count; i++){
+		
+		if(i == bg_img_time){//Your turn
+			//Remove all others
+			for(j = 0; j < homepage_background_image_count; j++){
+				if(j != i){
+					$(".homepage_background_image").eq(j).removeClass("displayed");
+					$(".homepage_background_image").eq(j).addClass("undisplayed");
+					//Make sure aggregate of fadeIn and fadeOut time doesn't exceed interval between each timer
+					$(".homepage_background_image").eq(j).hide();//fadeOut(1000);
+				}
+			}		
+			if(! $(".homepage_background_image").eq(i).hasClass("displayed")){//Your turn but not displayed
+			
+				//Remove previous guy
+				//$(".homepage_background_image").eq(prev_bg_img_time).removeClass("displayed");
+				//$(".homepage_background_image").eq(prev_bg_img_time).addClass("undisplayed");
+				//Make sure aggregate of fadeIn and fadeOut time doesn't exceed interval between each timer
+				//$(".homepage_background_image").eq(prev_bg_img_time).hide();//fadeOut(1000);
+				
+				//Then show current guy
+				window.setTimeout(show_bg_img(i), 600);//Set timeout time must be greater than fadeout time
+
+			}			
+		}		
+		
+	}
+	
+	//console.log("bg image time "+bg_img_time);
+	//console.log("in timer session scroll top: "+window.sessionStorage.scrollTop+ " scroll top:"+$(window).scrollTop());
+	bg_img_time++;
+	if(bg_img_time%homepage_background_image_count == 0){
+		bg_img_time = 0;//Reset
+	}	
+}
 
 $("document").ready(function(){
 	/*$(".specialty_box").hover(
@@ -125,17 +189,17 @@ function rebuild_bg_img(resize_level, window_width){//Use pictures that are not 
 		$(".homepage_background_image").css("z-index", -1);
 		$(".homepage_background_image_container").css("z-index", -1);
 		
-		$(".homepage_background_image").fadeIn(1500);
+		$(".homepage_background_image").eq(homepage_background_image_count).fadeIn(1500);
 		should_scroll_background_image = true;
 	}else{
 		
-		$(".homepage_background_image").css({
+		$(".homepage_background_image").eq(homepage_background_image_count).css({
 			position: "relative",
 			top: "0px"
 		});	
 		
 		$(".homepage_background_image").css("z-index", 1);
-		$(".homepage_background_image").show();
+		$(".homepage_background_image").eq(homepage_background_image_count).show();
 		should_scroll_background_image = false;
 	}
 	centralize_element_horizontally($(".homepage_background_image"));

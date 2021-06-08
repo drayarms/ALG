@@ -38,7 +38,9 @@ var	max_container_to_bg_img_ratio;
 var original_bg_img_width;
 var original_bg_img_height;
 var specialty_text_time = 0;
+var bg_img_time = 0;
 var specialty_statement_count;
+var homepage_background_image_count = 0;
 
 //console.log("original b4 "+prev_window_width);
 //alert(scroll_width);
@@ -274,6 +276,8 @@ $(document).ready(function(){
 	//Timer for rotating specialty statement text
 	specialty_statement_count = $(".specialty_statement").length;
 	window.setInterval(rotate_specialty_statement_text, 4000);//Run func every 4 secs
+	homepage_background_image_count = $(".homepage_background_image").length;
+	window.setInterval(rotate_bg_img, 5000);//Run func every 5 secs
 	
 
 	$(".menu_bar a").hover(

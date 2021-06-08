@@ -376,7 +376,7 @@ html{
 }
 
 .homepage_background_image{
-	
+	display:none;
 	/*Width and height set in dimenstions.js*/
 }
 
