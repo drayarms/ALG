@@ -29,12 +29,14 @@ function rebuild_elements(old_window_width, window_width){
 				//console.log("min window");
 				//Min window
 				rebuild_header(4, window_width);
-				rebuild_content(4, window_width);				
+				rebuild_content(4, window_width);
+				rebuild_footer(4, window_width);				
 			}else{
 				//intermediate window B
 				//console.log("intermediate window B");
 				rebuild_header(3, window_width);
 				rebuild_content(3, window_width);
+				rebuild_footer(3, window_width);
 			}
 			
 			
@@ -47,6 +49,7 @@ function rebuild_elements(old_window_width, window_width){
 			//set_resized_header_properties(window_width, header_width, header_inner_width);
 			//set_resized_content_properties();		
 			rebuild_content(2, window_width);
+			rebuild_footer(2, window_width);
 			/*if(old_window_width > window_width){
 				//console.log("window shrinking");
 				//header_inner_width = header_width*header_width_to_header_inner_width_ratio;//Let it shrink,instead of fixed
@@ -78,6 +81,7 @@ function rebuild_elements(old_window_width, window_width){
 		rebuild_header(1, window_width);
 		//$(window).scrollTop(window.sessionStorage.scrollTop);
 		rebuild_content(1, window_width);
+		rebuild_footer(1, window_width);
 		
 	}
 

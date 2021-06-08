@@ -367,35 +367,35 @@ function rebuild_attorney_panel(resize_level, window_width){
 	law_office_details_height = attorney_photo_container_height;
 	$("#law_office_details").css("width", law_office_details_width+ "px");
 	$("#law_office_details").css("height", law_office_details_height+ "px");
-if(resize_level == 1){
-	$("#law_office_details").css("float", "left");
-	law_office_details_vertical_shift = (attorney_panel_height - law_office_details_height)/2;
-	law_office_details_horizontal_shift = ($("#attorney_panel").width()*0.05)/2;
-	$("#law_office_details").css({
-		position: "relative",
-		top: law_office_details_vertical_shift + "px"
-	});	
-	$("#law_office_details").css({
-		position: "relative",
-		left: law_office_details_horizontal_shift + "px"
-	});	
-	$("#attorney_photo_container").css({
-		position: "relative",
-		left: "0px"//Remove centralize
-	});		
-	//$("#law_office_details").css("margin", "0px");
-}else{
-	$("#law_office_details").css("float", "none");
-	$("#law_office_details").css("width", window_width*0.95 +"px");
-	$("#law_office_details").css("height", window_width*0.48 +"px");
-	$("#law_office_details").css({
-		position: "relative",
-		left: ((window_width - $("#law_office_details").width())/2) + "px"
-	});	
-	centralize_element_horizontally($("#attorney_photo_container"));
-	//centralize_element_horizontally($("#law_office_details"));
-	//$("#law_office_details").css("margin", "15px");
-}
+	if(resize_level == 1){
+		$("#law_office_details").css("float", "left");
+		law_office_details_vertical_shift = (attorney_panel_height - law_office_details_height)/2;
+		law_office_details_horizontal_shift = ($("#attorney_panel").width()*0.05)/2;
+		$("#law_office_details").css({
+			position: "relative",
+			top: law_office_details_vertical_shift + "px"
+		});	
+		$("#law_office_details").css({
+			position: "relative",
+			left: law_office_details_horizontal_shift + "px"
+		});	
+		$("#attorney_photo_container").css({
+			position: "relative",
+			left: "0px"//Remove centralize
+		});		
+		//$("#law_office_details").css("margin", "0px");
+	}else{
+		$("#law_office_details").css("float", "none");
+		$("#law_office_details").css("width", window_width*0.95 +"px");
+		$("#law_office_details").css("height", window_width*0.48 +"px");
+		$("#law_office_details").css({
+			position: "relative",
+			left: ((window_width - $("#law_office_details").width())/2) + "px"
+		});	
+		centralize_element_horizontally($("#attorney_photo_container"));
+		//centralize_element_horizontally($("#law_office_details"));
+		//$("#law_office_details").css("margin", "15px");
+	}
 	
 	//Contact panel
 	//contact_panel_height = window_width_original*0.23;
