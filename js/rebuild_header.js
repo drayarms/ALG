@@ -138,7 +138,7 @@ function rebuild_header_elements(resize_level, window_width, header_width){
 }	
 	
 
-function rebuild_menu_bar(resize_level, window_width, header_width){
+/*function rebuild_menu_bar(resize_level, window_width, header_width){
 	if(resize_level <= 2){
 		//Restructue menu bar items
 		$(".menu_bar div").css("float", "left");
@@ -195,6 +195,69 @@ function rebuild_menu_bar(resize_level, window_width, header_width){
 			});			
 		});		
 	}	
+}*/
+
+
+function rebuild_menu_bar(resize_level, window_width, header_width){
+	$( ".menu_bar" ).each(function(){
+		var $this = $(this);
+		if(resize_level <= 2){
+			//Restructue menu bar items
+			$this.find("div").css("float", "left");
+			$this.find("div").css("border", "none");
+			//Divy up menu bar proportionately according to size of each element
+			var menu_items_collective_width = 0;
+			$this.find("div a").each(function(){
+				menu_items_collective_width += $(this).width();
+			});
+	
+	
+			//$(".menu_bar div").css("width",  menu_item_width);
+			var menu_item_height = $this.find("div a").height();
+			var vertical_shift = (menu_bar_height - menu_item_height)/2;
+	
+			$this.find("div a").each(function(){
+				this_width = $(this).width();
+				parent_width = (this_width/menu_items_collective_width)*menu_bar_width*0.99;//Give a little to avoid overflow
+				$(this).parent().css("width",  parent_width);
+				horizontal_shift = (parent_width - this_width)/2;
+		
+
+				$(this).css({
+					position: "relative",
+					left: horizontal_shift + "px"
+				});	
+
+				$(this).css({
+					position: "relative",
+					top: vertical_shift + "px"
+				});			
+			});		
+		}else{
+			//Restructure menu bar
+			$this.find("div").css("float", "none");//Remove float
+			$this.find("div").css("width", menu_bar_item_width +"px");
+			$this.find("div").css("height", menu_bar_item_height +"px");
+			$this.find("div").css("border", "1px solid"+menu_highlight_color_hex);
+			//$(".menu_bar div").css("background-color", "red");
+	
+			//Centralize menu text in thier respective containers
+			$this.find("div a").each(function(){
+				horizontal_shift = (menu_bar_item_width - $(this).width())/2;
+				vertical_shift = (menu_bar_item_height - $(this).height())/2;
+		
+				$(this).css({
+					position: "relative",
+					left: horizontal_shift + "px"
+				});	
+
+				$(this).css({
+					position: "relative",
+					top: vertical_shift + "px"
+				});			
+			});		
+		}
+	});
 }
 
 

@@ -28,6 +28,9 @@ var menu_bar_item_width;
 var menu_bar_height; 
 var footer_mission_statement_panel_fixed_width;
 var footer_mission_statement_panel_width_to_window_width_ratio;
+var footer_contact_details_fixed_width;
+var footer_map_panel_width_to_window_width_ratio;
+var footer_map_panel_fixed_width;
 //var specialties_panel_max_width;
 //var attorney_panel_combined_children_max_width;
 var specialties_panel_width_to_window_width_ratio;
@@ -215,6 +218,8 @@ $(document).ready(function(){
 	max_container_to_bg_img_ratio = max_bg_img_container_width/original_bg_img_width;
 	//Height will always depend on how much the width has been streched/compressed. So use ideally pics that aren't too wide
 	footer_mission_statement_panel_fixed_width = header_inner_width_fixed;
+	footer_contact_details_fixed_width = screen_width*0.22;
+	footer_map_panel_fixed_width = screen_width*0.42
 	
 	//specialties_panel_max_width = ;
 	//attorney_panel_combined_children_max_width = ;
