@@ -20,7 +20,7 @@ function centralize_element_horizontally(e){
 function centralize_element_vertically(e){
 	$(e).css({
 		position: "relative",
-		left: ((e.parent().height() - e.height())/2) + "px"
+		top: ((e.parent().height() - e.height())/2) + "px"
 	});
 }
 

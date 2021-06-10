@@ -21,26 +21,32 @@ $("document").ready(function(){
 function set_header_colors(){
 	$(".header_banner").css("background-color", theme_darkblue1);//For browsers that don't support gradient
 	$(".header_banner").css("background-image", "linear-gradient(to right, "+theme_darkblue1+","+theme_darkblue2+")");
-	$(".menu_bar").css("background-color", theme_gold2);	
+	$(".menu_bar").each(function(){
+		$(this).css("background-color", theme_gold2);
+	});
+	//$(".menu_bar").css("background-color", theme_gold2);	
 	//$(".menu_bar div").css("background-image", "linear-gradient(to bottom, "+theme_gold1+","+theme_gold2+")");	
 }
 
 
 function highlight_menu(){
     if (window.location.href.indexOf("index") > -1) {
-      $(".menu_home a").css("color", menu_highlight_color);
+		$(".menu_home").each(function(){
+			$(this).find("a").css("color", menu_highlight_color);	
+		});
+		//$(".menu_home a").css("color", menu_highlight_color);
     }	
 }
 
 
 function rebuild_header_inner(resize_level, window_width, header_width){
-	
+
 	var header_inner_width = ($(".logo_box").width() + $(".header_banner").width())+1;//Give some allowance for float
-	var header_inner_height = $(".logo_box").height() + $(".menu_bar").height();
+	var header_inner_height = $(".logo_box").height() + $(".header_menu_bar").height();
 	var header_width = window_width*window_to_header_width_ratio;
 	var header_height = header_inner_height;
 	
-	//console.log("header banner height "+$(".header_banner").height()+" menu bar height: "+$(".menu_bar").height());
+	//console.log("header banner height "+$(".header_banner").height()+" menu bar height: "+$(".header_menu_bar").height());
 	$(".inner_header").css("width", header_inner_width + "px");
 	$(".inner_header").css("height", header_inner_height+"px");//("height", header_inner_height);
 	//centralize_element_horizontally($(".inner_header"));
@@ -115,7 +121,7 @@ function rebuild_header_elements(resize_level, window_width, header_width){
 	}
 	$(".menu_bar").css("width",  menu_bar_width + "px");
 	$(".menu_bar").css("height",  menu_bar_height + "px");	
-	$(".menu_bar").css("float", "left");
+	//$(".menu_bar").css("float", "left");
 	
 	
 
@@ -199,41 +205,47 @@ function rebuild_header_elements(resize_level, window_width, header_width){
 
 
 function rebuild_menu_bar(resize_level, window_width, header_width){
-	$( ".menu_bar" ).each(function(){
+	$(".menu_bar").each(function(){//All menu bar instances
 		var $this = $(this);
-		if(resize_level <= 2){
+		//$this.css("margin", "auto");
+
+		if(resize_level <= 2){//Max window
 			//Restructue menu bar items
 			$this.find("div").css("float", "left");
 			$this.find("div").css("border", "none");
 			//Divy up menu bar proportionately according to size of each element
 			var menu_items_collective_width = 0;
 			$this.find("div a").each(function(){
+				//alert($(this).width())
 				menu_items_collective_width += $(this).width();
 			});
-	
+			//alert(menu_items_collective_width)
 	
 			//$(".menu_bar div").css("width",  menu_item_width);
 			var menu_item_height = $this.find("div a").height();
 			var vertical_shift = (menu_bar_height - menu_item_height)/2;
+			//alert(vertical_shift)
 	
 			$this.find("div a").each(function(){
 				this_width = $(this).width();
+				//parent_width = (this_width/menu_items_collective_width)*menu_bar_width*0.99;//Give a little to avoid overflow
 				parent_width = (this_width/menu_items_collective_width)*menu_bar_width*0.99;//Give a little to avoid overflow
 				$(this).parent().css("width",  parent_width);
-				horizontal_shift = (parent_width - this_width)/2;
+				/*horizontal_shift = (parent_width - this_width)/2;
 		
 
 				$(this).css({
 					position: "relative",
 					left: horizontal_shift + "px"
-				});	
+				});*/	
+				centralize_element_horizontally($(this));
 
 				$(this).css({
 					position: "relative",
 					top: vertical_shift + "px"
 				});			
 			});		
-		}else{
+		}else{//Min window
 			//Restructure menu bar
 			$this.find("div").css("float", "none");//Remove float
 			$this.find("div").css("width", menu_bar_item_width +"px");
@@ -257,6 +269,7 @@ function rebuild_menu_bar(resize_level, window_width, header_width){
 				});			
 			});		
 		}
+		//centralize_element_horizontally($this);
 	});
 }
 
@@ -275,7 +288,11 @@ function rebuild_header(resize_level, window_width){//, header_width, header_inn
 	if(resize_level > 2){
 		centralize_element_horizontally($(".header_banner"));
 	}
-	centralize_element_horizontally($(".menu_bar"));
+	
+	$(".menu_bar").each(function(){//All menu bar instances
+		centralize_element_horizontally($(this));
+	});
+	//centralize_element_horizontally($(".menu_bar"));
 	
 	//alert($("#a").width())
 

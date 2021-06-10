@@ -288,7 +288,7 @@ html{
 }
 
 .footer .footer_lower_half .footer_mission_statement_panel .footer_mission_statement{
-	
+	overflow:hidden;
 }
 
 .footer .footer_lower_half .footer_mission_statement_panel .footer_mission_statement h1{
@@ -453,7 +453,7 @@ html{
 	overflow:hidden;
 }
 
-.header .inner_header .menu_bar{
+/*.header .inner_header .menu_bar{
 	float:left;
 }
 
@@ -462,14 +462,13 @@ html{
 }
 
 .header .inner_header .menu_bar a{
-	/*padding-right:30px;*/
-	/*padding-top:5px;*/
+	//padding-right:30px;
+	//padding-top:5px;
 	font-family: Arial, Helvetica, sans-serif;
 	color:rgb(0, 26, 51);
 	font-size:18px;
 	font-weight:bold;
-	/*color:rgb(0, 13, 26);*/
-}
+}*/
 
 /*.header .outer_inner_header{
 	height:100%;
@@ -488,6 +487,23 @@ html{
 	/*Width and height set in dimenstions.js*/
 }
 
+
+.menu_bar{
+	float:left;
+}
+
+.menu_bar div{
+	float:left;
+}
+
+.menu_bar a{
+	//padding-right:30px;
+	//padding-top:5px;
+	font-family: Arial, Helvetica, sans-serif;
+	color:rgb(0, 26, 51);
+	font-size:18px;
+	font-weight:bold;
+}
 
 .social_media_left_panel{
 	width:50px;
