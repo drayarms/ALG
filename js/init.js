@@ -148,18 +148,18 @@ $(document).ready(function(){
 	//var delta_window_top = 0;
 	
 	
-	if (window.sessionStorage.scrollTop != "undefined") {//Forcibly maintains scrool position across sessions
-		console.log("defined")
+	/*if (window.sessionStorage.scrollTop != "undefined") {//Forcibly maintains scrool position across sessions
+		//console.log("defined")
 		$(window).scrollTop(window.sessionStorage.scrollTop);//Set scroll top to saved session scroll top value
 		//$(window).scrollTop = window.sessionStorage.scrollTop;
-	}//else{
+	}//else{*/
 		//console.log("undefined")
 	//}
 	//window.scrollTo(window, 0, window.sessionStorage.scrollTop);
 	//window.scrollTop = 0;//window.sessionStorage.scrollTop;
 	 //window.scroll(0, window.sessionStorage.scrollTop);
-	///console.log("scroll top "+original_window_top)
-	console.log("on document ready, session scroll top: "+window.sessionStorage.scrollTop+ " scroll top:"+$(window).scrollTop());
+	//console.log("scroll top "+original_window_top)
+	//console.log("on document ready, session scroll top: "+window.sessionStorage.scrollTop+ " scroll top:"+$(window).scrollTop());
 	/*$("#homepage_background_container").css({
 		position: "absolute",
 		top: (original_window_top*background_scroll_factor) + "px"//Move image by a fraction of page move in opposite direction

@@ -75,6 +75,11 @@ function rebuild_elements(old_window_width, window_width){
 
 		
 	}else{//Max window
+	
+//$("#header").css("min-height", "0px");
+//$("#content").css("height", "560px");
+//$("#footer").css("height", "340px");
+	
 		//Reassemble everything
 		//page_size = "expanded";
 		//console.log("max window");
@@ -84,5 +89,15 @@ function rebuild_elements(old_window_width, window_width){
 		rebuild_footer(1, window_width);
 		
 	}
+	
+
+
+
+	
+	//Maintain scroll position
+	if (window.sessionStorage.scrollTop != "undefined") {//Forcibly maintains scrool position across sessions
+		$(window).scrollTop(window.sessionStorage.scrollTop);//Set scroll top to saved session scroll top value
+	}
+	console.log("Page fully loaded. Session scroll top: "+window.sessionStorage.scrollTop+ ". Scroll top:"+$(window).scrollTop());
 
 }

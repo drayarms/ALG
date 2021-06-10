@@ -104,6 +104,10 @@ html{
 	/*border:1px solid red;*/
 }
 
+.content #attorney_panel #attorney_photo_container #attorney_photo{
+	display:none;
+}
+
 .content #attorney_panel #law_office_details{
 	/*height:95%;*/
 	/*border:1px solid red;*/
@@ -453,6 +457,9 @@ html{
 	overflow:hidden;
 }
 
+.header .inner_header .logo_box .logo_circle .logo_image{
+	display:none;
+}
 /*.header .inner_header .menu_bar{
 	float:left;
 }

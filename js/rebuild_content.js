@@ -296,23 +296,29 @@ function rebuild_specialties_panel(resize_level, window_width){
 	var specialty_box_height;
 	if(resize_level == 1){
 		specialties_panel_width = fixed_specialties_panel_width;
+		//$(".specialties_panel").css("background-color", "none");
 		//console.log(specialties_panel_width);
 	}
-	
 	if(resize_level == 2){
 		specialties_panel_width = window_width*specialties_panel_width_to_window_width_ratio;
+		//$(".specialties_panel").css("background-color", "none");
 		//console.log(specialties_panel_width);
 	}
-		
+	if(resize_level > 2){
+		specialties_panel_width = window_width//*0.95;
+		//$(".specialties_panel").css("background-color", "#d9d9d9");
+		//#d9d9d9
+	}
 	
-	specialty_box_width = specialties_panel_width/3;
+	specialty_box_width = (specialties_panel_width/3)-1;
 	specialty_box_height = logo_box_fixed_width*1.3;
 
 	if(resize_level < 3){
-		specialties_panel_height = specialty_box_height*1.53;	
+		specialties_panel_height = specialty_box_height*1.33;	
 	}else{
 		specialties_panel_height = specialty_box_height;
 	}
+	//alert("specialties panel height "+specialties_panel_height)
 	//specialties_panel_height = logo_box_fixed_width*2;	
 	//specialty_box_height = specialties_panel_height*0.65;		
 	
