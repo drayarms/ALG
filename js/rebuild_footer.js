@@ -174,4 +174,9 @@ function rebuild_footer(resize_level, window_width){
 	rebuild_mission_statement_box(resize_level, window_width);
 	rebuild_footer_contact_details_panel(resize_level, window_width);
 	
+	
+	//alert("footer upper half height "+$(".footer_upper_half").height());
+	//alert("footer lower half height "+$(".footer_lower_half").height());
+	//alert("footer height "+$(".footer").height());
+	
 }

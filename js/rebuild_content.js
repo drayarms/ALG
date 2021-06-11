@@ -338,8 +338,86 @@ function rebuild_specialties_panel(resize_level, window_width){
 }
 
 
+function rebuild_contact_panel(resize_level, window_width){
+	contact_panel_height = screen_width*0.23;
+	$("#contact_panel").css("height", contact_panel_height+"px");	
+}
+	
 
 function rebuild_attorney_panel(resize_level, window_width){
+	var container_to_content_height_ratio = 1.06;
+	var attorney_panel_width = window_width*0.95;
+	var attorney_panel_height;
+	var attorney_photo_container_width;
+	var attorney_photo_container_height;
+	//var attorney_photo_width;
+	//var attorney_photo_height;
+	var law_office_details_width;
+	var law_office_details_height;
+	
+	//Dimensioning
+	attorney_photo_container_width = screen_width*0.4;
+	attorney_photo_container_height = screen_width*0.45;
+	//attorney_panel_width = window_width*0.95;
+	attorney_panel_height = attorney_photo_container_height*container_to_content_height_ratio;
+	law_office_details_height = attorney_photo_container_height;
+	if(resize_level <= 1){//Max Window
+		law_office_details_width = attorney_panel_width - attorney_photo_container_width - 10;//Allowance for float	
+	}else{//Min Window
+		law_office_details_width = window_width;//attorney_panel_width;
+		law_office_details_height = screen_width*0.2;
+		attorney_panel_height = (attorney_photo_container_height + law_office_details_height)//*container_to_content_height_ratio;
+	}
+	
+	$("#attorney_panel").css("width", attorney_panel_width + "px");
+	$("#attorney_panel").css("height", attorney_panel_height + "px");
+	$("#attorney_photo_container").css("width", attorney_photo_container_width + "px");
+	$("#attorney_photo_container").css("height", attorney_photo_container_height + "px");
+	$("#law_office_details").css("width", law_office_details_width + "px");
+	$("#law_office_details").css("height", law_office_details_height + "px");	
+//alert($("#law_office_details").height())
+//alert($("#law_office_details").width())
+	//Positioning
+	if(resize_level <= 1){//Max Window
+		//Unfloat
+		$("#attorney_photo_container").css("float", "left");
+		$("#law_office_details").css("float", "right");
+		//Uncentralize horizontally
+		$("#attorney_photo_container").css({
+			position: "relative",
+			left: "0px"
+		});	
+		$("#law_office_details").css({
+			position: "relative",
+			left: "0px"
+		});			
+		//Centralize vertically
+		centralize_element_vertically($("#attorney_photo_container"));
+		centralize_element_vertically($("#law_office_details"));		
+	}else{//Min Window
+		$("#attorney_photo_container").css("float", "none");
+		$("#law_office_details").css("float", "none");	
+		centralize_element_horizontally($("#attorney_photo_container"));
+		centralize_element_horizontally($("#law_office_details"));
+		//Uncentralize vertically
+		$("#attorney_photo_container").css({
+			position: "relative",
+			top: "0px"
+		});	
+		$("#law_office_details").css({
+			position: "relative",
+			top: "0px"
+		});			
+		centralize_element_horizontally($("#attorney_photo_container"));
+		centralize_element_horizontally($("#law_office_details"));
+	}	
+	//centralize_element_horizontally($("#attorney_panel")); 
+
+	scale_and_position_image($("#attorney_photo"), $("#attorney_photo_container"), 1);	
+	$("#attorney_photo").show();
+}
+
+/*function rebuild_attorney_panel(resize_level, window_width){
 	//Attorney panel
 	//attorney_panel_height = window_width_original*0.45;//0.35;
 	var attorney_panel_height = screen_width*0.45;//0.35;
@@ -407,7 +485,7 @@ function rebuild_attorney_panel(resize_level, window_width){
 	//contact_panel_height = window_width_original*0.23;
 	contact_panel_height = screen_width*0.23;
 	$("#contact_panel").css("height", contact_panel_height+"px");	
-}
+}*/
 
 
 function rebuild_content(resize_level, window_width){
@@ -448,7 +526,7 @@ function rebuild_content(resize_level, window_width){
 	//$(window).scrollTop(window.sessionStorage.scrollTop);
 	rebuild_specialties_panel(resize_level, window_width);
 	rebuild_attorney_panel(resize_level, window_width);
-	
+	rebuild_contact_panel(resize_level, window_width);
 	
 	color_specialty_boxes();
 	
