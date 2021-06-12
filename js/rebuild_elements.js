@@ -99,5 +99,6 @@ function rebuild_elements(old_window_width, window_width){
 		$(window).scrollTop(window.sessionStorage.scrollTop);//Set scroll top to saved session scroll top value
 	}
 	console.log("Page fully loaded. Session scroll top: "+window.sessionStorage.scrollTop+ ". Scroll top:"+$(window).scrollTop());
+	//alert("Page fully loaded. Session scroll top: "+window.sessionStorage.scrollTop+ ". Scroll top:"+$(window).scrollTop());
 
 }

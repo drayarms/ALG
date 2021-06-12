@@ -377,6 +377,7 @@ function rebuild_attorney_panel(resize_level, window_width){
 	$("#law_office_details").css("height", law_office_details_height + "px");	
 //alert($("#law_office_details").height())
 //alert($("#law_office_details").width())
+
 	//Positioning
 	if(resize_level <= 1){//Max Window
 		//Unfloat

@@ -93,6 +93,7 @@ min window  |resize threshold 3| intermediate window B|resize threshold 2| inter
 	$(window).scroll(function() {
 		window.sessionStorage.scrollTop = $(this).scrollTop();//Remember the current scroll position even across sessions(refreshes)
 		var window_top = window.sessionStorage.scrollTop;//$(this).scrollTop();
+		
 		//console.log("current session scroll top: "+window.sessionStorage.scrollTop);
 		//var window_top = $(window).scrollTop();
 		//delta_window_top = window_top - original_window_top;
@@ -104,7 +105,7 @@ min window  |resize threshold 3| intermediate window B|resize threshold 2| inter
 		//console.log("delta window top "+delta_window_top);
 		//console.log("div top "+div_top+" window top "+window_top);
 		
-		var background_scroll_disp = window_top - prev_window_top;// - window_top;
+		/*/////////////////////////////////////////////////var background_scroll_disp = window_top - prev_window_top;// - window_top;
 		//console.log("on scroll background scroll disp "+background_scroll_disp);
 		current_homepage_background_image_container_top = $("#homepage_background_image_container").offset().top;
 		var y_displacement = current_homepage_background_image_container_top + (background_scroll_disp*background_scroll_factor);
@@ -133,7 +134,7 @@ min window  |resize threshold 3| intermediate window B|resize threshold 2| inter
 		//prev_background_img_top = $("#homepage_background_image_container").offset().top;//*Also reset this when element is rebuilt
 		//prev_window_top = window_top;
 		//window.sessionStorage.scrollTop = $(this).scrollTop();//Remember the current scroll position even across sessions(refreshes)
-		prev_window_top = window_top;
+		prev_window_top = window_top;////////////////////////////////////////////////////*/
 	});
 	
 
@@ -147,7 +148,7 @@ $(document).ready(function(){
 	//prev_window_top = $(window).scrollTop();
 	//var delta_window_top = 0;
 	
-	
+//alert("Page not yet fully loaded. Session scroll top: "+window.sessionStorage.scrollTop+ ". Scroll top:"+$(window).scrollTop());	
 	/*if (window.sessionStorage.scrollTop != "undefined") {//Forcibly maintains scrool position across sessions
 		//console.log("defined")
 		$(window).scrollTop(window.sessionStorage.scrollTop);//Set scroll top to saved session scroll top value

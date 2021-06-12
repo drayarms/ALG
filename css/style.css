@@ -85,7 +85,7 @@ html{
 	
 	/*position:relative;*/
 	top:0px;
-	border:1px dotted blue;
+	/*border:1px dotted blue;*/
 	overflow-x:hidden;
 	
 
@@ -138,7 +138,6 @@ html{
 	font-weight:390;
 	color: rgb(51, 51, 51);	
 	overflow:hidden;
-	border:1px solid red;
 }
 
 .content #attorney_panel #law_office_details h2{
@@ -150,7 +149,6 @@ html{
 	/*color: rgb(230, 184, 0);*/
 	color: rgb(204, 163, 0);
 	overflow:hidden;
-border:1px solid red;	
 }
 
 .content #attorney_panel #law_office_details h5{
@@ -162,7 +160,6 @@ border:1px solid red;
 	font-weight:190;
 	color: rgb(51, 51, 51);	
 	overflow:hidden;
-	border:1px solid red;
 }
 
 .content #contact_panel{
@@ -426,7 +423,7 @@ border:1px solid red;
 	/*width:100%;*/
 	/*min-width:0px;*/
 	/*border:none;*/
-	border:2px solid green;
+	/*border:2px solid green;*/
 	overflow:none;
 }
 
@@ -436,7 +433,7 @@ border:1px solid red;
 	/*margin:auto;*/
 	/*margin-top:1.5%;*/
 	/*background-color:black;*/
-	border:1px dotted red;
+	/*border:1px dotted red;*/
 }
 
 
@@ -527,15 +524,15 @@ border:1px solid red;
 }
 
 .menu_bar a{
-	//padding-right:30px;
-	//padding-top:5px;
+	/*padding-right:30px;
+	padding-top:5px;*/
 	font-family: Arial, Helvetica, sans-serif;
 	color:rgb(0, 26, 51);
 	font-size:18px;
 	font-weight:bold;
 }
 
-.our_h1s{
+.our_h1{
 	/*position:relative;top:8%;*/
 	padding:0;
 	margin:0;/*Padding and margin set to 0 to prevent spaces in ancestors*/
@@ -548,7 +545,7 @@ border:1px solid red;
 	border:1px solid red;*/
 }
 
-.our_h2s{
+.our_h2{
 	/*position:relative;top:8%;*/
 	padding:0;
 	margin:0;/*Padding and margin set to 0 to prevent spaces in ancestors*/
