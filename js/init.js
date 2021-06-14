@@ -31,6 +31,8 @@ var footer_mission_statement_panel_width_to_window_width_ratio;
 var footer_contact_details_fixed_width;
 var footer_map_panel_width_to_window_width_ratio;
 var footer_map_panel_fixed_width;
+var marketing_panel_width_to_window_width_ratio;
+var marketing_panel_fixed_width;
 //var specialties_panel_max_width;
 //var attorney_panel_combined_children_max_width;
 var specialties_panel_width_to_window_width_ratio;
@@ -89,7 +91,7 @@ min window  |resize threshold 3| intermediate window B|resize threshold 2| inter
 
 
 
-
+	//document.documentElement.scrollTop //
 	$(window).scroll(function() {
 		window.sessionStorage.scrollTop = $(this).scrollTop();//Remember the current scroll position even across sessions(refreshes)
 		var window_top = window.sessionStorage.scrollTop;//$(this).scrollTop();
@@ -141,7 +143,7 @@ min window  |resize threshold 3| intermediate window B|resize threshold 2| inter
 
 
 $(document).ready(function(){
-	
+
 	//alert("window width "+$(window).width()+" document width "+$(document).width()+" screen width "+window.screen.width)
 	//var div_top = $(".header").offset().top;
 	//var original_window_top = $(window).scrollTop();
@@ -220,7 +222,8 @@ $(document).ready(function(){
 	//Height will always depend on how much the width has been streched/compressed. So use ideally pics that aren't too wide
 	footer_mission_statement_panel_fixed_width = header_inner_width_fixed;
 	footer_contact_details_fixed_width = screen_width*0.22;
-	footer_map_panel_fixed_width = screen_width*0.42
+	footer_map_panel_fixed_width = screen_width*0.42;
+	marketing_panel_fixed_width = screen_width*0.6;
 	
 	//specialties_panel_max_width = ;
 	//attorney_panel_combined_children_max_width = ;
@@ -257,7 +260,17 @@ $(document).ready(function(){
 	//set_header_properties();//See restructure header func
 	//set_homepage_background_image_dimensions(window_width_original);
 	rebuild_elements(prev_window_width, window_width_original);//Initially build header
-	set_logo_image();
+	//set_logo_image();
+	//Maintain scroll position
+	//if (window.sessionStorage.scrollTop != "undefined") {//Forcibly maintains scrool position across sessions
+		//$(window).scrollTop(window.sessionStorage.scrollTop);//Set scroll top to saved session scroll top value
+	//}
+	if (window.sessionStorage.scrollTop != "undefined") {//Forcibly maintains scrool position across sessions
+		$(window).scrollTop(window.sessionStorage.scrollTop);//Set scroll top to saved session scroll top value
+	}	
+	console.log("Page fully loaded. Session scroll top: "+window.sessionStorage.scrollTop+ ". Scroll top:"+$(window).scrollTop());
+	//alert("Page fully loaded. Session scroll top: "+window.sessionStorage.scrollTop+ ". Scroll top:"+$(window).scrollTop());
+	
 
 //$(".header").css("width", old_header_width0 + "px");
 //$(".header").css("margin-left", (1.01*(window_width-old_header_width0)/2)+"px");
@@ -289,7 +302,7 @@ $(document).ready(function(){
 	window.setInterval(rotate_bg_img, 5000);//Run func every 5 secs
 	
 
-	$(".menu_bar a").hover(
+	/*$(".menu_bar a").hover(
 	function(){
 		menu_hover_color = $(this).css("color");
 		$(this).css("color",menu_highlight_color);
@@ -305,7 +318,7 @@ $(document).ready(function(){
 			$(this).parent().css("border", "1px solid"+menu_highlight_color_hex);
 			//$(this).parent().css("opacity", "1.0");
 		}
-	});	
+	});	*/
 	
 	
 });

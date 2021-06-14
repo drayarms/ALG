@@ -374,7 +374,7 @@ function rebuild_attorney_panel(resize_level, window_width){
 	$("#attorney_photo_container").css("width", attorney_photo_container_width + "px");
 	$("#attorney_photo_container").css("height", attorney_photo_container_height + "px");
 	$("#law_office_details").css("width", law_office_details_width + "px");
-	$("#law_office_details").css("height", law_office_details_height + "px");	
+	$("#law_office_details").css("min-height", law_office_details_height + "px");	
 //alert($("#law_office_details").height())
 //alert($("#law_office_details").width())
 

@@ -1,5 +1,5 @@
 
-function set_logo_image(){
+function rebuild_logo_image(){
 	//First vertically align circle
 	logo_box_height = $(".logo_box").height();
 	logo_circle_height = $(".logo_circle").height();

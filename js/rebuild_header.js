@@ -292,6 +292,7 @@ function rebuild_header(resize_level, window_width){//, header_width, header_inn
 	$(".menu_bar").each(function(){//All menu bar instances
 		centralize_element_horizontally($(this));
 	});
+	rebuild_logo_image();
 	$(".logo_image").show();//Can now display since it has been appropriately sized
 	//centralize_element_horizontally($(".menu_bar"));
 	

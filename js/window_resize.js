@@ -22,5 +22,6 @@ var onresize = function(e) {
 	rebuild_elements(prev_window_width, current_window_width);
 	prev_window_width = current_window_width;
 	//console.log("after "+current_window_width);
+
 }
 window.addEventListener("resize", onresize);

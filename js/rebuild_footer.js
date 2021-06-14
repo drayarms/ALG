@@ -169,10 +169,79 @@ function rebuild_footer_contact_details_panel(resize_level, window_width){
 }
 
 
+function rebuild_marketing_panel(resize_level, window_width){
+	var marketing_panel_width;
+	var marketing_panel_height = screen_width*0.11;
+	var marketing_panel_box_width;
+	var marketing_panel_box_height = marketing_panel_height;
+	marketing_panel_width_to_window_width_ratio = marketing_panel_fixed_width/resize_threshold1;
+	var num_marketing_panel_boxes = $(".marketing_panel_box").length;
+	
+	
+	if(resize_level == 1){
+		marketing_panel_width = marketing_panel_fixed_width;
+	}else{
+		marketing_panel_width = window_width*marketing_panel_width_to_window_width_ratio;
+	}
+	
+	marketing_panel_box_width = (marketing_panel_width/num_marketing_panel_boxes) - (6*num_marketing_panel_boxes);//Leave some gaps
+
+	
+	$(".marketing_panel").css("width", marketing_panel_width + "px");
+	$(".marketing_panel").css("height", marketing_panel_height + "px");
+	
+	$(".marketing_panel_box").css("width", marketing_panel_box_width + "px");
+	$(".marketing_panel_box").css("height", marketing_panel_box_height + "px");
+	
+	$(".marketing_panel_box a div").css("width", marketing_panel_box_width + "px");
+	$(".marketing_panel_box a div").css("height", (marketing_panel_box_height/3) + "px");	
+
+	//if(resize_level == 1){
+		var marketing_panel_box_right_shift = (marketing_panel_width - (num_marketing_panel_boxes * marketing_panel_box_width * 1.005))/(num_marketing_panel_boxes - 1);
+		$(".marketing_panel_box").css("float", "left");
+		for(var i = 1; i < num_marketing_panel_boxes; i++){
+			($(".marketing_panel_box").eq(i)).css({
+				position: "relative",
+				left: (i*marketing_panel_box_right_shift) +"px"
+			});		
+		}
+	//}else{
+		
+	//}
+	if(resize_level == 1){
+		$(".marketing_panel_box").css({
+			position: "relative",
+			top: (marketing_panel_box_height*-0.5) +"px"
+		});	
+	}else{
+		$(".marketing_panel_box").css({
+			position: "relative",
+			top: "0px"
+		});			
+	}
+	
+	$(".marketing_panel_box").hover(
+	function(){
+		$(this).css("background-color", theme_gold2);
+	},function() {
+		$(this).css("background-color", "#ffffff");
+	});	
+	
+	//Vertically align marketing panel icon to bottom of container
+	$(".marketing_panel_icon i").css({
+		position: "relative",
+		top: ($(".marketing_panel_icon").height() - $(".marketing_panel_icon i").height())+"px"
+	});		
+	
+	//alert($(".marketing_panel_icon i").height());
+}
+
+
 function rebuild_footer(resize_level, window_width){
 
 	rebuild_mission_statement_box(resize_level, window_width);
 	rebuild_footer_contact_details_panel(resize_level, window_width);
+	rebuild_marketing_panel(resize_level, window_width);
 	
 	
 	//alert("footer upper half height "+$(".footer_upper_half").height());

@@ -95,10 +95,10 @@ function rebuild_elements(old_window_width, window_width){
 
 	
 	//Maintain scroll position
-	if (window.sessionStorage.scrollTop != "undefined") {//Forcibly maintains scrool position across sessions
-		$(window).scrollTop(window.sessionStorage.scrollTop);//Set scroll top to saved session scroll top value
-	}
-	console.log("Page fully loaded. Session scroll top: "+window.sessionStorage.scrollTop+ ". Scroll top:"+$(window).scrollTop());
+	//if (window.sessionStorage.scrollTop != "undefined") {//Forcibly maintains scrool position across sessions
+		//$(window).scrollTop(window.sessionStorage.scrollTop);//Set scroll top to saved session scroll top value
+	//}
+	//console.log("Page fully loaded. Session scroll top: "+window.sessionStorage.scrollTop+ ". Scroll top:"+$(window).scrollTop());
 	//alert("Page fully loaded. Session scroll top: "+window.sessionStorage.scrollTop+ ". Scroll top:"+$(window).scrollTop());
 
 }
