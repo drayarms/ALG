@@ -563,8 +563,8 @@ html{
 .header .logo_box .logo_circle{
 	background-color:none;
 	margin:auto;
-	width:88%;
-	height:96%;
+	width:90%;/*88%;*/
+	height:90%;
 	border-radius: 50%;
 	overflow:hidden;
 }
@@ -574,15 +574,17 @@ html{
 }
 
 .header .menu_bar{
-	
+	border:1px dotted green;
 }
 
 .header .menu_bar .menu_item{
-	
+	background-color:blue;
+	border:1px dotted blue;
 }
 
 .header .menu_bar .menu_item a{
-	
+	background-color:red;
+	border:1px dotted red;
 }
 
 
@@ -592,7 +594,7 @@ html{
 }
 
 .header .menu_icon i{
-	font-size:170%;
+	font-size:380%;
 	color:#00264d;
 	text-shadow:0px 0px 0px #000000;
 }
