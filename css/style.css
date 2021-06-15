@@ -574,17 +574,20 @@ html{
 }
 
 .header .menu_bar{
-	border:1px dotted green;
+	overflow:hidden;/*Offsets any padding issues*/
+	/*border:1px dotted green;*/
 }
 
 .header .menu_bar .menu_item{
-	background-color:blue;
-	border:1px dotted blue;
+	/*background-color:blue;*/
+	/*border:1px dotted blue;*/
 }
 
 .header .menu_bar .menu_item a{
-	background-color:red;
-	border:1px dotted red;
+	display:inline-block;
+	text-align:center;
+	/*background-color:red;*/
+	/*border:1px dotted red;*/
 }
 
 

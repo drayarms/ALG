@@ -238,18 +238,67 @@ function rebuild_header1(resize_level, window_width){//, header_width, header_in
 function rebuild_menu_bar(resize_level, window_width){
 	var menu_bar_height = screen_width*0.03;
 	var menu_bar_width = get_menu_bar_width(resize_level, window_width);
-	if(resize_level == 1){
-		
-	}
-	if(resize_level == 2 || resize_level == 3){
-		
-	}
-	if(resize_level == 4){
-		
-	}	
+	
 	$(".menu_bar").css("height", menu_bar_height+"px");
 	$(".menu_bar").css("width", menu_bar_width+"px");
+				
+	$(".menu_bar").each(function(){//All menu bar instances
+		var $this = $(this);
+		var menu_item_vertical_shift = menu_bar_height*0.5 - 0.5*menu_item_anchor_original_height;
+	
+		//Insert separators
+		if(resize_level <= 2){
+			//Remove all prev separators
+			if($this.find(".menu_item_separator").length > 0){
+				$this.find(".menu_item_separator").each(function(){
+					$(this).remove();
+				});
+			}
+			
+			$this.find(".menu_item").each(function(){
+				$(this).after("<div class = 'menu_item_separator' style = 'color:"+theme_darkblue1+";font-size:100%'>|</div>");
+			});
+			var num_separators = $this.find(".menu_item_separator").length;
+			//Remove last separator
+			$this.find(".menu_item_separator").eq(num_separators - 1).remove();
 
+			var menu_item_separator_collective_width = 0;
+			$this.find(".menu_item_separator").each(function(){
+				menu_item_separator_collective_width += $(this).width();//Width of a separator
+				$(this).css({
+					position: "relative",
+					top: menu_item_vertical_shift +"px"
+				});	
+			});
+
+			//Divy up menu bar proportionately according to size of each element
+			var menu_items_collective_width = 0;
+			$this.find(".menu_item_anchor").each(function(){//Iterate each item of each menu bar to get width
+				menu_items_collective_width += $(this).width();
+			});
+	
+			$this.find(".menu_item_anchor").each(function(){//Iterate each item of each menu bar to set width
+				var this_width = $(this).width();//Width of a tag
+				var parent_width = (this_width/menu_items_collective_width)*(menu_bar_width - menu_item_separator_collective_width)*0.996;//Give a little to avoid overflow
+				$(this).parent().css("width", parent_width +"px");
+				//Stretch the anchor to cover parent w
+				$(this).css("width", parent_width +"px");
+			});	
+		
+		}else{//Min window
+			
+		}
+		
+		//Stretch the anchor to cover entire menu bar
+		$this.find(".menu_item_anchor").each(function(){
+			$(this).parent().css("height", menu_bar_height +"px");
+			//$(this).css("height", (menu_bar_height-menu_item_separator_collective_width) +"px");
+			$(this).css("height", menu_bar_height +"px");
+			//Move the text
+			$(this).css("padding-top", menu_item_vertical_shift+"px");
+		});
+	
+	});
 	
 	/*$(".menu_bar").each(function(){//All menu bar instances
 		var $this = $(this);
@@ -411,22 +460,6 @@ function rebuild_header(resize_level, window_width){
 	$(".logo_image").show();//Can now display since it has been appropriately sized
 
 
-	$(".menu_bar a").hover(
-	function(){
-		menu_hover_color = $(this).css("color");
-		$(this).css("color",menu_highlight_color);
-		if(page_size == "shrunken"){
-			//$(this).parent().css("background-color", theme_darkblue2_hex);
-			$(this).parent().css("border", "1px solid #ffffff");
-			//$(this).parent().css("opacity", "0.75");
-		}
-	},function() {
-		$(this).css("color",menu_hover_color);
-		if(page_size == "shrunken"){
-			//$(this).parent().css("background-color", "none");
-			$(this).parent().css("border", "1px solid"+menu_highlight_color_hex);
-			//$(this).parent().css("opacity", "1.0");
-		}
-	});	
+
 
 }
