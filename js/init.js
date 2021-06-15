@@ -321,17 +321,18 @@ $(document).ready(function(){
 		}
 	});	*/
 	
-	$(".menu_bar a").hover(
+	//$(".menu_bar a").hover(
+	$(".menu_item").hover(
 	function(){
 		menu_hover_color = $(this).css("color");
-		$(this).css("color",menu_highlight_color);
+		$(this).find("a").css("color",menu_highlight_color);
 		if(page_size == "shrunken"){
 			//$(this).parent().css("background-color", theme_darkblue2_hex);
 			$(this).parent().css("border", "1px solid #ffffff");
 			//$(this).parent().css("opacity", "0.75");
 		}
 	},function() {
-		$(this).css("color",menu_hover_color);
+		$(this).find("a").css("color",menu_hover_color);
 		if(page_size == "shrunken"){
 			//$(this).parent().css("background-color", "none");
 			$(this).parent().css("border", "1px solid"+menu_highlight_color_hex);
