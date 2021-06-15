@@ -579,14 +579,14 @@ html{
 }
 
 .header .menu_bar .menu_item{
-	background-color:blue;
+	/*background-color:blue;*/
 	/*border:1px dotted blue;*/
 }
 
 .header .menu_bar .menu_item .menu_item_anchor{
 	display:inline-block;
 	text-align:center;
-	background-color:red;
+	/*background-color:red;*/
 	/*border:1px dotted red;*/
 }
 

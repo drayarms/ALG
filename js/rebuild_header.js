@@ -255,7 +255,7 @@ function rebuild_menu_bar(resize_level, window_width){
 			
 		//Insert separators
 		if(resize_level <= 2){
-			
+			$(this).css("padding-top", "0px");//Remove any padding from previous window configuration
 			var menu_bar_height = screen_width*0.03;
 			var menu_bar_width = get_menu_bar_width(resize_level, window_width);
 	
@@ -301,6 +301,9 @@ function rebuild_menu_bar(resize_level, window_width){
 				//Stretch the anchor to cover parent w
 				$(this).css("width", parent_width +"px");
 			//});	
+			
+				//Styling
+				$(this).css("border", "none");//Remove any borders from prev window configs
 		
 			//Stretch the anchor to cover entire menu bar
 			//$this.find(".menu_item_anchor").each(function(){
@@ -319,7 +322,15 @@ function rebuild_menu_bar(resize_level, window_width){
 				$(this).parent().css({
 					position: "relative",
 					left: "0px"
-				});						
+				});	
+				$(this).css({
+					position: "relative",
+					top: "0px"
+				});	
+				$(this).css({
+					position: "relative",
+					left: "0px"
+				});					
 			});		
 		
 		}else if(resize_level == 3){//Min window3
@@ -330,7 +341,10 @@ function rebuild_menu_bar(resize_level, window_width){
 			var row_width = window_width;
 			var menu_bar_height = row_height*num_rows;
 			var menu_bar_width = row_width;
-			var menu_item_width = (row_width/2)-2;
+			var menu_item_width = (row_width/2)-0;
+			var menu_item_height = row_height;
+			var menu_item_anchor_height = menu_item_height*0.7;
+			var menu_item_anchor_width = menu_item_width*0.95;
 			
 			$(".menu_bar").css("height", menu_bar_height+"px");
 			$(".menu_bar").css("width", menu_bar_width+"px");
@@ -342,25 +356,35 @@ function rebuild_menu_bar(resize_level, window_width){
 			
 			$this.find(".menu_item_anchor").each(function(index){//Iterate each item of each menu bar to get width
 				//Dimensioning
+				$(this).css("padding-top", "0px");//Remove any padding from previous window configuration
 				$(this).parent().css("width", menu_item_width +"px");
-				$(this).parent().css("height", 40 +"px");
+				$(this).parent().css("height", row_height +"px");
 				$(this).parent().css("float", "left");
-				$(this).css("height", 40 +"px");
-				//$(this).css("padding-top", menu_item_vertical_shift+"px");				
-				//Positioning
-				$(this).parent().css({
-					position: "relative",
-					top:  ((Math.floor(index/2))*row_height)+"px"
-				});	
+				$(this).css("height", menu_item_anchor_height +"px");
+				$(this).css("width", menu_item_anchor_width +"px");
 				
-				var left_shift = 0;
-				if(index % 2 != 0){
-					left_shift = (row_width/2);
-				}
+				//Styling
+				$(this).css("border", "1px solid #ffffff");
+				
+				//Positioning
+				centralize_element($(this));
+				var menu_item_vertical_shift = menu_item_anchor_height*0.5 - 0.5*menu_item_anchor_original_height;
+				$(this).css("padding-top", menu_item_vertical_shift+"px");
+				//alert(index+" row height "+row_height+" position "+((Math.floor(index/2))*row_height))
+				/*$(this).parent().css({
+					position: "relative",
+					top:  ((Math.floor(index/2))*row_height)*0+"px"
+				});	*/
+				
+				/*var left_shift = 0;
+				//if(index % 2 != 0){
+					//left_shift = menu_item_width;
+				//}
+				//alert(index+")menu bar width"+menu_bar_width+" row width "+row_width+" left shift "+left_shift)
 				$(this).parent().css({
 					position: "relative",
-					left:  left_shift*0+"px"
-				});					
+					left:  left_shift +"px"
+				});	*/				
 			});			
 		}else{//Min window4
 		console.log("window 4")
