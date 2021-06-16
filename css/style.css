@@ -512,24 +512,29 @@ html{
 	/*min-width:0px;*/
 	/*border:none;*/
 	/*border:2px solid green;*/
+	border:1px dotted red;
 	overflow:none;
 }
 
 .header #homepage_top_header{
 	background-color :rgba(255, 255, 255, 0);
+	
 }
 
 .header .header_core{
+	margin:0px auto;
 	/*height:100%;*/
 	/*width:60%;*/
 	/*margin:auto;*/
 	/*margin-top:1.5%;*/
 	/*background-color:black;*/
 	/*border:1px dotted red;*/
+	border:1px dotted blue;
 }
 
 
 .header .header_core .header_banner{
+	/*border:1px solid green;*/
 	/*float:left;*/
 }
 
@@ -557,6 +562,8 @@ html{
 
 .header .logo_box{
 	background-color:#ffffff;
+	/*border:1px solid red;*/
+	/*background-color:yellow;*/
 	/*float:left;*/
 }
 

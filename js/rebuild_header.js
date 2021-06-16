@@ -244,6 +244,7 @@ function rebuild_menu_bar(resize_level, window_width){
 				
 	$(".menu_bar").each(function(){//All menu bar instances
 		var $this = $(this);
+		var num_menu_items = $this.find(".menu_item").length;
 		//var menu_item_vertical_shift = menu_bar_height*0.5 - 0.5*menu_item_anchor_original_height;
 
 		//Remove all prev separators
@@ -290,12 +291,16 @@ function rebuild_menu_bar(resize_level, window_width){
 			//Divy up menu bar proportionately according to size of each element
 			var menu_items_collective_width = 0;
 			$this.find(".menu_item_anchor").each(function(){//Iterate each item of each menu bar to get width
-				menu_items_collective_width += $(this).width();
+				var txt = $(this).text();
+				var txt_len = txt.length				
+				menu_items_collective_width += txt_len;//$(this).width();
 			});
 	
-			$this.find(".menu_item_anchor").each(function(){//Iterate each item of each menu bar to set width
+			$this.find(".menu_item_anchor").each(function(index){//Iterate each item of each menu bar to set width
 				//Dimensioning
-				var this_width = $(this).width();//Width of a tag
+				var txt = $(this).text();
+				var txt_len = txt.length
+				var this_width = txt_len; //$(this).width();//Width of a tag
 				var parent_width = (this_width/menu_items_collective_width)*(menu_bar_width - menu_item_separator_collective_width)*0.996;//Give a little to avoid overflow
 				$(this).parent().css("width", parent_width +"px");
 				//Stretch the anchor to cover parent w
@@ -335,11 +340,11 @@ function rebuild_menu_bar(resize_level, window_width){
 		
 		}else if(resize_level == 3){//Min window3
 			console.log("window 3")
-			var num_menu_items = $this.find(".menu_item").length;
+			//var num_menu_items = $this.find(".menu_item").length;
 			var num_rows = Math.ceil(num_menu_items/2);
 			var row_height = screen_width*0.03;
 			var row_width = window_width;
-			var menu_bar_height = row_height*num_rows;
+			var menu_bar_height = row_height*num_rows + 20;
 			var menu_bar_width = row_width;
 			var menu_item_width = (row_width/2)-0;
 			var menu_item_height = row_height;
@@ -387,76 +392,48 @@ function rebuild_menu_bar(resize_level, window_width){
 				});	*/				
 			});			
 		}else{//Min window4
-		console.log("window 4")
+			console.log("window 4")
+			var menu_width = window_width/3;
+			var menu_height = window_width*0.65;
+			var menu_item_width = menu_width;
+			var menu_item_height = (menu_height/num_menu_items)-1;//To account for bottom border
+			var menu_item_anchor_width = menu_item_width;
+			var menu_item_anchor_height = menu_item_height;
 			
+			$this.css("width", menu_width +"px");
+			$this.css("height", menu_height +"px");
+
+			$this.find(".menu_item_anchor").each(function(index){//Iterate each item of each menu bar to get width
+				//Dimensioning
+				$(this).css("padding-top", "0px");//Remove any padding from previous window configuration
+				$(this).parent().css("float", "none");//Remove float
+				$(this).parent().css("width", menu_item_width +"px");
+				$(this).parent().css("height", menu_item_height +"px");
+				$(this).css("height", menu_item_anchor_height +"px");
+				$(this).css("width", menu_item_anchor_width +"px");
+				
+				//Styling
+				$(this).css("border", "none");
+				$(this).css("border-bottom", "1px solid #ffffff");
+				
+				//Positioning
+				//centralize_element($(this));
+				$(this).css({
+					position: "relative",
+					top: "0px"
+				});	
+				$(this).css({
+					position: "relative",
+					left: "0px"
+				});				
+				var menu_item_vertical_shift = menu_item_anchor_height*0.5 - 0.5*menu_item_anchor_original_height;
+				$(this).css("padding-top", menu_item_vertical_shift+"px");			
+			});						
 		}
 		
-
-	
 	});
 	
-	/*$(".menu_bar").each(function(){//All menu bar instances
-		var $this = $(this);
-		//$this.css("margin", "auto");
-
-		if(resize_level <= 2){//Max window
-			//Restructue menu bar items
-			$this.find("div").css("float", "left");
-			$this.find("div").css("border", "none");
-			//Divy up menu bar proportionately according to size of each element
-			var menu_items_collective_width = 0;
-			$this.find("div a").each(function(){
-				//alert($(this).width())
-				menu_items_collective_width += $(this).width();
-			});
-			//alert(menu_items_collective_width)
-	
-			//$(".menu_bar div").css("width",  menu_item_width);
-			var menu_item_height = $this.find("div a").height();
-			var vertical_shift = (menu_bar_height - menu_item_height)/2;
-			//alert(vertical_shift)
-	
-			$this.find("div a").each(function(){
-				this_width = $(this).width();
-				//parent_width = (this_width/menu_items_collective_width)*menu_bar_width*0.99;//Give a little to avoid overflow
-				parent_width = (this_width/menu_items_collective_width)*menu_bar_width*0.99;//Give a little to avoid overflow
-				$(this).parent().css("width",  parent_width);
-
-				centralize_element_horizontally($(this));
-
-				$(this).css({
-					position: "relative",
-					top: vertical_shift + "px"
-				});			
-			});		
-		}else{//Min window
-			//Restructure menu bar
-			$this.find("div").css("float", "none");//Remove float
-			$this.find("div").css("width", menu_bar_item_width +"px");
-			$this.find("div").css("height", menu_bar_item_height +"px");
-			$this.find("div").css("border", "1px solid"+menu_highlight_color_hex);
-			//$(".menu_bar div").css("background-color", "red");
-	
-			//Centralize menu text in thier respective containers
-			$this.find("div a").each(function(){
-				horizontal_shift = (menu_bar_item_width - $(this).width())/2;
-				vertical_shift = (menu_bar_item_height - $(this).height())/2;
-		
-				$(this).css({
-					position: "relative",
-					left: horizontal_shift + "px"
-				});	
-
-				$(this).css({
-					position: "relative",
-					top: vertical_shift + "px"
-				});			
-			});		
-		}
-		//centralize_element_horizontally($this);
-	});*/
 }
-
 
 
 
@@ -465,8 +442,7 @@ function rebuild_logo_box(resize_level, window_width){
 	var logo_box_height = logo_box_fixed_height;
 
 	$(".logo_box").css("width", logo_box_width);
-	$(".logo_box").css("height", logo_box_height);
-	
+	$(".logo_box").css("height", logo_box_height);	
 }	
 
 
@@ -482,29 +458,58 @@ function rebuild_logo_image(){
 	});*/	
 
 	//Position image
+	centralize_element_vertically($(".logo_circle"));
 	scale_and_position_image($(".logo_image"), $(".logo_circle"), 1.0);		
 }
 
 
 function assemble_header_elements(resize_level, window_width){
 	//var header_height = header_fixed_height;
-	//var header_core_height = header_core_fixed_height;	
+	//var header_core_height = header_core_fixed_height;
+	
+	var logo_box_width = $(".logo_box").width();
+	var logo_box_height = $(".logo_box").height();
+	var menu_bar_width = $(".menu_bar").width();
+	var menu_bar_height = $(".menu_bar").height();
 	var header_banner_width;
-	var header_banner_height = $(".logo_box").height();	
-	
+	var header_banner_height = logo_box_height;
+	var header_core_width;
+	var header_core_height;	
+	var header_width = window_width;	
+	var top_header_height;
+	var bottom_header_height;
 
-	
-	if(resize_level == 1){//Maintain header inner fixed width
-		//header_banner_width = (header_core_width_fixed - $(".logo_box").width());//Give allowance for float
-		//menu_bar_width = header_core_width_fixed;
+	/*if(resize_level == 1){//Maintain header inner fixed width
+		
 	}
 	
 	if(resize_level == 2){//Shrink header inner to fit window
 		//header_banner_width = window_width*header_core_width_to_window_width_ratio - logo_box_width;
 		//menu_bar_width = window_width*header_core_width_to_window_width_ratio;
+	}*/
+
+	//Positioning
+	//Case of header banner
+	if(resize_level <= 3){
+		header_banner_width = menu_bar_width - logo_box_width;
+		header_core_width = menu_bar_width;
+		header_core_height = logo_box_height + menu_bar_height;
+	}else{
+		header_banner_width = window_width;
+		header_core_width = window_width
+		header_core_height = logo_box_height + header_banner_height;
 	}	
 	
-	if(resize_level > 2){//Collapse header
+	if(resize_level <= 2){//1 Maintain header inner fixed width 2 Shrink header inner to fit window 
+		top_header_height = header_core_height * top_header_to_header_core_height_ratio;
+		bottom_header_height = header_core_height;
+		
+
+			
+	}
+	
+	if(resize_level == 3){//Collapse header
+		top_header_height = header_core_height;
 		//console.log("collapse")
 		//header_banner_width = window_width*header_inner_width_to_window_width_ratio;
 		//menu_bar_width = header_banner_width;
@@ -514,6 +519,50 @@ function assemble_header_elements(resize_level, window_width){
 		//var num_menu_items = $(".menu_bar").children().length;
 		//menu_bar_height = (menu_bar_item_height*num_menu_items)+(2*num_menu_items);//Extra allowance for border				
 	}	
+	
+	if(resize_level == 4){
+		top_header_height = header_core_height
+	}
+
+	
+	$(".header").css("width", header_width+"px");
+	$(".top_header").css("height", top_header_height+"px");
+	$(".bottom_header").css("height", bottom_header_height+"px");
+	$(".header_core").css("width", header_core_width+"px");
+	$(".header_core").css("height", header_core_height+"px");	
+	$(".top_header_core").css({
+		position: "relative",
+		top: (top_header_height - header_core_height)+"px"
+	});	
+	$(".header_banner").css("width", header_banner_width+"px");
+	$(".header_banner").css("height", header_banner_height+"px");	
+	
+
+	//Dimensioning
+	if(resize_level <= 2){//1 Maintain header inner fixed width 2 Shrink header inner to fit window 
+		$(".menu_icon").hide();
+		$(".logo_box").css("float", "left");			
+		centralize_element_horizontally($(".bottom_logo_box"));	
+		
+		
+	}
+	if(resize_level == 3){//Collapse header
+		$(".menu_icon").hide();
+		$(".logo_box").css("float", "left");
+	}	
+	
+	if(resize_level == 4){	
+		$(".menu_icon").show();
+	}
+	
+	//Case of header banner
+	if(resize_level <= 3){
+		$(".header_banner").css("float", "left");
+		$(".top_menu_bar").show();
+	}else{
+		$(".header_banner").css("float", "none");
+		$(".top_menu_bar").hide();
+	}
 }
 
 function get_menu_bar_width(resize_level, window_width){
@@ -544,6 +593,9 @@ function rebuild_header(resize_level, window_width){
 	//Changes as window is resized
 	
 	rebuild_logo_box(resize_level, window_width);
+	rebuild_logo_image();
+	$(".logo_image").show();//Can now display since it has been appropriately sized
+	
 	//menu_bar_height = header_core_fixed_height - $(".logo_box").height();
 	rebuild_menu_bar(resize_level, window_width);
 	
@@ -552,11 +604,6 @@ function rebuild_header(resize_level, window_width){
 	set_header_colors();
 	highlight_menu();
 	
-
-	rebuild_logo_image();
-	$(".logo_image").show();//Can now display since it has been appropriately sized
-
-
 
 
 }

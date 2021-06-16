@@ -11,6 +11,7 @@ var header_max_width;//Width of header when page is maximized
 var max_bg_img_position_type = "absolute";
 var background_scroll_factor = 0.44;//0.63;
 //var background_scroll_disp;	
+let top_header_to_header_core_height_ratio = 1.21;
 var should_scroll_background_image;
 var prev_window_top;
 var resize_threshold1;
@@ -34,6 +35,8 @@ var footer_map_panel_fixed_width;
 var marketing_panel_width_to_window_width_ratio;
 var marketing_panel_fixed_width;
 var menu_item_anchor_original_height;
+//var original_menu_item_widths = [];
+//var menu_items_collective_width = 0;
 //var specialties_panel_max_width;
 //var attorney_panel_combined_children_max_width;
 var specialties_panel_width_to_window_width_ratio;
@@ -49,6 +52,7 @@ var specialty_text_time = 0;
 var bg_img_time = 0;
 var specialty_statement_count;
 var homepage_background_image_count = 0;
+
 
 //console.log("original b4 "+prev_window_width);
 //alert(scroll_width);
@@ -87,8 +91,14 @@ var menu_hover_color;
 min window  |resize threshold 3| intermediate window B|resize threshold 2| intermediate window A |resize threshold 1| max window
 */
 
-
-
+	/*$(".top_header .menu_item_anchor").each(function(){
+		//alert($(this).width())
+		var this_width = $(this).width();
+		menu_items_collective_width += this_width;
+		original_menu_item_widths.push(this_width);
+	});*/
+	
+	
 
 
 
@@ -205,7 +215,7 @@ $(document).ready(function(){
 	//header_inner_fixed_width = header_inner_width;
 	resize_threshold1 = header_core_fixed_width;
 	resize_threshold2 = header_max_width*0.45;
-	resize_threshold3 = header_max_width*0.38;
+	resize_threshold3 = header_max_width*0.4;//0.38;
 	//console.log("from dimensions header inner fixed width "+header_inner_fixed_width);
 	//header_fixed_height = screen_width*0.104;//0.13;
 	//header_core_fixed_height = header_fixed_height*0.8;//header_fixed_height*0.8;	
@@ -282,8 +292,6 @@ $(document).ready(function(){
 	
 	
 
-	
-	
 	
 	
 	
