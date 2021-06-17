@@ -1,7 +1,9 @@
 const pixel_to_point = 1.3281472327365; //16/12;
 var screen_width = window.screen.width;//*window.devicePixelRatio;//Inflexible
+var screen_height = window.screen.height;
 if(window.devicePixelRatio == 1.125){//MS Edge
 	screen_width = window.screen.width*pixel_to_point;
+	screen_height = window.screen.height*pixel_to_point;
 }
 var scroll_width = screen_width/85.001422895136;
 var window_width_original = window.innerWidth - scroll_width;// = $(window).width();//*window.devicePixelRatio;//Varies as window is resized
@@ -214,8 +216,8 @@ $(document).ready(function(){
 	header_core_fixed_width = header_max_width*header_width_to_header_inner_width_ratio;//Should remain constant as long as page isn't shrunken enough
 	//header_inner_fixed_width = header_inner_width;
 	resize_threshold1 = header_core_fixed_width;
-	resize_threshold2 = header_max_width*0.45;
-	resize_threshold3 = header_max_width*0.4;//0.38;
+	resize_threshold2 = header_max_width*0.48;//0.45;
+	resize_threshold3 = header_max_width*0.42;//0.38;
 	//console.log("from dimensions header inner fixed width "+header_inner_fixed_width);
 	//header_fixed_height = screen_width*0.104;//0.13;
 	//header_core_fixed_height = header_fixed_height*0.8;//header_fixed_height*0.8;	
@@ -234,7 +236,7 @@ $(document).ready(function(){
 	footer_contact_details_fixed_width = screen_width*0.22;
 	footer_map_panel_fixed_width = screen_width*0.42;
 	marketing_panel_fixed_width = screen_width*0.6;
-	menu_item_anchor_original_height = $(".menu_item_anchor").eq(0).height();
+	menu_item_anchor_original_height = $(".menu_item_anchor").eq(10).height();
 	
 	//specialties_panel_max_width = ;
 	//attorney_panel_combined_children_max_width = ;
@@ -348,6 +350,11 @@ $(document).ready(function(){
 		}
 	});		
 	
+	
+
+	$(".header .menu_icon").click(function(){
+		$(".top_menu_bar").show();
+	});
 	
 });
 

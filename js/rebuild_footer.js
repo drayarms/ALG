@@ -120,7 +120,11 @@ function rebuild_footer_contact_details_panel(resize_level, window_width){
 	
 	footer_contact_details_height = footer_contact_details_fixed_width;
 	footer_map_panel_height = footer_contact_details_height;
-	footer_contact_details_panel_height = footer_contact_details_height;
+	if(resize_level <= 2){
+		footer_contact_details_panel_height = footer_contact_details_height;
+	}else{
+		footer_contact_details_panel_height = footer_contact_details_height + footer_map_panel_height;
+	}
 	
 
 	
@@ -243,6 +247,8 @@ function rebuild_footer(resize_level, window_width){
 	rebuild_footer_contact_details_panel(resize_level, window_width);
 	rebuild_marketing_panel(resize_level, window_width);
 	
+	
+	//$(".footer_contact_details_panel").css("height", ($(".footer_contact_details").height()+$(".footer_map_panel").height())+"px");
 	
 	//alert("footer upper half height "+$(".footer_upper_half").height());
 	//alert("footer lower half height "+$(".footer_lower_half").height());

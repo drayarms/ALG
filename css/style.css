@@ -35,7 +35,6 @@ html{
     margin:0px;
     background: #none;
 	overflow-x:hidden;
-
 }
 
 /*.clear{background-color: #0000ff;
@@ -265,9 +264,46 @@ html{
 	width:100%;
 	margin:0px auto;
 	position:relative;top:250px;
-	min-height:400px;/*Min height so it is stretchable and no scrollbars*/
+	min-height:400px;//Min height so it is stretchable and no scrollbars
 }*/
 
+
+.flap_header{
+	display:none;
+	position:fixed;
+	/*margin:auto;*/
+	width:90%;
+	height:100%;
+	z-index:+11;
+}
+
+
+.flap_header .close_icon{
+	display:inline-block;
+	/*position:relative;top:7%;*/
+	cursor:pointer;
+	text-align:center;
+	border:1px dotted green;
+}
+
+.flap_header .close_icon i{
+	font-size:260%;
+	color:#00264d;
+	/*text-shadow:0px 0px 0px #000000;*/
+	text-align:center;
+
+}
+
+.flap_header .menu_bar .menu_item{
+	/*background-color:blue;*/
+}
+
+.flap_header .menu_bar .menu_item a{	
+	display:inline-block;
+	border-top:1px solid #ffffff;
+	overflow:hidden;/*counters padding*/
+	/*background-color:red;*/	
+}
 
 /*Desktop footer*/
 .footer{background-color :none;
@@ -507,6 +543,7 @@ html{
 .header{
 	/*background-color :rgba(255, 255, 255, 0);*/
 	margin:0px auto;
+	min-height:0px;
 	/*height:27%; *230px;*/
 	/*width:100%;*/
 	/*min-width:0px;*/
@@ -514,6 +551,7 @@ html{
 	/*border:2px solid green;*/
 	border:1px dotted red;
 	overflow:none;
+	/*background-color:red;*/
 }
 
 .header #homepage_top_header{
@@ -523,6 +561,7 @@ html{
 
 .header .header_core{
 	margin:0px auto;
+	min-height:0px;
 	/*height:100%;*/
 	/*width:60%;*/
 	/*margin:auto;*/
@@ -530,6 +569,7 @@ html{
 	/*background-color:black;*/
 	/*border:1px dotted red;*/
 	border:1px dotted blue;
+	/*background-color:blue;*/
 }
 
 
@@ -548,7 +588,8 @@ html{
 .header .header_core .header_banner .header_banner_text{
 	/*border:1px dotted red;*/
 	/*position:relative;top:20%;*/
-	text-align:right;
+	
+	/*text-align:right;*/
 	padding-right:30px;
 	padding-top:5px;
 	font-family: Arial, Helvetica, sans-serif;
@@ -569,9 +610,9 @@ html{
 
 .header .logo_box .logo_circle{
 	background-color:none;
-	margin:auto;
-	width:90%;/*88%;*/
-	height:90%;
+	/*margin:auto;
+	width:90%;
+	height:90%;*/
 	border-radius: 50%;
 	overflow:hidden;
 }
@@ -600,17 +641,24 @@ html{
 
 .header .menu_icon{
 	display:block;
-	/*text-align:center;*/
+	display:none;
+	position:relative;top:7%;
+	cursor:pointer;
+	text-align:center;
+	/*border:1px dotted green;*/
 }
 
 .header .menu_icon i{
-	font-size:380%;
+	font-size:350%;
 	color:#00264d;
 	text-shadow:0px 0px 0px #000000;
 }
 
 .header .menu_icon .menu_label{
-
+	font-size:120%;
+	color:#00264d;
+	text-align:center;
+	font-family: Arial, Helvetica, sans-serif;
 }
 /*.header .inner_header .menu_bar{
 	float:left;
@@ -648,7 +696,7 @@ html{
 
 
 .menu_bar{
-	float:left;
+	/*float:left;*/
 }
 
 .menu_bar div{
@@ -660,7 +708,8 @@ html{
 	padding-top:5px;*/
 	font-family: Arial, Helvetica, sans-serif;
 	color:rgb(0, 26, 51);
-	font-size:18px;
+	/*font-size:18px;*/
+	font-size:0.9em;
 	font-weight:bold;
 }
 
@@ -701,6 +750,17 @@ border:1px solid red;
 	color: rgb(51, 51, 51);	
 	/*overflow:hidden;*/
 	border:1px solid red;
+}
+
+
+.screen{
+	display:none;
+	position:fixed;
+	margin:auto;
+	background-color :rgba(0, 0, 0, 0.2);
+	width:100%;
+	height:100%;
+	z-index:+10;
 }
 
 .social_media_left_panel{
