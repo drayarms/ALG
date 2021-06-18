@@ -205,8 +205,6 @@ function rebuild_header_elements1(resize_level, window_width, header_width){
 
 
 
-
-
 function rebuild_header1(resize_level, window_width){//, header_width, header_inner_width){
 	/*Builds elements in header div whenever page is refreshed of resized*/
 	var header_width = window_width*window_to_header_width_ratio;
@@ -235,7 +233,7 @@ function rebuild_header1(resize_level, window_width){//, header_width, header_in
 
 
 
-function rebuild_menu_bar(resize_level, window_width){
+function rebuild_menu_bar_working_version(resize_level, window_width){
 	//var menu_bar_height = screen_width*0.03;
 	//var menu_bar_width = get_menu_bar_width(resize_level, window_width);
 	
@@ -463,7 +461,7 @@ function rebuild_menu_bar(resize_level, window_width){
 			
 			//alert("screen w "+screen_width+" window w "+window_width+" screen h "+screen_height)
 			var browser_height = isNaN(window.innerHeight) ? window.clientHeight : window.innerHeight;
-			var menu_width = window_width;
+			var menu_width = $(".flap_header").width();//window_width;
 			var menu_height = browser_height - logo_box_fixed_height;
 			var menu_item_width = menu_width;
 			var menu_item_height = (menu_height/num_menu_items)-0;//To account for bottom border
@@ -471,7 +469,7 @@ function rebuild_menu_bar(resize_level, window_width){
 			var menu_item_anchor_height = menu_item_height;
 
 
-			$this.css("width", menu_width +"px");
+			//$this.css("width", menu_width +"px");
 			$this.css("height", menu_height +"px");
 			//$this.css("border", "3px solid orange")
 
@@ -533,7 +531,9 @@ function rebuild_logo_box1(resize_level, window_width){
 }	
 
 
-function rebuild_logo_box(resize_level, window_width){
+function rebuild_logo_box2(resize_level, window_width){
+//alert("img w " +$(".logo_image").width()+ " img h " +$(".logo_image").height());
+//alert("1img w " +$(".flap_header_logo_box .logo_image").width()+ " 1img h " +$(".flap_header_logo_box .logo_image").height());	
 	$(".logo_box").each(function(){
 		var $this = $(this);
 		
@@ -545,14 +545,36 @@ function rebuild_logo_box(resize_level, window_width){
 		$this.css("width", logo_box_width);
 		$this.css("height", logo_box_height);	
 		$this.find(".logo_circle").css("width", logo_circle_width);
-		$this.find(".logo_circle").css("height", logo_circle_height);		
-	
+		$this.find(".logo_circle").css("height", logo_circle_height);	
+//alert("img src "+$this.find(".logo_image").attr("src"));
+//alert("cir w " +$this.find(".logo_circle").width()+ " cir h " +$this.find(".logo_circle").height());		
+//alert("img w " +$this.find(".logo_image").width()+ " img h " +$this.find(".logo_image").height());	
 		//alert("logo box h" +$(".logo_box").height())
 		//alert("logo circle h" +$(".logo_circle").height())
 		centralize_element($this.find(".logo_circle"));
 		scale_and_position_image($this.find(".logo_image"), $this.find(".logo_circle"), 1.0);	
 	});
 }
+
+
+/*function rebuild_logo_box(e){
+	if(e.is(":visible")){//Logo box display is not none
+		//alert("visible")
+
+		var logo_box_width = logo_box_fixed_width;
+		var logo_box_height = logo_box_fixed_height;
+		var logo_circle_width = logo_box_width*0.9;
+		var logo_circle_height = logo_box_height*0.9;
+
+		e.css("width", logo_box_width);
+		e.css("height", logo_box_height);	
+		e.find(".logo_circle").css("width", logo_circle_width);
+		e.find(".logo_circle").css("height", logo_circle_height);	
+
+		centralize_element(e.find(".logo_circle"));
+		scale_and_position_image(e.find(".logo_image"), e.find(".logo_circle"), 1.0);	
+	}
+}*/
 
 
 /*function rebuild_logo_image(){
@@ -748,6 +770,9 @@ function assemble_header_elements(resize_level, window_width){
 		$(".top_menu_bar").hide();
 	}
 	
+	//Close icon of flap header
+	rebuild_flap_header_close_icon();
+		
 	//Remove screen and flap header
 	if(resize_level <= 3){
 		remove_screen();
@@ -799,7 +824,10 @@ function rebuild_header(resize_level, window_width){
 	//menu_bar_width = get_menu_bar_width(resize_level, window_width);
 	//Changes as window is resized
 	
-	rebuild_logo_box(resize_level, window_width);
+	$(".logo_box").each(function(){
+		rebuild_logo_box($(this));
+	});
+	//rebuild_logo_box(resize_level, window_width);
 	//rebuild_logo_image();
 	$(".logo_image").show();//Can now display since it has been appropriately sized
 	

@@ -23,9 +23,11 @@ function rebuild_elements(old_window_width, window_width){
 	//console.log("window w "+window_width+" inner header fixed w "+inner_header_fixed_width);
 	
 	
+	global_window_width = window_width;
 	if(window_width < resize_threshold1){
 		if(window_width < resize_threshold2){
 			if(window_width < resize_threshold3){
+				global_resize_level = 4;
 				//console.log("min window");
 				//Min window
 				rebuild_header(4, window_width);
@@ -34,6 +36,7 @@ function rebuild_elements(old_window_width, window_width){
 			}else{
 				//intermediate window B
 				//console.log("intermediate window B");
+				global_resize_level = 3;
 				rebuild_header(3, window_width);
 				rebuild_content(3, window_width);
 				rebuild_footer(3, window_width);
@@ -41,6 +44,7 @@ function rebuild_elements(old_window_width, window_width){
 			
 			
 		}else{
+			global_resize_level = 2;
 			//console.log("intermediate window A");
 			//Intermediate window A
 			//header_width = window_width;
@@ -75,7 +79,7 @@ function rebuild_elements(old_window_width, window_width){
 
 		
 	}else{//Max window
-	
+		global_resize_level = 1;
 //$("#header").css("min-height", "0px");
 //$("#content").css("height", "560px");
 //$("#footer").css("height", "340px");

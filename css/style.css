@@ -267,31 +267,59 @@ html{
 	min-height:400px;//Min height so it is stretchable and no scrollbars
 }*/
 
-
-.flap_header{
+.flap_header_parent{
 	display:none;
 	position:fixed;
-	/*margin:auto;*/
-	width:90%;
+	width:100%;
 	height:100%;
-	z-index:+11;
+	z-index:+11;	
+	/*border:1px dotted blue;*/
 }
 
+.flap_header_transparent_sibling{
+	float:left;
+	width:59%;
+	height:100%;
+	background-color: rgba(255, 255, 255, 0);
+}
+
+.flap_header{
+	float:left;
+	width:40%;
+	height:100%;
+	background-color: #ffffff;
+	/*border:1px dotted green*/
+}
+
+.flap_header_logo_box_parent{
+	width:100%;
+	/*background-color:red;*/
+}
 
 .flap_header .close_icon{
 	display:inline-block;
-	/*position:relative;top:7%;*/
-	cursor:pointer;
+	/*float:right;*/
+	/*position:relative;top:7%;*/	
 	text-align:center;
-	border:1px dotted green;
+	/*border:1px dotted green;*/
 }
 
 .flap_header .close_icon i{
 	font-size:260%;
 	color:#00264d;
+	cursor:pointer;
 	/*text-shadow:0px 0px 0px #000000;*/
 	text-align:center;
+	position:relative;top:30%;
+}
 
+.flap_header .close_icon .close_label{
+	position:relative;top:28%;	
+}
+
+.flap_header .menu_bar{
+	/*Width set in rebuild menu bar*/
+	/*border:1px solid green;*/
 }
 
 .flap_header .menu_bar .menu_item{
@@ -648,13 +676,13 @@ html{
 	display:block;
 	/**/
 	position:relative;top:7%;
-	cursor:pointer;
 	text-align:center;
 	/*background-color:red;*/
 	/*border:1px dotted green;*/
 }
 
 .header .menu_icon i{
+	cursor:pointer;
 	position:relative;top:20%;
 	font-size:350%;
 	color:#00264d;
@@ -765,7 +793,7 @@ border:1px solid red;
 	display:none;
 	position:fixed;
 	margin:auto;
-	background-color :rgba(0, 0, 0, 0.2);
+	background-color :rgba(0, 0, 0, 0.8);
 	width:100%;
 	height:100%;
 	z-index:+10;

@@ -54,6 +54,8 @@ var specialty_text_time = 0;
 var bg_img_time = 0;
 var specialty_statement_count;
 var homepage_background_image_count = 0;
+var global_resize_level;
+var global_window_width;
 
 
 //console.log("original b4 "+prev_window_width);
@@ -87,11 +89,6 @@ const menu_highlight_color_hex = "#ba2d8b";
 var menu_hover_color;
 
 
-function remove_screen(){
-	//$(".top_menu_bar").show();
-	$(".screen").hide();
-	$("body").css("overflow-y", "visible");		
-}
 
 
 /*
@@ -357,13 +354,16 @@ $(document).ready(function(){
 	
 	
 
-	$(".header .menu_icon").click(function(){
+	$(".header .menu_icon i").click(function(){
 		//$(".top_menu_bar").show();
-		$(".screen").show();
-		$("body").css("overflow-y", "hidden");
+		show_screen();
 	});
 	
-	$(".screen").click(function(){
+	$(".flap_header .close_icon i").click(function(){
+		remove_screen();
+	});	
+	
+	$(".flap_header_transparent_sibling").click(function(){
 		remove_screen();
 	});	
 	
