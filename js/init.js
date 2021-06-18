@@ -87,6 +87,11 @@ const menu_highlight_color_hex = "#ba2d8b";
 var menu_hover_color;
 
 
+function remove_screen(){
+	//$(".top_menu_bar").show();
+	$(".screen").hide();
+	$("body").css("overflow-y", "visible");		
+}
 
 
 /*
@@ -353,8 +358,14 @@ $(document).ready(function(){
 	
 
 	$(".header .menu_icon").click(function(){
-		$(".top_menu_bar").show();
+		//$(".top_menu_bar").show();
+		$(".screen").show();
+		$("body").css("overflow-y", "hidden");
 	});
+	
+	$(".screen").click(function(){
+		remove_screen();
+	});	
 	
 });
 

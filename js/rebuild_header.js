@@ -374,7 +374,32 @@ function rebuild_menu_bar(resize_level, window_width){
 					$(this).css("border", "1px solid #ffffff");
 				
 					//Positioning
-					centralize_element($(this));
+					//var aggregate_gap = 2*(menu_item_width - menu_item_anchor_width);
+					//var left_cells_shift = aggregate_gap * 1;//Can vary the factor 
+					//var right_cells_shift = aggregate_gap - left_cells_shift;
+					//Move both sides to extremes
+					var aggregate_gap = 2*(menu_item_width - menu_item_anchor_width);
+					var left_cells_shift = 0;
+					var right_cells_shift = menu_item_width - menu_item_anchor_width;
+					var fraction_of_gap_shift = 0.38;//Not to exceed 0.5. 0 means no shift at all. 0.5 means no middle
+					//Now center both sides
+					left_cells_shift += aggregate_gap*fraction_of_gap_shift;
+					right_cells_shift -= aggregate_gap*fraction_of_gap_shift;
+					
+					if(index % 2 == 0){//Left cells
+						//$(this).css("float", "left");
+						$(this).css({
+							position: "relative",
+							left: left_cells_shift+"px"
+						});							
+					}else{//Right cells
+						//$(this).css("float", "right");
+						$(this).css({
+							position: "relative",
+							left: right_cells_shift+"px"
+						});							
+					}
+					centralize_element_vertically($(this));
 					var menu_item_vertical_shift = menu_item_anchor_height*0.5 - 0.5*menu_item_anchor_original_height;
 					$(this).css("padding-top", menu_item_vertical_shift+"px");
 					//alert(index+" row height "+row_height+" position "+((Math.floor(index/2))*row_height))
@@ -688,6 +713,7 @@ function assemble_header_elements1(resize_level, window_width){
 
 function assemble_header_elements(resize_level, window_width){
 	var header_core_width = $(".top_menu_bar").width();
+	var logo_box_height = $(".top_logo_box").height();
 	//var bottom_header_core_width = $(".bottom_menu_bar").width();
 	
 	//Header core
@@ -709,6 +735,23 @@ function assemble_header_elements(resize_level, window_width){
 	centralize_element_horizontally($(".top_menu_bar"));
 	centralize_element_horizontally($(".bottom_menu_bar"));
 	
+	//Menu icon
+	console.log(resize_level)
+	if(resize_level <= 3){
+		$(".menu_icon").hide();
+		$(".top_menu_bar").show();
+	}else{
+		$(".menu_icon").css("width", $(".menu_icon i").width()*1.8);
+		$(".menu_icon").css("float", "right");
+		$(".menu_icon").css("height", logo_box_height+"px");
+		$(".menu_icon").show();
+		$(".top_menu_bar").hide();
+	}
+	
+	//Remove screen and flap header
+	if(resize_level <= 3){
+		remove_screen();
+	}
 }
 
 function get_menu_bar_width(resize_level, window_width){
@@ -742,7 +785,11 @@ function rebuild_header_banner(resize_level, window_width){
 	var header_banner_width = menu_bar_width - logo_box_width;
 	var header_banner_height = logo_box_height;
 	
-	$(".header_banner").css("width", header_banner_width +"px");
+	if(resize_level <= 3){
+		$(".header_banner").css("width", header_banner_width +"px");
+	}else{
+		$(".header_banner").css("width", window_width +"px");
+	}
 	$(".header_banner").css("height", header_banner_height +"px");
 }
 
