@@ -132,21 +132,21 @@ html{
 
 .content #attorney_panel #law_office_details h1{
 	/*position:relative;top:8%;*/
-	padding:0;
-	margin:0;/*Padding and margin set to 0 to prevent spaces in ancestors*/
-	line-height:1.8;
-	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
-	font-weight:390;
+	/*padding:0;*/
+	/*margin:0;*//*Padding and margin set to 0 to prevent spaces in ancestors*/
+	/*line-height:1.8;*/
+	/*font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;*/
+	/*font-weight:390;*/
 	color: rgb(51, 51, 51);	
 	overflow:hidden;
 }
 
 .content #attorney_panel #law_office_details h2{
 	/*position:relative;top:8%;*/
-	padding:0;
-	margin:0;/*Padding and margin set to 0 to prevent spaces in ancestors*/
-	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
-	font-weight:190;
+	/*padding:0;*/
+	/*margin:0;*//*Padding and margin set to 0 to prevent spaces in ancestors*/
+	/*font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;*/
+	/*font-weight:190;*/
 	/*color: rgb(230, 184, 0);*/
 	color: rgb(204, 163, 0);
 	overflow:hidden;
@@ -154,11 +154,11 @@ html{
 
 .content #attorney_panel #law_office_details h5{
 	/*position:relative;top:8%;*/
-	padding:0;
-	margin:0;/*Padding and margin set to 0 to prevent spaces in ancestors*/
-	line-height:1.8;
-	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
-	font-weight:190;
+	/*padding:0;*/
+	/*margin:0;*//*Padding and margin set to 0 to prevent spaces in ancestors*/
+	/*line-height:1.8;*/
+	/*font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;*/
+	/*font-weight:190;*/
 	color: rgb(51, 51, 51);	
 	overflow:hidden;
 }
@@ -200,55 +200,55 @@ html{
 }
 
 .content #mission_statement_panel_container #mission_statement_panel h1{
-	text-align:center;
-	width: fit-content;
-	margin:auto;
-	margin-top:0%;
-	line-height:1.8;
-	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
-	font-weight:190;
+	/*text-align:center;*/
+	/*width: fit-content;*/
+	/*margin:auto;*/
+	/*margin-top:0%;*/
+	/*line-height:1.8;*/
+	/*font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;*/
+	/*font-weight:190;*/
 	color: rgb(204, 163, 0);
 	/*border:1px dotted green;*/
 }
 
 .content #mission_statement_panel_container #mission_statement_panel h2{
-	text-align:center;
-	width: fit-content;
-	margin:auto;	
+	/*text-align:center;*/
+	/*width: fit-content;*/
+	/*margin:auto;	*/
 	margin-top:8%;
-	line-height:1.8;
-	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
-	font-weight:190;
+	/*line-height:1.8;*/
+	/*font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;*/
+	/*font-weight:190;*/
 	color: rgb(51, 51, 51);	
 		
 }
 
 .content #mission_statement_panel_container #mission_statement_panel h3 a{
-	text-align:center;
-	width: fit-content;
-	margin:auto;	
+	/*text-align:center;*/
+	/*width: fit-content;*/
+	/*margin:auto;	*/
 	margin-top:8%;
-	line-height:1.8;
-	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
-	font-weight:190;
+	/*line-height:1.8;*/
+	/*font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;*/
+	/*font-weight:190;*/
 	color: rgb(51, 51, 51);
 	text-decoration: underline;
-	padding-left:5%;
-	padding-right:5%;	
+	/*padding-left:5%;*/
+	/*padding-right:5%;	*/
 }
 
 .content #mission_statement_panel_container #mission_statement_panel h5{	
-	text-align:center;
-	width: fit-content;
-	margin:auto;	
+	/*text-align:center;*/
+	/*width: fit-content;*/
+	/*margin:auto;	*/
 	margin-top:7%;
-	line-height:1.8;
-	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
-	font-weight:190;
+	/*line-height:1.8;*/
+	/*font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;*/
+	/*font-weight:190;*/
 	color: rgb(51, 51, 51);		
 	/*border:1px dotted blue;*/
-	padding-left:5%;
-	padding-right:5%;
+	/*padding-left:5%;*/
+	/*padding-right:5%;*/
 }
 
 .content .specialties_panel{
@@ -349,56 +349,60 @@ html{
 
 .footer .footer_lower_half .footer_mission_statement_panel .footer_mission_statement{
 	overflow:hidden;
+	/*border:1px solid red;*/
 }
 
 .footer .footer_lower_half .footer_mission_statement_panel .footer_mission_statement h1{
-	text-align:center;
-	width: fit-content;
-	margin:auto;
+	/*text-align:left;*/
+	/*width: fit-content;*/
+	/*margin:auto;*/
 	margin-top:0%;
-	line-height:1.8;
-	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
-	font-weight:190;
+	/*line-height:1.8;*/
+	/*font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;*/
+	/*font-weight:190;*/
 	color: rgb(204, 163, 0);	
+	/*border:1px dotted blue;*/
 }
 
 .footer .footer_lower_half .footer_mission_statement_panel .footer_mission_statement h2{
-	text-align:center;
-	width: fit-content;
-	margin:auto;	
+	/*text-align:left;*/
+	/*width: fit-content;*/
+	/*margin:auto;*/	
 	margin-top:8%;
-	line-height:1.8;
-	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
-	font-weight:190;
-	color: rgb(51, 51, 51);		
+	/*line-height:1.8;*/
+	/*font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;*/
+	/*font-weight:190;*/
+	color: rgb(51, 51, 51);	
+	/*border:1px dotted blue;*/	
 }
 
 .footer .footer_lower_half .footer_mission_statement_panel .footer_mission_statement h3 a{
-	text-align:center;
-	width: fit-content;
-	margin:auto;	
+	/*text-align:left;*/
+	/*width: fit-content;*/
+	/*margin:auto;*/	
 	margin-top:8%;
-	line-height:1.8;
-	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
-	font-weight:190;
+	/*line-height:1.8;*/
+	/*font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;*/
+	/*font-weight:190;*/
 	color: rgb(51, 51, 51);
-	text-decoration: underline;
-	padding-left:5%;
-	padding-right:5%;
+	/*text-decoration: underline;*/
+	/*padding-left:5%;
+	padding-right:5%;*/
+	/*border:1px dotted blue;*/
 }
 
 .footer .footer_lower_half .footer_mission_statement_panel .footer_mission_statement h5{
-	text-align:center;
-	width: fit-content;
-	margin:auto;	
+	/*text-align:left;*/
+	/*width: fit-content;*/
+	/*margin:auto;*/	
 	margin-top:4%;
-	line-height:1.8;
-	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
-	font-weight:190;
-	color: rgb(51, 51, 51);		
+	/*line-height:1.8;*/
+	/*font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;*/
+	/*font-weight:190;
+	color: rgb(51, 51, 51);*/		
 	/*border:1px dotted blue;*/
-	padding-left:5%;
-	padding-right:5%;	
+	/*padding-left:5%;
+	padding-right:5%;*/	
 }
 
 .footer .footer_lower_half .footer_mission_statement_panel .footer_mission_statement_picture{
@@ -777,6 +781,53 @@ border:1px solid red;
 }
 
 
+.statements h1{
+	/*text-align:left;*/
+	width: fit-content;
+	/*margin:auto;*/
+	line-height:1.8;
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+	font-weight:190;
+	/*border:1px dotted blue;*/
+}
+
+.statements h2{
+	/*text-align:left;*/
+	width: fit-content;
+	/*margin:auto;*/	
+	line-height:1.8;
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+	font-weight:190;	
+	/*border:1px dotted blue;*/	
+}
+
+.statements h3 a{
+	/*text-align:left;*/
+	width: fit-content;
+	/*margin:auto;*/	
+	line-height:1.8;
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+	font-weight:190;
+	text-decoration: underline;
+	/*padding-left:5%;
+	padding-right:5%;*/
+	/*border:1px dotted blue;*/
+}
+
+.statements h5{
+	/*text-align:left;*/
+	width: fit-content;
+	/*margin:auto;*/	
+	margin-top:4%;
+	line-height:1.8;
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+	font-weight:190;
+	color: rgb(51, 51, 51);		
+	/*border:1px dotted blue;*/
+	/*padding-left:5%;
+	padding-right:5%;*/	
+}
+
 /*#header-nav .header-nav-list .nav-down-img{
   
   cursor:pointer;
@@ -820,4 +871,26 @@ border:1px solid red;
 #bar2{
 	height:20px;
 	background:yellow;
+}
+
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #00264d; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #b3b3b3; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ba2d8b; 
 }

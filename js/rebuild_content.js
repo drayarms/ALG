@@ -145,6 +145,30 @@ function color_specialty_boxes(){
 
 
 
+function restyle_statements(resize_level){
+	if(resize_level <= 2){
+		$(".statements h1").css("text-align", "left");
+		$(".statements h1").css("margin-left", "0");
+		$(".statements h2").css("text-align", "left");
+		$(".statements h2").css("margin-left", "0");
+		$(".statements h3 a").css("text-align", "left");
+		$(".statements h3 a").css("margin-left", "0");
+		$(".statements h5").css("text-align", "left");
+		$(".statements h5").css("margin-left", "0");
+	}else{//Collapse
+		$(".statements h1").css("text-align", "center");
+		$(".statements h1").css("margin", "auto");
+		$(".statements h2").css("text-align", "center");
+		$(".statements h2").css("margin", "auto");
+		$(".statements h3 a").css("text-align", "center");
+		$(".statements h3 a").css("margin", "auto");
+		$(".statements h5").css("text-align", "center");
+		$(".statements h5").css("margin", "auto");		
+	}
+}
+
+
+
 function rebuild_bg_img(resize_level, window_width){//Use pictures that are not too wide. Narrow is ok but screen proportions is ideal
 	var bg_img_container_width = window_width;	
 	var bg_img_container_height;
@@ -529,6 +553,7 @@ function rebuild_content(resize_level, window_width){
 	rebuild_attorney_panel(resize_level, window_width);
 	rebuild_contact_panel(resize_level, window_width);
 	
+	restyle_statements(resize_level,);
 	color_specialty_boxes();
 	
 	/*
