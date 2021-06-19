@@ -168,7 +168,7 @@ function rebuild_menu_bar(resize_level, window_width){
 			//alert("screen w "+screen_width+" window w "+window_width+" screen h "+screen_height)
 			var browser_height = isNaN(window.innerHeight) ? window.clientHeight : window.innerHeight;
 			var menu_width = $(".flap_header").width();//window_width;
-			var menu_height = browser_height - logo_box_fixed_height;
+			var menu_height = screen_height - logo_box_fixed_height;//browser_height - logo_box_fixed_height;
 			var menu_item_width = menu_width;
 			var menu_item_height = (menu_height/num_menu_items)-0;//To account for bottom border
 			var menu_item_anchor_width = menu_item_width;
@@ -218,14 +218,63 @@ function rebuild_logo_box(e){
 	}
 }
 
+function animate_right_fixed(e, fixed_position, duration){
+	var interval = 1;//Pick an interval that is likely to be slower than execution of function
+	var animation_speed = interval*fixed_position/duration;//AMount by which position must move each milisecond
+	var ms = 0;
+	
+
+	/*e.css({
+		position: "fixed",
+		left:  "-500px"
+	});	*/
+
+
+	function payload(){
+		//console.log(animation_speed)
+		e.css({
+			position: "fixed",
+			left: (-1*animation_speed)+"px"
+		});			
+	}
+	
+	function stop_timer(){
+		window.clearInterval(timer);
+	}
+	
+	var timer = window.setInterval(function(){
+		//console.log(ms); 
+		payload();
+		if(ms == duration){
+			stop_timer();
+		}
+		ms++;
+	}, interval);
+}
+
 function show_screen(){
 	$(".screen").show();
 	$(".flap_header_parent").show();
+	
+	//var flap_header_parent_width = $(".flap_header_parent").width();
+	var flap_header_width = $(".flap_header").width();
+	var flap_header_shift = flap_header_width;
+	//alert(flap_header_parent_width)
+	//alert(flap_header_width)
+	//Default position of flap header parent should be right shifted by width of flap header
+	$(".flap_header_parent").css({
+		position: "fixed",
+		left: flap_header_shift +"px"
+	});		
+
 	//Rebuild now that it is rendered visible(display not none)
 	rebuild_logo_box($(".flap_header_logo_box"));
 	rebuild_flap_header_close_icon()
 	rebuild_menu_bar(global_resize_level, global_window_width);
 	$("body").css("overflow-y", "hidden");	
+	
+	window.setTimeout(animate_right_fixed, 1, $(".flap_header_parent"), flap_header_shift, 2000);
+	
 }
 
 function remove_screen(){

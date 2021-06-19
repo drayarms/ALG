@@ -273,12 +273,14 @@ html{
 	width:100%;
 	height:100%;
 	z-index:+11;	
+	overflow-y:scroll;
 	/*border:1px dotted blue;*/
+	/*position:relative;left:0px;*/
 }
 
 .flap_header_transparent_sibling{
 	float:left;
-	width:59%;
+	width:60%;
 	height:100%;
 	background-color: rgba(255, 255, 255, 0);
 }
