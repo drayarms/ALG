@@ -801,13 +801,54 @@ border:1px solid red;
 	z-index:+10;
 }
 
-.social_media_left_panel{
+.social_media_panel{
 	width:50px;
-	height:180px;
+	min-height:0px;
 	position:fixed;top:20%;
 	z-index:+2;
 	/*background-color:#ffffff;*/
-	border:1px solid green;
+	/*border:1px solid green;*/
+}
+
+
+.social_media_panel .fa{
+	display:inline-block;
+	width:100%;
+	height:40px;
+	padding-top: 13px;
+
+	text-align: center;
+	text-decoration: none;	
+	font-size:30px;
+}
+
+.social_media_panel .fa:hover {
+    /*opacity: 1.0;*/
+	width:125%;
+}
+
+.social_media_panel .fa-facebook {
+  background: #43609c;
+  /*background: #3B5998;*/
+  color: white;
+}
+
+.social_media_panel .fa-twitter {
+	background: #66ccff;
+  /*background: #55ACEE;*/
+  color: white;
+}
+
+.social_media_panel .fa-google {
+  /*background: #dd4b39;*/
+  background: #ff3333;
+  color: white;
+}
+
+.social_media_panel .fa-linkedin {
+	background: #0099cc;
+  /*background: #007bb5;*/
+  color: white;
 }
 
 

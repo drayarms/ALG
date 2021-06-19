@@ -91,6 +91,13 @@ var menu_hover_color;
 
 
 
+/*function vertically_centralize_social_media_icons(){
+	//alert($(".social_media_panel").height())
+	alert($(".social_media_panel .fa").height())
+	alert($(".social_media_panel .fa").innerHeight())
+	centralize_element_vertically($(".social_media_panel .fa"));
+}*/
+
 /*
 min window  |resize threshold 3| intermediate window B|resize threshold 2| intermediate window A |resize threshold 1| max window
 */
@@ -274,6 +281,7 @@ $(document).ready(function(){
 	//Set homepage background image width and other properties
 	//set_header_properties();//See restructure header func
 	//set_homepage_background_image_dimensions(window_width_original);
+	//vertically_centralize_social_media_icons();
 	rebuild_elements(prev_window_width, window_width_original);//Initially build header
 	//set_logo_image();
 	//Maintain scroll position
