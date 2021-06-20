@@ -19,7 +19,9 @@ var onresize = function(e) {
 	//header_width = current_window_width*window_to_header_width_ratio;
 	//console.log("header w "+header_width);
 	//console.log("from resize header inner fixed w "+header_inner_fixed_width);
-	rebuild_elements(prev_window_width, current_window_width);
+	window_width = current_window_width;
+	//rebuild_elements(prev_window_width, current_window_width);
+	rebuild_elements();
 	prev_window_width = current_window_width;
 	//console.log("after "+current_window_width);
 

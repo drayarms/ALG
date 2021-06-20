@@ -1,5 +1,5 @@
 
-function rebuild_mission_statement_box(resize_level, window_width){
+function rebuild_mission_statement_box(){
 	footer_mission_statement_panel_width_to_window_width_ratio = footer_mission_statement_panel_fixed_width/resize_threshold1;
 	var footer_mission_statement_panel_width;
 	//var footer_mission_statement_panel_height = screen_width*0.25;
@@ -85,7 +85,7 @@ function rebuild_mission_statement_box(resize_level, window_width){
 
 
 
-function rebuild_footer_contact_details_panel(resize_level, window_width){
+function rebuild_footer_contact_details_panel(){
 	var footer_contact_details_panel_width;
 	var footer_contact_details_panel_height;
 	var footer_contact_details_width;
@@ -173,7 +173,7 @@ function rebuild_footer_contact_details_panel(resize_level, window_width){
 }
 
 
-function rebuild_marketing_panel(resize_level, window_width){
+function rebuild_marketing_panel(){
 	var marketing_panel_width;
 	var marketing_panel_height = screen_width*0.11;
 	var marketing_panel_box_width;
@@ -241,11 +241,11 @@ function rebuild_marketing_panel(resize_level, window_width){
 }
 
 
-function rebuild_footer(resize_level, window_width){
+function rebuild_footer(){
 
-	rebuild_mission_statement_box(resize_level, window_width);
-	rebuild_footer_contact_details_panel(resize_level, window_width);
-	rebuild_marketing_panel(resize_level, window_width);
+	rebuild_mission_statement_box();
+	rebuild_footer_contact_details_panel();
+	rebuild_marketing_panel();
 	
 	
 	//$(".footer_contact_details_panel").css("height", ($(".footer_contact_details").height()+$(".footer_map_panel").height())+"px");

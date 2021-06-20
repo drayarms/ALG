@@ -91,13 +91,13 @@ html{
 
 }
 
-.content #attorney_panel{
+.content_homepage #attorney_panel{
 	background-color:#ffffff;
 	width:100%;
 	margin:auto;
 }
 
-.content #attorney_panel #attorney_photo_container{
+.content_homepage #attorney_panel #attorney_photo_container{
 	/*float:left;*/
 	/*width:40%;*/
 	/*height:95%;*/
@@ -106,11 +106,11 @@ html{
 	/*border:1px solid red;*/
 }
 
-.content #attorney_panel #attorney_photo_container #attorney_photo{
+.content_homepage #attorney_panel #attorney_photo_container #attorney_photo{
 	display:none;
 }
 
-.content #attorney_panel #law_office_details{
+.content_homepage #attorney_panel #law_office_details{
 	/*height:95%;*/
 	/*border:1px solid red;*/
 	overflow:hidden;/*Prevents child elements from causing grandparents to strech.*/
@@ -118,19 +118,19 @@ html{
 	/*background-color:yellow;*/
 }
 
-.content #attorney_panel #law_office_details .our_h1{
+.content_homepage #attorney_panel #law_office_details .our_h1{
 
 }
 
-.content #attorney_panel #law_office_details .our_h2{
+.content_homepage #attorney_panel #law_office_details .our_h2{
 	
 }
 
-.content #attorney_panel #law_office_details .our_h5{
+.content_homepage #attorney_panel #law_office_details .our_h5{
 
 }
 
-.content #attorney_panel #law_office_details h1{
+.content_homepage #attorney_panel #law_office_details h1{
 	/*position:relative;top:8%;*/
 	/*padding:0;*/
 	/*margin:0;*//*Padding and margin set to 0 to prevent spaces in ancestors*/
@@ -141,7 +141,7 @@ html{
 	overflow:hidden;
 }
 
-.content #attorney_panel #law_office_details h2{
+.content_homepage #attorney_panel #law_office_details h2{
 	/*position:relative;top:8%;*/
 	/*padding:0;*/
 	/*margin:0;*//*Padding and margin set to 0 to prevent spaces in ancestors*/
@@ -152,7 +152,7 @@ html{
 	overflow:hidden;
 }
 
-.content #attorney_panel #law_office_details h5{
+.content_homepage #attorney_panel #law_office_details h5{
 	/*position:relative;top:8%;*/
 	/*padding:0;*/
 	/*margin:0;*//*Padding and margin set to 0 to prevent spaces in ancestors*/
@@ -163,7 +163,7 @@ html{
 	overflow:hidden;
 }
 
-.content #contact_panel{
+.content_homepage #contact_panel{
 	background-color:#001a33;
 	width:100%;
 	margin:auto;
@@ -189,17 +189,17 @@ html{
 	display:none;
 }
 
-.content #mission_statement_panel_container{
+.content_homepage #mission_statement_panel_container{
 	/*margin:auto;*/
 	/*border:1px solid red;*/
 }
 
-.content #mission_statement_panel_container #mission_statement_panel{
+.content_homepage #mission_statement_panel_container #mission_statement_panel{
 	overflow:hidden;
 	background-color:#ffffff;
 }
 
-.content #mission_statement_panel_container #mission_statement_panel h1{
+.content_homepage #mission_statement_panel_container #mission_statement_panel h1{
 	/*text-align:center;*/
 	/*width: fit-content;*/
 	/*margin:auto;*/
@@ -211,7 +211,7 @@ html{
 	/*border:1px dotted green;*/
 }
 
-.content #mission_statement_panel_container #mission_statement_panel h2{
+.content_homepage #mission_statement_panel_container #mission_statement_panel h2{
 	/*text-align:center;*/
 	/*width: fit-content;*/
 	/*margin:auto;	*/
@@ -223,7 +223,7 @@ html{
 		
 }
 
-.content #mission_statement_panel_container #mission_statement_panel h3 a{
+.content_homepage #mission_statement_panel_container #mission_statement_panel h3 a{
 	/*text-align:center;*/
 	/*width: fit-content;*/
 	/*margin:auto;	*/
@@ -237,7 +237,7 @@ html{
 	/*padding-right:5%;	*/
 }
 
-.content #mission_statement_panel_container #mission_statement_panel h5{	
+.content_homepage #mission_statement_panel_container #mission_statement_panel h5{	
 	/*text-align:center;*/
 	/*width: fit-content;*/
 	/*margin:auto;	*/
@@ -251,11 +251,11 @@ html{
 	/*padding-right:5%;*/
 }
 
-.content .specialties_panel{
+.content_homepage .specialties_panel{
 	margin:auto;
 }
 
-.content .specialties_panel .specialty_box{
+.content_homepage .specialties_panel .specialty_box{
 
 }
 
@@ -802,53 +802,81 @@ border:1px solid red;
 }
 
 .social_media_panel{
-	width:50px;
-	min-height:0px;
-	position:fixed;top:20%;
 	z-index:+2;
 	/*background-color:#ffffff;*/
 	/*border:1px solid green;*/
 }
 
+.left_social_media_panel{
+	width:50px;
+	min-height:0px;
+	position:fixed;top:20%;
+}
+
+.bottom_social_media_panel{
+	width:80%;
+	height:5%;
+	position:fixed;top:93%;left:10%;/*top:100% - height  left:half(100% - width)*/
+	z-index:+2;
+}
 
 .social_media_panel .fa{
 	display:inline-block;
-	width:100%;
-	height:40px;
-	padding-top: 13px;
-
 	text-align: center;
 	text-decoration: none;	
+	height:40px;
+	padding-top: 13px;/*Depends on heihgt and font size*/
+}
+
+.left_social_media_panel .fa{
+	width:100%;
 	font-size:30px;
+}
+
+.bottom_social_media_panel .fa{
+	width:25%;/*Depends on num of icons*/
+	font-size:30px;
+	margin: 0px -2px;/*ver, hor  By defualt hor = 0 leaves a 2 px padding. So use -2 to clear padding*/
 }
 
 .social_media_panel .fa:hover {
     /*opacity: 1.0;*/
+}
+
+.left_social_media_panel .fa:hover {
 	width:125%;
 }
 
+.bottom_social_media_panel .fa:hover {
+	/*height:40px;
+	margin: -40px -2px;*/
+}
+
 .social_media_panel .fa-facebook {
-  background: #43609c;
-  /*background: #3B5998;*/
-  color: white;
+	background: #43609c;
+	/*background: #3B5998;*/
+	color: white;
 }
 
 .social_media_panel .fa-twitter {
-	background: #66ccff;
-  /*background: #55ACEE;*/
-  color: white;
+	background: #1DA1F2;
+	/*background: #66ccff;*/
+	/*background: #55ACEE;*/
+	color: white;
 }
 
 .social_media_panel .fa-google {
-  /*background: #dd4b39;*/
-  background: #ff3333;
-  color: white;
+	background: #db4a39;
+	/*background: #ff3333;*/
+	/*background: #dd4b39;*/
+	color: white;
 }
 
 .social_media_panel .fa-linkedin {
-	background: #0099cc;
-  /*background: #007bb5;*/
-  color: white;
+	background: #0e76a8;
+	/*background: #0099cc;*/
+	/*background: #007bb5;*/
+	color: white;
 }
 
 

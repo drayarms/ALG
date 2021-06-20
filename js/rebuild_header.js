@@ -205,7 +205,7 @@ function rebuild_header_elements1(resize_level, window_width, header_width){
 
 
 
-function rebuild_header1(resize_level, window_width){//, header_width, header_inner_width){
+function rebuild_header1(){//, header_width, header_inner_width){
 	/*Builds elements in header div whenever page is refreshed of resized*/
 	var header_width = window_width*window_to_header_width_ratio;
 	rebuild_header_elements(resize_level, window_width, header_width);
@@ -233,7 +233,7 @@ function rebuild_header1(resize_level, window_width){//, header_width, header_in
 
 
 
-function rebuild_menu_bar_working_version(resize_level, window_width){
+function rebuild_menu_bar_working_version(){
 	//var menu_bar_height = screen_width*0.03;
 	//var menu_bar_width = get_menu_bar_width(resize_level, window_width);
 	
@@ -513,7 +513,7 @@ function rebuild_menu_bar_working_version(resize_level, window_width){
 
 
 
-function rebuild_logo_box1(resize_level, window_width){
+function rebuild_logo_box1(){
 	var logo_box_width = logo_box_fixed_width;
 	var logo_box_height = logo_box_fixed_height;
 	var logo_circle_width = logo_box_width*0.9;
@@ -531,7 +531,7 @@ function rebuild_logo_box1(resize_level, window_width){
 }	
 
 
-function rebuild_logo_box2(resize_level, window_width){
+function rebuild_logo_box2(){
 //alert("img w " +$(".logo_image").width()+ " img h " +$(".logo_image").height());
 //alert("1img w " +$(".flap_header_logo_box .logo_image").width()+ " 1img h " +$(".flap_header_logo_box .logo_image").height());	
 	$(".logo_box").each(function(){
@@ -594,7 +594,7 @@ function rebuild_logo_box2(resize_level, window_width){
 }*/
 
 
-function assemble_header_elements1(resize_level, window_width){
+function assemble_header_elements1(){
 	//var header_height = header_fixed_height;
 	//var header_core_height = header_core_fixed_height;
 	
@@ -733,7 +733,7 @@ function assemble_header_elements1(resize_level, window_width){
 }
 
 
-function assemble_header_elements(resize_level, window_width){
+function assemble_header_elements(){
 	var header_core_width = $(".top_menu_bar").width();
 	var logo_box_height = $(".top_logo_box").height();
 	//var bottom_header_core_width = $(".bottom_menu_bar").width();
@@ -758,7 +758,7 @@ function assemble_header_elements(resize_level, window_width){
 	centralize_element_horizontally($(".bottom_menu_bar"));
 	
 	//Menu icon
-	console.log(resize_level)
+	//console.log(resize_level)
 	if(resize_level <= 3){
 		$(".menu_icon").hide();
 		$(".top_menu_bar").show();
@@ -779,7 +779,7 @@ function assemble_header_elements(resize_level, window_width){
 	}
 }
 
-function get_menu_bar_width(resize_level, window_width){
+function get_menu_bar_width(){
 	header_core_width_to_window_width_ratio = header_core_fixed_width/resize_threshold1;
 	if(resize_level == 1){//Maintain header inner fixed width
 		return header_core_fixed_width;
@@ -802,7 +802,7 @@ function get_menu_bar_width(resize_level, window_width){
 }
 
 
-function rebuild_header_banner(resize_level, window_width){
+function rebuild_header_banner(){
 	var logo_box_width = $(".top_logo_box").width();
 	var logo_box_height = $(".top_logo_box").height();
 	var menu_bar_width = $(".top_menu_bar").width();
@@ -819,7 +819,7 @@ function rebuild_header_banner(resize_level, window_width){
 }
 
 
-function rebuild_header(resize_level, window_width){
+function rebuild_header(){
 	
 	//menu_bar_width = get_menu_bar_width(resize_level, window_width);
 	//Changes as window is resized
@@ -832,10 +832,10 @@ function rebuild_header(resize_level, window_width){
 	$(".logo_image").show();//Can now display since it has been appropriately sized
 	
 	//menu_bar_height = header_core_fixed_height - $(".logo_box").height();
-	rebuild_menu_bar(resize_level, window_width);
-	rebuild_header_banner(resize_level, window_width);//Some properties based on logo box's and menu bar's. So build last
+	rebuild_menu_bar();
+	rebuild_header_banner();//Some properties based on logo box's and menu bar's. So build last
 	
-	assemble_header_elements(resize_level, window_width);
+	assemble_header_elements();
 
 	set_header_colors();
 	highlight_menu();

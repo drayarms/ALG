@@ -54,8 +54,8 @@ var specialty_text_time = 0;
 var bg_img_time = 0;
 var specialty_statement_count;
 var homepage_background_image_count = 0;
-var global_resize_level;
-var global_window_width;
+var resize_level;
+var window_width;
 
 
 //console.log("original b4 "+prev_window_width);
@@ -282,7 +282,9 @@ $(document).ready(function(){
 	//set_header_properties();//See restructure header func
 	//set_homepage_background_image_dimensions(window_width_original);
 	//vertically_centralize_social_media_icons();
-	rebuild_elements(prev_window_width, window_width_original);//Initially build header
+	window_width = window_width_original;
+	rebuild_elements();//Initially build header
+	//rebuild_elements(prev_window_width, window_width_original);//Initially build header
 	//set_logo_image();
 	//Maintain scroll position
 	//if (window.sessionStorage.scrollTop != "undefined") {//Forcibly maintains scrool position across sessions

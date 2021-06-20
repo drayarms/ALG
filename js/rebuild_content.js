@@ -145,7 +145,7 @@ function color_specialty_boxes(){
 
 
 
-function restyle_statements(resize_level){
+function restyle_statements(){
 	if(resize_level <= 2){
 		$(".statements h1").css("text-align", "left");
 		$(".statements h1").css("margin-left", "0");
@@ -169,7 +169,7 @@ function restyle_statements(resize_level){
 
 
 
-function rebuild_bg_img(resize_level, window_width){//Use pictures that are not too wide. Narrow is ok but screen proportions is ideal
+function rebuild_bg_img(){//Use pictures that are not too wide. Narrow is ok but screen proportions is ideal
 	var bg_img_container_width = window_width;	
 	var bg_img_container_height;
 	var new_bg_img_width;
@@ -233,7 +233,7 @@ function rebuild_bg_img(resize_level, window_width){//Use pictures that are not 
 }
 
 
-function rebuild_mission_statement_panel(resize_level, window_width){
+function rebuild_mission_statement_panel(){
 	//
 	//Content
 	//Set min height for class content	
@@ -307,7 +307,7 @@ function rebuild_mission_statement_panel(resize_level, window_width){
 }
 
 
-function rebuild_specialties_panel(resize_level, window_width){
+function rebuild_specialties_panel(){
 	//Specialties panel
 	fixed_specialties_panel_width = logo_box_fixed_width*5.58;
 
@@ -353,6 +353,7 @@ function rebuild_specialties_panel(resize_level, window_width){
 	
 	  
 	$(".specialty_box").each(function(){
+		//border:1px solid blue
 		$(this).css("width", specialty_box_width +"px");
 		$(this).css("height", specialty_box_height +"px");
 		$(this).css("float", "left");
@@ -362,13 +363,13 @@ function rebuild_specialties_panel(resize_level, window_width){
 }
 
 
-function rebuild_contact_panel(resize_level, window_width){
+function rebuild_contact_panel(){
 	contact_panel_height = screen_width*0.23;
 	$("#contact_panel").css("height", contact_panel_height+"px");	
 }
 	
 
-function rebuild_attorney_panel(resize_level, window_width){
+function rebuild_attorney_panel(){
 	var container_to_content_height_ratio = 1.06;
 	var attorney_panel_width = window_width*0.95;
 	var attorney_panel_height;
@@ -513,7 +514,7 @@ function rebuild_attorney_panel(resize_level, window_width){
 }*/
 
 
-function rebuild_content(resize_level, window_width){
+function rebuild_content_homepage(){
 	//Content
 	//Set min height for class content	
 	//document_height = $(document).height();
@@ -545,15 +546,15 @@ function rebuild_content(resize_level, window_width){
 	*/
 
 	//$(window).scrollTop(window.sessionStorage.scrollTop);
-	rebuild_bg_img(resize_level, window_width);
+	rebuild_bg_img();
 	//$(window).scrollTop(window.sessionStorage.scrollTop);
-	rebuild_mission_statement_panel(resize_level, window_width);
+	rebuild_mission_statement_panel();
 	//$(window).scrollTop(window.sessionStorage.scrollTop);
-	rebuild_specialties_panel(resize_level, window_width);
-	rebuild_attorney_panel(resize_level, window_width);
-	rebuild_contact_panel(resize_level, window_width);
+	rebuild_specialties_panel();
+	rebuild_attorney_panel();
+	rebuild_contact_panel();
 	
-	restyle_statements(resize_level,);
+	restyle_statements();
 	color_specialty_boxes();
 	
 	/*

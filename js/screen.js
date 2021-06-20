@@ -11,7 +11,7 @@ function rebuild_flap_header_close_icon(){
 }
 
 
-function rebuild_menu_bar(resize_level, window_width){
+function rebuild_menu_bar(){
 				
 	$(".menu_bar").each(function(){//All menu bar instances
 		var $this = $(this);
@@ -270,7 +270,7 @@ function show_screen(){
 	//Rebuild now that it is rendered visible(display not none)
 	rebuild_logo_box($(".flap_header_logo_box"));
 	rebuild_flap_header_close_icon()
-	rebuild_menu_bar(global_resize_level, global_window_width);
+	rebuild_menu_bar();
 	$("body").css("overflow-y", "hidden");	
 	
 	window.setTimeout(animate_right_fixed, 1, $(".flap_header_parent"), flap_header_shift, 2000);
