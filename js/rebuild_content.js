@@ -168,6 +168,11 @@ function restyle_statements(){
 }
 
 
+function rebuild_bg_img1(){//Use pictures that are not too wide. Narrow is ok but screen proportions is ideal
+	var bg_img_container_width = window_width;	
+	var bg_img_container_height = bg_img_container_width*0.75;
+}
+
 
 function rebuild_bg_img(){//Use pictures that are not too wide. Narrow is ok but screen proportions is ideal
 	var bg_img_container_width = window_width;	
@@ -359,7 +364,16 @@ function rebuild_specialties_panel(){
 		$(this).css("float", "left");
 		$(this).css("margin-top", "2px");
 		//$(this).css("background-color", "red");
+		
+		$(this).find("a div").css("width", specialty_box_width + "px");
+		$(this).find("a div").css("height", (specialty_box_height/3) + "px");
 	});	
+	
+	//Vertically align specialty box checkbox to bottom of container
+	$(".specialty_box_checkbox i").css({
+		position: "relative",
+		top: ($(".specialty_box_checkbox").height() - $(".specialty_box_checkbox i").height())+"px"
+	});		
 }
 
 
@@ -381,8 +395,14 @@ function rebuild_attorney_panel(){
 	var law_office_details_height;
 	
 	//Dimensioning
+	//if(resize_level <= 2){
+		//$(".content_homepage").css("background-color", "#ffffff");	
+	//}else{
+		//$(".content_homepage").css("background-color", "#e6e6e6");	
+	//}
 	attorney_photo_container_width = screen_width*0.4;
-	attorney_photo_container_height = screen_width*0.45;
+	attorney_photo_container_height = attorney_photo_container_width*1.125;//screen_width*0.45;
+	
 	//attorney_panel_width = window_width*0.95;
 	attorney_panel_height = attorney_photo_container_height*container_to_content_height_ratio;
 	law_office_details_height = attorney_photo_container_height;
@@ -439,7 +459,7 @@ function rebuild_attorney_panel(){
 	}	
 	//centralize_element_horizontally($("#attorney_panel")); 
 
-	scale_and_position_image($("#attorney_photo"), $("#attorney_photo_container"), 1);	
+	scale_and_position_image($("#attorney_photo"), $("#attorney_photo_container"), 0.95);	
 	$("#attorney_photo").show();
 }
 
@@ -604,3 +624,5 @@ function rebuild_content_homepage(){
 	$("#contact_panel").css("height", contact_panel_height+"px");*/
 	
 }
+
+specialty_box

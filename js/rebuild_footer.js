@@ -247,7 +247,7 @@ function rebuild_footer(){
 	rebuild_footer_contact_details_panel();
 	rebuild_marketing_panel();
 	
-	
+
 	//$(".footer_contact_details_panel").css("height", ($(".footer_contact_details").height()+$(".footer_map_panel").height())+"px");
 	
 	//alert("footer upper half height "+$(".footer_upper_half").height());
