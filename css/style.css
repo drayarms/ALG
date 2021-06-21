@@ -166,9 +166,78 @@ html{
 }
 
 .content_homepage #contact_panel{
+	padding-top:3%;
 	background-color:#001a33;
 	width:100%;
 	margin:auto;
+}
+
+
+.content_homepage #contact_panel form{
+	/*width:60%;*/ /*set in js*/
+	margin:auto;
+	margin-top:2%;
+	/*background:red;*/
+}
+
+.content_homepage #contact_panel form .left_fieldset{
+	float:left;
+}
+
+.content_homepage #contact_panel form .right_fieldset{
+	float:right;
+}
+
+.content_homepage #contact_panel form .left_fieldset, .content_homepage #contact_panel form .right_fieldset{
+	/*width:45%;*/ /*set in js*/
+	height:100px;
+	border:none;
+	/*background:yellow;*/
+}
+
+.content_homepage #contact_panel form .bottom_fieldset{
+	height:70px;
+	margin:auto;
+	border:none;
+}
+
+.content_homepage #contact_panel form .form_input{
+	display:inline-block;
+	width:100%;
+	margin:0px;
+	/*height:19%;*/
+}
+
+
+.content_homepage #contact_panel form .form_submit{
+	width:20%;
+	height:80%;
+	position:relative;top:20%;
+	cursor:pointer;
+	background-image:linear-gradient(to bottom, #ffcc00, #cca300);
+}
+
+.content_homepage #contact_panel form .form_submit:hover{
+	background-image:linear-gradient(to bottom, #d347a4, #ba2d8b);
+}
+
+.content_homepage #contact_panel form textarea{
+	width:100%;
+	height:100%;
+}
+
+
+.content_homepage #contact_panel h1{
+	/*position:relative;top:10%;*/
+
+	text-align:center;
+	width: fit-content;
+	margin:auto;
+	margin-top:0%;
+	line-height:1.8;
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+	font-weight:190;
+	color:rgb(255, 255, 255);
 }
 
 
