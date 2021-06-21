@@ -169,7 +169,7 @@ function rebuild_menu_bar(){
 			var browser_height = isNaN(window.innerHeight) ? window.clientHeight : window.innerHeight;
 			var menu_width = $(".flap_header").width();//window_width;
 			var menu_height = screen_height - logo_box_fixed_height;//browser_height - logo_box_fixed_height;
-			var menu_item_width = menu_width;
+			var menu_item_width = menu_width*1.05;
 			var menu_item_height = (menu_height/num_menu_items)-0;//To account for bottom border
 			var menu_item_anchor_width = menu_item_width;
 			var menu_item_anchor_height = menu_item_height;

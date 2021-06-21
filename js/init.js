@@ -10,7 +10,7 @@ var window_width_original = window.innerWidth - scroll_width;// = $(window).widt
 var prev_window_width = window_width_original;
 var header_max_width;//Width of header when page is maximized
 //var header_inner_fixed_width;
-var max_bg_img_position_type = "absolute";
+//var max_bg_img_position_type = "absolute";
 var background_scroll_factor = 0.44;//0.63;
 //var background_scroll_disp;	
 let top_header_to_header_core_height_ratio = 1.21;
@@ -322,7 +322,7 @@ $(document).ready(function(){
 	specialty_statement_count = $(".specialty_statement").length;
 	window.setInterval(rotate_specialty_statement_text, 4000);//Run func every 4 secs
 	homepage_background_image_count = $(".homepage_background_image").length;
-	window.setInterval(rotate_bg_img, 5000);//Run func every 5 secs
+	//window.setInterval(rotate_bg_img, 5000);//Run func every 5 secs
 	
 
 	/*$(".menu_bar a").hover(

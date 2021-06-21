@@ -101,10 +101,19 @@ function rebuild_elements(){
 		$(".social_media_panel").addClass("left_social_media_panel");		
 		
 	}
+	console.log("1current session scroll top: "+window.sessionStorage.scrollTop);
+	//alert("1current session scroll top: "+window.sessionStorage.scrollTop);
+	if(window.location.href.indexOf("index") > -1) {
+		rebuild_bg_img_dimensions();
+	}	
 	rebuild_header();
 	rebuild_content_homepage();
 	rebuild_footer();
-
+	if(window.location.href.indexOf("index") > -1) {
+		rebuild_bg_img_position();
+		console.log("2current session scroll top: "+window.sessionStorage.scrollTop);
+	}
+	//alert("1current session scroll top: "+window.sessionStorage.scrollTop);
 
 
 	
@@ -116,3 +125,12 @@ function rebuild_elements(){
 	//alert("Page fully loaded. Session scroll top: "+window.sessionStorage.scrollTop+ ". Scroll top:"+$(window).scrollTop());
 
 }
+
+
+$(window).scroll(function(){
+	if(window.location.href.indexOf("index") > -1) {
+		console.log("2current session scroll top: "+window.sessionStorage.scrollTop);
+		rebuild_bg_img_position();
+	}
+	//alert("from scorll current session scroll top: "+window.sessionStorage.scrollTop);
+});

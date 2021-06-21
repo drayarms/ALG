@@ -168,13 +168,62 @@ function restyle_statements(){
 }
 
 
-function rebuild_bg_img1(){//Use pictures that are not too wide. Narrow is ok but screen proportions is ideal
-	var bg_img_container_width = window_width;	
-	var bg_img_container_height = bg_img_container_width*0.75;
+function rebuild_bg_img_dimensions(){//Use pictures that are not too wide. Narrow is ok but screen proportions is ideal
+	//var bg_img_container_width = window_width;	
+	var bg_img_container_width;
+	var fixed_bg_img_container_width = screen_width*0.9;
+
+	//The max panel to window width ratio is gotten by using the max panel width(fixed width computed above)
+	//and the max window width for intermediate window A(resize_threshold1)
+	bg_img_container_width_to_window_width_ratio = fixed_bg_img_container_width/resize_threshold1;
+
+	if(resize_level == 1){
+		bg_img_container_width = fixed_bg_img_container_width;
+	}else if(resize_level == 2){
+		bg_img_container_width = bg_img_container_width_to_window_width_ratio*window_width;
+	}else{
+		bg_img_container_width = window_width;
+	}
+	
+	
+	var bg_img_container_height = bg_img_container_width*0.85;
+	
+	$("#homepage_background_image_container").css("width", bg_img_container_width + "px");
+	$("#homepage_background_image_container").css("height", bg_img_container_height + "px");
+	centralize_element_horizontally($("#homepage_background_image_container"));
+	
 }
 
 
-function rebuild_bg_img(){//Use pictures that are not too wide. Narrow is ok but screen proportions is ideal
+function rebuild_bg_img_position(){
+	var top_header_height = $(".top_header").height();
+	var top_header_margin_top = $(".top_header").css("margin-top");
+	//console.log("top header h: "+top_header_height+" margin top: "+top_header_margin_top)
+	
+	if(resize_level <= 2){
+		$("#homepage_background_image_container").css({
+			position: "absolute",
+			top: (0) + "px"
+		});			
+	}else{
+		$("#homepage_background_image_container").css({
+			position: "relative",
+			top: (0) + "px"
+		});			
+	}	
+	
+	
+	
+	
+	////////////////////////////////////////////////////
+	//centralize_element_horizontally($(".homepage_background_image"));
+	scale_and_position_image($(".homepage_background_image").eq(0), $("#homepage_background_image_container"), 1);
+	$(".homepage_background_image").eq(0).fadeIn(1600);	
+	/*Remeber to trigger rotate_bg_img in document ready. Function definition on this page*/
+}
+
+
+function rebuild_bg_img1(){//Use pictures that are not too wide. Narrow is ok but screen proportions is ideal
 	var bg_img_container_width = window_width;	
 	var bg_img_container_height;
 	var new_bg_img_width;
@@ -566,7 +615,7 @@ function rebuild_content_homepage(){
 	*/
 
 	//$(window).scrollTop(window.sessionStorage.scrollTop);
-	rebuild_bg_img();
+	//rebuild_bg_img();//On init and on scrool
 	//$(window).scrollTop(window.sessionStorage.scrollTop);
 	rebuild_mission_statement_panel();
 	//$(window).scrollTop(window.sessionStorage.scrollTop);
@@ -625,4 +674,3 @@ function rebuild_content_homepage(){
 	
 }
 
-specialty_box

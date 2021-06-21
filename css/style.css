@@ -115,6 +115,7 @@ html{
 	/*height:95%;*/
 	/*border:1px solid red;*/
 	overflow:hidden;/*Prevents child elements from causing grandparents to strech.*/
+	
 	/*border:1px solid red;*/
 	/*background-color:yellow;*/
 }
@@ -173,14 +174,15 @@ html{
 
 #homepage_background_image_container{
 	/*Houses the background animation plus other elements in the foreground*/
-	background-color:orange;
+	/*background-color:orange;*/
+	/*position:absolute;top:0px;*/
 	/*margin: auto;*/
 	/*min-height:0px;*/
 	/*height:950px;*/
 	/*width:100%;*/
-	/*z-index:-1;*/
+	z-index:-1;
 	/*overflow:hidden;*/
-	/*border:3px dotted black;*/
+	/*border:3px dotted red;*/
 	/*Top positioning set in dimensions.js*/
 	/*position:absolute;top:0px;*/
 }
@@ -197,6 +199,8 @@ html{
 
 .content_homepage #mission_statement_panel_container #mission_statement_panel{
 	overflow:hidden;
+	padding-left:15px;
+	padding-right:15px;
 	background-color:#ffffff;
 }
 
@@ -657,6 +661,7 @@ html{
 	/*background-color :rgba(255, 255, 255, 0);*/
 	margin:0px auto;
 	min-height:0px;
+	overflow:hidden;/*Ensures header elements stay confined in header*/
 	/*height:27%; *230px;*/
 	/*width:100%;*/
 	/*min-width:0px;*/
@@ -665,11 +670,11 @@ html{
 	/*border:1px dotted red;*/
 	overflow:none;
 	/*background-color:red;*/
+	/*border:4px dotted green;background:red;*/
 }
 
-.header #homepage_top_header{
+#homepage_top_header{
 	background-color :rgba(255, 255, 255, 0);
-	
 }
 
 .header .header_core{
