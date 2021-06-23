@@ -217,7 +217,6 @@ $(document).ready(function(){
 
 
 
-
 	//Header dimensions
 	//Header dimensions
 	header_max_width = screen_width*window_to_header_width_ratio;//Width of maximized header
@@ -293,7 +292,7 @@ $(document).ready(function(){
 	if (window.sessionStorage.scrollTop != "undefined") {//Forcibly maintains scrool position across sessions
 		$(window).scrollTop(window.sessionStorage.scrollTop);//Set scroll top to saved session scroll top value
 	}	
-	console.log("Page fully loaded. Session scroll top: "+window.sessionStorage.scrollTop+ ". Scroll top:"+$(window).scrollTop());
+	//console.log("Page fully loaded. Session scroll top: "+window.sessionStorage.scrollTop+ ". Scroll top:"+$(window).scrollTop());
 	//alert("Page fully loaded. Session scroll top: "+window.sessionStorage.scrollTop+ ". Scroll top:"+$(window).scrollTop());
 	
 
@@ -305,7 +304,8 @@ $(document).ready(function(){
 	//rebuild_elements(window_width, $(".header").width());
 	
 	
-
+	/*if("onhashchange" in window) {
+		alert("page changed or refreshed");*/
 	
 	
 	
@@ -322,7 +322,10 @@ $(document).ready(function(){
 	specialty_statement_count = $(".specialty_statement").length;
 	window.setInterval(rotate_specialty_statement_text, 4000);//Run func every 4 secs
 	homepage_background_image_count = $(".homepage_background_image").length;
-	//window.setInterval(rotate_bg_img, 5000);//Run func every 5 secs
+	//show_bg_img(0);//Initialize with img 0
+	//window.setTimeout(rotate_bg_img, 5000);
+	rotate_bg_img(bg_img_time);
+	window.setInterval(rotate_bg_img, 5000);//Run func every 5 secs to rotate the image
 	
 
 	/*$(".menu_bar a").hover(
@@ -346,7 +349,7 @@ $(document).ready(function(){
 	//$(".menu_bar a").hover(
 	$(".menu_item").hover(
 	function(){
-		menu_hover_color = $(this).css("color");
+		menu_hover_color = $(this).find("a").css("color");
 		$(this).find("a").css("color",menu_highlight_color);
 		if(page_size == "shrunken"){
 			//$(this).parent().css("background-color", theme_darkblue2_hex);
@@ -360,7 +363,7 @@ $(document).ready(function(){
 			$(this).parent().css("border", "1px solid"+menu_highlight_color_hex);
 			//$(this).parent().css("opacity", "1.0");
 		}
-	});		
+	});	
 	
 	
 

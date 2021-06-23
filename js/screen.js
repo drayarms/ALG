@@ -1,4 +1,26 @@
 
+function get_menu_bar_width(){
+	header_core_width_to_window_width_ratio = header_core_fixed_width/resize_threshold1;
+	if(resize_level == 1){//Maintain header inner fixed width
+		return header_core_fixed_width*1.35;
+	}
+	
+	if(resize_level == 2){//Shrink header inner to fit window
+		//console.log(2)
+		return window_width*header_core_width_to_window_width_ratio;
+	}	
+	
+	if(resize_level == 3){//Collapse header
+		//console.log(3)
+		return window_width;		
+	}	
+	
+	if(resize_level == 4){//Collapse header
+		//console.log(4)
+		return window_width;		
+	}	
+}
+
 function rebuild_flap_header_close_icon(){
 	var close_icon_width = ($(".flap_header_logo_box_parent").width() - $(".flap_header .logo_box").width())*0.9;//Room for float
 	var logo_box_height = $(".logo_box").height()
@@ -106,7 +128,7 @@ function rebuild_menu_bar(){
 				});		
 		
 			}else if(resize_level >= 3){//Min window3
-				console.log("window 3")
+				//console.log("window 3")
 				//var num_menu_items = $this.find(".menu_item").length;
 				var num_rows = Math.ceil(num_menu_items/2);
 				var row_height = screen_width*0.03;

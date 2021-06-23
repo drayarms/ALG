@@ -87,8 +87,117 @@ html{
 	top:0px;
 	/*border:1px dotted blue;*/
 	overflow-x:hidden;
-	
+}
 
+.content .attorneys_bio{
+	margin-top:30px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.content .attorneys_bio .attorney_bio{
+	width:100%;
+	min-height:370px;	
+}
+
+.content .attorneys_bio .attorney_bio .attorney_bio_image_container{
+	float:left;
+	width:280px;
+	height:330px;
+	border:2px solid #001a33;
+	border-radius:5%;	
+	overflow:hidden;
+	margin-right:2%;
+	margin-bottom:2%;
+}
+
+.content .attorneys_bio .attorney_bio .attorney_bio_image_container .attorney_bio_image{
+
+}
+
+.content .attorneys_bio .attorney_bio .attorney_bio_text{
+	/*float:left;*/
+	width:97%;
+	/*height:90%;*/
+	text-align: justify;	
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+	font-size:80%;	
+	line-height:1.7;
+	/*padding-left:15px;*/
+	/*border:1px dotted red;*/
+}
+
+.content .attorneys_bio .attorney_bio .attorney_bio_text .attorney_name_title{
+	font-size:100%;
+	font-weight:bold;
+}
+
+.content .content_attorney_profile{
+	
+}
+
+.content .content_banner{
+	/*width set in rebuild content*/
+	margin-top:20px;
+	margin-left:auto;
+	margin-right:auto;
+	height:95px;
+	background-color:rgb(0, 38, 77);
+}
+
+.content .content_banner .top_heading{
+	width:100%;
+	height:50%;
+	text-align:center;
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+	font-size:130%;	
+	color:#ffffff;
+}
+
+.content .content_banner .top_heading span{
+	display:inline-block;
+	margin-top:20px;
+}
+
+.content .content_banner .bottom_heading{
+	width:100%;
+	height:50%;	
+	text-align:center;
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+	font-size:110%;	
+	color:#ffffff;
+}
+
+.content .content_banner .bottom_heading span{
+	display:inline-block;
+	margin-top:5px;
+}
+
+.content .disclaimer{
+	/*width:95%;*/
+	margin:auto;
+	padding-top:40px;
+	padding-bottom:25px;
+}                    
+.content .disclaimer .disclaimer_heading{
+	margin:auto;
+	text-align:center;
+	font-size:80%;
+	line-height:1.2;
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+	font-style:italics;
+	font-weight:bold;
+	color:red;
+}
+.content .disclaimer .disclaimer_text{
+	margin:auto;
+	text-align:center;
+	font-size:80%;
+	line-height:1.2;
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+	font-style:italic;
+	font-weight:normal;
+	color:red;	
 }
 
 .content_homepage #attorney_panel{
@@ -170,6 +279,7 @@ html{
 	background-color:#001a33;
 	width:100%;
 	margin:auto;
+	overflow:hidden;
 }
 
 
@@ -181,7 +291,7 @@ html{
 }
 
 .content_homepage #contact_panel form .left_fieldset{
-	float:left;
+	float:left;	
 }
 
 .content_homepage #contact_panel form .right_fieldset{
@@ -190,9 +300,12 @@ html{
 
 .content_homepage #contact_panel form .left_fieldset, .content_homepage #contact_panel form .right_fieldset{
 	/*width:45%;*/ /*set in js*/
-	height:100px;
+	height:130px;
 	border:none;
 	/*background:yellow;*/
+	margin:0;
+	padding:0;	
+
 }
 
 .content_homepage #contact_panel form .bottom_fieldset{
@@ -202,10 +315,14 @@ html{
 }
 
 .content_homepage #contact_panel form .form_input{
-	display:inline-block;
+	/*display:inline-block;*/
 	width:100%;
-	margin:0px;
-	/*height:19%;*/
+	/*margin:0px;*/
+	/*padding:0px;*/
+	box-sizing:border-box;/*Contains input in its container fieldset*/
+	margin-bottom:0.6%;
+	height:33.9%;
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
 }
 
 
@@ -214,7 +331,9 @@ html{
 	height:80%;
 	position:relative;top:20%;
 	cursor:pointer;
+	border:none;
 	background-image:linear-gradient(to bottom, #ffcc00, #cca300);
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
 }
 
 .content_homepage #contact_panel form .form_submit:hover{
@@ -224,6 +343,7 @@ html{
 .content_homepage #contact_panel form textarea{
 	width:100%;
 	height:100%;
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
 }
 
 
@@ -742,8 +862,8 @@ html{
 	/*border:4px dotted green;background:red;*/
 }
 
-#homepage_top_header{
-	background-color :rgba(255, 255, 255, 0);
+.homepage_top_header{
+	/*background-color :rgba(255, 255, 255, 0);*/
 }
 
 .header .header_core{
@@ -898,7 +1018,7 @@ html{
 	/*padding-right:30px;
 	padding-top:5px;*/
 	font-family: Arial, Helvetica, sans-serif;
-	color:rgb(0, 26, 51);
+	/*color:rgb(0, 26, 51);*/
 	/*font-size:18px;*/
 	font-size:0.9em;
 	font-weight:bold;

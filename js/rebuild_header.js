@@ -19,6 +19,7 @@ $("document").ready(function(){
 });
 
 function set_header_colors(){
+	console.log("setting colors")
 	$(".header_banner").css("background-color", theme_darkblue1);//For browsers that don't support gradient
 	$(".header_banner").css("background-image", "linear-gradient(to right, "+theme_darkblue1+","+theme_darkblue2+")");
 	$(".menu_bar").each(function(){
@@ -26,16 +27,67 @@ function set_header_colors(){
 	});
 	//$(".menu_bar").css("background-color", theme_gold2);	
 	//$(".menu_bar div").css("background-image", "linear-gradient(to bottom, "+theme_gold1+","+theme_gold2+")");	
+	$(".top_header").each(function(){
+		if($(this).hasClass("homepage_top_header")){
+			$(".top_header").css("background-color", "rgba(255, 255, 255, 0)");//Transparent
+		}else{
+			if(resize_level == 4){
+				$(".top_header").css("background-color", "rgba(255, 255, 255, 0)");//Transparent
+				$(".top_header").css("background-image", "none");
+			}else{
+				$(".top_header").css("background-image", "linear-gradient(to right, "+theme_darkblue1+","+theme_darkblue2+")");
+				$(".top_header").css("background-color", "none");
+			}
+		}		
+	});
+
 }
 
 
 function highlight_menu(){
-    if (window.location.href.indexOf("index") > -1) {
+    /*if (window.location.href.indexOf("index") > -1) {
 		$(".menu_home").each(function(){
 			$(this).find("a").css("color", menu_highlight_color);	
 		});
 		//$(".menu_home a").css("color", menu_highlight_color);
-    }	
+    }*/	
+	function highlight_menu_item($this, url_check, class_name){
+		//console.log(highlighted)
+		//if(!highlighted && (url_check > -1) && $this.hasClass(class_name)){
+		if(!$this.hasClass("highlighted") && (url_check > -1) && $this.hasClass(class_name)){	
+			$this.find("a").css("color", menu_highlight_color);
+			//highlighted = true;
+			$this.addClass("highlighted");
+		}	
+	}
+	
+	$(".menu_item").each(function(){
+		//var highlighted = false;
+		/*if(!highlighted && (window.location.href.indexOf("index") > -1 || window.location.href.indexOf("home") > -1) && $(this).hasClass("menu_home")){
+			$(this).find("a").css("color", menu_highlight_color);
+			highlighted = true;
+		}else{
+			$(this).find("a").css("color", theme_darkblue1);
+		}	
+		
+		if(!highlighted && (window.location.href.indexOf("attorny_profiles") > -1) && $(this).hasClass("attorney_profiles")){
+			$(this).find("a").css("color", menu_highlight_color);
+			highlighted = true;
+		}else{
+			$(this).find("a").css("color", theme_darkblue1);
+		}	*/		
+		highlight_menu_item($(this), window.location.href.indexOf("index"), "menu_home");
+		highlight_menu_item($(this), window.location.href.indexOf("attorney_profiles"), "menu_attorney_profiles");
+		highlight_menu_item($(this), window.location.href.indexOf("newsletter"), "menu_newsletter");
+		highlight_menu_item($(this), window.location.href.indexOf("blog"), "menu_blog");
+		highlight_menu_item($(this), window.location.href.indexOf("faqs"), "menu_faqs");
+		highlight_menu_item($(this), window.location.href.indexOf("testimonials"), "menu_testimonials");
+		highlight_menu_item($(this), window.location.href.indexOf("contact"), "menu_contact");
+		
+		if(!$(this).hasClass("highlighted")){
+			$(this).find("a").css("color", theme_darkblue1);
+		}
+	});
 }
 
 
@@ -743,9 +795,11 @@ function assemble_header_elements(){
 	
 	//Header
 	if(resize_level <= 2){
-		$(".top_header").css("margin-top", "3%");
+		//$(".top_header").css("margin-top", "3%");
+		$(".homepage_top_header").css("margin-top", "3%");
 	}else{
-		$(".top_header").css("margin-top", "0%");
+		//$(".top_header").css("margin-top", "0%");
+		$(".homepage_top_header").css("margin-top", "0%");
 	}
 	
 	//Logo boxes
@@ -779,7 +833,7 @@ function assemble_header_elements(){
 	}
 }
 
-function get_menu_bar_width(){
+/*function get_menu_bar_width(){
 	header_core_width_to_window_width_ratio = header_core_fixed_width/resize_threshold1;
 	if(resize_level == 1){//Maintain header inner fixed width
 		return header_core_fixed_width;
@@ -799,7 +853,7 @@ function get_menu_bar_width(){
 		//console.log(4)
 		return window_width;		
 	}	
-}
+}*/
 
 
 function rebuild_header_banner(){
@@ -820,7 +874,7 @@ function rebuild_header_banner(){
 
 
 function rebuild_header(){
-	
+	//console.log("rebuilding header")
 	//menu_bar_width = get_menu_bar_width(resize_level, window_width);
 	//Changes as window is resized
 	
