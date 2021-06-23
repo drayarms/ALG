@@ -21,7 +21,7 @@ var onresize = function(e) {
 	//console.log("from resize header inner fixed w "+header_inner_fixed_width);
 	window_width = current_window_width;
 	//rebuild_elements(prev_window_width, current_window_width);
-	rebuild_elements();
+	rebuild_elements();//0 for refresh, 1 for resize
 	prev_window_width = current_window_width;
 	//console.log("after "+current_window_width);
 

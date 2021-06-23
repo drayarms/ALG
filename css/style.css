@@ -259,7 +259,8 @@ html{
 	/*font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;*/
 	/*font-weight:190;*/
 	/*color: rgb(230, 184, 0);*/
-	color: rgb(204, 163, 0);
+	/*color: rgb(204, 163, 0);*/
+	color:rgb(186, 45, 139);
 	overflow:hidden;
 }
 
@@ -383,7 +384,6 @@ html{
 
 .content_homepage #mission_statement_panel_container{
 	/*margin:auto;*/
-	/*border:1px solid red;*/
 }
 
 .content_homepage #mission_statement_panel_container #mission_statement_panel{
@@ -401,7 +401,8 @@ html{
 	/*line-height:1.8;*/
 	/*font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;*/
 	/*font-weight:190;*/
-	color: rgb(204, 163, 0);
+	/*color: rgb(204, 163, 0);*/
+	color:rgb(186, 45, 139);
 	/*border:1px dotted green;*/
 }
 
@@ -660,7 +661,8 @@ html{
 	/*line-height:1.8;*/
 	/*font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;*/
 	/*font-weight:190;*/
-	color: rgb(204, 163, 0);	
+	/*color: rgb(204, 163, 0);*/
+	color:rgb(186, 45, 139);
 	/*border:1px dotted blue;*/
 }
 
@@ -829,7 +831,8 @@ html{
 	padding-top:25px;
 	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
 	font-weight:190;
-	color: rgb(230, 184, 0);	
+	/*color: rgb(230, 184, 0);*/	
+	color:rgb(186, 45, 139);
 }
 
 .footer .footer_upper_half .specialties_statements .specialty_statement .specialty_statement_text{

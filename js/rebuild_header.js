@@ -19,7 +19,7 @@ $("document").ready(function(){
 });
 
 function set_header_colors(){
-	console.log("setting colors")
+	//console.log("setting colors")
 	$(".header_banner").css("background-color", theme_darkblue1);//For browsers that don't support gradient
 	$(".header_banner").css("background-image", "linear-gradient(to right, "+theme_darkblue1+","+theme_darkblue2+")");
 	$(".menu_bar").each(function(){

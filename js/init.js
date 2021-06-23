@@ -240,10 +240,10 @@ $(document).ready(function(){
 	max_bg_img_container_height = max_bg_img_container_width*0.5;
 	max_container_to_bg_img_ratio = max_bg_img_container_width/original_bg_img_width;
 	//Height will always depend on how much the width has been streched/compressed. So use ideally pics that aren't too wide
-	footer_mission_statement_panel_fixed_width = header_core_fixed_width;
-	footer_contact_details_fixed_width = screen_width*0.22;
+	footer_mission_statement_panel_fixed_width = header_core_fixed_width*1.3;
+	footer_contact_details_fixed_width = screen_width*0.39;
 	footer_map_panel_fixed_width = screen_width*0.42;
-	marketing_panel_fixed_width = screen_width*0.6;
+	marketing_panel_fixed_width = screen_width*0.7;
 	menu_item_anchor_original_height = $(".menu_item_anchor").eq(10).height();
 	
 	//specialties_panel_max_width = ;
@@ -282,7 +282,7 @@ $(document).ready(function(){
 	//set_homepage_background_image_dimensions(window_width_original);
 	//vertically_centralize_social_media_icons();
 	window_width = window_width_original;
-	rebuild_elements();//Initially build header
+	
 	//rebuild_elements(prev_window_width, window_width_original);//Initially build header
 	//set_logo_image();
 	//Maintain scroll position
@@ -322,11 +322,13 @@ $(document).ready(function(){
 	specialty_statement_count = $(".specialty_statement").length;
 	window.setInterval(rotate_specialty_statement_text, 4000);//Run func every 4 secs
 	homepage_background_image_count = $(".homepage_background_image").length;
+	
 	//show_bg_img(0);//Initialize with img 0
-	//window.setTimeout(rotate_bg_img, 5000);
+	////window.setTimeout(rotate_bg_img, 5000);
+
 	rotate_bg_img(bg_img_time);
 	window.setInterval(rotate_bg_img, 5000);//Run func every 5 secs to rotate the image
-	
+	rebuild_elements();//Important to set picture timer first b4 buildng elements so a visible pic obj is accessible in build elements
 
 	/*$(".menu_bar a").hover(
 	function(){

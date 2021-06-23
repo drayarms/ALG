@@ -29,7 +29,7 @@ function rotate_specialty_statement_text(){
 				}
 			}
 		
-			if(! $(".specialty_statement").eq(i).hasClass("displayed")){//Your turn but not displayed
+			if(!$(".specialty_statement").eq(i).hasClass("displayed")){//Your turn but not displayed
 			
 				//Remove previous guy
 				//$(".specialty_statement").eq(prev_specialty_text_time).removeClass("displayed");
@@ -64,14 +64,16 @@ function rotate_specialty_statement_text(){
 	//console.log("specialty txt time "+specialty_text_time);
 	//console.log("in timer session scroll top: "+window.sessionStorage.scrollTop+ " scroll top:"+$(window).scrollTop());
 	specialty_text_time++;
-	if(specialty_text_time%specialty_statement_count == 0){
+	if(specialty_text_time % specialty_statement_count == 0){
 		specialty_text_time = 0;//Reset
 	}
 }
 
 
 function show_bg_img(i){
-	scale_and_position_image($(".homepage_background_image").eq(i), $("#homepage_background_image_container"), 1);
+	//rebuild_bg_img_dimensions();
+	//rebuild_bg_img_position();
+	scale_and_position_image($(".homepage_background_image").eq(i), $("#homepage_background_image_container"), 1);//Repeat this on every resize
 	$(".homepage_background_image").eq(i).addClass("displayed");
 	$(".homepage_background_image").eq(i).removeClass("undisplayed");
 	//Make sure aggregate of fadeIn and fadeOut time doesn't exceed interval between each timer
@@ -185,18 +187,33 @@ function rebuild_bg_img_dimensions(){//Use pictures that are not too wide. Narro
 	}else{
 		bg_img_container_width = window_width;
 	}
-	
+
 	
 	var bg_img_container_height = bg_img_container_width*0.85;
 	
 	$("#homepage_background_image_container").css("width", bg_img_container_width + "px");
 	$("#homepage_background_image_container").css("height", bg_img_container_height + "px");
+	
 	centralize_element_horizontally($("#homepage_background_image_container"));
+	//console.log("scaling")
+	var current_displayed_img;
+	for(i = 0; i < homepage_background_image_count; i++){	
+		if($(".homepage_background_image").eq(i).is(":visible")){
+			current_displayed_img = $(".homepage_background_image").eq(i);
+			//console.log(i+" displayed")
+		}else{
+			//console.log(i+" not displayed")
+		}
+	}
+	//console.log(current_displayed_img.attr("src"));
+	scale_and_position_image(current_displayed_img, $("#homepage_background_image_container"), 1);
 	
 }
 
 
 function rebuild_bg_img_position(){
+	//$(".homepage_background_image").eq(bg_img_time).hide();
+	
 	var top_header_height = $(".top_header").height();
 	var top_header_margin_top = parseFloat($(".top_header").css("margin-top"));
 	//console.log("top header h: "+top_header_height+" margin top: "+top_header_margin_top)
@@ -218,8 +235,8 @@ function rebuild_bg_img_position(){
 	}	
 	
 	
-	
-	
+	//scale_and_position_image($(".homepage_background_image").eq(bg_img_time), $("#homepage_background_image_container"), 1);
+	//$(".homepage_background_image").eq(bg_img_time).show();
 	////////////////////////////////////////////////////
 	//centralize_element_horizontally($(".homepage_background_image"));
 	//scale_and_position_image($(".homepage_background_image").eq(0), $("#homepage_background_image_container"), 1);
@@ -292,8 +309,7 @@ function rebuild_bg_img1(){//Use pictures that are not too wide. Narrow is ok bu
 }
 
 
-function rebuild_mission_statement_panel(){
-	//
+function rebuild_mission_statement_box(){
 	//Content
 	//Set min height for class content	
 	//document_height = $(document).height();
@@ -307,6 +323,7 @@ function rebuild_mission_statement_panel(){
 	//mission_statement_panel_container_height = window_width_original*0.31;
 
 	if(resize_level <= 2){
+		//console.log(2)
 		mission_statement_panel_container_width = screen_width*0.7;
 		mission_statement_panel_container_height = screen_width*0.31;	
 		mission_statement_panel_width = mission_statement_panel_container_width*0.5;//0.5;
@@ -323,7 +340,7 @@ function rebuild_mission_statement_panel(){
 	$("#mission_statement_panel_container").css("min-height", mission_statement_panel_container_height + "px");
 	$("#mission_statement_panel").css("width", mission_statement_panel_width + "px");
 	$("#mission_statement_panel").css("min-height", mission_statement_panel_height + "px");	
-	//$("#mission_statement_panel").css("margin-bottom", "0px");
+//$("#mission_statement_panel").css("margin-bottom", "0px");
 //alert($("#mission_statement_panel_container").width())
 //alert($("#mission_statement_panel").width())
 	centralize_element_horizontally($("#mission_statement_panel_container"));
@@ -334,10 +351,10 @@ function rebuild_mission_statement_panel(){
 			position: "relative",
 			top: panel_vertical_shift + "px"
 		});	
-		/*$("#mission_statement_panel").css({
-			position: "relative",
-			left: panel_horizontal_shift + "px"
-		});	*/	
+		//$("#mission_statement_panel").css({
+			//position: "relative",
+			//left: panel_horizontal_shift + "px"
+		//});		
 	}else{//Resize level 2 or 3
 		$("#mission_statement_panel").css({
 			position: "relative",
@@ -368,7 +385,7 @@ function rebuild_mission_statement_panel(){
 
 function rebuild_specialties_panel(){
 	//Specialties panel
-	fixed_specialties_panel_width = logo_box_fixed_width*5.58;
+	fixed_specialties_panel_width = logo_box_fixed_width*6.58;
 
 	//The max panel to window width ratio is gotten by using the max panel width(fixed width computed above)
 	//and the max window width for intermediate window A(resize_threshold1)
@@ -394,7 +411,7 @@ function rebuild_specialties_panel(){
 	}
 	
 	specialty_box_width = (specialties_panel_width/3)-1;
-	specialty_box_height = logo_box_fixed_width*1.3;
+	specialty_box_height = logo_box_fixed_width*1.5;
 
 	if(resize_level < 3){
 		specialties_panel_height = specialty_box_height*1.33;	
@@ -661,8 +678,7 @@ function rebuild_content_homepage(){
 	//rebuild_bg_img();//On init and on scrool
 	//$(window).scrollTop(window.sessionStorage.scrollTop);
 	if(window.location.href.indexOf("index") > -1){
-	
-		rebuild_mission_statement_panel();
+		rebuild_mission_statement_box();
 	//$(window).scrollTop(window.sessionStorage.scrollTop);
 		rebuild_specialties_panel();
 		rebuild_contact_panel();

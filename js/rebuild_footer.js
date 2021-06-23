@@ -1,5 +1,5 @@
 
-function rebuild_mission_statement_box(){
+function rebuild_mission_statement_panel(){
 	footer_mission_statement_panel_width_to_window_width_ratio = footer_mission_statement_panel_fixed_width/resize_threshold1;
 	var footer_mission_statement_panel_width;
 	//var footer_mission_statement_panel_height = screen_width*0.25;
@@ -118,7 +118,7 @@ function rebuild_footer_contact_details_panel(){
 		footer_contact_details_panel_width = footer_contact_details_width;
 	}
 	
-	footer_contact_details_height = footer_contact_details_fixed_width;
+	footer_contact_details_height = footer_contact_details_fixed_width*0.8;
 	footer_map_panel_height = footer_contact_details_height;
 	if(resize_level <= 2){
 		footer_contact_details_panel_height = footer_contact_details_height;
@@ -175,7 +175,7 @@ function rebuild_footer_contact_details_panel(){
 
 function rebuild_marketing_panel(){
 	var marketing_panel_width;
-	var marketing_panel_height = screen_width*0.11;
+	var marketing_panel_height = screen_width*0.15;
 	var marketing_panel_box_width;
 	var marketing_panel_box_height = marketing_panel_height;
 	marketing_panel_width_to_window_width_ratio = marketing_panel_fixed_width/resize_threshold1;
@@ -243,7 +243,7 @@ function rebuild_marketing_panel(){
 
 function rebuild_footer(){
 
-	rebuild_mission_statement_box();
+	rebuild_mission_statement_panel();
 	rebuild_footer_contact_details_panel();
 	rebuild_marketing_panel();
 	
