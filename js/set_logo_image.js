@@ -45,7 +45,7 @@ function rebuild_logo_image1(){
 }
 
 
-function set_homepage_background_image_dimensions(window_width){
+function set_homepage_background_image_dimensions1(window_width){
 	//console.log(window_width)
 	//Set dimensions for homepage background container
 	//var homepage_width = window_width*1.05;

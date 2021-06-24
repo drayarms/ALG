@@ -223,6 +223,7 @@ function rebuild_bg_img_position(){
 	if(resize_level <= 2){
 		//alert(top_header_margin_top)
 		var resultant_top = -1*top_header_margin_top;//Maintain at least this distance
+		resultant_top += window.sessionStorage.scrollTop*background_scroll_factor; //Move against direction of scroll by a fraction, proportional to scroll top to give a bouncy effect
 		$("#homepage_background_image_container").css({
 			position: "absolute",
 			top: (resultant_top) + "px"
