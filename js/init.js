@@ -14,7 +14,7 @@ var header_max_width;//Width of header when page is maximized
 var background_scroll_factor = 0.44;//0.63;
 //var background_scroll_disp;	
 let top_header_to_header_core_height_ratio = 1.21;
-var should_scroll_background_image;
+//var should_scroll_background_image;
 var prev_window_top;
 var resize_threshold1;
 var resize_threshold2;
@@ -289,9 +289,38 @@ $(document).ready(function(){
 	//if (window.sessionStorage.scrollTop != "undefined") {//Forcibly maintains scrool position across sessions
 		//$(window).scrollTop(window.sessionStorage.scrollTop);//Set scroll top to saved session scroll top value
 	//}
+	//window.sessionStorage.removeItem('prev_url');
+	//window.sessionStorage.removeItem('url');	
+	window.sessionStorage.setItem('prev_url', sessionStorage.getItem('url'));
+	window.sessionStorage.setItem('url', location.href);
+	
 	if (window.sessionStorage.scrollTop != "undefined") {//Forcibly maintains scrool position across sessions
-		$(window).scrollTop(window.sessionStorage.scrollTop);//Set scroll top to saved session scroll top value
+		if(sessionStorage.getItem('prev_url') == sessionStorage.getItem('url')){
+			$(window).scrollTop(window.sessionStorage.scrollTop);//Set scroll top to saved session scroll top value
+		}
 	}	
+
+	
+	//alert("prev url "+sessionStorage.getItem('prev_url')+ " url "+sessionStorage.getItem('url'))	
+	//window.sessionStorage.removeItem('prev_url');
+	//window.sessionStorage.removeItem('url');
+	
+
+	
+	/*if(sessionStorage.getItem('prev_url') == sessionStorage.getItem('url')){
+		alert("equal")
+	}else{
+		alert("NOT equal")
+	}
+	window.sessionStorage.setItem('url', location.href);
+	window.sessionStorage.removeItem('url');
+	window.sessionStorage.clear();
+	//alert(sessionStorage.getItem('url'));
+	if(sessionStorage.getItem('url')){
+		alert(sessionStorage.getItem('url'))
+	}else{
+		alert(0)
+	}*/
 	//console.log("Page fully loaded. Session scroll top: "+window.sessionStorage.scrollTop+ ". Scroll top:"+$(window).scrollTop());
 	//alert("Page fully loaded. Session scroll top: "+window.sessionStorage.scrollTop+ ". Scroll top:"+$(window).scrollTop());
 	
