@@ -174,6 +174,7 @@ function rebuild_footer_contact_details_panel(){
 
 
 function rebuild_marketing_panel(){
+	$(".marketing_panel").css("border", "3px dotted red");
 	var marketing_panel_width;
 	var marketing_panel_height = screen_width*0.15;
 	var marketing_panel_box_width;
@@ -184,8 +185,10 @@ function rebuild_marketing_panel(){
 	
 	if(resize_level == 1){
 		marketing_panel_width = marketing_panel_fixed_width;
-	}else{
+	}else if(resize_level == 2){
 		marketing_panel_width = window_width*marketing_panel_width_to_window_width_ratio;
+	}else{
+		marketing_panel_width = window_width;
 	}
 	
 	marketing_panel_box_width = (marketing_panel_width/num_marketing_panel_boxes) - (6*num_marketing_panel_boxes);//Leave some gaps

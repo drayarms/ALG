@@ -101,6 +101,7 @@ function rebuild_elements(){
 		$(".social_media_panel").addClass("left_social_media_panel");		
 		
 	}
+	//$(".top_menu_bar").hide();//Prevents the unrpocessed menu bar from flickering b4 page fully loads
 	//console.log("1current session scroll top: "+window.sessionStorage.scrollTop);
 	//alert("1current session scroll top: "+window.sessionStorage.scrollTop);
 	if(window.location.href.indexOf("index") > -1) {

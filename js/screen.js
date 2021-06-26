@@ -2,7 +2,7 @@
 function get_menu_bar_width(){
 	header_core_width_to_window_width_ratio = header_core_fixed_width/resize_threshold1;
 	if(resize_level == 1){//Maintain header inner fixed width
-		return header_core_fixed_width*1.35;
+		return header_core_fixed_width;//*1.35;
 	}
 	
 	if(resize_level == 2){//Shrink header inner to fit window

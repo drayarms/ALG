@@ -674,7 +674,7 @@ function rebuild_content_homepage(){
 		top: panel_vertical_shift + "px"
 	});	
 	*/
-
+	var content_banner_width = get_menu_bar_width();
 	//$(window).scrollTop(window.sessionStorage.scrollTop);
 	//rebuild_bg_img();//On init and on scrool
 	//$(window).scrollTop(window.sessionStorage.scrollTop);
@@ -688,10 +688,18 @@ function rebuild_content_homepage(){
 		restyle_statements();
 		color_specialty_boxes();
 	}else{
-		var content_banner_width = get_menu_bar_width();
-		rebuild_content_banner(content_banner_width);
-		$(".attorneys_bio").css("width", content_banner_width +"px");
 		$(".disclaimer").css("width", content_banner_width +"px");
+		rebuild_content_banner(content_banner_width);
+	}
+	
+	if(window.location.href.indexOf("about_us") > -1){
+		$("#firm_info").css("width", content_banner_width +"px");
+		scale_and_position_image($("#firm_info_image"), $("#firm_info_image").parent(), 1);
+	}else if(window.location.href.indexOf("attorney_profiles") > -1){
+		
+		
+		$(".attorneys_bio").css("width", content_banner_width +"px");
+		
 		//$(".attorney_bio").each(function(){
 			//scale_and_position_image($(this).find(".bio_image"), $(this).find("bio_image_container"), 1);
 		//});

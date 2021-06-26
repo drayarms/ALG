@@ -224,7 +224,7 @@ $(document).ready(function(){
 	header_core_fixed_width = header_max_width*header_width_to_header_inner_width_ratio;//Should remain constant as long as page isn't shrunken enough
 	//header_inner_fixed_width = header_inner_width;
 	resize_threshold1 = header_core_fixed_width;
-	resize_threshold2 = header_max_width*0.48;//0.45;
+	resize_threshold2 = header_max_width*0.7;//0.48;//0.45;
 	resize_threshold3 = header_max_width*0.42;//0.38;
 	//console.log("from dimensions header inner fixed width "+header_inner_fixed_width);
 	//header_fixed_height = screen_width*0.104;//0.13;
@@ -240,7 +240,7 @@ $(document).ready(function(){
 	max_bg_img_container_height = max_bg_img_container_width*0.5;
 	max_container_to_bg_img_ratio = max_bg_img_container_width/original_bg_img_width;
 	//Height will always depend on how much the width has been streched/compressed. So use ideally pics that aren't too wide
-	footer_mission_statement_panel_fixed_width = header_core_fixed_width*1.3;
+	footer_mission_statement_panel_fixed_width = screen_width*0.68;//header_core_fixed_width*1.3;
 	footer_contact_details_fixed_width = screen_width*0.39;
 	footer_map_panel_fixed_width = screen_width*0.42;
 	marketing_panel_fixed_width = screen_width*0.7;
@@ -291,6 +291,7 @@ $(document).ready(function(){
 	//}
 	//window.sessionStorage.removeItem('prev_url');
 	//window.sessionStorage.removeItem('url');	
+	//$(".top_menu_bar").hide();//Prevents the unrpocessed menu bar from flickering b4 page fully loads
 	window.sessionStorage.setItem('prev_url', sessionStorage.getItem('url'));
 	window.sessionStorage.setItem('url', location.href);
 	
