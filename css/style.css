@@ -132,6 +132,31 @@ html{
 	font-weight:bold;
 }
 
+
+.content #contact_bulletin{
+	margin:auto;
+	margin-top:60px;
+	text-align: left;	
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+	font-size:90%;	
+	line-height:1.7;
+}
+
+.content #contact_bulletin #firm_title{
+	color:#ba2d8b;
+	font-weight:bold;
+	font-size:105%;
+}
+
+.content #contact_bulletin .highlighted{
+	font-weight:bold;
+}
+
+.content #contact_bulletin a{
+	text-decoration: underline;
+	color:black;
+}
+
 .content .content_attorney_profile{
 	
 }
@@ -201,14 +226,6 @@ html{
 }
 
 
-
-
-
-
-
-
-
-
 .content #firm_info{
 	margin-top:30px;
 	margin-left:auto;
@@ -221,7 +238,7 @@ html{
 	float:right;
 	width:330px;
 	height:280px;
-	border:1px solid #001a33;
+	border:1px solid transparent;/* #001a33;*/
 	border-radius:5%;	
 	overflow:hidden;
 	margin-left:2%;
@@ -244,21 +261,6 @@ html{
 	font-size:130%;
 	font-weight:bold;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 .content_homepage #attorney_panel{

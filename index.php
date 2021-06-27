@@ -5,7 +5,7 @@
 	$page_title = "Akofu Law Group Home";
 	
 	require "header.php";
-	require "index_content.php";
+	require "index-content.php";
 	require "footer.php";
 	
 ?>

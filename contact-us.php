@@ -1,10 +1,10 @@
 <?php
 
 	$page_index = 2;
-	$page_title = "Attorney Profiles";
+	$page_title = "Contact Us";
 	
 	require "header.php";
-	require "attorney_profiles_content.php";
+	require "contact-us-content.php";
 	require "footer.php";
 	
 ?>

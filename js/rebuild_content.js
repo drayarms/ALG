@@ -692,10 +692,10 @@ function rebuild_content_homepage(){
 		rebuild_content_banner(content_banner_width);
 	}
 	
-	if(window.location.href.indexOf("about_us") > -1){
+	if(window.location.href.indexOf("about-us") > -1){
 		$("#firm_info").css("width", content_banner_width +"px");
 		scale_and_position_image($("#firm_info_image"), $("#firm_info_image").parent(), 1);
-	}else if(window.location.href.indexOf("attorney_profiles") > -1){
+	}else if(window.location.href.indexOf("attorney-profiles") > -1){
 		
 		
 		$(".attorneys_bio").css("width", content_banner_width +"px");
@@ -706,6 +706,9 @@ function rebuild_content_homepage(){
 		$(".attorney_bio_image").each(function(){
 			scale_and_position_image($(this), $(this).parent(), 1);
 		});		
+	}else if(window.location.href.indexOf("contact-us") > -1){
+		$("#contact_bulletin").css("width", content_banner_width +"px");
+		$("#contact_us_page_form").css("width", content_banner_width +"px");
 	}
 	
 	/*
