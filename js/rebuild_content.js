@@ -386,30 +386,24 @@ function rebuild_mission_statement_box(){
 
 function rebuild_specialties_panel(){
 	//Specialties panel
-	fixed_specialties_panel_width = logo_box_fixed_width*6.58;
+	//fixed_specialties_panel_width = logo_box_fixed_width*6.58;
 
 	//The max panel to window width ratio is gotten by using the max panel width(fixed width computed above)
 	//and the max window width for intermediate window A(resize_threshold1)
-	specialties_panel_width_to_window_width_ratio = fixed_specialties_panel_width/resize_threshold1;
-	var specialties_panel_width;
+	//specialties_panel_width_to_window_width_ratio = fixed_specialties_panel_width/resize_threshold1;
+	var specialties_panel_width = get_menu_bar_width(0.85);
 	var specialties_panel_height;
 	var specialty_box_width;
 	var specialty_box_height;
-	if(resize_level == 1){
+	/*if(resize_level == 1){
 		specialties_panel_width = fixed_specialties_panel_width;
-		//$(".specialties_panel").css("background-color", "none");
-		//console.log(specialties_panel_width);
 	}
 	if(resize_level == 2){
 		specialties_panel_width = window_width*specialties_panel_width_to_window_width_ratio;
-		//$(".specialties_panel").css("background-color", "none");
-		//console.log(specialties_panel_width);
 	}
 	if(resize_level > 2){
 		specialties_panel_width = window_width//*0.95;
-		//$(".specialties_panel").css("background-color", "#d9d9d9");
-		//#d9d9d9
-	}
+	}*/
 	
 	specialty_box_width = (specialties_panel_width/3)-1;
 	specialty_box_height = logo_box_fixed_width*1.5;
@@ -531,8 +525,10 @@ function rebuild_attorney_panel(){
 	}	
 	//centralize_element_horizontally($("#attorney_panel")); 
 
-	scale_and_position_image($("#attorney_photo"), $("#attorney_photo_container"), 0.95);	
-	$("#attorney_photo").show();
+	$("#attorney_photo").show();//Show before scaling and positioning coz hidden element's width and height would be 0
+	window.setTimeout(function(){
+		scale_and_position_image($("#attorney_photo"), $("#attorney_photo_container"), 0.95);
+	}, 100);//Give a sufficient enough delay for image to be rendered first before scaling/positioning	
 }
 
 
@@ -644,7 +640,7 @@ function rebuild_content_banner(content_banner_width){
 	//centralize_element_vertically($(".content_banner").find("span"));
 }
 
-function rebuild_content_homepage(){
+function rebuild_content(){
 	//Content
 	//Set min height for class content	
 	//document_height = $(document).height();
@@ -674,7 +670,7 @@ function rebuild_content_homepage(){
 		top: panel_vertical_shift + "px"
 	});	
 	*/
-	var content_banner_width = get_menu_bar_width();
+	var content_banner_width = get_menu_bar_width(1);
 	//$(window).scrollTop(window.sessionStorage.scrollTop);
 	//rebuild_bg_img();//On init and on scrool
 	//$(window).scrollTop(window.sessionStorage.scrollTop);
@@ -696,7 +692,6 @@ function rebuild_content_homepage(){
 		$("#firm_info").css("width", content_banner_width +"px");
 		scale_and_position_image($("#firm_info_image"), $("#firm_info_image").parent(), 1);
 	}else if(window.location.href.indexOf("attorney-profiles") > -1){
-		
 		
 		$(".attorneys_bio").css("width", content_banner_width +"px");
 		

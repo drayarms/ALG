@@ -1,13 +1,13 @@
 
-function get_menu_bar_width(){
+function get_menu_bar_width(fraction_of_menu_bar){
 	header_core_width_to_window_width_ratio = header_core_fixed_width/resize_threshold1;
 	if(resize_level == 1){//Maintain header inner fixed width
-		return header_core_fixed_width;//*1.35;
+		return header_core_fixed_width*fraction_of_menu_bar;//*1.35;
 	}
 	
 	if(resize_level == 2){//Shrink header inner to fit window
 		//console.log(2)
-		return window_width*header_core_width_to_window_width_ratio;
+		return (window_width*header_core_width_to_window_width_ratio);
 	}	
 	
 	if(resize_level == 3){//Collapse header
@@ -33,8 +33,7 @@ function rebuild_flap_header_close_icon(){
 }
 
 
-function rebuild_menu_bar(){
-				
+function rebuild_menu_bar(){		
 	$(".menu_bar").each(function(){//All menu bar instances
 		var $this = $(this);
 		var num_menu_items = $this.find(".menu_item").length;
@@ -53,7 +52,7 @@ function rebuild_menu_bar(){
 			if(resize_level <= 2){
 				//$(this).css("padding-top", "0px");//Remove any padding from previous window configuration
 				var menu_bar_height = screen_width*0.03;
-				var menu_bar_width = get_menu_bar_width(resize_level, window_width);
+				var menu_bar_width = get_menu_bar_width(1);
 	
 				$this.css("height", menu_bar_height+"px");
 				$this.css("width", menu_bar_width+"px");

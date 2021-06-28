@@ -29,13 +29,13 @@ var header_core_fixed_width;
 var menu_bar_height;
 var menu_bar_item_height;
 var menu_bar_item_width;
-var footer_mission_statement_panel_fixed_width;
+//var footer_mission_statement_panel_fixed_width;
 var footer_mission_statement_panel_width_to_window_width_ratio;
 var footer_contact_details_fixed_width;
 var footer_map_panel_width_to_window_width_ratio;
 var footer_map_panel_fixed_width;
 var marketing_panel_width_to_window_width_ratio;
-var marketing_panel_fixed_width;
+//var marketing_panel_fixed_width;
 var menu_item_anchor_original_height;
 //var original_menu_item_widths = [];
 //var menu_items_collective_width = 0;
@@ -44,12 +44,12 @@ var menu_item_anchor_original_height;
 var specialties_panel_width_to_window_width_ratio;
 var header_core_width_to_window_width_ratio;
 var window_to_header_width_ratio = 0.999;
-var header_width_to_header_inner_width_ratio = 0.6;
-var	max_bg_img_container_width;
-var	max_bg_img_container_height;
-var	max_container_to_bg_img_ratio;
-var original_bg_img_width;
-var original_bg_img_height;
+//var header_width_to_header_inner_width_ratio = 0.6;
+//var	max_bg_img_container_width;
+//var	max_bg_img_container_height;
+//var	max_container_to_bg_img_ratio;
+//var original_bg_img_width;
+//var original_bg_img_height;
 var specialty_text_time = 0;
 var bg_img_time = 0;
 var specialty_statement_count;
@@ -219,31 +219,32 @@ $(document).ready(function(){
 
 	//Header dimensions
 	//Header dimensions
-	header_max_width = screen_width*window_to_header_width_ratio;//Width of maximized header
-	header_width_original = window_width_original*window_to_header_width_ratio;//Width of resized header
-	header_core_fixed_width = header_max_width*header_width_to_header_inner_width_ratio;//Should remain constant as long as page isn't shrunken enough
+	header_max_width = screen_width;//*window_to_header_width_ratio;//Width of maximized header
+	//header_width_original = window_width_original;//*window_to_header_width_ratio;//Width of resized header
+	//header_core_fixed_width = (screen_width - scroll_width)*header_width_to_header_inner_width_ratio;//Should remain constant as long as page isn't shrunken enough
 	//header_inner_fixed_width = header_inner_width;
-	resize_threshold1 = header_core_fixed_width;
-	resize_threshold2 = header_max_width*0.7;//0.48;//0.45;
-	resize_threshold3 = header_max_width*0.42;//0.38;
+	resize_threshold1 = (screen_width - scroll_width)*0.8; //header_core_fixed_width;
+	resize_threshold2 = (screen_width - scroll_width)*0.55; //header_max_width*0.7;//0.48;//0.45;
+	resize_threshold3 = (screen_width - scroll_width)*0.42; //header_max_width*0.42;//0.38;
 	//console.log("from dimensions header inner fixed width "+header_inner_fixed_width);
 	//header_fixed_height = screen_width*0.104;//0.13;
 	//header_core_fixed_height = header_fixed_height*0.8;//header_fixed_height*0.8;	
+	header_core_fixed_width = resize_threshold1*0.9;//Should remain constant. Must be less than resize threshold1
 	
 	logo_box_fixed_width = screen_width*0.09;//resize_threshold1*0.15;
 	logo_box_fixed_height = logo_box_fixed_width;//header_core_fixed_height*0.75;
 	//alert(inner_header_fixed_width);
 	
-	original_bg_img_width = $(".homepage_background_image").width();
-	original_bg_img_height = $(".homepage_background_image").height();
-	max_bg_img_container_width = screen_width;//Use pictures that are not too wide. Narrow is ok but screen proportions is ideal	
-	max_bg_img_container_height = max_bg_img_container_width*0.5;
-	max_container_to_bg_img_ratio = max_bg_img_container_width/original_bg_img_width;
+	//original_bg_img_width = $(".homepage_background_image").width();
+	//original_bg_img_height = $(".homepage_background_image").height();
+	//max_bg_img_container_width = screen_width;//Use pictures that are not too wide. Narrow is ok but screen proportions is ideal	
+	//max_bg_img_container_height = max_bg_img_container_width*0.5;
+	//max_container_to_bg_img_ratio = max_bg_img_container_width/original_bg_img_width;
 	//Height will always depend on how much the width has been streched/compressed. So use ideally pics that aren't too wide
-	footer_mission_statement_panel_fixed_width = screen_width*0.68;//header_core_fixed_width*1.3;
+	//footer_mission_statement_panel_fixed_width = screen_width*0.68;//header_core_fixed_width*1.3;
 	footer_contact_details_fixed_width = screen_width*0.39;
 	footer_map_panel_fixed_width = screen_width*0.42;
-	marketing_panel_fixed_width = screen_width*0.7;
+	//marketing_panel_fixed_width = screen_width*0.7;
 	menu_item_anchor_original_height = $(".menu_item_anchor").eq(10).height();
 	
 	//specialties_panel_max_width = ;
@@ -301,6 +302,11 @@ $(document).ready(function(){
 		}
 	}	
 
+
+
+	$(".to_top").click(function(){
+		$(window).scrollTop(0);
+	});
 	
 	//alert("prev url "+sessionStorage.getItem('prev_url')+ " url "+sessionStorage.getItem('url'))	
 	//window.sessionStorage.removeItem('prev_url');

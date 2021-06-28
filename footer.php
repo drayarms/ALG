@@ -88,7 +88,7 @@
 			<div class = "footer_lower_half" style = "">
 				<div class = "marketing_panel">
 					<div class = "marketing_panel_box meet_attorney_box">
-						<a href="attorney_profiles.html">
+						<a href="attorney-profiles.php" class = "to_top">
 							<div class = "marketing_panel_icon"> 
 								<i class="fa fa-briefcase"></i>
 							</div>
@@ -99,7 +99,7 @@
 						</a>
 					</div>
 					<div class = "marketing_panel_box consultation_box"> 
-						<a href="index.html">
+						<a href="contact-us.php" class = "to_top">
 							<div class = "marketing_panel_icon"> 
 								<i class="fa fa-calendar"></i>
 							</div>
@@ -110,7 +110,7 @@
 						</a>
 					</div>
 					<div class = "marketing_panel_box referrals_box"> 
-						<a href="index.html">
+						<a href="index.php" class = "to_top">
 							<div class = "marketing_panel_icon"> 
 								<i class="fa fa-users"></i>
 							</div>
@@ -132,7 +132,7 @@
 							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 							cillum dolore eu fugiat nulla pariatur.
 						</h5>
-						<h3><a href="about_us.php">About Us</a></h3>					
+						<h3><a href="about-us.php">About Us</a></h3>					
 					</div>
 					<div class = "footer_mission_statement_picture" style = "">
 						<img class = "footer_mission_statement_photo" style = "display:none" src="images/background_images/btm3-img1.webp" alt="Colleagues">

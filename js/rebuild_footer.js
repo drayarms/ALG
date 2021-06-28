@@ -1,7 +1,7 @@
 
 function rebuild_mission_statement_panel(){
-	footer_mission_statement_panel_width_to_window_width_ratio = footer_mission_statement_panel_fixed_width/resize_threshold1;
-	var footer_mission_statement_panel_width;
+	//footer_mission_statement_panel_width_to_window_width_ratio = footer_mission_statement_panel_fixed_width/resize_threshold1;
+	var footer_mission_statement_panel_width = get_menu_bar_width(0.85);
 	//var footer_mission_statement_panel_height = screen_width*0.25;
 	var footer_mission_statement_panel_height;
 	var footer_mission_statement_width;
@@ -11,17 +11,17 @@ function rebuild_mission_statement_panel(){
 	var footer_mission_statement_picture_height;
 	
 
-	if(resize_level == 1){
+	/*if(resize_level == 1){
 		footer_mission_statement_panel_width = footer_mission_statement_panel_fixed_width;
 
 	}
 	
 	if(resize_level == 2){
 		footer_mission_statement_panel_width = window_width*footer_mission_statement_panel_width_to_window_width_ratio;
-	}
+	}*/
 	
 	if(resize_level > 2){//Disappear picture and make statement 100% of container
-		footer_mission_statement_panel_width = window_width*window_to_header_width_ratio;
+		//footer_mission_statement_panel_width = window_width*window_to_header_width_ratio;
 		//footer_mission_statement_width = footer_mission_statement_panel_width;
 		centralize_element_horizontally($(".footer_mission_statement"));
 	}else{
@@ -35,8 +35,8 @@ function rebuild_mission_statement_panel(){
 	if(resize_level > 2){
 		footer_mission_statement_width = footer_mission_statement_panel_width;
 	}else{
-		footer_mission_statement_width = footer_mission_statement_panel_width*0.48;
-		footer_mission_statement_picture_width = footer_mission_statement_panel_width*0.48;
+		footer_mission_statement_width = footer_mission_statement_panel_width*0.52;
+		footer_mission_statement_picture_width = footer_mission_statement_panel_width*0.46;
 		footer_mission_statement_picture_height = footer_mission_statement_picture_width*0.95;
 	}
 	//console.log("pic w "+footer_mission_statement_picture_width+" pic h "+footer_mission_statement_picture_height);
@@ -46,14 +46,14 @@ function rebuild_mission_statement_panel(){
 	if(footer_mission_statement_height > footer_mission_statement_picture_height){
 		footer_mission_statement_panel_height = footer_mission_statement_height;
 	}
-	
+
 	$(".footer_mission_statement_panel").css("width", footer_mission_statement_panel_width +"px");
 	$(".footer_mission_statement_panel").css("height", footer_mission_statement_panel_height +"px");
 	$(".footer_mission_statement").css("width", footer_mission_statement_width +"px");
 	$(".footer_mission_statement").css("height", footer_mission_statement_height +"px");
 	$(".footer_mission_statement_picture").css("width", footer_mission_statement_picture_width +"px");
 	$(".footer_mission_statement_picture").css("height", footer_mission_statement_picture_height +"px");
-
+	//alert("container w "+$(".footer_mission_statement_picture").width()+" container h "+$(".footer_mission_statement_picture").height());
 	centralize_element_horizontally($(".footer_mission_statement_panel"));
 	
 	if(resize_level <= 2){
@@ -77,9 +77,11 @@ function rebuild_mission_statement_panel(){
 	}else{
 		//Scale and place picture
 		$(".footer_mission_statement_picture").show();
-		scale_and_position_image($("#attorney_photo"), $("#attorney_photo_container"), 1);
-		scale_and_position_image($(".footer_mission_statement_photo"), $(".footer_mission_statement_picture"), 1);
-		$(".footer_mission_statement_photo").show();
+		//scale_and_position_image($("#attorney_photo"), $("#attorney_photo_container"), 1);
+		$(".footer_mission_statement_photo").show();//Show before scaling and positioning coz hidden element's width and height would be 0
+		window.setTimeout(function(){
+			scale_and_position_image($(".footer_mission_statement_photo"), $(".footer_mission_statement_picture"), 1);
+		}, 100);//Give a sufficient enough delay for image to be rendered first before scaling/positioning
 	}	
 }
 
@@ -174,22 +176,23 @@ function rebuild_footer_contact_details_panel(){
 
 
 function rebuild_marketing_panel(){
-	$(".marketing_panel").css("border", "3px dotted red");
-	var marketing_panel_width;
+	//$(".marketing_panel").css("border", "3px dotted red");
+	//$(".marketing_panel").css("margin", "0");
+	var marketing_panel_width = get_menu_bar_width(0.7);
 	var marketing_panel_height = screen_width*0.15;
 	var marketing_panel_box_width;
 	var marketing_panel_box_height = marketing_panel_height;
-	marketing_panel_width_to_window_width_ratio = marketing_panel_fixed_width/resize_threshold1;
+	//marketing_panel_width_to_window_width_ratio = marketing_panel_fixed_width/resize_threshold1;
 	var num_marketing_panel_boxes = $(".marketing_panel_box").length;
 	
 	
-	if(resize_level == 1){
+	/*if(resize_level == 1){
 		marketing_panel_width = marketing_panel_fixed_width;
 	}else if(resize_level == 2){
 		marketing_panel_width = window_width*marketing_panel_width_to_window_width_ratio;
 	}else{
 		marketing_panel_width = window_width;
-	}
+	}*/
 	
 	marketing_panel_box_width = (marketing_panel_width/num_marketing_panel_boxes) - (6*num_marketing_panel_boxes);//Leave some gaps
 

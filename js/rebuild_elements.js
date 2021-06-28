@@ -108,7 +108,7 @@ function rebuild_elements(){
 		rebuild_bg_img_dimensions();
 	}	
 	rebuild_header();
-	rebuild_content_homepage();
+	rebuild_content();
 	rebuild_footer();
 	if(window.location.href.indexOf("index") > -1) {
 		rebuild_bg_img_position();
