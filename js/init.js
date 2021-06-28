@@ -30,11 +30,11 @@ var menu_bar_height;
 var menu_bar_item_height;
 var menu_bar_item_width;
 //var footer_mission_statement_panel_fixed_width;
-var footer_mission_statement_panel_width_to_window_width_ratio;
+//var footer_mission_statement_panel_width_to_window_width_ratio;
 var footer_contact_details_fixed_width;
-var footer_map_panel_width_to_window_width_ratio;
-var footer_map_panel_fixed_width;
-var marketing_panel_width_to_window_width_ratio;
+//var footer_map_panel_width_to_window_width_ratio;
+//var footer_map_panel_fixed_width;
+//var marketing_panel_width_to_window_width_ratio;
 //var marketing_panel_fixed_width;
 var menu_item_anchor_original_height;
 //var original_menu_item_widths = [];
@@ -242,8 +242,8 @@ $(document).ready(function(){
 	//max_container_to_bg_img_ratio = max_bg_img_container_width/original_bg_img_width;
 	//Height will always depend on how much the width has been streched/compressed. So use ideally pics that aren't too wide
 	//footer_mission_statement_panel_fixed_width = screen_width*0.68;//header_core_fixed_width*1.3;
-	footer_contact_details_fixed_width = screen_width*0.39;
-	footer_map_panel_fixed_width = screen_width*0.42;
+	footer_contact_details_fixed_width = screen_width*0.28;
+	//footer_map_panel_fixed_width = screen_width*0.42;
 	//marketing_panel_fixed_width = screen_width*0.7;
 	menu_item_anchor_original_height = $(".menu_item_anchor").eq(10).height();
 	

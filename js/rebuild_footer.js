@@ -21,15 +21,17 @@ function rebuild_mission_statement_panel(){
 	}*/
 	
 	if(resize_level > 2){//Disappear picture and make statement 100% of container
+		$(".footer_mission_statement").css("margin", "auto");
 		//footer_mission_statement_panel_width = window_width*window_to_header_width_ratio;
 		//footer_mission_statement_width = footer_mission_statement_panel_width;
-		centralize_element_horizontally($(".footer_mission_statement"));
+		//centralize_element_horizontally($(".footer_mission_statement"));
 	}else{
 		//Uncentralize
-		$(".footer_mission_statement").css({
+		$(".footer_mission_statement").css("margin", "0");
+		/*$(".footer_mission_statement").css({
 			position: "relative",
 			left: "0px"
-		});			
+		});	*/		
 	}
 	
 	if(resize_level > 2){
@@ -74,6 +76,7 @@ function rebuild_mission_statement_panel(){
 	if(resize_level > 2){//Disappear picture and make statement 100% of container
 		$(".footer_mission_statement_picture").hide();
 		$(".footer_mission_statement_photo").hide();
+		$(".footer_mission_statement").css("margin-top", "40px");
 	}else{
 		//Scale and place picture
 		$(".footer_mission_statement_picture").show();
@@ -82,21 +85,22 @@ function rebuild_mission_statement_panel(){
 		window.setTimeout(function(){
 			scale_and_position_image($(".footer_mission_statement_photo"), $(".footer_mission_statement_picture"), 1);
 		}, 100);//Give a sufficient enough delay for image to be rendered first before scaling/positioning
+		$(".footer_mission_statement").css("margin-top", "0px");
 	}	
 }
 
 
 
 function rebuild_footer_contact_details_panel(){
-	var footer_contact_details_panel_width;
+	var footer_contact_details_panel_width = get_menu_bar_width(1);
 	var footer_contact_details_panel_height;
 	var footer_contact_details_width;
 	var footer_contact_details_height;
 	var footer_map_panel_width;
 	var footer_map_panel_height;
-	footer_map_panel_width_to_window_width_ratio = footer_map_panel_fixed_width/resize_threshold1;
+	//footer_map_panel_width_to_window_width_ratio = footer_map_panel_fixed_width/resize_threshold1;
 	
-	if(resize_level == 1){
+	/*if(resize_level == 1){
 		footer_map_panel_width = footer_map_panel_fixed_width;
 	}	
 	if(resize_level == 2){
@@ -104,20 +108,22 @@ function rebuild_footer_contact_details_panel(){
 	}
 	if(resize_level > 2){//min
 		footer_map_panel_width = window_width*window_to_header_width_ratio;
-	}
+	}*/
 
 	
 	if(resize_level <= 2){
 		footer_contact_details_width = footer_contact_details_fixed_width;
 	}else{//Min
-		footer_contact_details_width = window_width*window_to_header_width_ratio;
+		footer_contact_details_width = window_width;
 	}
 	
 	
 	if(resize_level <= 2){
-		footer_contact_details_panel_width = footer_contact_details_width + footer_map_panel_width;
+		footer_map_panel_width = footer_contact_details_panel_width - footer_contact_details_width;
+		//footer_contact_details_panel_width = footer_contact_details_width + footer_map_panel_width;
 	}else{//Min
-		footer_contact_details_panel_width = footer_contact_details_width;
+		footer_map_panel_width = footer_contact_details_panel_width;
+		//footer_contact_details_panel_width = footer_contact_details_width;
 	}
 	
 	footer_contact_details_height = footer_contact_details_fixed_width*0.8;
@@ -148,24 +154,28 @@ function rebuild_footer_contact_details_panel(){
 		$(".footer_contact_details").css("float", "left");
 		$(".footer_map_panel").css("float", "right");
 		//Uncentralize
-		$(".footer_contact_details").css({
+		$(".footer_contact_details").css("margin", "0");
+		$(".footer_map_panel").css("margin", "0");
+		/*$(".footer_contact_details").css({
 			position: "relative",
 			left: "0px"
 		});		
 		$(".footer_map_panel").css({
 			position: "relative",
 			left: "0px"
-		});		
+		});	*/	
 	}else{//Min
 		//Unfloat left
 		$(".footer_contact_details").css("float", "none");
 		$(".footer_map_panel").css("float", "none");		
 		//Centralize
-		centralize_element_horizontally($(".footer_contact_details"));	
-		centralize_element_horizontally($(".footer_map_panel"));			
+		$(".footer_contact_details").css("margin", "auto");
+		$(".footer_map_panel").css("margin", "auto");
+		//centralize_element_horizontally($(".footer_contact_details"));	
+		//centralize_element_horizontally($(".footer_map_panel"));			
 	}
 
-	centralize_element_horizontally($(".footer_contact_details_panel"));	
+	//centralize_element_horizontally($(".footer_contact_details_panel"));	
 	
 	//$(".footer_contact_details").css("background-color", theme_darkblue1);
 	
@@ -176,6 +186,7 @@ function rebuild_footer_contact_details_panel(){
 
 
 function rebuild_marketing_panel(){
+	//console.log("from marketing panel")
 	//$(".marketing_panel").css("border", "3px dotted red");
 	//$(".marketing_panel").css("margin", "0");
 	var marketing_panel_width = get_menu_bar_width(0.7);

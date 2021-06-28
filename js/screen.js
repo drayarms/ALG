@@ -11,12 +11,12 @@ function get_menu_bar_width(fraction_of_menu_bar){
 	}	
 	
 	if(resize_level == 3){//Collapse header
-		//console.log(3)
+		console.log(3)
 		return window_width;		
 	}	
 	
 	if(resize_level == 4){//Collapse header
-		//console.log(4)
+		console.log(4)
 		return window_width;		
 	}	
 }
