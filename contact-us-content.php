@@ -7,7 +7,7 @@
 			
 			<div id = "contact_bulletin">	
 			
-				<p id = "firm_title">Akofu Law Group</br></p>
+				<div id = "firm_title">Akofu Law Group</br></div>
 				
 				<p>
 				805 Pleasant Hill Rd Unit 201</br>
@@ -23,35 +23,35 @@
 				
 				<form id = "contact_us_page_form" action="#" method="POST">
 					<p id = "required_info">*Required Information</p>
-					<fieldset class = "fieldset1">
-						<legend>Full Name*</legend>
-						<input type="text" id="" class = "form_input" name="fname" value = "First Name">
-						<input type="text" id="" class = "form_input" name="lname" value = "Last Name">
+					<fieldset class = "">
+						<legend>Full Name<span class = "ast">*</span></legend>
+						<input type="text" id="" class = "form_input left_input" name="fname" value = "First Name">
+						<input type="text" id="" class = "form_input right_input" name="lname" value = "Last Name">
 					</fieldset>
 
-					<fieldset class = "fieldset2">
-						<legend>Address*</legend>
-						<input type="text" id="" class = "form_input" name="addy1" value = "Address Line 1">
-						<input type="text" id="" class = "form_input" name="addy2" value = "Address Line 2">
+					<fieldset class = "">
+						<legend>Address<span class = "ast">*</span></legend>
+						<input type="text" id="" class = "form_input left_input" name="addy1" value = "Address Line 1">
+						<input type="text" id="" class = "form_input right_input" name="addy2" value = "Address Line 2">
 					</fieldset>
-	
-					<fieldset class = "fieldset3">
-						<legend>Address*</legend>
-						<input type="text" id="" class = "form_input" name="addy1" value = "Address Line 1">
-						<input type="text" id="" class = "form_input" name="addy2" value = "Address Line 2">
-					</fieldset>	
+
+					<fieldset class = "">
+						<legend>Contact<span class = "ast">*</span></legend>
+						<input type="text" id="" class = "form_input left_input" name="email" value = "Enter Email">
+						<input type="text" id="" class = "form_input right_input" name="phone" value = "Enter Phone Number">
+					</fieldset>		
 					
-					<fieldset class = "fieldset4">
-						<legend>Email*</legend>
+					<!--<fieldset class = "fieldset3 left_fieldset">
+						<legend>Email<span class = "ast">*</span></legend>
 						<input type="text" id="" class = "form_input" name="email" value = "Enter Email">
 					</fieldset>		
 
-					<fieldset class = "fieldset5">
-						<legend>Phone*</legend>
+					<fieldset class = "fieldset4 right_fieldset">
+						<legend>Phone<span class = "ast">*</span></legend>
 						<input type="text" id="" class = "form_input" name="phone" value = "Enter Phone Number">
-					</fieldset>					
+					</fieldset>	-->				
 					
-					<fieldset class = "fieldset6">
+					<fieldset class = "">
 						<legend>Question/Comment</legend>
 						<textarea id="" class = "" name="message">
 							Enter your question/comment.

@@ -1,0 +1,85 @@
+
+.content #contact_bulletin{
+	margin:auto;
+	margin-top:60px;
+	text-align: left;	
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+	font-size:90%;	
+	line-height:1.7;
+}
+
+.content #contact_bulletin #firm_title{
+	color:#ba2d8b;
+	font-weight:bold;
+	font-size:105%;
+}
+
+.content #contact_bulletin .highlighted{
+	font-weight:bold;
+}
+
+.content #contact_bulletin a{
+	text-decoration: underline;
+	color:black;
+}
+
+.content #contact_us_page_form{
+	/*border:2px solid #e6e6e6;*/
+	/*background-color:#f2f2f2;*/
+	/*background:#cca300;*/
+	border-radius:1%;
+	margin-top:20px;
+	margin-bottom:40px;
+	/*padding-left:15px;
+	padding-right:15px;*/
+	padding-top:10px;
+	padding-bottom:30px;
+}
+
+.content #contact_us_page_form #required_info{
+	/*padding-left:5%;*//*Based on form width and fieldset width % difference*/
+	font-size:120%;
+	font-weight:bold;
+	color:red;
+}
+
+.content #contact_us_page_form fieldset{
+	/*width:90%;*/
+	/*margin:auto;*/
+	font-size:130%;
+	font-weight:bold;	
+	border:none;
+}
+
+.content #contact_us_page_form fieldset .form_input{
+	width:100%;
+	border:none;
+	padding-left:20px;
+	height:60px;
+	font-size:80%;
+	background-color:#00264d;/*#001a33;*/
+	color:#ffffff;
+}
+
+.content #contact_us_page_form fieldset textarea{
+	background-color:#00264d;/*#001a33;*/
+	color:#ffffff;
+}
+
+.content #contact_us_page_form fieldset .form_submit{
+
+}
+
+.content #contact_us_page_form .fieldset3{
+	/*width:46%;
+	float:left;*/
+}
+
+.content #contact_us_page_form .fieldset4{
+	/*width:46%;
+	float:right;*/
+}
+
+.ast{
+	color:red;
+}

@@ -21,6 +21,9 @@ a img {
 	border: none;
 }
 
+form fieldset input{
+	box-sizing:border-box;/*Contains input in its container fieldset*/
+}
 
 /*Document should fill entire browser window and be stretchable*/
 html{
@@ -133,29 +136,7 @@ html{
 }
 
 
-.content #contact_bulletin{
-	margin:auto;
-	margin-top:60px;
-	text-align: left;	
-	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
-	font-size:90%;	
-	line-height:1.7;
-}
 
-.content #contact_bulletin #firm_title{
-	color:#ba2d8b;
-	font-weight:bold;
-	font-size:105%;
-}
-
-.content #contact_bulletin .highlighted{
-	font-weight:bold;
-}
-
-.content #contact_bulletin a{
-	text-decoration: underline;
-	color:black;
-}
 
 .content .content_attorney_profile{
 	
@@ -383,7 +364,7 @@ html{
 	width:100%;
 	/*margin:0px;*/
 	/*padding:0px;*/
-	box-sizing:border-box;/*Contains input in its container fieldset*/
+	/*box-sizing:border-box;*//*Contains input in its container fieldset*/
 	margin-bottom:0.6%;
 	height:33.9%;
 	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
@@ -1349,3 +1330,4 @@ div{
 }
 
 /*To achieve a consistent result cross browser, you would usually add another div inside the div and give that no explicit width, and a margin. The margin will simulate padding for the outer div.*/
+

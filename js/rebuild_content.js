@@ -704,6 +704,30 @@ function rebuild_content(){
 	}else if(window.location.href.indexOf("contact-us") > -1){
 		$("#contact_bulletin").css("width", content_banner_width +"px");
 		$("#contact_us_page_form").css("width", content_banner_width +"px");
+		//$("#required_info").css("margin-left", (($("#contact_bulletin").width() - $("#contact_us_page_form").width())/2)+"px");
+		if(resize_level <= 2){
+			//$(".fieldset1 .form_input").css("width", "49%");
+			$(".left_input").css("float", "left");
+			$(".left_input").css("width", "49.5%");
+			$(".right_input").css("float", "right");
+			$(".right_input").css("width", "49.5%");
+			
+			/*$(".left_fieldset").css("float", "left");
+			$(".left_fieldset").css("width", "45.5%");
+			$(".right_fieldset").css("float", "right");
+			$(".right_fieldset").css("width", "45.5%");*/
+		}else{
+			//$(".fieldset1 .form_input").css("width", "100%");
+			$(".left_input").css("float", "none");
+			$(".left_input").css("width", "100%");
+			$(".right_input").css("float", "none");
+			$(".right_input").css("width", "100%");
+			
+			/*$(".left_fieldset").css("float", "none");
+			$(".left_fieldset").css("width", "100%");
+			$(".right_fieldset").css("float", "none");
+			$(".right_fieldset").css("width", "100%");*/			
+		}
 	}
 	
 	/*

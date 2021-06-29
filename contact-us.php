@@ -1,6 +1,6 @@
 <?php
 
-	$page_index = 2;
+	$page_index = 7;
 	$page_title = "Contact Us";
 	
 	require "header.php";
