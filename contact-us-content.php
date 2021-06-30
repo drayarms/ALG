@@ -25,20 +25,20 @@
 					<p id = "required_info">*Required Information</p>
 					<fieldset class = "">
 						<legend>Full Name<span class = "ast">*</span></legend>
-						<input type="text" id="" class = "form_input left_input" name="fname" value = "First Name">
-						<input type="text" id="" class = "form_input right_input" name="lname" value = "Last Name">
+						<input type="text" id="contact_us_fname" class = "form_input_space form_input left_input input_default" name="fname" value = "" placeholder = "First Name" maxlength = 20>
+						<input type="text" id="contact_us_lname" class = "form_input_space form_input right_input input_default" name="lname" value = "" placeholder = "Last Name" maxlength = 20>
 					</fieldset>
 
 					<fieldset class = "">
 						<legend>Address<span class = "ast">*</span></legend>
-						<input type="text" id="" class = "form_input left_input" name="addy1" value = "Address Line 1">
-						<input type="text" id="" class = "form_input right_input" name="addy2" value = "Address Line 2">
+						<input type="text" id="contact_us_addy1" class = "form_input_space form_input left_input input_default" name="address" value = "" placeholder = "Address Line 1" maxlength = 100>
+						<input type="text" id="contact_us_addy2" class = "form_input_space form_input right_input input_default" name="address2" value = "" placeholder = "Address Line 2" maxlength = 20>
 					</fieldset>
 
 					<fieldset class = "">
 						<legend>Contact<span class = "ast">*</span></legend>
-						<input type="text" id="" class = "form_input left_input" name="email" value = "Enter Email">
-						<input type="text" id="" class = "form_input right_input" name="phone" value = "Enter Phone Number">
+						<input type="text" id="contact_us_email" class = "form_input_space form_input left_input input_default" name="email" value = "" placeholder = "Enter Email" maxlength = 50>
+						<input type="text" id="contact_us_phone" class = "form_input_space form_input right_input input_default" name="phone" value = "" placeholder = "Enter Phone Number" maxlength = 20>
 					</fieldset>		
 					
 					<!--<fieldset class = "fieldset3 left_fieldset">
@@ -49,17 +49,15 @@
 					<fieldset class = "fieldset4 right_fieldset">
 						<legend>Phone<span class = "ast">*</span></legend>
 						<input type="text" id="" class = "form_input" name="phone" value = "Enter Phone Number">
-					</fieldset>	-->				
+					</fieldset>	-->	<!--rows = "8" cols = "60"-->			
 					
-					<fieldset class = "">
+					<fieldset class = "textarea_fieldset">
 						<legend>Question/Comment</legend>
-						<textarea id="" class = "" name="message">
-							Enter your question/comment.
-						</textarea>
+						<textarea id="contact_us_msg" class = "form_input_space input_default"  name="message" value = "" placeholder = "Enter your question/comment." maxlength = 500></textarea>
 					</fieldset>	
 					
-					<fieldset class = "fieldset7">
-						<input type="submit" class = "form_submit" value="SUBMIT">
+					<fieldset class = "submit_fieldset">
+						<input type="submit" class = "form_submit form_submit_ghosted" value="SUBMIT">
 					</fieldset>										
 				</form>				
 				

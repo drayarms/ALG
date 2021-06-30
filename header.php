@@ -28,6 +28,7 @@
 		<script type="text/javascript" src="js/rebuild_footer.js"></script>		
 		<script type="text/javascript" src="js/rebuild_elements.js"></script>
 		<script type="text/javascript" src="js/window_resize.js"></script>
+		<script type="text/javascript" src="js/process_forms.js"></script>
 
 	</head>
 	

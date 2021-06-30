@@ -704,6 +704,8 @@ function rebuild_content(){
 	}else if(window.location.href.indexOf("contact-us") > -1){
 		$("#contact_bulletin").css("width", content_banner_width +"px");
 		$("#contact_us_page_form").css("width", content_banner_width +"px");
+		//alert($("#contact_us_page_form").width())
+		//centralize_element_horizontally($(".textarea_fieldset"))
 		//$("#required_info").css("margin-left", (($("#contact_bulletin").width() - $("#contact_us_page_form").width())/2)+"px");
 		if(resize_level <= 2){
 			//$(".fieldset1 .form_input").css("width", "49%");
