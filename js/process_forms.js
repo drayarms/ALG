@@ -1,3 +1,5 @@
+var all_inputs = [];
+
 
 function process_focus(e){
 	e.focus(function(){
@@ -100,7 +102,7 @@ function process_keyup(e, regex, error_txt){
 function enable_submit(){
 	$("#contact_us_page_form .form_input_space").keyup(function(){
 		//alert($(this))
-		alert("2")
+		//alert("2")
 		var $this = $(this);
 		var all_other_inputs_valid = true;//Assume by default all other inputs have been validated
 		$("#contact_us_page_form .form_input_space").each(function(){//Iterate all inputs/textareas
@@ -121,6 +123,7 @@ function enable_submit(){
 
 $(document).ready(function(){
 
+	all_inputs.push({element:$("#contact_us_fname"), regex:name_regex, err_msg:"Please, enter a valid first name"});
 	/*$(".form_input_space").focus(function(){
 		//console.log("focus");
 	});
@@ -135,6 +138,11 @@ $(document).ready(function(){
 	var phone_num_regex = /^[0-9]+$/;
 	var message_regex = /^.{6,}$/;
 	
+	all_inputs.push({element:$("#contact_us_fname"), regex:name_regex, err_msg:"Please, enter a valid first name"});
+	all_inputs.push({element:$("#contact_us_lname"), regex:name_regex, err_msg:"Please, enter a valid last name"});
+	
+	//alert(all_inputs[1].regex)
+	//Use objects instead to process focus, blur and keyup. Can now move process keyup meat into the keyup func
 	process_focus($("#contact_us_fname"));
 	process_blur($("#contact_us_fname"), name_regex, "Please, enter a valid first name");
 	process_keyup($("#contact_us_fname"), name_regex, "Please, enter a valid first name");
