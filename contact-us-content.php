@@ -21,7 +21,7 @@
 				</p>
 				
 				
-				<form id = "contact_us_page_form" action="#" method="POST">
+				<form id = "contact_us_page_form" action="#" method="POST"> <!--autocomplete="off">-->
 					<p id = "required_info">*Required Information</p>
 					<fieldset class = "">
 						<legend>Full Name<span class = "ast">*</span></legend>
@@ -57,7 +57,7 @@
 					</fieldset>	
 					
 					<fieldset class = "submit_fieldset">
-						<input type="submit" class = "form_submit form_submit_ghosted" value="SUBMIT">
+						<input type="submit" id = "contact_us_submit" class = "form_submit form_submit_ghosted" value="SUBMIT">
 					</fieldset>										
 				</form>				
 				
