@@ -1,9 +1,11 @@
 var contact_us_form_inputs = [];
 
 
-function process_focus(e){
+function process_focus(e, placeholder_txt){
 	e.focus(function(){
 		//console.log("focus");
+		e.val("");//Clear any input
+		e.attr("placeholder", placeholder_txt);//Put back placeholder		
 		$(this).removeClass("input_error");
 		$(this).removeClass("input_valid");
 		$(this).addClass("input_default");
@@ -16,7 +18,7 @@ requirements
 */
 function establish_input_validity(e, regex, error_txt, action){
 	//alert("1")
-	if(e.val().length < 1){//No text entered
+	if(e.val().length < 1){//No text entered 
 			//alert("nothing entered")
 		if(action == "blur"){
 			e.removeClass("input_valid");
@@ -105,16 +107,24 @@ function process_blur(e, regex, error_txt){
 //process_keyup($("#contact_us_email"), email_regex, "Please, enter a valid email");
 function enable_submit(){
 
-	$("#contact_us_page_form .form_input_space").keyup(function(){
+	$("#contact_us_page_form .form_input_space").keyup(function(){//Triggered on keyup and also on autofill
 		
 		var $this = $(this);
+		
+		//console.log("val "+$this.val());
+		//$this.css("background-color", "red");//In cas of autofill, revert to original color
 		
 		for(var i = 0; i < contact_us_form_inputs.length; i++){
 			if(contact_us_form_inputs[i].elem.is($this)){
 				establish_input_validity(contact_us_form_inputs[i].elem, contact_us_form_inputs[i].regex, contact_us_form_inputs[i].err_msg, "keyup");
 			}
+			if(contact_us_form_inputs[i].elem.is($("#contact_us_addy2"))){
+				$("#contact_us_addy2").addClass("validity_established");
+				$("#contact_us_addy2").removeClass("validity_not_established");					
+			}
 		}
-		
+	
+		//alert($("#contact_us_addy2").attr("class"));
 		//alert($(this))
 		//alert("2")
 		
@@ -124,11 +134,14 @@ function enable_submit(){
 				//alert(1)
 			}else{//Not an element currently in focus
 				//alert(0)
-				if(!$(this).hasClass("input_valid")){
+				//if(!$(this).hasClass("input_valid")){
+				if(!$(this).hasClass("validity_established")){	
 					all_other_inputs_valid = false;
 				}
 			}
 		});
+		
+		
 		if(all_other_inputs_valid && $this.hasClass("validity_established")){
 			//alert("all other inputs valid")
 			$("#contact_us_submit").addClass("form_submit_non_ghosted");
@@ -151,24 +164,25 @@ $(document).ready(function(){
 	});*/	
 	///^[0-9a-zA-Z]+$/
 	var name_regex = /^[a-zA-Z]+$/;
-	var address_regex = /^[a-z0-9\s,'-]*$/i;
+	var address1_regex = /^[a-z0-9\s,'-]*$/i;
+	var address2_regex = /^.{0,}$/;
 	var email_regex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 	var phone_num_regex = /^[0-9]+$/;
 	var message_regex = /^.{6,}$/;
 	
-	contact_us_form_inputs.push({elem:$("#contact_us_fname"), regex:name_regex, err_msg:"Please, enter a valid first name"});
-	contact_us_form_inputs.push({elem:$("#contact_us_lname"), regex:name_regex, err_msg:"Please, enter a valid last name"});
-	contact_us_form_inputs.push({elem:$("#contact_us_addy1"), regex:address_regex, err_msg:"Please, enter a valid address"});
-	contact_us_form_inputs.push({elem:$("#contact_us_addy2"), regex:address_regex, err_msg:"Please, enter a valid address"});
-	contact_us_form_inputs.push({elem:$("#contact_us_email"), regex:email_regex, err_msg:"Please, enter a valid email"});
-	contact_us_form_inputs.push({elem:$("#contact_us_phone"), regex:phone_num_regex, err_msg:"Please, enter a valid phone number"});
-	contact_us_form_inputs.push({elem:$("#contact_us_msg"), regex:message_regex, err_msg:"Invalid message"});
+	contact_us_form_inputs.push({elem:$("#contact_us_fname"), regex:name_regex, err_msg:"Please, enter a valid first name", placeholder_txt:$("#contact_us_fname").attr("placeholder")});
+	contact_us_form_inputs.push({elem:$("#contact_us_lname"), regex:name_regex, err_msg:"Please, enter a valid last name", placeholder_txt:$("#contact_us_lname").attr("placeholder")});
+	contact_us_form_inputs.push({elem:$("#contact_us_addy1"), regex:address1_regex, err_msg:"Please, enter a valid address", placeholder_txt:$("#contact_us_addy1").attr("placeholder")});
+	contact_us_form_inputs.push({elem:$("#contact_us_addy2"), regex:address2_regex, err_msg:"Please, enter a valid address", placeholder_txt:$("#contact_us_addy2").attr("placeholder")});
+	contact_us_form_inputs.push({elem:$("#contact_us_email"), regex:email_regex, err_msg:"Please, enter a valid email", placeholder_txt:$("#contact_us_email").attr("placeholder")});
+	contact_us_form_inputs.push({elem:$("#contact_us_phone"), regex:phone_num_regex, err_msg:"Please, enter a valid phone number", placeholder_txt:$("#contact_us_phone").attr("placeholder")});
+	contact_us_form_inputs.push({elem:$("#contact_us_msg"), regex:message_regex, err_msg:"Invalid message", placeholder_txt:$("#contact_us_msg").attr("placeholder")});
 	
 	//alert(all_inputs[1].regex)
 	//Use objects instead to process focus, blur and keyup. Can now move process keyup meat into the keyup func
 	
 	for(var i = 0; i < contact_us_form_inputs.length; i++){
-		process_focus(contact_us_form_inputs[i].elem);
+		process_focus(contact_us_form_inputs[i].elem, contact_us_form_inputs[i].placeholder_txt);
 		process_blur(contact_us_form_inputs[i].elem, contact_us_form_inputs[i].regex, contact_us_form_inputs[i].err_msg);
 	}
 	
@@ -201,12 +215,28 @@ $(document).ready(function(){
 	process_keyup($("#contact_us_msg"), message_regex, "Invalid message"); */
 
 	//setTimeout(function(){enable_submit();},10);
+	//$("#contact_us_addy2").addClass("validity_established");
+	//$("#contact_us_addy2").removeClass("validity_not_established");
 	enable_submit();
 	
-	//$("#contact_us_page_form .form_input_space").each(function(){
-		//$(this).autocomplete({
+	$("#contact_us_page_form .form_input_space").each(function(){
+		/*$(this).autocomplete({
 			//alert($(this).val());
-		//});
+			focus: function( event, ui ) {
+				alert($(this).val());
+			}
+		});*/
+		
+		//$("#contact_us_fname").on('autocompleteSelect', function(event, node) {
+		//$(this).on('autocompleteSelect', function(event, node) {
+			//alert(1)
+		//});		
+	});
+	
+	//$("#contact_us_page_form .form_input_space").select(function(){
+		//alert(1)
 	//});
+	
+
 	
 });

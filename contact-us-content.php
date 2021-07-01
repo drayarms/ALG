@@ -32,7 +32,7 @@
 					<fieldset class = "">
 						<legend>Address<span class = "ast">*</span></legend>
 						<input type="text" id="contact_us_addy1" class = "form_input_space form_input left_input input_default" name="address" value = "" placeholder = "Address Line 1" maxlength = 100>
-						<input type="text" id="contact_us_addy2" class = "form_input_space form_input right_input input_default" name="address2" value = "" placeholder = "Address Line 2" maxlength = 20>
+						<input type="text" id="contact_us_addy2" class = "form_input_space form_input right_input input_default" name="address2" value = "" placeholder = "Address Line 2 (Optional)" maxlength = 20>
 					</fieldset>
 
 					<fieldset class = "">

@@ -44,6 +44,14 @@ textarea{
 	box-sizing: border-box; 	
 }
 
+/*
+.ui-state-focus {
+	background: none !important;
+	background-color: blue !important;
+	border: none !important;
+}*/
+
+
 .body{
 	width:100%;
 	height:100%;
