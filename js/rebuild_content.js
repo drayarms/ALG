@@ -730,6 +730,8 @@ function rebuild_content(){
 			$(".right_fieldset").css("float", "none");
 			$(".right_fieldset").css("width", "100%");*/			
 		}
+	}else if(window.location.href.indexOf("blog") > -1){
+		$("#blog_inner").css("width", content_banner_width +"px");
 	}
 	
 	/*

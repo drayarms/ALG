@@ -110,7 +110,8 @@
 
 .content #contact_us_page_form fieldset .form_submit{
 	display:block;/*So it can be margined auto*/
-	width:9%;
+	width:15%;
+	text-align:center;
 	height:40px;
 	margin:auto;
 	border:none;

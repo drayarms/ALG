@@ -98,6 +98,21 @@ textarea{
 	color: rgb(255, 255, 255);	
 }
 
+.bulletin a{
+	/*position:relative;top:20%;*/
+	display:block;
+	text-align:center;
+	width: fit-content;
+	margin:auto;
+	margin-top:0%;
+	line-height:1.3;
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+	font-weight:190;
+	font-size:110%;
+	color: rgb(255, 255, 255);	
+	cursor:pointer;
+}
+
 
 .content{
 	background-color : none;

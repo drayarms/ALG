@@ -13,7 +13,7 @@
 				805 Pleasant Hill Rd Unit 201</br>
 				Lilburn GA, 30047</br>
 				Phone:<span class = "highlighted">(470)430-8035</span></br>
-				Email:<a class = "highlighted" href = "#">akofulawgroup@outlook.com</a></br>
+				Email:<a class = "highlighted" href = "mailto:akofulawgroup@outlook.com">akofulawgroup@outlook.com</a></br>
 				</p>
 				
 				<p>

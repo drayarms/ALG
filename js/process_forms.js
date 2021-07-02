@@ -3,12 +3,15 @@ var contact_us_form_inputs = [];
 
 function process_focus(e, placeholder_txt){
 	e.focus(function(){
+		//console.log(e.attr("class"))
 		//console.log("focus");
-		e.val("");//Clear any input
-		e.attr("placeholder", placeholder_txt);//Put back placeholder		
+		if(e.hasClass("input_error")){
+			e.val("");//Clear any input
+			e.attr("placeholder", placeholder_txt);//Put back placeholder	
+		}
 		$(this).removeClass("input_error");
 		$(this).removeClass("input_valid");
-		$(this).addClass("input_default");
+		$(this).addClass("input_default");//Default regardless of whether we have placeholder or validated
 	});	
 }
 

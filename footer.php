@@ -144,12 +144,12 @@
 						<h1 style = "position:relative;top:10%;">Contact Details</h1>
 						<h3 style = "position:relative;top:10%;">
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua.
+							
 						</h3>
-						<h3  style = "position:relative;top:25%;">805 Pleasant Hill Rd Unit 201</h3>
-						<h3  style = "position:relative;top:25%;">Lilburn GA, 30047</h3>
-						<h3 style = "position:relative;top:35%;">Phone (818)650-4032</h3>
-						<h3 style = "position:relative;top:35%;">akofulawgroup@outlook.com</h3>
+						<h3  style = "position:relative;top:15%;">805 Pleasant Hill Rd Unit 201</h3>
+						<h3  style = "position:relative;top:15%;">Lilburn GA, 30047</h3>
+						<h3 style = "position:relative;top:20%;">Phone (818)650-4032</h3>
+						<a style = "position:relative;top:20%;" href = "mailto:akofulawgroup@outlook.com" > akofulawgroup@outlook.com</a>
 					</div>
 					<div id = "google_map" class = "footer_map_panel">
 					</div>					
