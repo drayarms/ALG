@@ -1,5 +1,40 @@
 
 .content #blog_inner{
 	margin:auto;
-	min-height:0px;
+	min-height:200px;
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;	
+	line-height:1.7;	
+}
+
+.content #blog_inner #no_blogs{
+	width:100%;
+	margin:auto;
+	margin-top:80px;
+	font-size:100%;
+	text-align:center;
+	font-style:italic;
+}
+
+.content #blog_inner .blog_square{
+	
+}
+
+.content #blog_inner .blog_square .blog_img_container{
+	
+}
+
+.content #blog_inner .blog_square .blog_img_container .blog_img{
+	
+}
+
+.content #blog_inner .blog_square .blog_read_more_link{
+	
+}
+
+.content #blog_inner .blog_square .blog_title{
+	
+}
+
+.content #blog_inner .blog_square .blog_truncated_txt{
+	
 }

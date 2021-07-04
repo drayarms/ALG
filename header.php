@@ -11,7 +11,7 @@
 
 		<link type="text/css" rel="stylesheet" href="css/general-styles.css"/>
 		<?php
-			if($page_index == 7){
+			if($page_index == 4){
 				echo '<link type="text/css" rel="stylesheet" href="css/blog-styles.css"/>';
 			}		
 			if($page_index == 7){
