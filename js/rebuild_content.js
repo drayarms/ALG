@@ -640,6 +640,51 @@ function rebuild_content_banner(content_banner_width){
 	//centralize_element_vertically($(".content_banner").find("span"));
 }
 
+
+function rebuild_blog_square(parent_width){
+	if(resize_level <= 3){
+		$(".blog_square").css("width", parent_width*0.48 +"px");
+		$(".blog_square").css("margin-left","0px");
+		$(".blog_square").css("margin-right","0px");
+		$(".left_blog").css("float", "left");
+		$(".right_blog").css("float", "right");
+	}else{
+		$(".blog_square").css("width", parent_width*0.8 +"px");
+		$(".blog_square").css("margin-left","auto");
+		$(".blog_square").css("margin-right","auto");
+		$(".left_blog").css("float", "none");
+		$(".right_blog").css("float", "none");		
+	}
+
+	var blog_square_width = $(".blog_square").width();
+	var blog_img_container_width = blog_square_width*0.7;
+	var blog_img_container_height = blog_square_width*0.5;
+	$(".blog_img_container").css("width", blog_img_container_width +"px");
+	$(".blog_img_container").css("height", blog_img_container_height +"px");
+	/*$(".blog_img").each(function(){
+		$(this).show();
+		window.setTimeout(function(){
+			alert($(this).parent())
+			scale_and_position_image($(this), $(this).parent(), 1);
+		}, 100);//Give a sufficient enough delay for image to be rendered first before scaling/positioning	
+		
+	});*/
+	$(".blog_img").show();
+	window.setTimeout(function(){
+		scale_and_position_image($(".blog_img"), $(".blog_img_container"), 1);
+	}, 100);//Give a sufficient enough delay for image to be rendered first before scaling/positioning		
+
+	//Compute blog square height only after all child elements have been inserted with their heights determined
+	var max_blog_square_height = 0;
+	$(".blog_square").each(function(){
+		if($(this).height() > max_blog_square_height){
+			max_blog_square_height = $(this).height();
+		}
+	});	
+	$(".blog_square").css("height", max_blog_square_height+"px");
+}
+
+
 function rebuild_content(){
 	//Content
 	//Set min height for class content	
@@ -731,7 +776,8 @@ function rebuild_content(){
 			$(".right_fieldset").css("width", "100%");*/			
 		}
 	}else if(window.location.href.indexOf("blog") > -1){
-		$("#blog_inner").css("width", content_banner_width +"px");
+		$("#blog_inner").css("width", content_banner_width*0.96 +"px");
+		rebuild_blog_square($("#blog_inner").width());
 	}
 	
 	/*
