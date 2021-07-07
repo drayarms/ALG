@@ -20,13 +20,20 @@
 	font-style:italic;
 }
 
-.content #blog_inner .blog_square{
+.content #blog_inner #blog_squares{
+	width:100%;
+	margin:auto;
+	overflow:hidden;
+	/*border:1px dotted red;*/
+}
+
+.content #blog_inner #blog_squares .blog_square{
 	margin-top:40px;
 	box-shadow: -20px 10px 30px #e6f2ff; /*#f2f2f2;*/
 	/*border:1px dotted red;*/
 }
 
-.content #blog_inner .blog_square .blog_date{
+.content #blog_inner #blog_squares .blog_square .blog_date{
 	width:100%;
 	margin-top:5px;
 	margin-bottom:4px;
@@ -36,7 +43,7 @@
 	font-size:80%;
 }
 
-.content #blog_inner .blog_square .blog_img_container{
+.content #blog_inner #blog_squares .blog_square .blog_img_container{
 	margin-top:20px;
 	margin-left:auto;
 	margin-right:auto;
@@ -44,11 +51,11 @@
 	/*border:1px dotted red;*/
 }
 
-.content #blog_inner .blog_square .blog_img_container .blog_img{
+.content #blog_inner #blog_squares .blog_square .blog_img_container .blog_img{
 	display:none;
 }
 
-.content #blog_inner .blog_square .blog_line{
+.content #blog_inner #blog_squares .blog_square .blog_line{
 	width:90%;
 	height:0px;
 	margin-top:8px;
@@ -57,7 +64,7 @@
 	border-top:1px solid #e6f2ff;	
 }
 
-.content #blog_inner .blog_square .blog_read_more_link{
+.content #blog_inner #blog_squares .blog_square .blog_read_more_link{
 	display:block;	
 	text-decoration: none;
 	margin-top:8px;
@@ -69,7 +76,7 @@
 	font-weight:bold;
 }
 
-.content #blog_inner .blog_square .blog_title{
+.content #blog_inner #blog_squares .blog_square .blog_title{
 	display:block;
 	width:80%;
 	margin-top:8px;
@@ -83,9 +90,87 @@
 	/*border:1px dotted red;*/
 }
 
-.content #blog_inner .blog_square .blog_truncated_txt{
+.content #blog_inner #blog_squares .blog_square .blog_truncated_txt{
 	width:95%;
 	margin-top:8px;
 	margin-left:auto;
 	margin-left:auto;	
+}
+
+.content #blog_inner .pagination_tab{
+	float:right;
+	margin-top:30px;
+	min-width:0px;
+	border-radius:5%;
+	/*border:1px solid #001a33;*/
+}
+
+
+.content #blog_inner .pagination_tab .pagination_next{
+	padding-left:5px;
+}
+
+.content #blog_inner .pagination_tab .pagination_previous{
+	padding-right:5px;
+}
+
+.content #blog_inner .pagination_tab .pagination_direction{
+	float:left;	
+	cursor:pointer;	
+	/*border:1px solid black;*/
+}
+
+.content #blog_inner .pagination_tab .pagination_direction span{
+	height:40px;/*Should be same as pagination slot*/	
+	display:inline-block;
+    display:table-cell;
+    vertical-align:middle; 	
+	color:#ba2d8b;
+	font-size:110%;
+}
+
+
+.content #blog_inner .pagination_tab .pagination_slots{
+	/*display:inline-block;*/
+	float:left;
+	/*border:1px solid red;*/
+}
+
+.content #blog_inner .pagination_tab .pagination_slots .pagination_slot{
+	display:inline-block;
+	width:40px;
+	height:40px;
+	/*margin-left:20px;*/
+	border-radius:50%;
+	color:#ffffff;
+	font-size:120%;
+	text-align:center;
+	cursor:pointer;
+    display:table-cell;
+    vertical-align:middle; 	
+
+}
+
+.content #blog_inner .pagination_tab .pagination_slots .pagination_slot:hover{
+	background-color:#00264d;	
+}
+
+.content #blog_inner .pagination_tab .pagination_slots .highlighted_slot{
+	background-color:#00264d;	
+}
+
+.content #blog_inner .pagination_tab .pagination_slots .unhighlighted_slot{
+	background-color:#ba2d8b;	
+}
+
+.content #blog_inner .pagination_tab .pagination_slots .hidden_page{
+	display:none;
+}
+
+.content #blog_inner .pagination_tab .pagination_slots .unhidden_page{
+	
+}
+
+.invis{
+	visibility: hidden;
 }

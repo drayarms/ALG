@@ -46,8 +46,11 @@
 	$num_blogs_per_page = 4;
 	$num_pages = ceil($num_blogs/$num_blogs_per_page);
 	$page_num = $_GET['page'];
+	//$page_num = page_num % $num_pages;//Wrap around to prevent user from entering faulty page number
 	$num_page_mark_slots = 3;
 	
+	
+	echo "<div id = 'blog_squares'>";
 	if($num_blogs < 1){
 		echo "<div id = 'no_blogs'>Stay tuned. We will be posting content on our blog shortly.</div>";
 		echo "<div class = 'dotted_line'></div>";
@@ -85,11 +88,16 @@
 			}	
 		}
 	}
+	echo "</div>";
 	
 
-	//Page slots
-	echo "<div class = 'page_slots'>";
 	if($num_pages > 1){
+		
+		//Page slots
+		echo "
+		<div class = 'pagination_tab'>
+			<div class = 'pagination_previous pagination_direction'><span>Prev</span></div>
+			<div class = 'pagination_slots'>";		
 		
 		$page_num_in_first_slot = (ceil($page_num/$num_page_mark_slots)*($num_page_mark_slots))-($num_page_mark_slots - 1);
 		//echo "first slot ".$page_num_in_first_slot;
@@ -100,10 +108,12 @@
 		//echo "unfilled".$num_unfilled_slots;
 		
 		for($i = 1; $i <= $num_pages; $i++){
-			$slot_class = "'unhighlighted_slot";
+			$slot_class = "'pagination_slot";
 			
 			if($i == $page_num){
-				$slot_class = "'highlighted_slot";
+				$slot_class = $slot_class." highlighted_slot";
+			}else{
+				$slot_class = $slot_class." unhighlighted_slot";
 			}
 			
 			
@@ -131,7 +141,7 @@
 			//}
 			
 			
-			echo "<div class = ".$slot_class.">".$i."</div>";
+			echo "<a href = 'blog.php?page=".$i."' class = ".$slot_class.">".$i."</a>";
 			
 		}		
 		/*if($num_pages <= $num_page_mark_slots){
@@ -139,14 +149,20 @@
 		}else{//More pages than page mark slots
 			
 		}*/
+		
+		echo "
+			</div>
+			<div class = 'pagination_next pagination_direction'><span>Next</span></div>
+		</div>";
+	
+		echo"
+			<span id = 'num_pages' class = 'invis'>".$num_pages."</span>
+			<span id = 'num_slots' class = 'invis'>".$num_page_mark_slots."</span>
+			<span id = 'page_num' class = 'invis'>".$page_num."</span>
+		";		
+		
 	}
 		
-	echo "</div>";
 	
-	echo"
-		<span id = 'num_pages'>".$num_pages."</span>
-		<span id = 'num_slots'>".$num_page_mark_slots."</span>
-		<span id = 'page_num'>".$page_num."</span>
-	";	
 				
 ?>

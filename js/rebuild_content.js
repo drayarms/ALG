@@ -685,6 +685,21 @@ function rebuild_blog_square(parent_width){
 }
 
 
+function rebuild_pagination_tab(){
+	var num_pages = parseInt($("#num_pages").text());
+	var num_slots = parseInt($("#num_slots").text());
+	var page_num = parseInt($("#page_num").text());
+	
+	//alert(num_pages+1)
+	//alert(num_slots+1)
+	//alert(page_num+1)
+
+	//$(".pagination_slots").children().eq(0).css("background", "yellow");
+	//$(".pagination_slots").children().eq(4).addClass("highlighted_slot");
+	//$(".pagination_slots").children().eq(4).removeClass("unhighlighted_slot");
+}
+
+
 function rebuild_content(){
 	//Content
 	//Set min height for class content	
@@ -778,6 +793,7 @@ function rebuild_content(){
 	}else if(window.location.href.indexOf("blog") > -1){
 		$("#blog_inner").css("width", content_banner_width*0.96 +"px");
 		rebuild_blog_square($("#blog_inner").width());
+		rebuild_pagination_tab();
 	}
 	
 	/*
