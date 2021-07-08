@@ -11,9 +11,15 @@
 
 		<link type="text/css" rel="stylesheet" href="css/general-styles.css"/>
 		<?php
+			if($page_index == 3){
+				echo '<link type="text/css" rel="stylesheet" href="css/practice-areas-styles.css"/>';
+			}		
 			if($page_index == 4){
 				echo '<link type="text/css" rel="stylesheet" href="css/blog-styles.css"/>';
-			}		
+			}
+			if($page_index == 5){
+				echo '<link type="text/css" rel="stylesheet" href="css/faqs-styles.css"/>';
+			}			
 			if($page_index == 7){
 				echo '<link type="text/css" rel="stylesheet" href="css/contact-us-styles.css"/>';
 			}

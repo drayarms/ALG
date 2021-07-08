@@ -1,0 +1,42 @@
+		<div class = "content content_practice-areas"> 
+		
+			<div class = "content_banner">
+				<div class = "top_heading"><span>Practice Areas</span></div>
+				<div class = "bottom_heading"><span>Some Eye Catching Title Inserted Here</span></div>
+			</div>
+						
+			
+			<div id = "practice_areas_inner">
+			
+				<div id = "practice_areas_intro">
+			
+					<div id = "intro_image_container">
+						<img id = "intro_image" src="images/background_images/stockphoto4.jpg" alt="Law Books">
+					</div>			
+			
+					<div id = "intro_text">
+						<div class = "intro_heading">Intro</div>
+						<?php require "practice-areas/intro.php" ?>
+					
+				</div>		
+			
+				<div id = "business-transactions" class = "practice_areas_heading">Business Transactions</div>
+				<div class = "practice-areas-text" > <?php require "practice-areas/business-transactions.php" ?> </div>
+				<div id = "real-estate" class = "practice_areas_heading">Real Estate</div>
+				<div class = "practice-areas-text" > <?php require "practice-areas/real-estate.php" ?> </div>
+				<div id = "immigration" class = "practice_areas_heading">Immigration</div>				
+				<div class = "practice-areas-text"> <?php require "practice-areas/immigration.php" ?> </div>
+				<!--<a name = "immigration"/> -->
+			</div>
+			
+			<div class = "disclaimer">
+				<div class = "disclaimer_heading">Disclaimer</div>
+				<div class = "disclaimer_text">
+					<?php
+						require "disclaimer.php";
+					?>				
+				</div>
+			</div>			
+
+		
+		</div>

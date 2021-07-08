@@ -1,16 +1,15 @@
-		<div class = "content content_blog"> 
+		<div class = "content content_faqs"> 
 		
 			<div class = "content_banner">
-				<div class = "top_heading"><span>Blog</span></div>
+				<div class = "top_heading"><span>Frequently Asked Questions</span></div>
 				<div class = "bottom_heading"><span>Some Eye Catching Title Inserted Here</span></div>
 			</div>
 			
 			
-			<div id = "blog_inner">
+			<div id = "faqs_inner">
 			
-				<?php
-					require "construct_blog_content.php";
-				?>
+				<div id = "no_faqs">Stay tuned. We will be posting content shortly.</div>
+				<div class = "dotted_line"></div>
 
 			</div>
 			

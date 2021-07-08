@@ -219,6 +219,7 @@ textarea{
 	margin:auto;
 	padding-top:40px;
 	padding-bottom:25px;
+	text-align:justify;
 }                    
 .content .disclaimer .disclaimer_heading{
 	margin:auto;
@@ -894,6 +895,22 @@ textarea{
 	background-color:#f2f2f2;
 }
 
+.footer .footer_upper_half .read_more{
+
+	text-align:center;
+	margin-top:50px;
+}
+
+.footer .footer_upper_half .read_more a{
+	cursor:pointer;
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+	font-weight:normal;
+	font-size:150%;
+	color:rgb(51, 51, 51);
+	text-decoration: underline;
+
+}
+
 .footer .footer_upper_half .specialties_statements{
 	width:100%;
 	margin:auto;
@@ -924,12 +941,13 @@ textarea{
 .footer .footer_upper_half .specialties_statements .specialty_statement .specialty_statement_text{
 	/*border:1px dotted red;*/
 	/*position:relative;top:20%;*/
-	text-align:center;
+	/*text-align:center;*/
 	line-height:1.8;
 	padding-top:25px;
 	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;		
 	font-weight:190;
 	color: rgb(51, 51, 51);
+	text-align: justify;
 }
 
 

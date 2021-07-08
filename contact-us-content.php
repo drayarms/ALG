@@ -63,6 +63,16 @@
 				
 
 			</div>
+			
+			
+			<div class = "disclaimer">
+				<div class = "disclaimer_heading">Disclaimer</div>
+				<div class = "disclaimer_text">
+					<?php
+						require "disclaimer.php";
+					?>						
+				</div>
+			</div>			
 		
 		
 		</div>

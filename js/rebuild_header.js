@@ -77,8 +77,9 @@ function highlight_menu(){
 			$(this).find("a").css("color", theme_darkblue1);
 		}	*/		
 		highlight_menu_item($(this), window.location.href.indexOf("index"), "menu_home");
-		highlight_menu_item($(this), window.location.href.indexOf("attorney_profiles"), "menu_attorney_profiles");
-		highlight_menu_item($(this), window.location.href.indexOf("newsletter"), "menu_newsletter");
+		highlight_menu_item($(this), window.location.href.indexOf("about-us"), "menu_about_us");	
+		highlight_menu_item($(this), window.location.href.indexOf("attorney-profiles"), "menu_attorney_profiles");
+		highlight_menu_item($(this), window.location.href.indexOf("practice-areas"), "menu_practice_areas");
 		highlight_menu_item($(this), window.location.href.indexOf("blog"), "menu_blog");
 		highlight_menu_item($(this), window.location.href.indexOf("faqs"), "menu_faqs");
 		highlight_menu_item($(this), window.location.href.indexOf("testimonials"), "menu_testimonials");

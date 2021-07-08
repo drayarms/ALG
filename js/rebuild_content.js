@@ -1,3 +1,27 @@
+$(document).ready(function(){
+	
+	var num_pages = parseInt($("#num_pages").text());
+	var num_slots = parseInt($("#num_slots").text());
+	var page_num = parseInt($("#page_num").text());
+	
+	//alert(num_pages+1)
+	//alert(num_slots+1)
+	//alert(page_num+1)
+
+	//$(".pagination_slots").children().eq(0).css("background", "yellow");
+	//$(".pagination_slots").children().eq(4).addClass("highlighted_slot");
+	//$(".pagination_slots").children().eq(4).removeClass("unhighlighted_slot");	
+	
+	$(".pagination_previous").click(function(){
+		alert(num_pages)
+	});
+	
+		$(".pagination_next").click(function(){
+		alert(page_num)
+	});
+});
+
+
 function show_statement(i){
 	$(".specialty_statement").eq(i).addClass("displayed");
 	$(".specialty_statement").eq(i).removeClass("undisplayed");
@@ -686,17 +710,7 @@ function rebuild_blog_square(parent_width){
 
 
 function rebuild_pagination_tab(){
-	var num_pages = parseInt($("#num_pages").text());
-	var num_slots = parseInt($("#num_slots").text());
-	var page_num = parseInt($("#page_num").text());
-	
-	//alert(num_pages+1)
-	//alert(num_slots+1)
-	//alert(page_num+1)
 
-	//$(".pagination_slots").children().eq(0).css("background", "yellow");
-	//$(".pagination_slots").children().eq(4).addClass("highlighted_slot");
-	//$(".pagination_slots").children().eq(4).removeClass("unhighlighted_slot");
 }
 
 
@@ -793,7 +807,12 @@ function rebuild_content(){
 	}else if(window.location.href.indexOf("blog") > -1){
 		$("#blog_inner").css("width", content_banner_width*0.96 +"px");
 		rebuild_blog_square($("#blog_inner").width());
-		rebuild_pagination_tab();
+		//rebuild_pagination_tab();
+	}else if(window.location.href.indexOf("faqs") > -1){
+		$("#faqs_inner").css("width", content_banner_width*0.96 +"px");
+	}else if(window.location.href.indexOf("practice-areas") > -1){
+		$("#practice_areas_inner").css("width", content_banner_width*0.96 +"px");
+		scale_and_position_image($("#intro_image"), $("#intro_image").parent(), 1);
 	}
 	
 	/*
