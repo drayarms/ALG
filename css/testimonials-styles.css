@@ -1,0 +1,202 @@
+
+.content #testimonials_bulletin{
+	margin:auto;
+	margin-top:60px;
+	text-align: left;	
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+	font-size:90%;	
+	line-height:1.7;
+}
+
+.content #testimonials_bulletin .firm_title{
+	color:#ba2d8b;
+	font-weight:bold;
+	font-size:105%;
+}
+
+/*.content #testimonials_bulletin .highlighted{
+	font-weight:bold;
+}
+
+.content #testimonials_bulletin a{
+	text-decoration: underline;
+	color:black;
+}*/
+
+.content #testimonials_page_form{
+	border:2px solid #e6e6e6;
+	/*background-color:#f2f2f2;*/
+	/*background:#cca300;*/
+	border-radius:1%;
+	margin-top:20px;
+	margin-bottom:40px;
+	/*padding-left:15px;
+	padding-right:15px;*/
+	padding-top:10px;
+	padding-bottom:30px;
+}
+
+.content #testimonials_page_form #required_info{
+	/*padding-left:5%;*//*Based on form width and fieldset width % difference*/
+	font-size:120%;
+	font-weight:bold;
+	color:red;
+}
+
+.content #testimonials_page_form fieldset{
+	/*width:90%;*/
+	/*margin:auto;*/
+	font-size:130%;
+	font-weight:bold;
+	padding:0px;
+	border:none;
+}
+
+.content #testimonials_page_form fieldset .form_input{
+	width:100%;
+	border:none;
+	padding-left:20px;
+	height:60px;
+	font-size:80%;
+	background-color:#00264d;/*#001a33;*/
+	/*color:#bfbfbf;*/
+}
+
+/*.content #contact_us_page_form fieldset .form_input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 100px white inset;
+	-webkit-box-shadow: -10 -10 10 3px #00264d;
+    -webkit-text-fill-color: #bfbfbf;
+}
+.content #contact_us_page_form fieldset .form_input:autofill {
+    -webkit-box-shadow: 0 0 0 100px white inset;
+    -webkit-text-fill-color: #f90;
+}*/
+
+
+.content #testimonials_page_form fieldset textarea{
+	padding-left:20px;
+	padding-right:20px;
+	padding-top:20px;
+	padding-bottom:20px;	
+	border:none;
+	margin:atuo;
+	width:100%;
+	height:100%;
+	background-color:#00264d;/*#001a33;*/
+	/*color:#bfbfbf;*/
+}
+
+.content #testimonials_page_form fieldset .input_default{	
+	color:#bfbfbf;;
+}
+
+/*.content #contact_us_page_form fieldset .input_error{
+	color:red;
+}*/
+
+.content #testimonials_page_form fieldset .input_valid{
+	color:green;
+}
+
+.content #testimonials_page_form .submit_fieldset{
+	margin-top:35px;
+	width:100%;
+}
+
+.content #testimonials_page_form .textarea_fieldset{
+	/*width:100%;*/ /*47.5%;*/
+	height:100px;
+}
+
+.content #testimonials_page_form fieldset .form_submit{
+	display:block;/*So it can be margined auto*/
+	width:15%;
+	text-align:center;
+	height:40px;
+	margin:auto;
+	border:none;
+	border-radius:3%;
+	background-color:rgb(255, 204, 0);
+}
+
+.content #testimonials_page_form fieldset .form_submit_non_ghosted:hover{
+	background-color:rgb(186, 45, 139);
+}
+
+.content #testimonials_page_form fieldset .form_submit_non_ghosted{
+	cursor:pointer;
+	opacity:1.0;
+}
+
+.content #testimonials_page_form fieldset .form_submit_ghosted{
+	cursor:arrow;
+	opacity:0.4;
+}
+
+.content #testimonials_page_form .fieldset3{
+	/*width:46%;
+	float:left;*/
+}
+
+.content #testimonials_page_form .fieldset4{
+	/*width:46%;
+	float:right;*/
+}
+
+.ast{
+	color:red;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+	font-size:90%;
+	opacity: 1; /* Firefox */
+}
+
+.input_default::placeholder{
+	color: #bfbfbf;
+}
+
+/*.input_valid::placeholder{
+	color: green;
+}*/
+
+.input_error::placeholder{
+	color: red;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+	font-size:90%;
+	color: #bfbfbf;
+}
+
+.input_default:-ms-input-placeholder{
+	color: #bfbfbf;
+}
+
+/*.input_valid:-ms-input-placeholder{
+	color: green;
+}*/
+
+.input_error:-ms-input-placeholder{
+	color: red;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+	font-size:90%;
+	color: #bfbfbf;
+}
+
+.input_default::-ms-input-placeholder{
+	color: #bfbfbf;
+}
+
+/*.input_valid::-ms-input-placeholder{
+	color: green;
+}*/
+
+.input_error::-ms-input-placeholder{
+	color: red;
+}

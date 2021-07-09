@@ -78,9 +78,9 @@
 				
 					<div class = 'blog_img_container'> <img class = 'blog_img' src = '".$image."' alt = 'Blog Image' > </div>
 					<div class = 'blog_line'></div>
-					<a class = 'blog_title' href = '#'>".$title."</a>
+					<a class = 'blog_title' href = 'article.php?path=".$blog_folder_array[$current_blog_index]."'>".$title."</a>
 					<div class = 'blog_truncated_txt'>".$article."... </div>
-					<a class = 'blog_read_more_link' href = '#'>Read More</a>
+					<a class = 'blog_read_more_link' href = 'article.php?path=".$blog_folder_array[$current_blog_index]."'>Read More</a>
 					<div class = 'blog_line'></div>
 					<div class = 'blog_date'>".$date."</div>
 				
@@ -89,7 +89,7 @@
 		}
 	}
 	echo "</div>";
-	
+
 
 	if($num_pages > 1){
 		

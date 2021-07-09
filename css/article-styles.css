@@ -1,0 +1,47 @@
+.content #article_inner{
+	margin-top:20px;
+	margin-left:auto;
+	margin-right:auto;	
+	margin-bottom:40px;
+	min-height:200px;
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+	overflow:hidden;
+	/*border:1px solid red;*/
+}
+
+.content #article_inner #article_title{
+	width:80%;
+	margin-top:25px;
+	margin-bottom:20px;
+	margin-left:auto;
+	margin-right:auto;	
+	font-size:140%;
+	line-height:1.2;
+	text-align:center;
+	/*color:#001a33;*/
+	color:#0099e6;
+}
+
+.content #article_inner #article_image_container{
+	float:right;
+	width:360px;
+	height:280px;
+	border:1px solid transparent;/* #001a33;*/
+	border-radius:5%;	
+	overflow:hidden;
+	margin-left:2%;
+	margin-bottom:2%;
+}
+
+.content #article_inner #article_image_container #article_image{
+	display:none;
+}
+
+.content #article_inner #article_text{
+	width:97%;
+	text-align: justify;	
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+	font-size:100%;	
+	line-height:1.7;
+	/*border:1px solid red;*/
+}

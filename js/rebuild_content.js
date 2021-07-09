@@ -13,11 +13,11 @@ $(document).ready(function(){
 	//$(".pagination_slots").children().eq(4).removeClass("unhighlighted_slot");	
 	
 	$(".pagination_previous").click(function(){
-		alert(num_pages)
+		//alert(num_pages)
 	});
 	
 		$(".pagination_next").click(function(){
-		alert(page_num)
+		//alert(page_num)
 	});
 });
 
@@ -709,8 +709,39 @@ function rebuild_blog_square(parent_width){
 }
 
 
-function rebuild_pagination_tab(){
+function resize_contact_us_form(){
+	if(resize_level <= 2){
+		//$(".fieldset1 .form_input").css("width", "49%");
+		$(".left_input").css("float", "left");
+		$(".left_input").css("width", "49.5%");
+		$(".right_input").css("float", "right");
+		$(".right_input").css("width", "49.5%");
+			
+	}else{
+		//$(".fieldset1 .form_input").css("width", "100%");
+		$(".left_input").css("float", "none");
+		$(".left_input").css("width", "100%");
+		$(".right_input").css("float", "none");
+		$(".right_input").css("width", "100%");
+	}
+}
 
+
+function resize_testimonials_form(){
+	if(resize_level <= 2){
+		//$(".fieldset1 .form_input").css("width", "49%");
+		$(".left_input").css("float", "left");
+		$(".left_input").css("width", "49.5%");
+		$(".right_input").css("float", "right");
+		$(".right_input").css("width", "49.5%");
+			
+	}else{
+		//$(".fieldset1 .form_input").css("width", "100%");
+		$(".left_input").css("float", "none");
+		$(".left_input").css("width", "100%");
+		$(".right_input").css("float", "none");
+		$(".right_input").css("width", "100%");
+	}
 }
 
 
@@ -781,29 +812,18 @@ function rebuild_content(){
 		//alert($("#contact_us_page_form").width())
 		//centralize_element_horizontally($(".textarea_fieldset"))
 		//$("#required_info").css("margin-left", (($("#contact_bulletin").width() - $("#contact_us_page_form").width())/2)+"px");
-		if(resize_level <= 2){
-			//$(".fieldset1 .form_input").css("width", "49%");
-			$(".left_input").css("float", "left");
-			$(".left_input").css("width", "49.5%");
-			$(".right_input").css("float", "right");
-			$(".right_input").css("width", "49.5%");
-			
-			/*$(".left_fieldset").css("float", "left");
-			$(".left_fieldset").css("width", "45.5%");
-			$(".right_fieldset").css("float", "right");
-			$(".right_fieldset").css("width", "45.5%");*/
-		}else{
-			//$(".fieldset1 .form_input").css("width", "100%");
-			$(".left_input").css("float", "none");
-			$(".left_input").css("width", "100%");
-			$(".right_input").css("float", "none");
-			$(".right_input").css("width", "100%");
+		resize_contact_us_form();
 			
 			/*$(".left_fieldset").css("float", "none");
 			$(".left_fieldset").css("width", "100%");
 			$(".right_fieldset").css("float", "none");
 			$(".right_fieldset").css("width", "100%");*/			
-		}
+	}else if(window.location.href.indexOf("article") > -1){//Ensure this condition appears b4 the blog condition coz href also contains string "blog"
+		$("#article_inner").css("width", content_banner_width*0.96 +"px");
+		$("#article_image").show();//Show before scaling and positioning coz hidden element's width and height would be 0
+		window.setTimeout(function(){		
+			scale_and_position_image($("#article_image"), $("#article_image").parent(), 1);
+		});
 	}else if(window.location.href.indexOf("blog") > -1){
 		$("#blog_inner").css("width", content_banner_width*0.96 +"px");
 		rebuild_blog_square($("#blog_inner").width());
@@ -813,6 +833,10 @@ function rebuild_content(){
 	}else if(window.location.href.indexOf("practice-areas") > -1){
 		$("#practice_areas_inner").css("width", content_banner_width*0.96 +"px");
 		scale_and_position_image($("#intro_image"), $("#intro_image").parent(), 1);
+	}else if(window.location.href.indexOf("testimonials") > -1){
+		$("#testimonials_bulletin").css("width", content_banner_width +"px");
+		$("#testimonials_page_form").css("width", content_banner_width +"px");
+		resize_testimonials_form();
 	}
 	
 	/*

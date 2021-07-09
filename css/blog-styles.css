@@ -76,6 +76,10 @@
 	font-weight:bold;
 }
 
+.content #blog_inner #blog_squares .blog_square .blog_read_more_link:hover{
+	color:#ba2d8b;
+}
+
 .content #blog_inner #blog_squares .blog_square .blog_title{
 	display:block;
 	width:80%;
@@ -88,6 +92,10 @@
 	color:#001a33;
 	text-decoration: none;
 	/*border:1px dotted red;*/
+}
+
+.content #blog_inner #blog_squares .blog_square .blog_title:hover{
+	color:#0099e6;
 }
 
 .content #blog_inner #blog_squares .blog_square .blog_truncated_txt{
