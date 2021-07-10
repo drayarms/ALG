@@ -55,9 +55,9 @@
 
 
 #submit_screen #submit_div .submit_feedback{
-	width:100%;
+	width:80%;
 	height:30px;
-	margin-top:30px;
+	margin-top:0px;
 	margin-left:auto;
 	margin-right:auto;
 	text-align:center;

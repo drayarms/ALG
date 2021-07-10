@@ -153,17 +153,22 @@ function animate_animation_bubbles(num_bubbles, animation_bubble_width){
 
 
 
-function get_submit_feedback(success_msg){
-	$(".submit_feedback").addClass("submit_success");
-	$(".submit_feedback").addClass("remove_error");
-	//$(".submit_feedback").addClass("submit_error");
-	//$(".submit_feedback").removeClass("submit_success");
-	$(".submit_feedback").append(success_msg);
+function get_submit_feedback(msg, msg_type){
+	if(msg_type == 1){//Success
+		$(".submit_feedback").addClass("submit_success");
+		$(".submit_feedback").addClass("remove_error");
+	}
+	if(msg_type == 0){//Error
+		$(".submit_feedback").addClass("submit_error");
+		$(".submit_feedback").removeClass("submit_success");
+	}
+	$(".submit_feedback").append(msg);
 }
 
 
-function generate_animation_bubbles(animation_bubbles, success_msg){
+function generate_animation_bubbles(animation_bubbles){
 	animation_bubbles.show();
+	$(".close").hide();
 	var num_bubbles = 3;
 	var bubble_container_width = $(".animation_bubbles").width()/num_bubbles;
 	var bubble_container_height = $(".animation_bubbles").height();
@@ -177,20 +182,47 @@ function generate_animation_bubbles(animation_bubbles, success_msg){
 	}
 	
 	animate_animation_bubbles(num_bubbles, animation_bubble_width);
-	get_submit_feedback(success_msg);
+	//get_submit_feedback(success_msg);
 }
 
-function generate_from_submit_screen(success_msg){
+function generate_from_submit_screen(){
 	$("#submit_screen").show();
 	$("#submit_screen").css("top", window.sessionStorage.scrollTop+"px");
 	$("body").css("overflow", "hidden");//Disable scroll
 	centralize_element($("#submit_div"));
 	
-	generate_animation_bubbles($(".animation_bubbles"), success_msg);
+	generate_animation_bubbles($(".animation_bubbles"));
 }
 
-function process_contact_us_submit($this, success_msg){
-	//generate_from_submit_screen(success_msg);
+
+function process_form_server_side(url, my_data){
+	
+	$.ajax(url, {
+		type: 'POST',  // http method
+		data: my_data,  // data to submit
+		success: function (data, status, xhr) {
+			$(".animation_bubbles").hide();
+			$(".close").show();
+			window.clearInterval(bubble_anim);
+			//console.log("status: "+status);
+			//console.log("data: "+data);
+			get_submit_feedback(data, 1);
+
+		},
+		error: function (jqXhr, textStatus, errorMessage) {
+			$(".animation_bubbles").hide();
+			$(".close").show();
+			window.clearInterval(bubble_anim);
+            //console.log("error: "+errorMessage);
+			get_submit_feedback(data, 0);
+		}
+	});	
+	
+}
+
+
+function process_contact_us_submit($this){
+	//generate_from_submit_screen();
 	if($this.hasClass("form_submit_non_ghosted")){
 		var name1 = $("#contact_us_fname").val();
 		var name2 = $("#contact_us_lname").val();
@@ -201,14 +233,15 @@ function process_contact_us_submit($this, success_msg){
 		var msg = $("#contact_us_msg").val();
 		curr_form = $this.closest(".page_form");
 		
-		generate_from_submit_screen(success_msg);
+		generate_from_submit_screen();
+		process_form_server_side("submit-contact-us-form.php", {"name1":name1, "name2":name2, "address1":address1, "address2":address2, "email":email, "phone":phone, "msg":msg});
 		
 	}
 }
 
 
 
-function process_testimonials_submit($this, success_msg){
+function process_testimonials_submit($this){
 	if($this.hasClass("form_submit_non_ghosted")){
 		var name = $("#testimonials_name").val();
 		var email = $("#testimonials_email").val();
@@ -216,27 +249,24 @@ function process_testimonials_submit($this, success_msg){
 		var msg = $("#testimonials_msg").val();
 		curr_form = $this.closest(".page_form");
 		
-		generate_from_submit_screen(success_msg);
+		generate_from_submit_screen();
+		process_form_server_side("submit-testimonials-form.php", {"name":name, "email":email, "website":website, "msg":msg});
 	
 	}
 }
 
 
-function process_homepage_contact_submit($this, success_msg){
+function process_homepage_contact_submit($this){
 	if($this.hasClass("form_submit_non_ghosted")){
 		var name = $("#homepage_contact_name").val();
 		var email = $("#homepage_contact_email").val();
 		var phone = $("#homepage_contact_phone").val();
 		var msg = $("#homepage_contact_msg").val();
 		curr_form = $this.closest(".page_form");
+
+		generate_from_submit_screen();
+		process_form_server_side("submit-homepage-contact-form.php", {"name":name, "email":email, "phone":phone, "msg":msg});
 		
-		alert(name)
-		alert(email)
-		alert(phone)
-		alert(msg)
-		
-		generate_from_submit_screen(success_msg);
-	
 	}
 }
 
@@ -295,7 +325,7 @@ function process_submit_click(){
 		$(".animation_bubble_container").remove();
 		$(".submit_feedback").empty();
 		//console.log(bubble_anim)
-		window.clearInterval(bubble_anim);
+		//window.clearInterval(bubble_anim);
 		clear_form(curr_form);
 	});	
 }
@@ -352,17 +382,19 @@ $(document).ready(function(){
 	
 	
 	$("#contact_us_submit").click(function(){
-		process_contact_us_submit($(this), "Thanks for reaching out. We will get back with you shortly.");
+		process_contact_us_submit($(this));
 	});
 	
 	
 	$("#testimonials_submit").click(function(){
-		process_testimonials_submit($(this), "Thanks for your submission.");
+		//process_testimonials_submit($(this), "Thanks for your submission.");
+		process_testimonials_submit($(this));
 	});	
 	
 	
 	$("#homepage_contact_submit").click(function(){
-		process_homepage_contact_submit($(this), "Thanks for reaching out. We will get back with you shortly.");
+		//process_homepage_contact_submit($(this), "Thanks for reaching out. We will get back with you shortly.");
+		process_homepage_contact_submit($(this));
 	});	
 	
 	process_submit_click();	
