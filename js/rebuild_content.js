@@ -158,11 +158,12 @@ function rotate_specialty_statement_text(){
 function show_bg_img(i){
 	//rebuild_bg_img_dimensions();
 	//rebuild_bg_img_position();
+	$(".homepage_background_image").eq(i).fadeIn(1600);	
 	scale_and_position_image($(".homepage_background_image").eq(i), $("#homepage_background_image_container"), 1);//Repeat this on every resize
 	$(".homepage_background_image").eq(i).addClass("displayed");
 	$(".homepage_background_image").eq(i).removeClass("undisplayed");
 	//Make sure aggregate of fadeIn and fadeOut time doesn't exceed interval between each timer
-	$(".homepage_background_image").eq(i).fadeIn(1600);	
+	//$(".homepage_background_image").eq(i).fadeIn(1600);	
 }
 
 
@@ -291,7 +292,11 @@ function rebuild_bg_img_dimensions(){//Use pictures that are not too wide. Narro
 		}
 	}
 	//console.log(current_displayed_img.attr("src"));
-	scale_and_position_image(current_displayed_img, $("#homepage_background_image_container"), 1);
+	//console.log(current_displayed_img.height())
+	current_displayed_img.show();
+	window.setTimeout(function(){
+		scale_and_position_image(current_displayed_img, $("#homepage_background_image_container"), 1);
+	}, 100);//Give a sufficient enough delay for image to be rendered first before scaling/positioning
 	
 }
 
@@ -302,13 +307,18 @@ function rebuild_bg_img_position(){
 	var top_header_height = $(".top_header").height();
 	var top_header_margin_top = parseFloat($(".top_header").css("margin-top"));
 	//console.log("top header h: "+top_header_height+" margin top: "+top_header_margin_top)
-	
+	//console.log("top header top "+top_header_margin_top)
 	
 	
 	if(resize_level <= 2){
 		//alert(top_header_margin_top)
 		var resultant_top = -1*top_header_margin_top;//Maintain at least this distance
+		//console.log("orig resultant top "+resultant_top)
+		//console.log("from rebuild "+window.sessionStorage.scrollTop)
 		resultant_top += window.sessionStorage.scrollTop*background_scroll_factor; //Move against direction of scroll by a fraction, proportional to scroll top to give a bouncy effect
+		//resultant_top += 37.625
+		//resultant_top -= 37.625
+		console.log("resultant "+resultant_top)
 		$("#homepage_background_image_container").css({
 			position: "absolute",
 			top: (resultant_top) + "px"
@@ -319,6 +329,8 @@ function rebuild_bg_img_position(){
 			top: (0) + "px"
 		});			
 	}	
+	
+	
 	
 	
 	//scale_and_position_image($(".homepage_background_image").eq(bg_img_time), $("#homepage_background_image_container"), 1);

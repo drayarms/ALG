@@ -204,9 +204,10 @@ $(document).ready(function(){
 	//$("#bar2").css("width", window_width +"px");
 
 
-
-
-
+	
+	window.sessionStorage.scrollTop = $(window).scrollTop();//Remember the current scroll position even across sessions(refreshes)
+	var window_top = window.sessionStorage.scrollTop;//$(this).scrollTop();
+	
 
 
 
@@ -357,11 +358,12 @@ $(document).ready(function(){
 	//Timer for rotating specialty statement text
 	specialty_statement_count = $(".specialty_statement").length;
 	window.setInterval(rotate_specialty_statement_text, 4000);//Run func every 4 secs
-	homepage_background_image_count = $(".homepage_background_image").length;
+	
 	
 	//show_bg_img(0);//Initialize with img 0
 	////window.setTimeout(rotate_bg_img, 5000);
-
+	
+	homepage_background_image_count = $(".homepage_background_image").length;
 	rotate_bg_img(bg_img_time);
 	window.setInterval(rotate_bg_img, 5000);//Run func every 5 secs to rotate the image
 	rebuild_elements();//Important to set picture timer first b4 buildng elements so a visible pic obj is accessible in build elements

@@ -103,17 +103,19 @@ function rebuild_elements(){
 	}
 	//$(".top_menu_bar").hide();//Prevents the unrpocessed menu bar from flickering b4 page fully loads
 	//console.log("1current session scroll top: "+window.sessionStorage.scrollTop);
-	//alert("1current session scroll top: "+window.sessionStorage.scrollTop);
+	//alert("1current session scroll top: "+window.sessionStorage.scrollTop);	
+	rebuild_header();
+	rebuild_content();
 	if(window.location.href.indexOf("index") > -1) {
 		rebuild_bg_img_dimensions();
 	}	
-	rebuild_header();
-	rebuild_content();
-	rebuild_footer();
 	if(window.location.href.indexOf("index") > -1) {
 		rebuild_bg_img_position();
 		//console.log("2current session scroll top: "+window.sessionStorage.scrollTop);
-	}
+	}	
+	
+	
+	rebuild_footer();	
 	//alert("1current session scroll top: "+window.sessionStorage.scrollTop);
 
 
