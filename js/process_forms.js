@@ -1,5 +1,8 @@
 var contact_us_form_inputs = [];
 var testimonials_form_inputs = [];
+var bubble_anim;
+var curr_form;
+
 
 
 function process_focus(e, placeholder_txt){
@@ -165,6 +168,138 @@ function enable_submit(form_inputs, input_item, input_exceptions, input_submit){
 	});
 }
 
+
+function animate_animation_bubbles(num_bubbles, animation_bubble_width){
+	var curr_bubble = 0;
+	var new_bubble_width;
+	var new_bubble_height;
+	function animate_bubbles(){
+		curr_bubble %= num_bubbles;
+		//console.log(curr_bubble);
+		for(var i = 0; i < num_bubbles; i++){
+			if(i == curr_bubble){
+				new_bubble_width = animation_bubble_width*1.1;
+				$(".animation_bubble").eq(i).css("opacity", "0.2");
+			}else{
+				new_bubble_width = animation_bubble_width;
+				$(".animation_bubble").eq(i).css("opacity", "0.6");
+			}
+			new_bubble_height = new_bubble_width;
+			$(".animation_bubble").eq(i).css("width", new_bubble_width+"px");
+			$(".animation_bubble").eq(i).css("height", new_bubble_height+"px");
+			centralize_element_vertically($(".animation_bubble").eq(i));
+		}
+		curr_bubble++;
+	}
+
+	bubble_anim = window.setInterval(animate_bubbles, 180);
+}
+
+
+
+function get_submit_feedback(success_msg){
+	$(".submit_feedback").addClass("submit_success");
+	$(".submit_feedback").addClass("remove_error");
+	//$(".submit_feedback").addClass("submit_error");
+	//$(".submit_feedback").removeClass("submit_success");
+	$(".submit_feedback").append(success_msg);
+}
+
+
+function generate_animation_bubbles(animation_bubbles, success_msg){
+	animation_bubbles.show();
+	var num_bubbles = 3;
+	var bubble_container_width = $(".animation_bubbles").width()/num_bubbles;
+	var bubble_container_height = $(".animation_bubbles").height();
+	var animation_bubble_width = bubble_container_width*0.8;
+	var animation_bubble_height = animation_bubble_width;
+	
+	for(var i = 0; i < num_bubbles; i++){
+		$(".animation_bubbles").append("<div class = 'animation_bubble_container' style = 'float:left;width:"+bubble_container_width+"px;height:"+bubble_container_height+"px;'></div>");
+		$(".animation_bubble_container").eq(i).append("<div class = 'animation_bubble' style = 'width:"+animation_bubble_width+"px;height:"+animation_bubble_height+"px;border-radius:50%;margin-left:auto;margin-right:auto;background:#ba2d8b;'></div>");
+		centralize_element_vertically($(".animation_bubble").eq(i));
+	}
+	
+	animate_animation_bubbles(num_bubbles, animation_bubble_width);
+	get_submit_feedback(success_msg);
+}
+
+function generate_from_submit_screen(success_msg){
+	$("#submit_screen").show();
+	$("#submit_screen").css("top", window.sessionStorage.scrollTop+"px");
+	$("body").css("overflow", "hidden");//Disable scroll
+	centralize_element($("#submit_div"));
+	
+	generate_animation_bubbles($(".animation_bubbles"), success_msg);
+}
+
+function process_contact_us_submit($this, success_msg){
+	//generate_from_submit_screen(success_msg);
+	if($this.hasClass("form_submit_non_ghosted")){
+		var name1 = $("#contact_us_fname").val();
+		var name2 = $("#contact_us_lname").val();
+		var address1 = $("#contact_us_addy1").val();
+		var address2 = $("#contact_us_addy2").val();
+		var email = $("#contact_us_email").val();
+		var phone = $("#contact_us_phone").val();
+		var msg = $("#contact_us_msg").val();
+		curr_form = $this.closest(".page_form");
+		
+		generate_from_submit_screen(success_msg);
+		
+	}
+}
+
+
+
+function process_testimonials_submit($this, success_msg){
+	if($this.hasClass("form_submit_non_ghosted")){
+		var name = $("#testimonials_name").val();
+		var email = $("#testimonials_email").val();
+		var website = $("#testimonials_website").val();
+		var msg = $("#testimonials_msg").val();
+		curr_form = $this.closest(".page_form");
+		
+		generate_from_submit_screen(success_msg);
+	
+	}
+}
+
+
+function restore_original_state(e){
+	e.removeClass("input_valid");
+	e.removeClass("input_error");	
+	e.addClass("input_default");	
+}
+
+
+function clear_inputs(this_form, form_inputs){
+	i = 0;
+	this_form.find(".form_input_space").each(function(){
+		//alert(i+" "+$(this).attr("id")+" "+form_inputs[i].placeholder_txt)
+		 //$(this).reset();
+		restore_original_state($(this));
+		//$(this).css("width", "90px");
+		$(this).attr("placeholder", form_inputs[i].placeholder_txt);
+		//$(this).val(form_inputs[i].placeholder_txt);
+		i++;
+	});	
+}
+
+
+function clear_form(this_form){
+	//alert(this_form.attr("class"))
+	 this_form.trigger("reset");
+	/*if(this_form.attr("id") == "contact_us_page_form"){
+		//alert("contact")
+		clear_inputs(this_form, contact_us_form_inputs);
+	}
+	if(this_form.attr("id") == "testimonials_page_form"){
+		//alert("tes")
+		clear_inputs(this_form, testimonials_form_inputs);
+	}	*/
+}
+
 $(document).ready(function(){
 
 	/*$(".form_input_space").focus(function(){
@@ -202,7 +337,7 @@ $(document).ready(function(){
 	
 	
 	
-	testimonials_form_inputs.push({elem:$("#testimonials_name"), regex:full_name_regex, err_msg:"Please, enter a valid name", placeholder_txt:$("#testimonials_name").attr("placeholder")});
+	testimonials_form_inputs.push({elem:$("#testimonials_name"), regex:full_name_regex, err_msg:"Please, enter your full name", placeholder_txt:$("#testimonials_name").attr("placeholder")});
 	testimonials_form_inputs.push({elem:$("#testimonials_email"), regex:email_regex, err_msg:"Please, enter a valid email", placeholder_txt:$("#testimonials_email").attr("placeholder")});
 	testimonials_form_inputs.push({elem:$("#testimonials_website"), regex:website_regex, err_msg:"Please, enter a valid website", placeholder_txt:$("#testimonials_website").attr("placeholder")});	
 	testimonials_form_inputs.push({elem:$("#testimonials_msg"), regex:message_regex, err_msg:"Invalid message", placeholder_txt:$("#testimonials_msg").attr("placeholder")});
@@ -246,7 +381,28 @@ $(document).ready(function(){
 	enable_submit(contact_us_form_inputs, $("#contact_us_page_form .form_input_space"), [$("#contact_us_addy2")], $("#contact_us_submit"));
 	enable_submit(testimonials_form_inputs, $("#testimonials_page_form .form_input_space"), [$("#testimonials_website")], $("#testimonials_submit"));
 	
-	$("#contact_us_page_form .form_input_space").each(function(){
+	
+	$("#contact_us_submit").click(function(){
+		process_contact_us_submit($(this), "Thanks for reaching out. We will get back with you shortly.");
+	});
+	
+	
+	$("#testimonials_submit").click(function(){
+		process_testimonials_submit($(this), "Thanks for your submission.");
+	});	
+	
+	
+	$("#submit_div .close i").click(function(){
+		$("#submit_screen").hide();
+		$("body").css("overflow-y", "auto");
+		$("body").css("overflow-x", "hidden");
+		$(".animation_bubble_container").remove();
+		//console.log(bubble_anim)
+		window.clearInterval(bubble_anim);
+		clear_form(curr_form);
+	});
+	
+	//$("#contact_us_page_form .form_input_space").each(function(){
 		/*$(this).autocomplete({
 			//alert($(this).val());
 			focus: function( event, ui ) {
@@ -258,7 +414,7 @@ $(document).ready(function(){
 		//$(this).on('autocompleteSelect', function(event, node) {
 			//alert(1)
 		//});		
-	});
+	//});
 	
 	//$("#contact_us_page_form .form_input_space").select(function(){
 		//alert(1)

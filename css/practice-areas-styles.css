@@ -31,7 +31,7 @@
 }
 
 .content #practice_areas_inner #practice_areas_intro #intro_image_container #intro_image{
-
+	display:none;
 }
 
 .content #practice_areas_inner #practice_areas_intro #intro_text{

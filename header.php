@@ -10,6 +10,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 		<link type="text/css" rel="stylesheet" href="css/general-styles.css"/>
+		<link type="text/css" rel="stylesheet" href="css/submit-screen-styles.css"/>
 		<?php
 			if($page_index == 3){
 				echo '<link type="text/css" rel="stylesheet" href="css/practice-areas-styles.css"/>';
@@ -50,6 +51,19 @@
 	
 	<body class = "body">
 
+		<div id = "submit_screen">
+			<div id = "submit_div">
+				<div class = "close_block">
+					<div class = "close">
+						<i class="material-icons">&#xe14c;</i>
+						<div class = "close_label">Close</div>
+					</div>
+				</div>
+				<div class = "animation_bubbles"></div>
+				<div class = "submit_feedback"></div>
+			</div>
+		</div>
+		
 		<div class = "social_media_panel left_social_media_panel">
 			<a href="http://facebook.com" target="_blank" class="fa fa-facebook"></a>
 			<a href="http://twitter.com" target="_blank" class="fa fa-twitter"></a>

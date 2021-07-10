@@ -1,0 +1,72 @@
+
+#submit_screen{
+	display:none;
+	width:100%;
+	height:100%;
+	position:absolute;
+	z-index:+100;
+	background-color:rgba(0, 0, 0, 0.8);
+}
+
+#submit_screen #submit_div{
+	width:450px;
+	height:260px;
+	background-color:#ffffff;
+	border-radius:2%;
+}
+
+
+#submit_screen #submit_div .animation_bubbles{
+	/*display:none;	*/
+	width:50%;
+	height:15%;
+	margin-left:auto;
+	margin-right:auto;
+	/*background:yellow;*/
+}
+
+
+#submit_screen #submit_div .close_block{
+	width:100%;	
+	height:40%;
+	/*border:1px solid red;*/
+}
+
+#submit_screen #submit_div .close_block .close{
+	display:inline-block;	
+	text-align:center;
+	float:right;
+	/*border:1px solid green;*/
+}
+
+
+#submit_screen #submit_div .close_block .close i{
+	font-size:260%;
+	color:#00264d;
+	cursor:pointer;
+	text-align:center;
+	position:relative;top:30%;
+}
+
+#submit_screen #submit_div .close_block .close .close_label{
+	position:relative;top:20%;	
+}
+
+
+#submit_screen #submit_div .submit_feedback{
+	width:100%;
+	height:30px;
+	margin-top:30px;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;
+	/*border:1px solid red;*/
+}
+
+#submit_screen #submit_div .submit_success{
+	color:green;
+}
+
+#submit_screen #submit_div .submit_error{
+	color:red;
+}

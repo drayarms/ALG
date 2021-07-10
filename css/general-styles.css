@@ -263,7 +263,7 @@ textarea{
 }
 
 .content #firm_info #firm_info_image_container #firm_info_image{
-
+	display:none;
 }
 
 .content #firm_info #firm_info_text{

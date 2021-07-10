@@ -14,11 +14,11 @@
 
 				
 				
-				<form id = "testimonials_page_form" action="#" method="POST"> <!--autocomplete="off">-->
+				<form id = "testimonials_page_form" class = "page_form"> <!--autocomplete="off">-->
 					<p id = "required_info">*Required Information</p>
 					<fieldset class = "">
 						<legend>Name<span class = "ast">*</span></legend>
-						<input type="text" id="testimonials_name" class = "form_input_space form_input input_default" name="name" value = "" placeholder = "Enter Name" maxlength = 20>
+						<input type="text" id="testimonials_name" class = "form_input_space form_input input_default" name="name" value = "" placeholder = "Enter Full Name" maxlength = 20>
 					</fieldset>
 
 
@@ -40,7 +40,7 @@
 					</fieldset>	
 					
 					<fieldset class = "submit_fieldset">
-						<input type="submit" id = "testimonials_submit" class = "form_submit form_submit_ghosted" value="SUBMIT">
+						<input type="button" id = "testimonials_submit" class = "form_submit form_submit_ghosted" value="SUBMIT">
 					</fieldset>										
 				</form>				
 				

@@ -746,6 +746,12 @@ function resize_testimonials_form(){
 
 
 function rebuild_content(){
+	
+	if($("#submit_screen").is(":visible")){
+		$("#submit_screen").css("top", window.sessionStorage.scrollTop+"px");
+		$("body").css("overflow", "hidden");//Disable scroll
+		centralize_element($("#submit_div"));
+	}
 	//Content
 	//Set min height for class content	
 	//document_height = $(document).height();
@@ -795,7 +801,10 @@ function rebuild_content(){
 	
 	if(window.location.href.indexOf("about-us") > -1){
 		$("#firm_info").css("width", content_banner_width +"px");
-		scale_and_position_image($("#firm_info_image"), $("#firm_info_image").parent(), 1);
+		$("#firm_info_image").show();//Show before scaling and positioning coz hidden element's width and height would be 0
+		window.setTimeout(function(){		
+			scale_and_position_image($("#firm_info_image"), $("#firm_info_image").parent(), 1);
+		});
 	}else if(window.location.href.indexOf("attorney-profiles") > -1){
 		
 		$(".attorneys_bio").css("width", content_banner_width +"px");
@@ -832,7 +841,10 @@ function rebuild_content(){
 		$("#faqs_inner").css("width", content_banner_width*0.96 +"px");
 	}else if(window.location.href.indexOf("practice-areas") > -1){
 		$("#practice_areas_inner").css("width", content_banner_width*0.96 +"px");
-		scale_and_position_image($("#intro_image"), $("#intro_image").parent(), 1);
+		$("#intro_image").show();//Show before scaling and positioning coz hidden element's width and height would be 0
+		window.setTimeout(function(){		
+			scale_and_position_image($("#intro_image"), $("#intro_image").parent(), 1);
+		});
 	}else if(window.location.href.indexOf("testimonials") > -1){
 		$("#testimonials_bulletin").css("width", content_banner_width +"px");
 		$("#testimonials_page_form").css("width", content_banner_width +"px");

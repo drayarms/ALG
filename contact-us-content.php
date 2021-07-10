@@ -21,12 +21,12 @@
 				</p>
 				
 				
-				<form id = "contact_us_page_form" action="#" method="POST"> <!--autocomplete="off">-->
+				<form id = "contact_us_page_form" class = "page_form"> <!--autocomplete="off">-->
 					<p id = "required_info">*Required Information</p>
 					<fieldset class = "">
 						<legend>Full Name<span class = "ast">*</span></legend>
-						<input type="text" id="contact_us_fname" class = "form_input_space form_input left_input input_default" name="fname" value = "" placeholder = "First Name" maxlength = 20>
-						<input type="text" id="contact_us_lname" class = "form_input_space form_input right_input input_default" name="lname" value = "" placeholder = "Last Name" maxlength = 20>
+						<input type="text" id="contact_us_fname" class = "form_input_space form_input left_input input_default" name="name1" value = "" placeholder = "First Name" maxlength = 20>
+						<input type="text" id="contact_us_lname" class = "form_input_space form_input right_input input_default" name="name2" value = "" placeholder = "Last Name" maxlength = 20>
 					</fieldset>
 
 					<fieldset class = "">
@@ -57,7 +57,7 @@
 					</fieldset>	
 					
 					<fieldset class = "submit_fieldset">
-						<input type="submit" id = "contact_us_submit" class = "form_submit form_submit_ghosted" value="SUBMIT">
+						<input type="button" id = "contact_us_submit" class = "form_submit form_submit_ghosted" value="SUBMIT">
 					</fieldset>										
 				</form>				
 				
