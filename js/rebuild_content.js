@@ -1,8 +1,13 @@
 $(document).ready(function(){
 	
-	var num_pages = parseInt($("#num_pages").text());
+	//var num_pages = parseInt($("#num_pages").text());
 	var num_slots = parseInt($("#num_slots").text());
-	var page_num = parseInt($("#page_num").text());
+	//var page_num = parseInt($("#page_num").text());
+
+	/*var slot1 = parseInt($(".pagination_slot:visible").eq(0).text())
+	var slot_last = parseInt($(".pagination_slot:visible").eq(num_slots).text())	
+	var slot1_index = slot1 - 1;
+	var slot_last_index = slot_last - 1;*/
 	
 	//alert(num_pages+1)
 	//alert(num_slots+1)
@@ -10,16 +15,72 @@ $(document).ready(function(){
 
 	//$(".pagination_slots").children().eq(0).css("background", "yellow");
 	//$(".pagination_slots").children().eq(4).addClass("highlighted_slot");
-	//$(".pagination_slots").children().eq(4).removeClass("unhighlighted_slot");	
+	//$(".pagination_slots").children().eq(4).removeClass("unhighlighted_slot");
+
+
+
+	//$(".pagination_slot:visible").eq(num_slots-1).css("background", "yellow")
 	
 	$(".pagination_previous").click(function(){
-		//alert(num_pages)
+		
+		var first_visible_slot = $(".pagination_slot:visible").eq(0);
+		var last_visible_slot = $(".pagination_slot:visible").eq(num_slots-1);		
+		
+		first_visible_slot.prev().addClass("unhidden_page");
+		first_visible_slot.prev().removeClass("hidden_page");
+		
+		if(last_visible_slot.length > 0){//Make sure the slot exists
+			last_visible_slot.addClass("hidden_page");
+			last_visible_slot.removeClass("unhidden_page");
+		}		
+		
+		show_hide_prev_next();
+		
 	});
 	
-		$(".pagination_next").click(function(){
-		//alert(page_num)
+	$(".pagination_next").click(function(){
+		
+		var first_visible_slot = $(".pagination_slot:visible").eq(0);
+		var last_visible_slot = $(".pagination_slot:visible").eq(num_slots-1);		
+		
+		first_visible_slot.addClass("hidden_page");
+		first_visible_slot.removeClass("unhidden_page");
+		
+		if(last_visible_slot.next().length > 0){//Make sure the slot exists
+			last_visible_slot.next().addClass("unhidden_page");
+			last_visible_slot.next().removeClass("hidden_page");
+		}		
+		
+		show_hide_prev_next();
+		
 	});
 });
+
+
+
+function show_hide_prev_next(){
+	var num_pages = parseInt($("#num_pages").text());
+	var num_slots = parseInt($("#num_slots").text());
+	//var page_num = parseInt($("#page_num").text());
+	//var slot1 = parseInt($(".pagination_slots").children().eq(0).text())
+	var slot1 = parseInt($(".pagination_slot:visible").eq(0).text())
+	var slot_last = parseInt($(".pagination_slot:visible").eq(num_slots-1).text())
+
+	//Show prev if slot 1 isn't occupied by bubble 1
+	if(slot1 == 1){
+		$(".pagination_previous").hide();
+	}else{
+		$(".pagination_previous").show();
+	}
+	
+	//Show next if slot lst isn't occupied by bubble last page
+
+	if(slot_last == num_pages){
+		$(".pagination_next").hide();
+	}else{
+		$(".pagination_next").show();
+	}
+}
 
 
 function show_statement(i){
@@ -706,6 +767,8 @@ function rebuild_blog_square(parent_width){
 		}
 	});	
 	$(".blog_square").css("height", max_blog_square_height+"px");
+	
+	show_hide_prev_next();
 }
 
 
