@@ -12,6 +12,9 @@
 		<link type="text/css" rel="stylesheet" href="css/general-styles.css"/>
 		<link type="text/css" rel="stylesheet" href="css/submit-screen-styles.css"/>
 		<?php
+			if($page_index == 0){
+				echo '<link type="text/css" rel="stylesheet" href="css/homepage-styles.css"/>';
+			}		
 			if($page_index == 3){
 				echo '<link type="text/css" rel="stylesheet" href="css/practice-areas-styles.css"/>';
 			}		

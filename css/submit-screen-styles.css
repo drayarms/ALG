@@ -29,14 +29,15 @@
 #submit_screen #submit_div .close_block{
 	width:100%;	
 	height:40%;
-	/*border:1px solid red;*/
 }
 
 #submit_screen #submit_div .close_block .close{
 	display:inline-block;	
 	text-align:center;
 	float:right;
-	/*border:1px solid green;*/
+	padding-top:8px;
+	padding-right:8px;
+	/*border:1px solid red;*/	
 }
 
 

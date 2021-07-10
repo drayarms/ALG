@@ -558,7 +558,7 @@ function rebuild_attorney_panel(){
 
 
 function rebuild_contact_panel(){
-	var contact_panel_height = screen_width*0.24;
+	var contact_panel_height = screen_width*0.27;//0.24;
 	$("#contact_panel").css("height", contact_panel_height+"px");	
 	
 	var fixed_form_width = screen_width*0.55;

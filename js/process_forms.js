@@ -1,5 +1,6 @@
 var contact_us_form_inputs = [];
 var testimonials_form_inputs = [];
+var hompage_contact_form_inputs = [];
 var bubble_anim;
 var curr_form;
 
@@ -56,9 +57,6 @@ function establish_input_validity(e, regex, error_txt, action){
 				e.removeClass("input_default");				
 				e.val("");//First clear input
 				e.attr("placeholder", error_txt);
-				//alert("error")
-				//alert($(this).attr("placeholder"));
-				//alert($(this).attr("class"))
 			}
 			if(action == "keyup"){
 				e.removeClass("validity_established");	
@@ -70,48 +68,11 @@ function establish_input_validity(e, regex, error_txt, action){
 
 function process_blur(e, regex, error_txt){
 	e.blur(function(){
-		establish_input_validity(e, regex, error_txt, "blur")
-		//console.log("blur");
-		//$(this).attr("placeholder", error_txt);
-		//alert($(this).val())
-		/*if(e.val().length < 1){//No text entered
-			//alert("nothing entered")
-				e.removeClass("input_valid");
-				e.removeClass("input_error");	
-				e.addClass("input_default");
-				//return false;
-		}else{
-			if(e.val().match(regex)){
-				//alert("valid")
-				e.addClass("input_valid");
-				e.removeClass("input_error");	
-				e.removeClass("input_default");
-				//alert($(this).attr("class"))
-				//return true;
-			}else{
-				e.addClass("input_error");
-				e.removeClass("input_valid");	
-				e.removeClass("input_default");				
-				e.val("");//First clear input
-				e.attr("placeholder", error_txt);
-				//alert("error")
-				//alert($(this).attr("placeholder"));
-				//alert($(this).attr("class"))
-				//return false;
-			}
-		}*/			
+		establish_input_validity(e, regex, error_txt, "blur")		
 	});		
 }
 
 
-/*function process_keyup(e, regex, error_txt){
-	e.keyup(function(){
-		establish_input_validity(e, regex, error_txt, "keyup")
-	});
-}*/
-
-
-//process_keyup($("#contact_us_email"), email_regex, "Please, enter a valid email");
 function enable_submit(form_inputs, input_item, input_exceptions, input_submit){
 
 	input_item.keyup(function(){//Triggered on keyup and also on autofill
@@ -125,21 +86,16 @@ function enable_submit(form_inputs, input_item, input_exceptions, input_submit){
 			if(form_inputs[i].elem.is($this)){
 				establish_input_validity(form_inputs[i].elem, form_inputs[i].regex, form_inputs[i].err_msg, "keyup");
 			}
-			/*if(contact_us_form_inputs[i].elem.is($("#contact_us_addy2"))){
-				$("#contact_us_addy2").addClass("validity_established");
-				$("#contact_us_addy2").removeClass("validity_not_established");					
-			}*/
+			if(input_exceptions.length > 0){
 			//for(var j = 0; j < input_exceptions.lenth; j++){//Establish as valid, any input element in the exceptions array
 				if(form_inputs[i].elem.is(input_exceptions[0])){
 					input_exceptions[0].addClass("validity_established");
 					input_exceptions[0].removeClass("validity_not_established");					
 				}	
 			//}
+			}
 		}
 	
-		//alert($("#contact_us_addy2").attr("class"));
-		//alert($(this))
-		//alert("2")
 		
 		var all_other_inputs_valid = true;//Assume by default all other inputs have been validated
 		//$("#contact_us_page_form .form_input_space").each(function(){//Iterate all inputs/textareas
@@ -266,23 +222,45 @@ function process_testimonials_submit($this, success_msg){
 }
 
 
+function process_homepage_contact_submit($this, success_msg){
+	if($this.hasClass("form_submit_non_ghosted")){
+		var name = $("#homepage_contact_name").val();
+		var email = $("#homepage_contact_email").val();
+		var phone = $("#homepage_contact_phone").val();
+		var msg = $("#homepage_contact_msg").val();
+		curr_form = $this.closest(".page_form");
+		
+		alert(name)
+		alert(email)
+		alert(phone)
+		alert(msg)
+		
+		generate_from_submit_screen(success_msg);
+	
+	}
+}
+
+
 function restore_original_state(e){
 	e.removeClass("input_valid");
 	e.removeClass("input_error");	
-	e.addClass("input_default");	
+	e.addClass("input_default");
+
+	e.removeClass("validity_established");	
+	e.addClass("validity_not_established");		
 }
 
 
 function clear_inputs(this_form, form_inputs){
-	i = 0;
+	//i = 0;
 	this_form.find(".form_input_space").each(function(){
 		//alert(i+" "+$(this).attr("id")+" "+form_inputs[i].placeholder_txt)
 		 //$(this).reset();
 		restore_original_state($(this));
 		//$(this).css("width", "90px");
-		$(this).attr("placeholder", form_inputs[i].placeholder_txt);
+		//$(this).attr("placeholder", form_inputs[i].placeholder_txt);
 		//$(this).val(form_inputs[i].placeholder_txt);
-		i++;
+		//i++;
 	});	
 }
 
@@ -290,25 +268,42 @@ function clear_inputs(this_form, form_inputs){
 function clear_form(this_form){
 	//alert(this_form.attr("class"))
 	 this_form.trigger("reset");
-	/*if(this_form.attr("id") == "contact_us_page_form"){
+	if(this_form.attr("id") == "contact_us_page_form"){
 		//alert("contact")
 		clear_inputs(this_form, contact_us_form_inputs);
 	}
 	if(this_form.attr("id") == "testimonials_page_form"){
 		//alert("tes")
 		clear_inputs(this_form, testimonials_form_inputs);
-	}	*/
+	}
+	if(this_form.attr("id") == "homepage_contact_form"){
+		//alert("home")
+		clear_inputs(this_form, hompage_contact_form_inputs);
+	}	
+
+	this_form.find(".form_submit").removeClass("form_submit_non_ghosted");
+	this_form.find(".form_submit").addClass("form_submit_ghosted");
 }
 
+
+
+function process_submit_click(){
+	$("#submit_div .close i").click(function(){
+		$("#submit_screen").hide();
+		$("body").css("overflow-y", "auto");
+		$("body").css("overflow-x", "hidden");
+		$(".animation_bubble_container").remove();
+		$(".submit_feedback").empty();
+		//console.log(bubble_anim)
+		window.clearInterval(bubble_anim);
+		clear_form(curr_form);
+	});	
+}
+
+
+
 $(document).ready(function(){
-
-	/*$(".form_input_space").focus(function(){
-		//console.log("focus");
-	});
-
-	$(".form_input_space").blur(function(){
-		//console.log("blur");
-	});*/	
+	
 	///^[0-9a-zA-Z]+$/
 	var name_regex = /^[a-zA-Z]+$/;
 	var address1_regex = /^[a-z0-9\s,'-]*$/i;
@@ -326,10 +321,7 @@ $(document).ready(function(){
 	contact_us_form_inputs.push({elem:$("#contact_us_email"), regex:email_regex, err_msg:"Please, enter a valid email", placeholder_txt:$("#contact_us_email").attr("placeholder")});
 	contact_us_form_inputs.push({elem:$("#contact_us_phone"), regex:phone_num_regex, err_msg:"Please, enter a valid phone number", placeholder_txt:$("#contact_us_phone").attr("placeholder")});
 	contact_us_form_inputs.push({elem:$("#contact_us_msg"), regex:message_regex, err_msg:"Invalid message", placeholder_txt:$("#contact_us_msg").attr("placeholder")});
-	
-	//alert(all_inputs[1].regex)
-	//Use objects instead to process focus, blur and keyup. Can now move process keyup meat into the keyup func
-	
+
 	for(var i = 0; i < contact_us_form_inputs.length; i++){
 		process_focus(contact_us_form_inputs[i].elem, contact_us_form_inputs[i].placeholder_txt);
 		process_blur(contact_us_form_inputs[i].elem, contact_us_form_inputs[i].regex, contact_us_form_inputs[i].err_msg);
@@ -347,39 +339,16 @@ $(document).ready(function(){
 		process_blur(testimonials_form_inputs[i].elem, testimonials_form_inputs[i].regex, testimonials_form_inputs[i].err_msg);
 	}	
 	
-	/*process_focus($("#contact_us_fname"));
-	process_blur($("#contact_us_fname"), name_regex, "Please, enter a valid first name");
-	process_keyup($("#contact_us_fname"), name_regex, "Please, enter a valid first name");
 	
-	process_focus($("#contact_us_lname"));
-	process_blur($("#contact_us_lname"), name_regex, "Please, enter a valid last name");
-	process_keyup($("#contact_us_lname"), name_regex, "Please, enter a valid last name");
+	hompage_contact_form_inputs.push({elem:$("#homepage_contact_name"), regex:full_name_regex, err_msg:"Please, enter your full name", placeholder_txt:$("#homepage_contact_name").attr("placeholder")});
+	hompage_contact_form_inputs.push({elem:$("#homepage_contact_email"), regex:email_regex, err_msg:"Please, enter a valid email", placeholder_txt:$("#homepage_contact_email").attr("placeholder")});
+	hompage_contact_form_inputs.push({elem:$("#homepage_contact_phone"), regex:phone_num_regex, err_msg:"Please, enter a valid phone number", placeholder_txt:$("#homepage_contact_phone").attr("placeholder")});
+	hompage_contact_form_inputs.push({elem:$("#homepage_contact_msg"), regex:message_regex, err_msg:"Invalid message", placeholder_txt:$("#homepage_contact_msg").attr("placeholder")});
 	
-	process_focus($("#contact_us_addy1"));
-	process_blur($("#contact_us_addy1"), address_regex, "Please, enter a valid address");
-	process_keyup($("#contact_us_addy1"), address_regex, "Please, enter a valid address");
 	
-	process_focus($("#contact_us_addy2"));
-	process_blur($("#contact_us_addy2"), address_regex, "Please, enter a valid address");
-	process_keyup($("#contact_us_addy2"), address_regex, "Please, enter a valid address");
-	
-	process_focus($("#contact_us_email"));
-	process_blur($("#contact_us_email"), email_regex, "Please, enter a valid email");
-	process_keyup($("#contact_us_email"), email_regex, "Please, enter a valid email");
-
-	process_focus($("#contact_us_phone"));
-	process_blur($("#contact_us_phone"), phone_num_regex, "Please, enter a valid phone number");
-	process_keyup($("#contact_us_phone"), phone_num_regex, "Please, enter a valid phone number");	
-	
-	process_focus($("#contact_us_msg"));
-	process_blur($("#contact_us_msg"), message_regex, "Invalid message"); 
-	process_keyup($("#contact_us_msg"), message_regex, "Invalid message"); */
-
-	//setTimeout(function(){enable_submit();},10);
-	//$("#contact_us_addy2").addClass("validity_established");
-	//$("#contact_us_addy2").removeClass("validity_not_established");
 	enable_submit(contact_us_form_inputs, $("#contact_us_page_form .form_input_space"), [$("#contact_us_addy2")], $("#contact_us_submit"));
 	enable_submit(testimonials_form_inputs, $("#testimonials_page_form .form_input_space"), [$("#testimonials_website")], $("#testimonials_submit"));
+	enable_submit(hompage_contact_form_inputs, $("#homepage_contact_form .form_input_space"), [], $("#homepage_contact_submit"));
 	
 	
 	$("#contact_us_submit").click(function(){
@@ -392,34 +361,10 @@ $(document).ready(function(){
 	});	
 	
 	
-	$("#submit_div .close i").click(function(){
-		$("#submit_screen").hide();
-		$("body").css("overflow-y", "auto");
-		$("body").css("overflow-x", "hidden");
-		$(".animation_bubble_container").remove();
-		//console.log(bubble_anim)
-		window.clearInterval(bubble_anim);
-		clear_form(curr_form);
-	});
+	$("#homepage_contact_submit").click(function(){
+		process_homepage_contact_submit($(this), "Thanks for reaching out. We will get back with you shortly.");
+	});	
 	
-	//$("#contact_us_page_form .form_input_space").each(function(){
-		/*$(this).autocomplete({
-			//alert($(this).val());
-			focus: function( event, ui ) {
-				alert($(this).val());
-			}
-		});*/
-		
-		//$("#contact_us_fname").on('autocompleteSelect', function(event, node) {
-		//$(this).on('autocompleteSelect', function(event, node) {
-			//alert(1)
-		//});		
-	//});
-	
-	//$("#contact_us_page_form .form_input_space").select(function(){
-		//alert(1)
-	//});
-	
+	process_submit_click();	
 
-	
 });

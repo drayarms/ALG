@@ -1,0 +1,420 @@
+.content_homepage #attorney_panel{
+	background-color:#ffffff;
+	width:100%;
+	margin:auto;
+}
+
+.content_homepage #attorney_panel #attorney_photo_container{
+	/*float:left;*/
+	/*width:40%;*/
+	/*height:95%;*/
+	overflow:hidden;
+	min-height:0px;
+	/*border:1px solid red;*/
+	/*background:#e6e6e6;*/
+}
+
+.content_homepage #attorney_panel #attorney_photo_container #attorney_photo{
+	display:none;
+}
+
+.content_homepage #attorney_panel #law_office_details{
+	/*height:95%;*/
+	/*border:1px solid red;*/
+	overflow:hidden;/*Prevents child elements from causing grandparents to strech.*/
+	
+	/*border:1px solid red;*/
+	/*background-color:yellow;*/
+}
+
+.content_homepage #attorney_panel #law_office_details .our_h1{
+
+}
+
+.content_homepage #attorney_panel #law_office_details .our_h2{
+	
+}
+
+.content_homepage #attorney_panel #law_office_details .our_h5{
+
+}
+
+.content_homepage #attorney_panel #law_office_details h1{
+	/*position:relative;top:8%;*/
+	/*padding:0;*/
+	/*margin:0;*//*Padding and margin set to 0 to prevent spaces in ancestors*/
+	/*line-height:1.8;*/
+	/*font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;*/
+	/*font-weight:390;*/
+	color: rgb(51, 51, 51);	
+	overflow:hidden;
+}
+
+.content_homepage #attorney_panel #law_office_details h2{
+	/*position:relative;top:8%;*/
+	/*padding:0;*/
+	/*margin:0;*//*Padding and margin set to 0 to prevent spaces in ancestors*/
+	/*font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;*/
+	/*font-weight:190;*/
+	/*color: rgb(230, 184, 0);*/
+	/*color: rgb(204, 163, 0);*/
+	color:rgb(186, 45, 139);
+	overflow:hidden;
+}
+
+.content_homepage #attorney_panel #law_office_details h5{
+	/*position:relative;top:8%;*/
+	/*padding:0;*/
+	/*margin:0;*//*Padding and margin set to 0 to prevent spaces in ancestors*/
+	/*line-height:1.8;*/
+	/*font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;*/
+	/*font-weight:190;*/
+	color: rgb(51, 51, 51);	
+	overflow:hidden;
+}
+
+.content_homepage #contact_panel{
+	padding-top:3%;
+	background-color:#001a33;
+	width:100%;
+	margin:auto;
+	overflow:hidden;
+}
+
+
+.content_homepage #contact_panel form{
+	/*width:60%;*/ /*set in js*/
+	margin:auto;
+	margin-top:2%;
+	/*background:red;*/
+}
+
+.content_homepage #contact_panel form .left_fieldset{
+	float:left;	
+}
+
+.content_homepage #contact_panel form .right_fieldset{
+	float:right;
+}
+
+.content_homepage #contact_panel form .left_fieldset, .content_homepage #contact_panel form .right_fieldset{
+	/*width:45%;*/ /*set in js*/
+	height:130px;
+	border:none;
+	/*background:yellow;*/
+	margin:0;
+	padding:0;	
+	
+	
+	font-size:130%;
+	font-weight:bold;
+
+}
+
+.content_homepage #contact_panel form .bottom_fieldset{
+	height:70px;
+	margin:auto;
+	border:none;
+}
+
+.content_homepage #contact_panel form .form_input{
+	/*display:inline-block;*/
+	width:100%;
+	/*margin:0px;*/
+	/*padding:0px;*/
+	/*box-sizing:border-box;*//*Contains input in its container fieldset*/
+	margin-bottom:0.6%;
+	height:31.5%;
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+	
+	
+
+	border:none;
+	font-size:80%;
+
+}
+
+
+
+
+
+.content_homepage #contact_panel form .input_default{	
+	color:#333333;
+}
+
+/*.content_homepage #contact_panel form .input_error{
+	color:red;
+}*/
+
+.content_homepage #contact_panel form .input_valid{
+	color:green;
+}
+
+
+.content_homepage #contact_panel form .form_submit{
+	width:20%;
+	height:80%;
+	position:relative;top:20%;
+	border:none;
+	background-image:linear-gradient(to bottom, #ffcc00, #cca300);
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+}
+
+
+.content_homepage #contact_panel form .form_submit_non_ghosted{
+	cursor:pointer;
+	opacity:1.0;
+}
+
+.content_homepage #contact_panel form .form_submit_ghosted{
+	cursor:arrow;
+	opacity:0.4;
+}
+
+.content_homepage #contact_panel form .form_submit_non_ghosted:hover{
+	background-image:linear-gradient(to bottom, #d347a4, #ba2d8b);
+}
+
+.content_homepage #contact_panel form textarea{
+	width:100%;
+	height:97.7%;
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+	
+	
+	color:#333333;
+	border:none;
+	
+}
+
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+	font-size:90%;
+	opacity: 1; /* Firefox */
+}
+
+.input_default::placeholder{
+	color: #333333;
+}
+
+/*.input_valid::placeholder{
+	color: green;
+}*/
+
+.input_error::placeholder{
+	color: red;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+	font-size:90%;
+	color: #333333;
+}
+
+.input_default:-ms-input-placeholder{
+	color: #333333;
+}
+
+/*.input_valid:-ms-input-placeholder{
+	color: green;
+}*/
+
+.input_error:-ms-input-placeholder{
+	color: red;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+	font-size:90%;
+	color: #333333;
+}
+
+.input_default::-ms-input-placeholder{
+	color: #333333;
+}
+
+/*.input_valid::-ms-input-placeholder{
+	color: green;
+}*/
+
+.input_error::-ms-input-placeholder{
+	color: red;
+}
+
+
+.content_homepage #contact_panel h1{
+	/*position:relative;top:10%;*/
+
+	text-align:center;
+	width: fit-content;
+	margin:auto;
+	margin-top:0%;
+	line-height:1.8;
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+	font-weight:190;
+	color:rgb(255, 255, 255);
+}
+
+
+#homepage_background_image_container{
+	/*Houses the background animation plus other elements in the foreground*/
+	/*background-color:orange;*/
+	/*position:absolute;top:0px;*/
+	/*margin: auto;*/
+	/*min-height:0px;*/
+	/*height:950px;*/
+	/*width:100%;*/
+	z-index:-1;
+	/*overflow:hidden;*/
+	/*border:3px dotted red;*/
+	/*Top positioning set in dimensions.js*/
+	/*position:absolute;top:0px;*/
+}
+
+#homepage_background_image_container img{
+	/*z-index:-1;*/
+	display:none;
+}
+
+.content_homepage #mission_statement_panel_container{
+	/*margin:auto;*/
+}
+
+.content_homepage #mission_statement_panel_container #mission_statement_panel{
+	overflow:hidden;
+	padding-left:15px;
+	padding-right:15px;
+	background-color:#ffffff;
+}
+
+.content_homepage #mission_statement_panel_container #mission_statement_panel h1{
+	/*text-align:center;*/
+	/*width: fit-content;*/
+	/*margin:auto;*/
+	/*margin-top:0%;*/
+	/*line-height:1.8;*/
+	/*font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;*/
+	/*font-weight:190;*/
+	/*color: rgb(204, 163, 0);*/
+	color:rgb(186, 45, 139);
+	/*border:1px dotted green;*/
+}
+
+.content_homepage #mission_statement_panel_container #mission_statement_panel h2{
+	/*text-align:center;*/
+	/*width: fit-content;*/
+	/*margin:auto;	*/
+	margin-top:8%;
+	/*line-height:1.8;*/
+	/*font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;*/
+	/*font-weight:190;*/
+	color: rgb(51, 51, 51);	
+		
+}
+
+.content_homepage #mission_statement_panel_container #mission_statement_panel h3 a{
+	/*text-align:center;*/
+	/*width: fit-content;*/
+	/*margin:auto;	*/
+	margin-top:8%;
+	/*line-height:1.8;*/
+	/*font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;*/
+	/*font-weight:190;*/
+	color: rgb(51, 51, 51);
+	text-decoration: underline;
+	/*padding-left:5%;*/
+	/*padding-right:5%;	*/
+}
+
+.content_homepage #mission_statement_panel_container #mission_statement_panel h5{	
+	/*text-align:center;*/
+	/*width: fit-content;*/
+	/*margin:auto;	*/
+	margin-top:7%;
+	/*line-height:1.8;*/
+	/*font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;*/
+	/*font-weight:190;*/
+	color: rgb(51, 51, 51);		
+	/*border:1px dotted blue;*/
+	/*padding-left:5%;*/
+	/*padding-right:5%;*/
+}
+
+.content_homepage .specialties_panel{
+	margin:auto;
+}
+
+.content_homepage .specialties_panel .specialty_box{
+
+}
+
+													
+.content_homepage .specialties_panel .specialty_box1 a .specialty_box_checkbox i{
+	color:#000000;
+}
+.content_homepage .specialties_panel .specialty_box1 a .specialty_box_text{
+	color:#000000;
+}
+.content_homepage .specialties_panel .specialty_box1 a .specialty_box_arrow{
+	color:#000000;
+}
+
+.content_homepage .specialties_panel .specialty_box2 a .specialty_box_checkbox i{
+	color:#ffffff;
+}
+.content_homepage .specialties_panel .specialty_box2 a .specialty_box_text{
+	color:#ffffff;
+}
+.content_homepage .specialties_panel .specialty_box2 a .specialty_box_arrow{
+	color:#ffffff;
+}
+
+.content_homepage .specialties_panel .specialty_box3 a .specialty_box_checkbox i{
+	color:#000000;
+}
+.content_homepage .specialties_panel .specialty_box3 a .specialty_box_text{
+	color:#000000;
+}
+.content_homepage .specialties_panel .specialty_box3 a .specialty_box_arrow{
+	color:#000000;
+}
+
+.content_homepage .specialties_panel .specialty_box a{
+	display:inline-block;
+	width:100%;
+	height:100%;
+}
+
+.content_homepage .specialties_panel .specialty_box a .specialty_box_checkbox{
+	display:block;
+	text-align:center;
+}
+
+.content_homepage .specialties_panel .specialty_box a .specialty_box_checkbox i{
+	font-size:170%;
+	font-weight:100;
+	/*color:#00264d;*/
+	text-shadow:0px 0px 0px #000000;
+}
+
+.content_homepage .specialties_panel .specialty_box a .specialty_box_text{
+	text-align:center;
+	display:table-cell;/*For vertical alignment*/
+	vertical-align: middle;
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+	font-size:150%;
+	font-weight:100;
+	/*color: rgb(51, 51, 51);	*/	
+}
+
+.content_homepage .specialties_panel .specialty_box a .specialty_box_arrow{
+	display:inline-block;
+	text-align:center;
+}
+
+.content_homepage .specialties_panel .specialty_box a .specialty_box_arrow i{
+	font-size:170%;
+	font-weight:100;
+	/*color:#00264d;*/
+	text-shadow:0px 0px 0px #000000;
+}

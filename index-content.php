@@ -88,22 +88,20 @@
 				<h1>Start Your Free Consultation</h1>
 				
 				<!--<form action="/action_page.php" method="POST">-->
-				<form action="#" method="POST">
+				<form id = "homepage_contact_form" class = "page_form">
 					<fieldset class = "left_fieldset">
 						<!--<legend></legend>-->
-						<input type="text" id="" class = "form_input" name="name" value = "Your Name">
-						<input type="text" id="" class = "form_input" name="email" value = "Email">
-						<input type="text" id="" class = "form_input" name="phone" value = "Phone Number">
+						<input type="text" id="homepage_contact_name" class = "form_input form_input_space input_default" name="name" placeholder = "Your Name" maxlength = 41>
+						<input type="text" id="homepage_contact_email" class = "form_input form_input_space input_default" name="email" placeholder = "Email" maxlength = 50>
+						<input type="text" id="homepage_contact_phone" class = "form_input form_input_space input_default" name="phone" placeholder = "Phone Number" maxlength = 20>
 					</fieldset>
 					<fieldset class = "right_fieldset">
 						<!--<legend></legend>-->
-						<textarea id="" class = "" name="message">
-							Tell us how we can help you.
-						</textarea>
+						<textarea id="homepage_contact_msg" class = "form_input_space input_default" name="msg" value = "" placeholder = "Enter your question/comment." maxlength = 500></textarea>
 					</fieldset>	
 					<fieldset class = "bottom_fieldset">
 						<!--<legend></legend>-->
-						<input type="submit" class = "form_submit" value="GET HELP NOW">
+						<input type="button" id = "homepage_contact_submit" class = "form_submit form_submit_ghosted" value="GET HELP NOW">
 					</fieldset>										
 				</form>
 
