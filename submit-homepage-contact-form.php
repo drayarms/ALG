@@ -6,6 +6,8 @@
 	 $phone = $_POST["phone"];
 	 $msg = $_POST["msg"];
 	 
+	 require "send_emails.php";
+	 
 	 for($i = 0; $i < 9999999; $i++){
 		$a = $i+1;
 	 }

@@ -9,6 +9,11 @@
 	 $phone = $_POST["phone"];
 	 $msg = $_POST["msg"];
 	 
+	 require "send_emails.php";
+	 
+	 $name = $name1." ".$name2;
+	 receive_contact_email($name, $email, $phone, $msg);
+	 
 	 for($i = 0; $i < 9999999; $i++){
 		$a = $i+1;
 	 }
