@@ -19,12 +19,12 @@
 						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 						cillum dolore eu fugiat nulla pariatur.
 					</h5>
-					<h3><a href="index.php" >Request a Case Review</a></h3>
+					<h3><a href="contact-us.php" >Request a Case Review</a></h3>
 				</div>
 			</div>
 			<div class = "specialties_panel" style = "">
 				<div class = "specialty_box specialty_box1" style = "">
-					<a href="index.php">
+					<a href="practice-areas.php#business-transactions">
 						<div class = "specialty_box_checkbox"> 
 							<i class="fa fa-balance-scale"></i>
 						</div>
@@ -35,7 +35,7 @@
 					</a>				
 				</div>
 				<div class = "specialty_box specialty_box2" style = "">
-					<a href="index.html">
+					<a href="practice-areas.php#real-estate">
 						<div class = "specialty_box_checkbox"> 
 							<i class="fa fa-balance-scale"></i>
 						</div>
@@ -46,7 +46,7 @@
 					</a>				
 				</div>	
 				<div class = "specialty_box specialty_box3" style = "">
-					<a href="index.html">
+					<a href="practice-areas.php#immigration">
 						<div class = "specialty_box_checkbox"> 
 							<i class="fa fa-balance-scale"></i>
 						</div>
@@ -64,7 +64,7 @@
 				</div>
 				
 				<div id = "law_office_details" class = "statements" style = "background:none;overflow:hidden">
-					<h2>Welcome to</h2><p></p>
+					<!--<h2>Welcome to</h2><p></p>
 					<h1>Akofu Law Group</h1><p></p><p></p><p></p>
 					<div style = "width:55%;border-top:1px solid rgb(51, 51, 51);position:relative;top:0%;"></div><p>
 					<h5>
@@ -78,7 +78,7 @@
 						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 						consequat.				
-					</h5>	
+					</h5>-->	
 				</div>
 			</div>
 

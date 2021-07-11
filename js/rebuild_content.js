@@ -452,12 +452,14 @@ function rebuild_mission_statement_box(){
 		//$("#mission_statement_panel").css({
 			//position: "relative",
 			//left: panel_horizontal_shift + "px"
-		//});		
+		//});	
+		$("#mission_statement_panel").css("text-align", "left");
 	}else{//Resize level 2 or 3
 		$("#mission_statement_panel").css({
 			position: "relative",
 			top: "0px"
-		});		
+		});	
+		$("#mission_statement_panel").css("text-align", "justify");		
 		centralize_element_horizontally($("#mission_statement_panel"));		
 		//console.log("container "+$("#mission_statement_panel_container").width()+" panel "+$("#mission_statement_panel").width());
 	}
@@ -568,21 +570,21 @@ function rebuild_attorney_panel(){
 	
 	//attorney_panel_width = window_width*0.95;
 	attorney_panel_height = attorney_photo_container_height*container_to_content_height_ratio;
-	law_office_details_height = attorney_photo_container_height;
+	//law_office_details_height = attorney_photo_container_height;
 	if(resize_level <= 1){//Max Window
 		law_office_details_width = attorney_panel_width - attorney_photo_container_width - 10;//Allowance for float	
 	}else{//Min Window
 		law_office_details_width = window_width;//attorney_panel_width;
-		law_office_details_height = screen_width*0.2;
-		attorney_panel_height = (attorney_photo_container_height + law_office_details_height)//*container_to_content_height_ratio;
+		//law_office_details_height = screen_width*0.2;
+		//attorney_panel_height = (attorney_photo_container_height + law_office_details_height)//*container_to_content_height_ratio;
 	}
 	
 	$("#attorney_panel").css("width", attorney_panel_width + "px");
-	$("#attorney_panel").css("height", attorney_panel_height + "px");
+
 	$("#attorney_photo_container").css("width", attorney_photo_container_width + "px");
 	$("#attorney_photo_container").css("height", attorney_photo_container_height + "px");
 	$("#law_office_details").css("width", law_office_details_width + "px");
-	$("#law_office_details").css("min-height", law_office_details_height + "px");	
+	//$("#law_office_details").css("min-height", law_office_details_height + "px");	
 //alert($("#law_office_details").height())
 //alert($("#law_office_details").width())
 
@@ -602,7 +604,9 @@ function rebuild_attorney_panel(){
 		});			
 		//Centralize vertically
 		centralize_element_vertically($("#attorney_photo_container"));
-		centralize_element_vertically($("#law_office_details"));		
+		centralize_element_vertically($("#law_office_details"));
+		$("#law_office_details").show();
+		law_office_details_height = attorney_photo_container_height;
 	}else{//Min Window
 		$("#attorney_photo_container").css("float", "none");
 		$("#law_office_details").css("float", "none");	
@@ -616,16 +620,30 @@ function rebuild_attorney_panel(){
 		$("#law_office_details").css({
 			position: "relative",
 			top: "0px"
-		});			
-		centralize_element_horizontally($("#attorney_photo_container"));
-		centralize_element_horizontally($("#law_office_details"));
+		});	
+		$("#law_office_details").hide();
+		law_office_details_height = 0;
+		//centralize_element_horizontally($("#attorney_photo_container"));
+		//centralize_element_horizontally($("#law_office_details"));
 	}	
 	//centralize_element_horizontally($("#attorney_panel")); 
+	
+	if(resize_level <= 1){
+		$("#law_office_details").css("text-align", "left");
+		$("#law_office_details h5").css("padding-right", "15%");
+	}else{
+		$("#law_office_details").css("text-align", "justify");
+		$("#law_office_details h5").css("padding-right", "0%");
+	}
 
 	$("#attorney_photo").show();//Show before scaling and positioning coz hidden element's width and height would be 0
 	window.setTimeout(function(){
 		scale_and_position_image($("#attorney_photo"), $("#attorney_photo_container"), 0.95);
 	}, 100);//Give a sufficient enough delay for image to be rendered first before scaling/positioning	
+	
+	$("#law_office_details").css("height", law_office_details_height + "px");	
+	attorney_panel_height = (attorney_photo_container_height + law_office_details_height)//*container_to_content_height_ratio;
+	$("#attorney_panel").css("height", attorney_panel_height + "px");
 }
 
 

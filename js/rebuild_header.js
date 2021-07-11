@@ -896,5 +896,4 @@ function rebuild_header(){
 	highlight_menu();
 	
 
-
 }

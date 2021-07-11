@@ -434,7 +434,8 @@ textarea{
 	/*text-align:left;*/
 	/*width: fit-content;*/
 	/*margin:auto;*/	
-	margin-top:8%;
+	/*margin-top:8%;*/
+	padding-top:4%;
 	/*line-height:1.8;*/
 	/*font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;*/
 	/*font-weight:190;*/
@@ -446,7 +447,8 @@ textarea{
 	/*text-align:left;*/
 	/*width: fit-content;*/
 	/*margin:auto;*/	
-	margin-top:8%;
+	/*margin-top:8%;*/
+	padding-top:4%;
 	/*line-height:1.8;*/
 	/*font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;*/
 	/*font-weight:190;*/
@@ -461,7 +463,8 @@ textarea{
 	/*text-align:left;*/
 	/*width: fit-content;*/
 	/*margin:auto;*/	
-	margin-top:4%;
+	/*margin-top:4%;*/
+	padding-top:4%;
 	/*line-height:1.8;*/
 	/*font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;*/
 	/*font-weight:190;
@@ -591,6 +594,7 @@ textarea{
 .footer .footer_upper_half .specialties_statements{
 	width:100%;
 	margin:auto;
+	visibility:hidden;/*Avoids flickering*/
 	/*overflow:hidden;*/
 	/*border:1px solid transparent;*/
 }
@@ -714,6 +718,10 @@ textarea{
 }
 
 .header .menu_bar{
+	/*display:none;*/
+	
+	/*width:0px;
+	height:0px;*/
 	overflow:hidden;/*Offsets any padding issues*/
 	/*border:1px dotted green;*/
 }
@@ -731,6 +739,7 @@ textarea{
 }
 
 .top_menu_bar{
+	visibility:hidden;/*Only show after dimenstion have been computed, to avoid flickering*/
 	/*display:none;*//*Prevents the unrpocessed menu bar from flickering b4 page fully loads*/
 }
 
@@ -941,11 +950,13 @@ border:1px solid red;
 }
 
 
+.statements{visibility:hidden;}
+
 .statements h1{
 	/*text-align:left;*/
-	width: fit-content;
+	/*width: fit-content;*/
 	/*margin:auto;*/
-	line-height:1.8;
+	/*line-height:1.8;*/
 	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
 	font-weight:190;
 	/*border:1px dotted blue;*/
@@ -953,19 +964,19 @@ border:1px solid red;
 
 .statements h2{
 	/*text-align:left;*/
-	width: fit-content;
+	/*width: fit-content;*/
 	/*margin:auto;*/	
-	line-height:1.8;
+	/*line-height:1.8;*/
 	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
-	font-weight:190;	
+	font-weight:190;
 	/*border:1px dotted blue;*/	
 }
 
 .statements h3 a{
 	/*text-align:left;*/
-	width: fit-content;
+	/*width: fit-content;*/
 	/*margin:auto;*/	
-	line-height:1.8;
+	/*line-height:1.8;*/
 	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
 	font-weight:190;
 	text-decoration: underline;
@@ -976,10 +987,10 @@ border:1px solid red;
 
 .statements h5{
 	/*text-align:left;*/
-	width: fit-content;
+	/*width: fit-content;*/
 	/*margin:auto;*/	
-	margin-top:4%;
-	line-height:1.8;
+	/*margin-top:4%;*/
+	line-height:1.5;
 	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
 	font-weight:190;
 	color: rgb(51, 51, 51);		

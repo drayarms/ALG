@@ -164,6 +164,8 @@ function rebuild_footer_contact_details_panel(){
 			position: "relative",
 			left: "0px"
 		});	*/	
+		$(".footer_contact_details bulletin").css("text-align", "left");
+		$(".footer_mission_statement h5").css("text-align", "left");
 	}else{//Min
 		//Unfloat left
 		$(".footer_contact_details").css("float", "none");
@@ -172,7 +174,9 @@ function rebuild_footer_contact_details_panel(){
 		$(".footer_contact_details").css("margin", "auto");
 		$(".footer_map_panel").css("margin", "auto");
 		//centralize_element_horizontally($(".footer_contact_details"));	
-		//centralize_element_horizontally($(".footer_map_panel"));			
+		//centralize_element_horizontally($(".footer_map_panel"));	
+		$(".footer_contact_details bulletin").css("text-align", "justify");		
+		$(".footer_mission_statement h5").css("text-align", "justify");
 	}
 
 	//centralize_element_horizontally($(".footer_contact_details_panel"));	

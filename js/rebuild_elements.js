@@ -105,6 +105,7 @@ function rebuild_elements(){
 	//console.log("1current session scroll top: "+window.sessionStorage.scrollTop);
 	//alert("1current session scroll top: "+window.sessionStorage.scrollTop);	
 	rebuild_header();
+	$(".top_menu_bar").css("visibility", "visible");
 	rebuild_content();
 	if(window.location.href.indexOf("index") > -1) {
 		rebuild_bg_img_dimensions();
@@ -113,9 +114,11 @@ function rebuild_elements(){
 		rebuild_bg_img_position();
 		//console.log("2current session scroll top: "+window.sessionStorage.scrollTop);
 	}	
+	$(".statements").css("visibility", "visible");
 	
 	
 	rebuild_footer();	
+	$(".specialties_statements").css("visibility", "visible");
 	//alert("1current session scroll top: "+window.sessionStorage.scrollTop);
 
 
