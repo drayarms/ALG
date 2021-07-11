@@ -59,14 +59,11 @@
 			</div>
 			
 			<div id = "attorney_panel" style = "overflow:hidden">
-				<div id = "attorney_photo_container" style = "">
-					<img id = "attorney_photo" style = "" src="images/background_images/PHOTO-2021-05-20-14-33-00 (1).jpg" alt="Smiling Lawyer">
-				</div>
 				
 				<div id = "law_office_details" class = "statements" style = "background:none;overflow:hidden">
-					<!--<h2>Welcome to</h2><p></p>
-					<h1>Akofu Law Group</h1><p></p><p></p><p></p>
-					<div style = "width:55%;border-top:1px solid rgb(51, 51, 51);position:relative;top:0%;"></div><p>
+					<h2>Welcome to</h2>
+					<h1>Akofu Law Group</h1><p></p>
+					<!--<div style = "width:55%;border-top:1px solid rgb(51, 51, 51);position:relative;top:0%;margin:auto;"></div><p>-->
 					<h5>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -78,8 +75,13 @@
 						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 						consequat.				
-					</h5>-->	
+					</h5>
 				</div>
+				
+				<div id = "attorney_photo_container" style = "">
+					<img id = "attorney_photo" style = "" src="images/background_images/PHOTO-2021-05-20-14-33-00 (1).jpg" alt="Smiling Lawyer">
+				</div>
+				
 			</div>
 
 

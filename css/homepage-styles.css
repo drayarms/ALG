@@ -1,4 +1,6 @@
 .content_homepage #attorney_panel{
+	margin-left:auto;
+	margin-right:auto;
 	background-color:#ffffff;
 	border:1px dotted green;
 	width:100%;
@@ -11,7 +13,7 @@
 	/*height:95%;*/
 	overflow:hidden;
 	min-height:0px;
-	/*border:1px solid red;*/
+	/*border:1px solid blue;*/
 	/*background:#e6e6e6;*/
 }
 
@@ -21,9 +23,8 @@
 
 .content_homepage #attorney_panel #law_office_details{
 	/*height:95%;*/
-	border:1px solid red;
+	/*border:1px solid red;*/
 	overflow:hidden;/*Prevents child elements from causing grandparents to strech.*/
-	
 	/*border:1px solid red;*/
 	/*background-color:yellow;*/
 }
@@ -37,6 +38,8 @@
 	/*font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;*/
 	/*font-weight:390;*/
 	padding-top:4%;
+
+	text-decoration: underline;	
 	color: rgb(51, 51, 51);	
 	overflow:hidden;
 }

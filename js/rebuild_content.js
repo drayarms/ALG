@@ -318,7 +318,7 @@ function rebuild_bg_img_position(){
 		resultant_top += window.sessionStorage.scrollTop*background_scroll_factor; //Move against direction of scroll by a fraction, proportional to scroll top to give a bouncy effect
 		//resultant_top += 37.625
 		//resultant_top -= 37.625
-		console.log("resultant "+resultant_top)
+		//console.log("resultant "+resultant_top)
 		$("#homepage_background_image_container").css({
 			position: "absolute",
 			top: (resultant_top) + "px"
@@ -549,6 +549,78 @@ function rebuild_contact_panel1(){
 	
 
 function rebuild_attorney_panel(){
+	var attorney_panel_width = window_width;
+	var attorney_panel_height;
+	var attorney_photo_container_width;
+	var attorney_photo_container_height;
+	var law_office_details_width;
+	var law_office_details_height;
+	
+	//attorney_photo_container_width = screen_width*0.4;//Invariant*
+	//attorney_photo_container_height = attorney_photo_container_width*1.125;
+	
+	if(resize_level <= 2){//Max Window
+		attorney_photo_container_width = screen_width*0.4;
+		attorney_photo_container_height = attorney_photo_container_width*1.125;	
+	
+		law_office_details_width = attorney_panel_width - attorney_photo_container_width - 10;//Allowance for float	
+		law_office_details_height = attorney_photo_container_height;
+		attorney_panel_height = attorney_photo_container_height;
+		
+		$("#attorney_photo_container").css("float", "left");
+		$("#law_office_details").css("float", "right");
+		
+	}else{//Min Window
+		attorney_photo_container_width = attorney_panel_width*0.9;
+		attorney_photo_container_height = attorney_photo_container_width*0.7;	
+	
+		law_office_details_width = attorney_panel_width;//window width
+		law_office_details_height = screen_width*0.25;
+		attorney_panel_height = attorney_photo_container_height + law_office_details_height;
+		
+		$("#attorney_photo_container").css("float", "none");
+		$("#law_office_details").css("float", "none");	
+		
+	}
+	
+	
+	$("#attorney_panel").css("width", attorney_panel_width + "px");
+	$("#attorney_panel").css("height", attorney_panel_height + "px");
+	$("#attorney_photo_container").css("width", attorney_photo_container_width + "px");
+	$("#attorney_photo_container").css("height", attorney_photo_container_height + "px");
+	$("#law_office_details").css("width", law_office_details_width + "px");
+	$("#law_office_details").css("height", law_office_details_height + "px");
+	//$("#law_office_details").css("min-height", law_office_details_height + "px");	
+
+	if(resize_level <= 2){//Max Window
+		//Uncentralize horizontally
+		$("#attorney_photo_container").css({
+			position: "relative",
+			left: "0px"
+		});	
+		
+		$("#law_office_details").css("text-align", "left");
+		$("#law_office_details").css("padding-right", "15%");
+		$("#law_office_details").css("padding-left", "5%");
+		
+	}else{	
+			
+		centralize_element_horizontally($("#attorney_photo_container"));
+		
+		$("#law_office_details").css("text-align", "justify");
+		$("#law_office_details").css("padding-right", "1%");
+		$("#law_office_details").css("padding-left", "1%");		
+	}
+	
+	$("#attorney_photo").show();//Show before scaling and positioning coz hidden element's width and height would be 0
+	window.setTimeout(function(){
+		scale_and_position_image($("#attorney_photo"), $("#attorney_photo_container"), 1);
+	}, 100);//Give a sufficient enough delay for image to be rendered first before scaling/positioning	
+		
+}
+
+
+function rebuild_attorney_panel2(){
 	var container_to_content_height_ratio = 1.06;
 	var attorney_panel_width = window_width*0.95;
 	var attorney_panel_height;
