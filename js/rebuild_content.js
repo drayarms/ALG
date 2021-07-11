@@ -969,7 +969,7 @@ function rebuild_content(){
 		$("#firm_info_image").show();//Show before scaling and positioning coz hidden element's width and height would be 0
 		window.setTimeout(function(){		
 			scale_and_position_image($("#firm_info_image"), $("#firm_info_image").parent(), 1);
-		});
+		},100);
 	}else if(window.location.href.indexOf("attorney-profiles") > -1){
 		
 		$(".attorneys_bio").css("width", content_banner_width +"px");
@@ -977,9 +977,13 @@ function rebuild_content(){
 		//$(".attorney_bio").each(function(){
 			//scale_and_position_image($(this).find(".bio_image"), $(this).find("bio_image_container"), 1);
 		//});
-		$(".attorney_bio_image").each(function(){
-			scale_and_position_image($(this), $(this).parent(), 1);
-		});		
+		$(".attorney_bio_image").show();
+		window.setTimeout(function(){		
+			scale_and_position_image($(".attorney_bio_image"), $(".attorney_bio_image").parent(), 1);
+		},100);		
+		//$(".attorney_bio_image").each(function(){
+			//scale_and_position_image($(this), $(this).parent(), 1);
+		//});		
 	}else if(window.location.href.indexOf("contact-us") > -1){
 		$("#contact_bulletin").css("width", content_banner_width +"px");
 		$("#contact_us_page_form").css("width", content_banner_width +"px");
@@ -997,7 +1001,7 @@ function rebuild_content(){
 		$("#article_image").show();//Show before scaling and positioning coz hidden element's width and height would be 0
 		window.setTimeout(function(){		
 			scale_and_position_image($("#article_image"), $("#article_image").parent(), 1);
-		});
+		},100);
 	}else if(window.location.href.indexOf("blog") > -1){
 		$("#blog_inner").css("width", content_banner_width*0.96 +"px");
 		rebuild_blog_square($("#blog_inner").width());
@@ -1009,7 +1013,7 @@ function rebuild_content(){
 		$("#intro_image").show();//Show before scaling and positioning coz hidden element's width and height would be 0
 		window.setTimeout(function(){		
 			scale_and_position_image($("#intro_image"), $("#intro_image").parent(), 1);
-		});
+		},100);
 	}else if(window.location.href.indexOf("testimonials") > -1){
 		$("#testimonials_bulletin").css("width", content_banner_width +"px");
 		$("#testimonials_page_form").css("width", content_banner_width +"px");

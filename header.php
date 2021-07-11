@@ -15,6 +15,12 @@
 			if($page_index == 0){
 				echo '<link type="text/css" rel="stylesheet" href="css/homepage-styles.css"/>';
 			}		
+			if($page_index == 1){
+				echo '<link type="text/css" rel="stylesheet" href="css/about-us-styles.css"/>';
+			}		
+			if($page_index == 2){
+				echo '<link type="text/css" rel="stylesheet" href="css/attorney-profiles-styles.css"/>';
+			}			
 			if($page_index == 3){
 				echo '<link type="text/css" rel="stylesheet" href="css/practice-areas-styles.css"/>';
 			}		
