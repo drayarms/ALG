@@ -52,7 +52,7 @@
 					</fieldset>	-->	<!--rows = "8" cols = "60"-->			
 					
 					<fieldset class = "textarea_fieldset">
-						<legend>Question/Comment</legend>
+						<legend>Question/Comment<span class = "ast">*</span></legend>
 						<textarea id="contact_us_msg" class = "form_input_space input_default"  name="message" value = "" placeholder = "Enter your question/comment." maxlength = 500></textarea>
 					</fieldset>	
 					

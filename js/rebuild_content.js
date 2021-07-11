@@ -293,10 +293,11 @@ function rebuild_bg_img_dimensions(){//Use pictures that are not too wide. Narro
 	}
 	//console.log(current_displayed_img.attr("src"));
 	//console.log(current_displayed_img.height())
-	current_displayed_img.show();
+	insert_image(current_displayed_img, $("#homepage_background_image_container"), 1, 10);
+	/*current_displayed_img.show();
 	window.setTimeout(function(){
 		scale_and_position_image(current_displayed_img, $("#homepage_background_image_container"), 1);
-	}, 100);//Give a sufficient enough delay for image to be rendered first before scaling/positioning
+	}, 100);//Give a sufficient enough delay for image to be rendered first before scaling/positioning*/
 	
 }
 
@@ -612,10 +613,11 @@ function rebuild_attorney_panel(){
 		$("#law_office_details").css("padding-left", "1%");		
 	}
 	
-	$("#attorney_photo").show();//Show before scaling and positioning coz hidden element's width and height would be 0
+	insert_image($("#attorney_photo"), $("#attorney_photo_container"), 1, 10);
+	/*$("#attorney_photo").show();//Show before scaling and positioning coz hidden element's width and height would be 0
 	window.setTimeout(function(){
 		scale_and_position_image($("#attorney_photo"), $("#attorney_photo_container"), 1);
-	}, 100);//Give a sufficient enough delay for image to be rendered first before scaling/positioning	
+	}, 100);//Give a sufficient enough delay for image to be rendered first before scaling/positioning*/	
 		
 }
 
@@ -856,10 +858,11 @@ function rebuild_blog_square(parent_width){
 		}, 100);//Give a sufficient enough delay for image to be rendered first before scaling/positioning	
 		
 	});*/
-	$(".blog_img").show();
+	insert_image($(".blog_img"), $(".blog_img_container"), 1, 10);
+	/*$(".blog_img").show();
 	window.setTimeout(function(){
 		scale_and_position_image($(".blog_img"), $(".blog_img_container"), 1);
-	}, 100);//Give a sufficient enough delay for image to be rendered first before scaling/positioning		
+	}, 100);//Give a sufficient enough delay for image to be rendered first before scaling/positioning*/		
 
 	//Compute blog square height only after all child elements have been inserted with their heights determined
 	var max_blog_square_height = 0;
@@ -966,21 +969,23 @@ function rebuild_content(){
 	
 	if(window.location.href.indexOf("about-us") > -1){
 		$("#firm_info").css("width", content_banner_width +"px");
-		$("#firm_info_image").show();//Show before scaling and positioning coz hidden element's width and height would be 0
+		insert_image($("#firm_info_image"), $("#firm_info_image").parent(), 1, 10);
+		/*$("#firm_info_image").show();//Show before scaling and positioning coz hidden element's width and height would be 0
 		window.setTimeout(function(){		
 			scale_and_position_image($("#firm_info_image"), $("#firm_info_image").parent(), 1);
-		},100);
+		},100);*/
 	}else if(window.location.href.indexOf("attorney-profiles") > -1){
 		
 		$(".attorneys_bio").css("width", content_banner_width +"px");
 		
+		insert_image($(".attorney_bio_image"), $(".attorney_bio_image").parent(), 1, 10);
 		//$(".attorney_bio").each(function(){
 			//scale_and_position_image($(this).find(".bio_image"), $(this).find("bio_image_container"), 1);
 		//});
-		$(".attorney_bio_image").show();
+		/*$(".attorney_bio_image").show();
 		window.setTimeout(function(){		
 			scale_and_position_image($(".attorney_bio_image"), $(".attorney_bio_image").parent(), 1);
-		},100);		
+		},100);*/		
 		//$(".attorney_bio_image").each(function(){
 			//scale_and_position_image($(this), $(this).parent(), 1);
 		//});		
@@ -998,10 +1003,11 @@ function rebuild_content(){
 			$(".right_fieldset").css("width", "100%");*/			
 	}else if(window.location.href.indexOf("article") > -1){//Ensure this condition appears b4 the blog condition coz href also contains string "blog"
 		$("#article_inner").css("width", content_banner_width*0.96 +"px");
-		$("#article_image").show();//Show before scaling and positioning coz hidden element's width and height would be 0
+		insert_image($("#article_image"), $("#article_image").parent(), 1, 10);
+		/*$("#article_image").show();//Show before scaling and positioning coz hidden element's width and height would be 0
 		window.setTimeout(function(){		
 			scale_and_position_image($("#article_image"), $("#article_image").parent(), 1);
-		},100);
+		},100);*/
 	}else if(window.location.href.indexOf("blog") > -1){
 		$("#blog_inner").css("width", content_banner_width*0.96 +"px");
 		rebuild_blog_square($("#blog_inner").width());
@@ -1011,9 +1017,10 @@ function rebuild_content(){
 	}else if(window.location.href.indexOf("practice-areas") > -1){
 		$("#practice_areas_inner").css("width", content_banner_width*0.96 +"px");
 		$("#intro_image").show();//Show before scaling and positioning coz hidden element's width and height would be 0
-		window.setTimeout(function(){		
+		insert_image($("#intro_image"), $("#intro_image").parent(), 1, 10);
+		/*window.setTimeout(function(){		
 			scale_and_position_image($("#intro_image"), $("#intro_image").parent(), 1);
-		},100);
+		},100);*/
 	}else if(window.location.href.indexOf("testimonials") > -1){
 		$("#testimonials_bulletin").css("width", content_banner_width +"px");
 		$("#testimonials_page_form").css("width", content_banner_width +"px");

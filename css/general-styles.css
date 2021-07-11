@@ -168,9 +168,8 @@ textarea{
 .content .disclaimer{
 	/*width:95%;*/
 	margin:auto;
-	padding-top:40px;
+	padding-top:60px;
 	padding-bottom:25px;
-	text-align:justify;
 }                    
 .content .disclaimer .disclaimer_heading{
 	margin:auto;
@@ -184,7 +183,7 @@ textarea{
 }
 .content .disclaimer .disclaimer_text{
 	margin:auto;
-	text-align:center;
+	text-align:justify;
 	font-size:80%;
 	line-height:1.2;
 	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
@@ -662,6 +661,7 @@ textarea{
 .header .menu_icon{
 	/*display:none;*/
 	display:block;
+	visibility:hidden;
 	/**/
 	position:relative;top:7%;
 	text-align:center;

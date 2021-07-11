@@ -106,6 +106,7 @@ function rebuild_elements(){
 	//alert("1current session scroll top: "+window.sessionStorage.scrollTop);	
 	rebuild_header();
 	$(".top_menu_bar").css("visibility", "visible");
+	$(".menu_icon").css("visibility", "visible");
 	rebuild_content();
 	if(window.location.href.indexOf("index") > -1) {
 		rebuild_bg_img_dimensions();

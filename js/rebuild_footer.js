@@ -82,9 +82,10 @@ function rebuild_mission_statement_panel(){
 		$(".footer_mission_statement_picture").show();
 		//scale_and_position_image($("#attorney_photo"), $("#attorney_photo_container"), 1);
 		$(".footer_mission_statement_photo").show();//Show before scaling and positioning coz hidden element's width and height would be 0
-		window.setTimeout(function(){
+		insert_image($(".footer_mission_statement_photo"), $(".footer_mission_statement_picture"), 1, 10);
+		/*window.setTimeout(function(){
 			scale_and_position_image($(".footer_mission_statement_photo"), $(".footer_mission_statement_picture"), 1);
-		}, 100);//Give a sufficient enough delay for image to be rendered first before scaling/positioning
+		}, 100);//Give a sufficient enough delay for image to be rendered first before scaling/positioning*/
 		$(".footer_mission_statement").css("margin-top", "0px");
 	}	
 }

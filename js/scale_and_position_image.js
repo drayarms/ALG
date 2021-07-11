@@ -46,6 +46,16 @@ function scale_and_position_image(image_object, container_object, magnification)
 
 
 
+function insert_image(img, img_container, scale, timeout){
+	if(!img.is(":visible")){
+		img.show();
+		img.css("visibility", "hidden");
+	}
+	window.setTimeout(function(){		
+		scale_and_position_image(img, img_container, scale);
+		img.css("visibility", "visible");
+	},timeout);	//Give a sufficient enough delay for image to be rendered first before scaling/positioning	
+}
 
 
 
