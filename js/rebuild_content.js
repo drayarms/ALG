@@ -315,7 +315,9 @@ function rebuild_bg_img_position(){
 		//alert(top_header_margin_top)
 		var resultant_top = -1*top_header_margin_top;//Maintain at least this distance
 		//console.log("orig resultant top "+resultant_top)
-		//console.log("from rebuild "+window.sessionStorage.scrollTop)
+		//console.log("from rebuild: scrool top "+window.sessionStorage.scrollTop)
+		//console.log("scroll factor "+background_scroll_factor)
+		//console.log("top * scroll factor: "+(window.sessionStorage.scrollTop*background_scroll_factor))
 		resultant_top += window.sessionStorage.scrollTop*background_scroll_factor; //Move against direction of scroll by a fraction, proportional to scroll top to give a bouncy effect
 		//resultant_top += 37.625
 		//resultant_top -= 37.625
@@ -344,7 +346,7 @@ function rebuild_bg_img_position(){
 }
 
 
-function rebuild_bg_img1(){//Use pictures that are not too wide. Narrow is ok but screen proportions is ideal
+/*function rebuild_bg_img1(){//Use pictures that are not too wide. Narrow is ok but screen proportions is ideal
 	var bg_img_container_width = window_width;	
 	var bg_img_container_height;
 	var new_bg_img_width;
@@ -405,7 +407,7 @@ function rebuild_bg_img1(){//Use pictures that are not too wide. Narrow is ok bu
 	
 	//prev_background_img_top = $("#homepage_background_image_container").offset().top;//*Also reset this when window is scrolled
 	//console.log("prev top "+prev_background_img_top);
-}
+}*/
 
 
 function rebuild_mission_statement_box(){
@@ -543,10 +545,10 @@ function rebuild_specialties_panel(){
 }
 
 
-function rebuild_contact_panel1(){
+/*function rebuild_contact_panel1(){
 	contact_panel_height = screen_width*0.23;
 	$("#contact_panel").css("height", contact_panel_height+"px");	
-}
+}*/
 	
 
 function rebuild_attorney_panel(){
@@ -622,7 +624,7 @@ function rebuild_attorney_panel(){
 }
 
 
-function rebuild_attorney_panel2(){
+/*function rebuild_attorney_panel2(){
 	var container_to_content_height_ratio = 1.06;
 	var attorney_panel_width = window_width*0.95;
 	var attorney_panel_height;
@@ -718,7 +720,7 @@ function rebuild_attorney_panel2(){
 	$("#law_office_details").css("height", law_office_details_height + "px");	
 	attorney_panel_height = (attorney_photo_container_height + law_office_details_height)//*container_to_content_height_ratio;
 	$("#attorney_panel").css("height", attorney_panel_height + "px");
-}
+}*/
 
 
 
@@ -953,7 +955,8 @@ function rebuild_content(){
 	//$(window).scrollTop(window.sessionStorage.scrollTop);
 	//rebuild_bg_img();//On init and on scrool
 	//$(window).scrollTop(window.sessionStorage.scrollTop);
-	if(window.location.href.indexOf("index") > -1){
+	if((window.location.href.indexOf("index") > -1) || (window.location.pathname == "/")){
+		//console.log("soo root url")
 		rebuild_mission_statement_box();
 	//$(window).scrollTop(window.sessionStorage.scrollTop);
 		rebuild_specialties_panel();
@@ -963,6 +966,7 @@ function rebuild_content(){
 		restyle_statements();
 		color_specialty_boxes();
 	}else{
+		console.log("soo NOT root url")
 		$(".disclaimer").css("width", content_banner_width +"px");
 		rebuild_content_banner(content_banner_width);
 	}
@@ -1016,7 +1020,7 @@ function rebuild_content(){
 		$("#faqs_inner").css("width", content_banner_width*0.96 +"px");
 	}else if(window.location.href.indexOf("practice-areas") > -1){
 		$("#practice_areas_inner").css("width", content_banner_width*0.96 +"px");
-		$("#intro_image").show();//Show before scaling and positioning coz hidden element's width and height would be 0
+		//$("#intro_image").show();//Show before scaling and positioning coz hidden element's width and height would be 0
 		insert_image($("#intro_image"), $("#intro_image").parent(), 1, 10);
 		/*window.setTimeout(function(){		
 			scale_and_position_image($("#intro_image"), $("#intro_image").parent(), 1);

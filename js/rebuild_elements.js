@@ -1,5 +1,6 @@
 //function rebuild_elements(old_window_width, window_width){
 function rebuild_elements(){	
+	//console.log("rebuilding elements")
 	//console.log("header w: "+header_width);
 	if(prev_window_width > window_width){
 		//console.log("window shrinking");
@@ -101,25 +102,36 @@ function rebuild_elements(){
 		$(".social_media_panel").addClass("left_social_media_panel");		
 		
 	}
+	//console.log("resize level "+resize_level)
 	//$(".top_menu_bar").hide();//Prevents the unrpocessed menu bar from flickering b4 page fully loads
 	//console.log("1current session scroll top: "+window.sessionStorage.scrollTop);
 	//alert("1current session scroll top: "+window.sessionStorage.scrollTop);	
 	rebuild_header();
 	$(".top_menu_bar").css("visibility", "visible");
 	$(".menu_icon").css("visibility", "visible");
+	//console.log("bout to rebuild content")
 	rebuild_content();
-	if(window.location.href.indexOf("index") > -1) {
+	//console.log("url '"+window.location.href+"'")
+	/*if (window.location.pathname == "/"){
+		console.log("root url")
+	}else{
+		console.log("NOT root")
+	}*/
+	if((window.location.href.indexOf("index") > -1) || (window.location.pathname == "/")) {
+		//console.log("bout to rebuild bg dimensions")
 		rebuild_bg_img_dimensions();
 	}	
-	if(window.location.href.indexOf("index") > -1) {
+	if((window.location.href.indexOf("index") > -1) || (window.location.pathname == "/")) {
 		rebuild_bg_img_position();
 		//console.log("2current session scroll top: "+window.sessionStorage.scrollTop);
+		$(".specialties_panel").css("visibility", "visible");
 	}	
 	$(".statements").css("visibility", "visible");
 	
 	
 	rebuild_footer();	
 	$(".specialties_statements").css("visibility", "visible");
+	$(".header_banner_right_box").css("visibility", "visible");
 	//alert("1current session scroll top: "+window.sessionStorage.scrollTop);
 
 
@@ -135,7 +147,7 @@ function rebuild_elements(){
 
 
 $(window).scroll(function(){
-	if(window.location.href.indexOf("index") > -1) {
+	if((window.location.href.indexOf("index") > -1) || (window.location.pathname == "/")) {
 		//console.log("2current session scroll top: "+window.sessionStorage.scrollTop);
 		rebuild_bg_img_position();
 	}

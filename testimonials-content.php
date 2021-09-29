@@ -6,7 +6,6 @@
 			</div>
 			
 			<div id = "testimonials_bulletin">	
-			
 				See what satisfied clients have been saying about the quality of our services at
 				<span class = "firm_title">Akofu Law Group</span>.
 				<p>Your email address will not be published</p>
@@ -42,12 +41,28 @@
 					<fieldset class = "submit_fieldset">
 						<input type="button" id = "testimonials_submit" class = "form_submit form_submit_ghosted" value="SUBMIT">
 					</fieldset>										
-				</form>				
-				
+				</form>	
 
+				<div id = "testimonial_statements">
+					<?php
+						require "get-testimonial-statements.php";
+						
+						for($i = 0; $i < count($testimonial_statements); $i++){
+							//echo $testimonial_statements[$i][0]." ".$testimonial_statements[$i][1]." ".$testimonial_statements[$i][2]."</br>";
+							echo"
+							<div class = 'testimonial_statement'>
+								<div class = 'testimonial_date'>".$testimonial_statements[$i][3]."</div>
+								<div class = 'testimonial_statement_text'>".$testimonial_statements[$i][2]."</div>
+								<div class = 'testimonial_author'> <span class = 'testimonial_author_name'>".$testimonial_statements[$i][0]."</span> <span class = 'testimonial_author_website'>".$testimonial_statements[$i][1]."</span> </div>
+							</div>
+							";						
+						}
+						
+					?>
+				</div>
 			</div>
 			
-			
+		
 			<div class = "disclaimer">
 				<div class = "disclaimer_heading">Disclaimer</div>
 				<div class = "disclaimer_text">

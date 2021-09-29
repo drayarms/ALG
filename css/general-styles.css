@@ -592,6 +592,7 @@ textarea{
 	position:relative;top:20%;
 	float:right;
 	width:70%;
+	visibility:hidden;
 	/*border:1px solid green;*/
 }
 

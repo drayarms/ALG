@@ -200,3 +200,54 @@
 .input_error::-ms-input-placeholder{
 	color: red;
 }
+
+
+.content #testimonials_bulletin #testimonial_statements{
+	width:100%;
+	margin-top:5%;
+	margin-left:auto;
+	margin-right:auto;
+	/*border:1px dotted red;*/
+}
+
+.content #testimonials_bulletin #testimonial_statements .testimonial_statement{
+	padding-left:10px;
+	padding-top:5px;
+	width:100%;
+	min-height:100px;
+	margin-left:auto;
+	margin-left:auto;
+	/*border-top:1px solid #e6f2ff;*/
+	border-bottom:3px solid #ffffff;
+	background-color:#e6f2ff;/*#f2f2f2;*/
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;	
+}
+
+.content #testimonials_bulletin #testimonial_statements .testimonial_statement .testimonial_date{
+	margin-top:15px;
+	font-size:90%;	
+	font-style:italic;	
+}
+
+.content #testimonials_bulletin #testimonial_statements .testimonial_statement .testimonial_statement_text{
+	margin-top:15px;
+	font-size:100%;	
+	line-height:1.7;	
+}
+
+.content #testimonials_bulletin #testimonial_statements .testimonial_statement .testimonial_author{
+	margin-top:15px;	
+}
+
+.content #testimonials_bulletin #testimonial_statements .testimonial_statement .testimonial_author .testimonial_author_name{
+	font-size:110%;	
+	font-weight:bold;
+}
+
+.content #testimonials_bulletin #testimonial_statements .testimonial_statement .testimonial_author .testimonial_author_website{
+	margin-left:10px;
+	font-size:90%;	
+	font-style:italic;
+	font-weight:bold;
+	color:#ba2d8b;
+}

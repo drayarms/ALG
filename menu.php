@@ -1,7 +1,7 @@
 <?php
 
 			echo"
-					<div class = 'menu_item menu_home'> <a class = 'menu_item_anchor' href='index.php'>Home</a> </div>
+					<div class = 'menu_item menu_home'> <a class = 'menu_item_anchor' href='/'>Home</a> </div>
 					<div class = 'menu_item menu_about_us'> <a class = 'menu_item_anchor' href='about-us.php'>About Us</a> </div>
 					<div class = 'menu_item menu_attorney_profiles'> <a class = 'menu_item_anchor' href='attorney-profiles.php'>Attorney Profiles</a> </div>
 					<div class = 'menu_item menu_practice_areas'> <a class = 'menu_item_anchor' href='practice-areas.php'>Practice Areas</a> </div>

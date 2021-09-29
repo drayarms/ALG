@@ -118,6 +118,7 @@ min window  |resize threshold 3| intermediate window B|resize threshold 2| inter
 		window.sessionStorage.scrollTop = $(this).scrollTop();//Remember the current scroll position even across sessions(refreshes)
 		var window_top = window.sessionStorage.scrollTop;//$(this).scrollTop();
 		
+		
 		//console.log("current session scroll top: "+window.sessionStorage.scrollTop);
 		//var window_top = $(window).scrollTop();
 		//delta_window_top = window_top - original_window_top;

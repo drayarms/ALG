@@ -342,6 +342,7 @@
 
 .content_homepage .specialties_panel{
 	margin:auto;
+	visibility:hidden;
 }
 
 .content_homepage .specialties_panel .specialty_box{

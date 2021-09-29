@@ -54,7 +54,7 @@ function highlight_menu(){
 	function highlight_menu_item($this, url_check, class_name){
 		//console.log(highlighted)
 		//if(!highlighted && (url_check > -1) && $this.hasClass(class_name)){
-		if(!$this.hasClass("highlighted") && (url_check > -1) && $this.hasClass(class_name)){	
+		if(!$this.hasClass("highlighted") && (url_check > -1 || url_check == "/") && $this.hasClass(class_name)){	
 			$this.find("a").css("color", menu_highlight_color);
 			//highlighted = true;
 			$this.addClass("highlighted");
@@ -75,7 +75,9 @@ function highlight_menu(){
 			highlighted = true;
 		}else{
 			$(this).find("a").css("color", theme_darkblue1);
-		}	*/		
+		}	*/	
+		//window.location.pathname == "/"
+		highlight_menu_item($(this), window.location.pathname, "menu_home");
 		highlight_menu_item($(this), window.location.href.indexOf("index"), "menu_home");
 		highlight_menu_item($(this), window.location.href.indexOf("about-us"), "menu_about_us");	
 		highlight_menu_item($(this), window.location.href.indexOf("attorney-profiles"), "menu_attorney_profiles");
