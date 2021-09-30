@@ -89,7 +89,9 @@ const menu_highlight_color_hex = "#ba2d8b";
 var menu_hover_color;
 
 
-
+function is_mobile() {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
 
 /*function vertically_centralize_social_media_icons(){
 	//alert($(".social_media_panel").height())
@@ -113,54 +115,54 @@ min window  |resize threshold 3| intermediate window B|resize threshold 2| inter
 
 
 
-	//document.documentElement.scrollTop //
-	$(window).scroll(function() {
-		window.sessionStorage.scrollTop = $(this).scrollTop();//Remember the current scroll position even across sessions(refreshes)
-		var window_top = window.sessionStorage.scrollTop;//$(this).scrollTop();
+//document.documentElement.scrollTop //
+$(window).scroll(function() {
+	window.sessionStorage.scrollTop = $(this).scrollTop();//Remember the current scroll position even across sessions(refreshes)
+	var window_top = window.sessionStorage.scrollTop;//$(this).scrollTop();
 		
 		
-		//console.log("current session scroll top: "+window.sessionStorage.scrollTop);
-		//var window_top = $(window).scrollTop();
-		//delta_window_top = window_top - original_window_top;
-		//original_window_top = window_top;
+	//console.log("current session scroll top: "+window.sessionStorage.scrollTop);
+	//var window_top = $(window).scrollTop();
+	//delta_window_top = window_top - original_window_top;
+	//original_window_top = window_top;
 		
-		//new_homepage_background_container_offset += delta_window_top;
+	//new_homepage_background_container_offset += delta_window_top;
 		
-		//console.log("scroll top "+window_top)
-		//console.log("delta window top "+delta_window_top);
-		//console.log("div top "+div_top+" window top "+window_top);
+	//console.log("scroll top "+window_top)
+	//console.log("delta window top "+delta_window_top);
+	//console.log("div top "+div_top+" window top "+window_top);
 		
-		/*/////////////////////////////////////////////////var background_scroll_disp = window_top - prev_window_top;// - window_top;
-		//console.log("on scroll background scroll disp "+background_scroll_disp);
-		current_homepage_background_image_container_top = $("#homepage_background_image_container").offset().top;
-		var y_displacement = current_homepage_background_image_container_top + (background_scroll_disp*background_scroll_factor);
+	/*/////////////////////////////////////////////////var background_scroll_disp = window_top - prev_window_top;// - window_top;
+	//console.log("on scroll background scroll disp "+background_scroll_disp);
+	current_homepage_background_image_container_top = $("#homepage_background_image_container").offset().top;
+	var y_displacement = current_homepage_background_image_container_top + (background_scroll_disp*background_scroll_factor);
 		
 		
-		//console.log("top "+window_top+" prev "+prev_window_top+" diff"+background_scroll_disp);
-		//console.log("curr top "+current_homepage_background_image_container_top);
-		//console.log("header height "+$(".inner_header").height());
-		//console.log("y disp "+y_displacement);
-		//if(window_top > prev_window_top){
-			//console.log("scrolling downwards");
-			//y_displacement = current_homepage_background_image_container_top + background_scroll_disp;
-		//}else{
-			//console.log("scrolling upwards");
-			//y_displacement = current_homepage_background_image_container_top - background_scroll_disp;
-		//}
+	//console.log("top "+window_top+" prev "+prev_window_top+" diff"+background_scroll_disp);
+	//console.log("curr top "+current_homepage_background_image_container_top);
+	//console.log("header height "+$(".inner_header").height());
+	//console.log("y disp "+y_displacement);
+	//if(window_top > prev_window_top){
+		//console.log("scrolling downwards");
+		//y_displacement = current_homepage_background_image_container_top + background_scroll_disp;
+	//}else{
+		//console.log("scrolling upwards");
+		//y_displacement = current_homepage_background_image_container_top - background_scroll_disp;
+	//}
 		
 		 
-		if(should_scroll_background_image){
-			$("#homepage_background_image_container").css({
-				position: max_bg_img_position_type,
-				top: y_displacement + "px"//Move image by a fraction of page move in opposite direction
-				//top: (new_homepage_background_container_offset*background_scroll_factor) + "px"//Move image by a fraction of page move in opposite direction
-			});
-		}
-		//prev_background_img_top = $("#homepage_background_image_container").offset().top;//*Also reset this when element is rebuilt
-		//prev_window_top = window_top;
-		//window.sessionStorage.scrollTop = $(this).scrollTop();//Remember the current scroll position even across sessions(refreshes)
-		prev_window_top = window_top;////////////////////////////////////////////////////*/
-	});
+	if(should_scroll_background_image){
+		$("#homepage_background_image_container").css({
+			position: max_bg_img_position_type,
+			top: y_displacement + "px"//Move image by a fraction of page move in opposite direction
+			//top: (new_homepage_background_container_offset*background_scroll_factor) + "px"//Move image by a fraction of page move in opposite direction
+		});
+	}
+	//prev_background_img_top = $("#homepage_background_image_container").offset().top;//*Also reset this when element is rebuilt
+	//prev_window_top = window_top;
+	//window.sessionStorage.scrollTop = $(this).scrollTop();//Remember the current scroll position even across sessions(refreshes)
+	prev_window_top = window_top;////////////////////////////////////////////////////*/
+});
 	
 
 
