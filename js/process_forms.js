@@ -340,9 +340,9 @@ $(document).ready(function(){
 	var address2_regex = /^.{0,}$/;
 	var email_regex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 	var phone_num_regex = /^[0-9]+$/;
-	var message_regex = /^.{6,}$/;
+	var message_regex = /^.{10,}$/;
 	var website_regex = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
-	var full_name_regex = message_regex;
+	var full_name_regex = /^.{2,}$/;
 	
 	contact_us_form_inputs.push({elem:$("#contact_us_fname"), regex:name_regex, err_msg:"Please, enter a valid first name", placeholder_txt:$("#contact_us_fname").attr("placeholder")});
 	contact_us_form_inputs.push({elem:$("#contact_us_lname"), regex:name_regex, err_msg:"Please, enter a valid last name", placeholder_txt:$("#contact_us_lname").attr("placeholder")});
@@ -374,6 +374,11 @@ $(document).ready(function(){
 	hompage_contact_form_inputs.push({elem:$("#homepage_contact_email"), regex:email_regex, err_msg:"Please, enter a valid email", placeholder_txt:$("#homepage_contact_email").attr("placeholder")});
 	hompage_contact_form_inputs.push({elem:$("#homepage_contact_phone"), regex:phone_num_regex, err_msg:"Please, enter a valid phone number", placeholder_txt:$("#homepage_contact_phone").attr("placeholder")});
 	hompage_contact_form_inputs.push({elem:$("#homepage_contact_msg"), regex:message_regex, err_msg:"Invalid message", placeholder_txt:$("#homepage_contact_msg").attr("placeholder")});
+	
+	for(var i = 0; i < hompage_contact_form_inputs.length; i++){
+		process_focus(hompage_contact_form_inputs[i].elem, hompage_contact_form_inputs[i].placeholder_txt);
+		process_blur(hompage_contact_form_inputs[i].elem, hompage_contact_form_inputs[i].regex, hompage_contact_form_inputs[i].err_msg);
+	}	
 	
 	
 	enable_submit(contact_us_form_inputs, $("#contact_us_page_form .form_input_space"), [$("#contact_us_addy2")], $("#contact_us_submit"));
