@@ -14,9 +14,7 @@
 	$page_index = 8;
 	$page_title = $title;
 	
-
 	require "header.php";
-	
 	
 	echo"
 		<div class = 'content content_article'> 
@@ -26,7 +24,6 @@
 				<div class = 'bottom_heading'><span>".$title."</span></div>
 			</div>
 						
-			
 			<div id = 'article_inner'>	
 		
 				<div id = 'article_title'>".$title."</div>
@@ -36,9 +33,12 @@
 				</div>			
 			
 				<div id = 'article_text'>
-		
 					".$article."
+				</div>
 				
+				<div id = 'comments_box'>";
+					require "comments.php";
+				echo "
 				</div>
 
 			</div>

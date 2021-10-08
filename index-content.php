@@ -99,7 +99,7 @@
 					</fieldset>
 					<fieldset class = "right_fieldset">
 						<!--<legend></legend>-->
-						<textarea id="homepage_contact_msg" class = "form_input_space input_default" name="msg" value = "" placeholder = "Enter your question/comment." maxlength = 500></textarea>
+						<textarea id="homepage_contact_msg" class = "form_input_space input_default" name="msg" value = "" placeholder = "Enter your question/comment(character limit 500)." maxlength = 500></textarea>
 					</fieldset>	
 					<fieldset class = "bottom_fieldset">
 						<!--<legend></legend>-->

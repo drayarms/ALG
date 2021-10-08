@@ -37,7 +37,9 @@
 				echo '<link type="text/css" rel="stylesheet" href="css/contact-us-styles.css"/>';
 			}
 			if($page_index == 8){
-				echo '<link type="text/css" rel="stylesheet" href="css/article-styles.css"/>';
+				echo '<link type="text/css" rel="stylesheet" href="css/article-styles.css"/>
+					<link type="text/css" rel="stylesheet" href="css/comments-styles.css"/>
+				';
 			}			
 		?>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">

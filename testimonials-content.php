@@ -35,7 +35,7 @@
 					
 					<fieldset class = "textarea_fieldset">
 						<legend>Comment<span class = "ast">*</span></legend>
-						<textarea id="testimonials_msg" class = "form_input_space input_default"  name="message" value = "" placeholder = "Enter your comment." maxlength = 1000></textarea>
+						<textarea id="testimonials_msg" class = "form_input_space input_default"  name="message" value = "" placeholder = "Enter your comment(limit 1000 characters)." maxlength = 1000></textarea>
 					</fieldset>	
 					
 					<fieldset class = "submit_fieldset">
