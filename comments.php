@@ -6,8 +6,9 @@
 	<div id = 'comments_heading'>0 Comments</div>
 	
 	<div id = 'add_comment_box'>
-		<div id = 'add_comment_pic_box'> <img src = '' alt = 'pic'> </div>
-		
+		<div id = 'add_comment_pic_box_container'>
+			<div id = 'add_comment_pic_box'> <img src = '' alt = 'pic'> </div>
+		</div>	
 		
 		<div id = 'add_comment_form_container'>
 			

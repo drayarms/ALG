@@ -13,8 +13,14 @@
 	/*border:1px dotted red;*/
 }
 
-#add_comment_box #add_comment_pic_box{
+#add_comment_box #add_comment_pic_box_container{
 	float:left;
+	width:6%;
+	overflow:hidden;
+	/*border:1px dotted black;*/
+}
+	
+#add_comment_box #add_comment_pic_box_container #add_comment_pic_box{
 	width:55px;
 	height:55px;
 	border-radius:50%;
@@ -28,12 +34,15 @@
 
 #add_comment_box #add_comment_form_container{
 	float:left;
-	margin-left:10px;
-	width:80%;
+	margin-left:0px;
+	width:92%;
 	/*border: 1px dotted blue;*/
 }
 
 #add_comment_box #add_comment_form_container #add_comment_line{
+	width:fit-content;   
+	display: flex;
+	align-items: center; /*fit content, flex, and align center collectively force div to shrink to fit content*/
 	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
 	font-size:95%;
 	line-height:1.1;
