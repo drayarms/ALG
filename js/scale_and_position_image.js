@@ -1,5 +1,5 @@
 function scale_and_position_image(image_object, container_object, magnification){
-
+	//console.log("image obj w: "+image_object.width()+" container_object w: "+container_object.width())
 	//Position image
 	//Magnification is factor to magnify new image if it is too small.
 	var x_target = container_object.width()*magnification;
@@ -47,14 +47,16 @@ function scale_and_position_image(image_object, container_object, magnification)
 
 
 function insert_image(img, img_container, scale, timeout){
-	if(!img.is(":visible")){
-		img.show();
-		img.css("visibility", "hidden");
+	if(!img.is(":visible")){//Ie display property is none
+		img.show();//Must have display set to show in order to have a width a height
+		//img.css("visibility", "hidden");//But don't make visible yet though, till dimensions have been set
 	}
+	img.css("visibility", "hidden");//But don't make visible yet though, till dimensions have been set
 	window.setTimeout(function(){		
 		scale_and_position_image(img, img_container, scale);
 		img.css("visibility", "visible");
 	},timeout);	//Give a sufficient enough delay for image to be rendered first before scaling/positioning	
+	
 }
 
 

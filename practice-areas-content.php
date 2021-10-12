@@ -6,7 +6,7 @@
 			</div>
 						
 			
-			<div id = "practice_areas_inner">
+			<div id = "practice_areas_inner" class = "content_inner">
 			
 				<div id = "practice_areas_intro">
 			

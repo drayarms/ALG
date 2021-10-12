@@ -293,7 +293,7 @@ function rebuild_bg_img_dimensions(){//Use pictures that are not too wide. Narro
 	}
 	//console.log(current_displayed_img.attr("src"));
 	//console.log(current_displayed_img.height())
-	insert_image(current_displayed_img, $("#homepage_background_image_container"), 1, 10);
+	insert_image(current_displayed_img, $("#homepage_background_image_container"), 1, image_load_wait_time);
 	/*current_displayed_img.show();
 	window.setTimeout(function(){
 		scale_and_position_image(current_displayed_img, $("#homepage_background_image_container"), 1);
@@ -615,7 +615,7 @@ function rebuild_attorney_panel(){
 		$("#law_office_details").css("padding-left", "1%");		
 	}
 	
-	insert_image($("#attorney_photo"), $("#attorney_photo_container"), 1, 10);
+	insert_image($("#attorney_photo"), $("#attorney_photo_container"), 1, image_load_wait_time);
 	/*$("#attorney_photo").show();//Show before scaling and positioning coz hidden element's width and height would be 0
 	window.setTimeout(function(){
 		scale_and_position_image($("#attorney_photo"), $("#attorney_photo_container"), 1);
@@ -860,7 +860,7 @@ function rebuild_blog_square(parent_width){
 		}, 100);//Give a sufficient enough delay for image to be rendered first before scaling/positioning	
 		
 	});*/
-	insert_image($(".blog_img"), $(".blog_img_container"), 1, 10);
+	insert_image($(".blog_img"), $(".blog_img_container"), 1, image_load_wait_time);
 	/*$(".blog_img").show();
 	window.setTimeout(function(){
 		scale_and_position_image($(".blog_img"), $(".blog_img_container"), 1);
@@ -966,14 +966,14 @@ function rebuild_content(){
 		restyle_statements();
 		color_specialty_boxes();
 	}else{
-		console.log("soo NOT root url")
+		//console.log("soo NOT root url")
 		$(".disclaimer").css("width", content_banner_width +"px");
 		rebuild_content_banner(content_banner_width);
 	}
 	
 	if(window.location.href.indexOf("about-us") > -1){
 		$("#firm_info").css("width", content_banner_width +"px");
-		insert_image($("#firm_info_image"), $("#firm_info_image").parent(), 1, 10);
+		insert_image($("#firm_info_image"), $("#firm_info_image").parent(), 1, image_load_wait_time);
 		/*$("#firm_info_image").show();//Show before scaling and positioning coz hidden element's width and height would be 0
 		window.setTimeout(function(){		
 			scale_and_position_image($("#firm_info_image"), $("#firm_info_image").parent(), 1);
@@ -982,7 +982,7 @@ function rebuild_content(){
 		
 		$(".attorneys_bio").css("width", content_banner_width +"px");
 		
-		insert_image($(".attorney_bio_image"), $(".attorney_bio_image").parent(), 1, 10);
+		insert_image($(".attorney_bio_image"), $(".attorney_bio_image").parent(), 1, image_load_wait_time);
 		//$(".attorney_bio").each(function(){
 			//scale_and_position_image($(this).find(".bio_image"), $(this).find("bio_image_container"), 1);
 		//});
@@ -1007,7 +1007,7 @@ function rebuild_content(){
 			$(".right_fieldset").css("width", "100%");*/			
 	}else if(window.location.href.indexOf("article") > -1){//Ensure this condition appears b4 the blog condition coz href also contains string "blog"
 		$("#article_inner").css("width", content_banner_width*0.96 +"px");
-		insert_image($("#article_image"), $("#article_image").parent(), 1, 10);
+		insert_image($("#article_image"), $("#article_image").parent(), 1, image_load_wait_time);
 		/*$("#article_image").show();//Show before scaling and positioning coz hidden element's width and height would be 0
 		window.setTimeout(function(){		
 			scale_and_position_image($("#article_image"), $("#article_image").parent(), 1);
@@ -1021,7 +1021,7 @@ function rebuild_content(){
 	}else if(window.location.href.indexOf("practice-areas") > -1){
 		$("#practice_areas_inner").css("width", content_banner_width*0.96 +"px");
 		//$("#intro_image").show();//Show before scaling and positioning coz hidden element's width and height would be 0
-		insert_image($("#intro_image"), $("#intro_image").parent(), 1, 10);
+		insert_image($("#intro_image"), $("#intro_image").parent(), 1, image_load_wait_time);
 		/*window.setTimeout(function(){		
 			scale_and_position_image($("#intro_image"), $("#intro_image").parent(), 1);
 		},100);*/

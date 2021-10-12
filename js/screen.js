@@ -235,10 +235,11 @@ function rebuild_logo_box(e){
 		e.find(".logo_circle").css("height", logo_circle_height);	
 
 		centralize_element(e.find(".logo_circle"));
-		e.find(".logo_image");
-		window.setTimeout(function(){
-			scale_and_position_image(e.find(".logo_image"), e.find(".logo_circle"), 1.0);
-		}, 100);//Give a sufficient enough delay for image to be rendered first before scaling/positioning				
+		//e.find(".logo_image");
+		//window.setTimeout(function(){
+			//scale_and_position_image(e.find(".logo_image"), e.find(".logo_circle"), 1.0);
+		//}, 100);//Give a sufficient enough delay for image to be rendered first before scaling/positioning				
+		insert_image(e.find(".logo_image"), e.find(".logo_circle"), 1, image_load_wait_time*3);
 	}
 }
 

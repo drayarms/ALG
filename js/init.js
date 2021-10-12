@@ -56,6 +56,7 @@ var specialty_statement_count;
 var homepage_background_image_count = 0;
 var resize_level;
 var window_width;
+var image_load_wait_time = 40;
 
 
 //console.log("original b4 "+prev_window_width);

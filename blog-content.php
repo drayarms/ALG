@@ -6,7 +6,7 @@
 			</div>
 			
 			
-			<div id = "blog_inner">
+			<div id = "blog_inner" class = "content_inner">
 			
 				<?php
 					require "construct_blog_content.php";

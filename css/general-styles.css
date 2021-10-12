@@ -135,6 +135,7 @@ textarea{
 	margin-right:auto;
 	height:95px;
 	background-color:rgb(0, 38, 77);
+	visibility:hidden;
 }
 
 .content .content_banner .top_heading{
@@ -193,6 +194,9 @@ textarea{
 }
 
 
+.content .content_inner{
+	visibility:hidden;
+}
 
 .dotted_line{
 	width:100%;
@@ -394,6 +398,7 @@ textarea{
 	z-index:+1;
 	/*width:60%;*/
 	margin:auto;
+	visibility:hidden;
 	/*height:100px;Re-do in script*/
 	/*border:1px dotted blue;*/
 }

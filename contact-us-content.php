@@ -5,7 +5,7 @@
 				<div class = "bottom_heading"><span>Some Eye Catching Title Inserted Here</span></div>
 			</div>
 			
-			<div id = "contact_bulletin">	
+			<div id = "contact_bulletin" class = "content_inner">	
 			
 				<div id = "firm_title">Akofu Law Group</br></div>
 				

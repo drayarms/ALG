@@ -5,7 +5,7 @@
 				<div class = "bottom_heading"><span>Some Eye Catching Title Inserted Here</span></div>
 			</div>
 			
-			<div class = "attorneys_bio">
+			<div class = "attorneys_bio" class = "content_inner">
 				<div class = "attorney_bio">
 					<div class = "attorney_bio_image_container">
 						<img class = "attorney_bio_image" src="images/background_images/ifanglawyer1.jpeg" alt="Attorney">

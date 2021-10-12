@@ -94,7 +94,7 @@ function highlight_menu(){
 }
 
 
-function rebuild_header_inner1(resize_level, window_width, header_width){
+/*function rebuild_header_inner1(resize_level, window_width, header_width){
 
 	var header_inner_width = ($(".logo_box").width() + $(".header_banner").width())+1;//Give some allowance for float
 	var header_inner_height = $(".logo_box").height() + $(".header_menu_bar").height();
@@ -113,10 +113,10 @@ function rebuild_header_inner1(resize_level, window_width, header_width){
 	//centralize_element_horizontally($(".header"));
 	
 	
-}
+}*/
 
 
-function rebuild_header_elements1(resize_level, window_width, header_width){
+/*function rebuild_header_elements1(resize_level, window_width, header_width){
 	//Header elements(logo box and header banner)
 	//console.log(window_width);
 	//The max header inner to window width ratio is gotten by using the  fixed header inner width
@@ -180,23 +180,23 @@ function rebuild_header_elements1(resize_level, window_width, header_width){
 	
 	
 
-	/*if(resize_level <= 2){
-	}else{
-		var header_height = logo_box_height + header_banner_height + menu_bar_height;
-		var header_inner_height = header_height;
+	//if(resize_level <= 2){
+	//}else{
+		//var header_height = logo_box_height + header_banner_height + menu_bar_height;
+		//var header_inner_height = header_height;
 
-		$(".header").css("width", header_width + "px");
-		$(".header").css("min-height", "0px");//$(".header").css("height", header_height + "px");
-		$(".header").css("margin-left", ((window_width-header_width)/2)+"px");
+		//$(".header").css("width", header_width + "px");
+		//$(".header").css("min-height", "0px");//$(".header").css("height", header_height + "px");
+		//$(".header").css("margin-left", ((window_width-header_width)/2)+"px");
 	
-		$(".inner_header").css("width", window_width);
-		$(".inner_header").css("height", "1000px");//("height", header_inner_height + "px");
-		//$(".inner_header").css("margin-left", ((header_width-header_inner_width)/2)+"px");
-		centralize_element_horizontally($(".inner_header"));
-	}*/
+		//$(".inner_header").css("width", window_width);
+		//$(".inner_header").css("height", "1000px");//("height", header_inner_height + "px");
+		
+		//centralize_element_horizontally($(".inner_header"));
+	//}
 	
 	
-}	
+}	*/
 	
 
 /*function rebuild_menu_bar(resize_level, window_width, header_width){
@@ -260,8 +260,8 @@ function rebuild_header_elements1(resize_level, window_width, header_width){
 
 
 
-function rebuild_header1(){//, header_width, header_inner_width){
-	/*Builds elements in header div whenever page is refreshed of resized*/
+/*function rebuild_header1(){//, header_width, header_inner_width){
+	//Builds elements in header div whenever page is refreshed of resized
 	var header_width = window_width*window_to_header_width_ratio;
 	rebuild_header_elements(resize_level, window_width, header_width);
 	rebuild_menu_bar(resize_level, window_width, header_width);
@@ -284,7 +284,7 @@ function rebuild_header1(){//, header_width, header_inner_width){
 	
 	//alert($("#a").width())
 
-}
+}*/
 
 
 
@@ -568,7 +568,7 @@ function rebuild_menu_bar_working_version(){
 
 
 
-function rebuild_logo_box1(){
+/*function rebuild_logo_box1(){
 	var logo_box_width = logo_box_fixed_width;
 	var logo_box_height = logo_box_fixed_height;
 	var logo_circle_width = logo_box_width*0.9;
@@ -609,7 +609,7 @@ function rebuild_logo_box2(){
 		centralize_element($this.find(".logo_circle"));
 		scale_and_position_image($this.find(".logo_image"), $this.find(".logo_circle"), 1.0);	
 	});
-}
+}*/
 
 
 /*function rebuild_logo_box(e){
@@ -649,7 +649,7 @@ function rebuild_logo_box2(){
 }*/
 
 
-function assemble_header_elements1(){
+/*function assemble_header_elements1(){
 	//var header_height = header_fixed_height;
 	//var header_core_height = header_core_fixed_height;
 	
@@ -673,14 +673,14 @@ function assemble_header_elements1(){
 	}else{
 		$(".header_banner").css("text-align", "center");
 	}
-	/*if(resize_level == 1){//Maintain header inner fixed width
+	//if(resize_level == 1){//Maintain header inner fixed width
 		
-	}
+	//}
 	
-	if(resize_level == 2){//Shrink header inner to fit window
+	//if(resize_level == 2){//Shrink header inner to fit window
 		//header_banner_width = window_width*header_core_width_to_window_width_ratio - logo_box_width;
 		//menu_bar_width = window_width*header_core_width_to_window_width_ratio;
-	}*/
+	//}
 
 	//Positioning
 	//Case of header banner
@@ -785,7 +785,7 @@ function assemble_header_elements1(){
 		$(".top_menu_bar").hide();
 	}
 
-}
+}*/
 
 
 function assemble_header_elements(){
@@ -887,6 +887,7 @@ function rebuild_header(){
 	//rebuild_logo_box(resize_level, window_width);
 	//rebuild_logo_image();
 	$(".logo_image").show();//Can now display since it has been appropriately sized
+
 	
 	//menu_bar_height = header_core_fixed_height - $(".logo_box").height();
 	rebuild_menu_bar();

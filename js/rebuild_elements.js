@@ -116,11 +116,64 @@ function rebuild_elements(){
 	//$(".top_menu_bar").hide();//Prevents the unrpocessed menu bar from flickering b4 page fully loads
 	//console.log("1current session scroll top: "+window.sessionStorage.scrollTop);
 	//alert("1current session scroll top: "+window.sessionStorage.scrollTop);	
+	rebuild();
+
+
+
+	//make_elements_invisible
+	/*if(document.readyState === 'ready' || document.readyState === 'complete'){
+		console.log("ready 1");	
+		rebuild();
+		//make_elements_visible
+	}else{
+		document.onreadystatechange = function (){
+			if(document.readyState == 'complete'){
+				console.log("ready 2");	
+				rebuild();
+				//make_elements_visible
+			}
+		}
+	}*/
+
+
+
+
+
+}
+
+
+function make_elements_invisible(){
+	$(".header").css("visibility", "hidden");
+	$(".content").css("visibility", "hidden");
+	$(".footer").css("visibility", "hidden");
+
+	$(".statements").css("visibility", "hidden");
+	$(".specialties_statements").css("visibility", "hidden");
+	$(".top_menu_bar").css("visibility", "hidden");
+	$(".menu_icon").css("visibility", "hidden");	
+}
+
+function make_elements_visible(){
+	$(".header").css("visibility", "visible");
+	$(".content").css("visibility", "visible");
+	$(".footer").css("visibility", "visible");
+
+	$(".statements").css("visibility", "visible");
+	$(".specialties_statements").css("visibility", "visible");
+	$(".top_menu_bar").css("visibility", "visible");
+	$(".menu_icon").css("visibility", "visible");	
+}
+
+
+function rebuild(){
+
 	rebuild_header();
 	$(".top_menu_bar").css("visibility", "visible");
 	$(".menu_icon").css("visibility", "visible");
 	//console.log("bout to rebuild content")
 	rebuild_content();
+	$(".content_banner").css("visibility", "visible");
+	$(".content_inner").css("visibility", "visible");
 	//console.log("url '"+window.location.href+"'")
 	/*if (window.location.pathname == "/"){
 		console.log("root url")
@@ -141,6 +194,7 @@ function rebuild_elements(){
 	
 	rebuild_footer();	
 	$(".specialties_statements").css("visibility", "visible");
+	$(".marketing_panel").css("visibility", "visible");
 	$(".header_banner_right_box").css("visibility", "visible");
 	//alert("1current session scroll top: "+window.sessionStorage.scrollTop);
 
@@ -152,8 +206,9 @@ function rebuild_elements(){
 	//}
 	//console.log("Page fully loaded. Session scroll top: "+window.sessionStorage.scrollTop+ ". Scroll top:"+$(window).scrollTop());
 	//alert("Page fully loaded. Session scroll top: "+window.sessionStorage.scrollTop+ ". Scroll top:"+$(window).scrollTop());
-
+	
 }
+
 
 
 $(window).scroll(function(){

@@ -6,7 +6,7 @@
 			</div>
 			
 			
-			<div id = "faqs_inner">
+			<div id = "faqs_inner" class = "content_inner">
 			
 				<div id = "no_faqs">Stay tuned. We will be posting content shortly.</div>
 				<div class = "dotted_line"></div>

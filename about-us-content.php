@@ -6,7 +6,7 @@
 			</div>
 			
 					 
-			<div id = "firm_info">
+			<div id = "firm_info" class = "content_inner">
 			
 				<div id = "firm_info_image_container">
 					<img id = "firm_info_image" src="images/background_images/btm2-img4.jpg" alt="Office Meeting">
