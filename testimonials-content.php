@@ -8,7 +8,7 @@
 			<div id = "testimonials_bulletin" class = "content_inner">	
 				See what satisfied clients have been saying about the quality of our services at
 				<span class = "firm_title">Akofu Law Group</span>.
-				<p>Your email address will not be published</p>
+				<p>Your email address will not be published.</p>
 				
 
 				

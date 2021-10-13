@@ -3,36 +3,52 @@
 				<div class = "specialties_statements" style = "">
 					<div class = "specialty_statement displayed">
 						<h1 class = "specialty_statement_heading" style = "">Business Transactions</h1>
-						<h5 class = "specialty_statement_text" style = "">
-							<?php
-								$article_file = "practice-areas/business-transactions.php";
-								$article = file_get_contents($article_file, 1, NULL, 0, 2000);
-								echo $article."...";
-							?>
-						</h5>
-						<p class = "read_more"> <a href = "practice-areas.php#business-transactions">Read More</a></p>
+						<?php
+							$article_file = "practice-areas/business-transactions.php";
+							$file_len = strlen(file_get_contents($article_file));
+							$article = file_get_contents($article_file, 1, NULL, 0, 1600);
+							echo "<h5 class = 'specialty_statement_text'>" .$article;
+							if($file_len > 1600){
+								echo"...";
+							}
+							echo"</h5>";
+							if($file_len > 1600){
+								echo "<p class = 'read_more'> <a href = 'practice-areas.php#business-transactions'>Read More</a></p>";
+							}
+						?>
 					</div>
 					<div class = "specialty_statement undisplayed" style = "display:none;">
-						<h1 class = "specialty_statement_heading">Real Estate</h1>
-						<h5 class = "specialty_statement_text">
-							<?php
-								$article_file = "practice-areas/real-estate.php";
-								$article = file_get_contents($article_file, 1, NULL, 0, 2000);
-								echo $article."...";
-							?>
-						</h5>
-						<p class = "read_more"><a href = "practice-areas.php#real-estate">Read More</a></p>						
+						<h1 class = "specialty_statement_heading">Personal Injury</h1>
+						<?php
+							$article_file = "practice-areas/personal-injury.php";
+							$file_len = strlen(file_get_contents($article_file));
+							$article = file_get_contents($article_file, 1, NULL, 0, 1600);
+							echo "<h5 class = 'specialty_statement_text'>" .$article;
+							if($file_len > 1600){
+								echo"...";
+							}
+							echo"</h5>";
+							if($file_len > 1600){
+								echo "<p class = 'read_more'> <a href = 'practice-areas.php#personal-injury'>Read More</a></p>";
+							}
+						?>
+									
 					</div>
 					<div class = "specialty_statement undisplayed" style = "display:none;">
 						<h1 class = "specialty_statement_heading">Immigration</h1>
-						<h5 class = "specialty_statement_text">
-							<?php
-								$article_file = "practice-areas/immigration.php";
-								$article = file_get_contents($article_file, 1, NULL, 0, 2000);
-								echo $article."...";
-							?>
-						</h5>	
-						<p class = "read_more"><a href = "practice-areas.php#immigration">Read More</a></p>					
+						<?php
+							$article_file = "practice-areas/immigration.php";
+							$file_len = strlen(file_get_contents($article_file));
+							$article = file_get_contents($article_file, 1, NULL, 0, 1300);
+							echo "<h5 class = 'specialty_statement_text'>" .$article;
+							if($file_len > 1300){
+								echo"...";
+							}
+							echo"</h5>";
+							if($file_len > 1300){
+								echo "<p class = 'read_more'> <a href = 'practice-areas.php#immigration'>Read More</a></p>";
+							}
+						?>									
 					</div>					
 				</div>
 			</div>

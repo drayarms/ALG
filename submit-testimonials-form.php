@@ -1,6 +1,6 @@
 <?php
 
-	$alg_email = "drayarms@yahoo.com";
+	$alg_email = "akofulawgroup@gmail.com";
 	$name = $_POST["name"];
 	$email = $_POST["email"];
 	$website = $_POST["website"];

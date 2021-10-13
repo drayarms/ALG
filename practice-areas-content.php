@@ -22,8 +22,8 @@
 			
 				<div id = "business-transactions" class = "practice_areas_heading">Business Transactions</div>
 				<div class = "practice-areas-text" > <?php require "practice-areas/business-transactions.php" ?> </div>
-				<div id = "real-estate" class = "practice_areas_heading">Real Estate</div>
-				<div class = "practice-areas-text" > <?php require "practice-areas/real-estate.php" ?> </div>
+				<div id = "personal-injury" class = "practice_areas_heading">Personal Injury</div>
+				<div class = "practice-areas-text" > <?php require "practice-areas/personal-injury.php" ?> </div>
 				<div id = "immigration" class = "practice_areas_heading">Immigration</div>				
 				<div class = "practice-areas-text"> <?php require "practice-areas/immigration.php" ?> </div>
 				<!--<a name = "immigration"/> -->

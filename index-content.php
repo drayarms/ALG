@@ -35,11 +35,11 @@
 					</a>				
 				</div>
 				<div class = "specialty_box specialty_box2" style = "">
-					<a href="practice-areas.php#real-estate">
+					<a href="practice-areas.php#personal-injury">
 						<div class = "specialty_box_checkbox"> 
 							<i class="fa fa-balance-scale"></i>
 						</div>
-						<div class = "specialty_box_text">Real Eastate</div>
+						<div class = "specialty_box_text">Personal Injury</div>
 						<div class = "specialty_box_arrow">
 							<i class="fa fa-arrow-right"></i>
 						</div>

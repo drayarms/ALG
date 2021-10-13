@@ -47,11 +47,11 @@ function scale_and_position_image(image_object, container_object, magnification)
 
 
 function insert_image(img, img_container, scale, timeout){
-	if(!img.is(":visible")){//Ie display property is none
+	if(!img.is(":visible")){//Ie display property is none such as on page refresh. On resize, this shouldn't be the case
 		img.show();//Must have display set to show in order to have a width a height
-		//img.css("visibility", "hidden");//But don't make visible yet though, till dimensions have been set
+		img.css("visibility", "hidden");//But don't make visible yet though, till dimensions have been set
 	}
-	img.css("visibility", "hidden");//But don't make visible yet though, till dimensions have been set
+
 	window.setTimeout(function(){		
 		scale_and_position_image(img, img_container, scale);
 		img.css("visibility", "visible");
