@@ -2,7 +2,7 @@
 		
 			<div class = "content_banner">
 				<div class = "top_heading"><span>ATTORNEY PROFILES</span></div>
-				<div class = "bottom_heading"><span>Some Eye Catching Title Inserted Here</span></div>
+				<div class = "bottom_heading"><span>Get to Know Our Attorneys</span></div>
 			</div>
 			
 			<div class = "attorneys_bio" class = "content_inner">
@@ -11,48 +11,8 @@
 						<img class = "attorney_bio_image" src="images/background_images/ifanglawyer1.jpeg" alt="Attorney">
 					</div>
 					<div class = "attorney_bio_text">
-						<p class = "attorney_name_title"> Andong Ifang Akofu: CEO</p>
-						<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-						non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. </p> <p>Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-						non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.	
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-						non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua.</p>  <p>Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-						non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-						non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-						Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-						non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-						non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-						</p>						
+						<p class = "attorney_name_title"> Ifang A. Akofu (Managing Attorney)</p>
+						<?php require "attorney-profiles/ifang-akofu.php"; ?>						
 					</div>
 				</div>
 				
@@ -62,50 +22,8 @@
 						<img class = "attorney_bio_image" src="images/background_images/IMG_5116.JPG" alt="Attorney">
 					</div>
 					<div class = "attorney_bio_text">
-						<p class = "attorney_name_title"> Jessica Navarro: Some Fanct Ass Legal Title</p>
-						<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-						non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. </p> <p>Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-						non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.	
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-						non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua.</p>  <p>Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-						non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-						non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-						Excepteur sint occaecat cupidatat
-						non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-						Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-						non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-						non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.						
-						</p>						
+						<p class = "attorney_name_title"> Dalilian Gutierrez, Of Counsel</p>
+						<?php require "attorney-profiles/dalilian-gutierrez.php"; ?>						
 					</div>
 				</div>
 
@@ -116,49 +34,8 @@
 						<img class = "attorney_bio_image" src="images/background_images/FullSizeRender.jpeg" alt="Attorney">
 					</div>
 					<div class = "attorney_bio_text">
-						<p class = "attorney_name_title"> Irma Sanchez: Another High Sounding Legal Title</p>
-						<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-						non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. </p> <p>Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-						non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.	
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-						non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua.</p>  <p>Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-						non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-						non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-						Excepteur sint occaecat cupidatat Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-						non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-						non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-						non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-						</p>						
+						<p class = "attorney_name_title"> Karla Garcia, Of Counsel</p>
+						<?php require "attorney-profiles/karla-garcia.php"; ?>							
 					</div>
 				</div>				
 			</div>

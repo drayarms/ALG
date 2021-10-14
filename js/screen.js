@@ -225,7 +225,13 @@ function rebuild_logo_box(e){
 		//alert("visible")
 
 		var logo_box_width = logo_box_fixed_width;
+		if(is_mobile()){
+			logo_box_width = logo_box_fixed_width*5;
+		}
 		var logo_box_height = logo_box_fixed_height;
+		if(is_mobile()){
+			logo_box_height = logo_box_fixed_height*5;
+		}		
 		var logo_circle_width = logo_box_width*0.9;
 		var logo_circle_height = logo_box_height*0.9;
 
@@ -239,7 +245,7 @@ function rebuild_logo_box(e){
 		//window.setTimeout(function(){
 			//scale_and_position_image(e.find(".logo_image"), e.find(".logo_circle"), 1.0);
 		//}, 100);//Give a sufficient enough delay for image to be rendered first before scaling/positioning				
-		insert_image(e.find(".logo_image"), e.find(".logo_circle"), 1, image_load_wait_time*3);
+		insert_image(e.find(".logo_image"), e.find(".logo_circle"), 1, image_load_wait_time);
 	}
 }
 

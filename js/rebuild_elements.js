@@ -116,24 +116,21 @@ function rebuild_elements(){
 	//$(".top_menu_bar").hide();//Prevents the unrpocessed menu bar from flickering b4 page fully loads
 	//console.log("1current session scroll top: "+window.sessionStorage.scrollTop);
 	//alert("1current session scroll top: "+window.sessionStorage.scrollTop);	
-	rebuild();
+	//rebuild();
 
 
 
-	//make_elements_invisible
-	/*if(document.readyState === 'ready' || document.readyState === 'complete'){
-		console.log("ready 1");	
+	if(document.readyState === 'ready' || document.readyState === 'complete'){
+		//console.log("ready 1");	
 		rebuild();
-		//make_elements_visible
 	}else{
 		document.onreadystatechange = function (){
 			if(document.readyState == 'complete'){
-				console.log("ready 2");	
+				//console.log("ready 2");	
 				rebuild();
-				//make_elements_visible
 			}
 		}
-	}*/
+	}
 
 
 

@@ -1,4 +1,4 @@
-<div style = 'text-align:center;font-size:125%'>I. AUTO ACCIDENTS</div>
+<div style = 'text-align:center;font-size:125%'>I. Auto Accidents</div>
 
 Motor vehicle collisions commonly occur when drivers indulge in negligent behaviors and fail to follow 
 traffic laws. Accident survivors often sustain severe physical and cognitive injuries that necessitate 
@@ -46,7 +46,7 @@ At Akofu Law Group, we understand that this is an extremely difficult time for y
 you pursue a positive case outcome that yields substantial damages. During your consultation, we can 
 discuss your case, explore your legal options, and develop a litigation strategy based on your financial and legal needs.
 
-<div style = 'text-align:center;font-size:125%'>II.	SLIP AND FALL</div>
+<div style = 'text-align:center;font-size:125%'>II.	Slip and Fall</div>
 
 ** Slip & Fall Accidents Involving Immigrants**
 If you are an immigrant who has been injured in a slip and fall accident, you may have a host of 

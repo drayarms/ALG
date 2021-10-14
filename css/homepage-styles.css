@@ -1,8 +1,10 @@
 .content_homepage #attorney_panel{
+	overflow-y:hidden;
 	margin-left:auto;
 	margin-right:auto;
 	background-color:#ffffff;
 	/*border:1px dotted green;*/
+	/*background:green;*/
 	width:100%;
 	margin:auto;
 }
@@ -292,7 +294,7 @@
 	/*font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;*/
 	/*font-weight:190;*/
 	/*color: rgb(204, 163, 0);*/
-	padding-top:4%;
+	padding-top:3%;
 	color:rgb(186, 45, 139);
 	/*border:1px dotted green;*/
 }
@@ -301,7 +303,7 @@
 	/*text-align:center;*/
 	/*width: fit-content;*/
 	/*margin:auto;	*/
-	padding-top:4%;
+	padding-top:3%;
 	/*line-height:1.8;*/
 	/*font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;*/
 	/*font-weight:190;*/
@@ -315,7 +317,7 @@
 	/*width: fit-content;*/
 	/*margin:auto;	*/
 	/*margin-top:8%;*/
-	padding-top:4%;
+	padding-top:3%;
 	/*line-height:1.8;*/
 	/*font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;*/
 	/*font-weight:190;*/
@@ -330,7 +332,7 @@
 	/*width: fit-content;*/
 	/*margin:auto;	*/
 	/*margin-top:7%;*/
-	padding-top:4%;
+	padding-top:3%;
 	/*line-height:1.8;*/
 	/*font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;*/
 	/*font-weight:190;*/

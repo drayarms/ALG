@@ -820,9 +820,17 @@ function assemble_header_elements(){
 		$(".menu_icon").hide();
 		$(".top_menu_bar").show();
 	}else{
-		$(".menu_icon").css("width", $(".menu_icon i").width()*1.8);
+		if(is_mobile()){
+			$(".menu_icon").css("width", $(".menu_icon i").width()*2.5);
+		}else{
+			$(".menu_icon").css("width", $(".menu_icon i").width()*1.8);
+		}
 		$(".menu_icon").css("float", "right");
-		$(".menu_icon").css("height", logo_box_height+"px");
+		if(is_mobile()){
+			$(".menu_icon").css("height", (logo_box_height*1)+"px");
+		}else{
+			$(".menu_icon").css("height", logo_box_height+"px");
+		}
 		$(".menu_icon").show();
 		$(".top_menu_bar").hide();
 	}
@@ -873,6 +881,11 @@ function rebuild_header_banner(){
 		$(".header_banner").css("width", window_width +"px");
 	}
 	$(".header_banner").css("height", header_banner_height +"px");
+	
+	if(is_mobile()){
+		$(".header_banner .header_banner_text").css("font-size", "160%");
+		$(".header_banner .phone_num").css("font-size", "160%");
+	}
 }
 
 
@@ -882,12 +895,15 @@ function rebuild_header(){
 	//Changes as window is resized
 	
 	$(".logo_box").each(function(){
-		rebuild_logo_box($(this));
+		rebuild_logo_box($(this));//In screen
 	});
 	//rebuild_logo_box(resize_level, window_width);
 	//rebuild_logo_image();
 	$(".logo_image").show();//Can now display since it has been appropriately sized
 
+	if(is_mobile()){
+		$(".bottom_header").hide();
+	}
 	
 	//menu_bar_height = header_core_fixed_height - $(".logo_box").height();
 	rebuild_menu_bar();

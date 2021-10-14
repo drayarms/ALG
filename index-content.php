@@ -13,11 +13,8 @@
 					<h2>Complex Cases. Exceptional Results.</h2>
 					<h1>A Tradition of Success.</h1>
 					<h5>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur.
+Our goal is to provide you with the support and representation you need whether in a business transaction, an immigration dispute, or after an accident. Our team is dedicated to the resolution of your matter and passionate about the process it involves. Because we understand that every client matter is unique, we tailor our representation to suit each client’s needs.
+We pride ourselves as a law firm that is responsive to client’s needs. We make ourselves available every step of the way. Please call us on (470) 430-8035 to request a case evaluation.
 					</h5>
 					<h3><a href="contact-us.php" >Request a Case Review</a></h3>
 				</div>
@@ -61,20 +58,16 @@
 			<div id = "attorney_panel" style = "overflow:hidden">
 				
 				<div id = "law_office_details" class = "statements" style = "background:none;overflow:hidden">
-					<h2>Welcome to</h2>
+					<h2>Welcome to</h2>					
 					<h1>Akofu Law Group</h1><p></p>
 					<!--<div style = "width:55%;border-top:1px solid rgb(51, 51, 51);position:relative;top:0%;margin:auto;"></div><p>-->
 					<h5>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-						non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat.				
+Akofu Law Group based in the Atlanta Metro is a law firm by immigrants for immigrants. Aware of the difficulties and emotional struggles of immigrating to the United States, our team of immigration lawyers understand how to help you make your case for a hopeful future for you and your family. We are committed to protecting their interests during each and every case we take. At Akofu Law Group, we pride ourselves on a client-centered approach. We toil and sweat while understanding the uniqueness of every case to represent our clients.
+
+Akofu Law Group also assists clients in various forms of business transactions, from business formation to business restructuring, to business acquisition, business succession, and personal estate matters. Akofu Law Group is aware of the vulnerabilities faced by immigrant businesses and advises on compliance and strategies for sustainable growth. We also represent business owners facing litigation.
+
+Akofu Law Group also serves clients in need of representation in personal injury matters.
+				
 					</h5>
 				</div>
 				

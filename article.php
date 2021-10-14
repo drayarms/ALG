@@ -24,7 +24,7 @@
 				<div class = 'bottom_heading'><span>".$title."</span></div>
 			</div>
 						
-			<div id = 'article_inner'>	
+			<div id = 'article_inner' class = 'content_inner'>	
 		
 				<div id = 'article_title'>".$title."</div>
 

@@ -114,8 +114,8 @@
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 							
 						</h3>
-						<h3  style = "position:relative;top:15%;">805 Pleasant Hill Rd Unit 201</h3>
-						<h3  style = "position:relative;top:15%;">Lilburn GA, 30047</h3>
+						<h3  style = "position:relative;top:15%;">2070 Sugarloaf Parkway Suite 700</h3>
+						<h3  style = "position:relative;top:15%;">Lawrenceville GA, 30045</h3>
 						<h3 style = "position:relative;top:20%;">Phone (818)650-4032</h3>
 						<a style = "position:relative;top:20%;" href = "mailto:akofulawgroup@outlook.com" > akofulawgroup@outlook.com</a>
 					</div>

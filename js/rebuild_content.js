@@ -508,7 +508,11 @@ function rebuild_specialties_panel(){
 	}*/
 	
 	specialty_box_width = (specialties_panel_width/3)-1;
-	specialty_box_height = logo_box_fixed_width*1.5;
+	if(is_mobile()){
+		specialty_box_height = logo_box_fixed_width*6.5;
+	}else{
+		specialty_box_height = logo_box_fixed_width*1.5;
+	}
 
 	if(resize_level < 3){
 		specialties_panel_height = specialty_box_height*1.33;	
@@ -578,7 +582,11 @@ function rebuild_attorney_panel(){
 		attorney_photo_container_height = attorney_photo_container_width*0.7;	
 	
 		law_office_details_width = attorney_panel_width;//window width
-		law_office_details_height = screen_width*0.25;
+		if(is_mobile()){
+			law_office_details_height = screen_width*1.1;
+		}else{
+			law_office_details_height = screen_width*0.25;
+		}
 		attorney_panel_height = attorney_photo_container_height + law_office_details_height;
 		
 		$("#attorney_photo_container").css("float", "none");
@@ -725,7 +733,12 @@ function rebuild_attorney_panel(){
 
 
 function rebuild_contact_panel(){
-	var contact_panel_height = screen_width*0.27;//0.24;
+	var contact_panel_height;
+	if(is_mobile()){
+		contact_panel_height = screen_width*1;
+	}else{
+		contact_panel_height = screen_width*0.27;//0.24;
+	}
 	$("#contact_panel").css("height", contact_panel_height+"px");	
 	
 	var fixed_form_width = screen_width*0.55;

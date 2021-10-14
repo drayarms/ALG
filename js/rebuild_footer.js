@@ -6,8 +6,13 @@ function rebuild_mission_statement_panel(){
 	var footer_mission_statement_panel_height;
 	var footer_mission_statement_width;
 	var footer_mission_statement_picture_width;
-	//var footer_mission_statement_height = footer_mission_statement_panel_height;	
-	var footer_mission_statement_height = screen_width*0.25;	
+	
+	var footer_mission_statement_height;
+	if(is_mobile()){
+		footer_mission_statement_height = screen_width*1.1;
+	}else{
+		footer_mission_statement_height = screen_width*0.25;
+	}
 	var footer_mission_statement_picture_height;
 	
 
@@ -35,7 +40,7 @@ function rebuild_mission_statement_panel(){
 	}
 	
 	if(resize_level > 2){
-		footer_mission_statement_width = footer_mission_statement_panel_width;
+		footer_mission_statement_width = footer_mission_statement_panel_width*0.8;
 	}else{
 		footer_mission_statement_width = footer_mission_statement_panel_width*0.52;
 		footer_mission_statement_picture_width = footer_mission_statement_panel_width*0.46;
@@ -127,7 +132,11 @@ function rebuild_footer_contact_details_panel(){
 		//footer_contact_details_panel_width = footer_contact_details_width;
 	}
 	
-	footer_contact_details_height = footer_contact_details_fixed_width*0.8;
+	if(is_mobile()){
+		footer_contact_details_height = footer_contact_details_fixed_width*3.2;
+	}else{
+		footer_contact_details_height = footer_contact_details_fixed_width*0.8;
+	}
 	footer_map_panel_height = footer_contact_details_height;
 	if(resize_level <= 2){
 		footer_contact_details_panel_height = footer_contact_details_height;
@@ -195,7 +204,12 @@ function rebuild_marketing_panel(){
 	//$(".marketing_panel").css("border", "3px dotted red");
 	//$(".marketing_panel").css("margin", "0");
 	var marketing_panel_width = get_menu_bar_width(0.7);
-	var marketing_panel_height = screen_width*0.15;
+	var marketing_panel_height;
+	if(is_mobile()){
+		marketing_panel_height = screen_width*0.8;
+	}else{
+		marketing_panel_height = screen_width*0.15;
+	}
 	var marketing_panel_box_width;
 	var marketing_panel_box_height = marketing_panel_height;
 	//marketing_panel_width_to_window_width_ratio = marketing_panel_fixed_width/resize_threshold1;
@@ -268,6 +282,10 @@ function rebuild_footer(){
 	rebuild_mission_statement_panel();
 	rebuild_footer_contact_details_panel();
 	rebuild_marketing_panel();
+	
+	if(is_mobile()){
+		$(".specialties_statements").css("min-height", "1200px");
+	}
 	
 
 	//$(".footer_contact_details_panel").css("height", ($(".footer_contact_details").height()+$(".footer_map_panel").height())+"px");
