@@ -28,6 +28,8 @@ function rebuild_elements(){
 	content*/
 	//window_width = window_width;/*Set before rebuild_elements is called in both init and window resize*/
 	if(is_mobile()){
+		$(".social_media_panel").removeClass("left_social_media_panel");
+		$(".social_media_panel").addClass("bottom_social_media_panel");		
 		resize_level = 4;
 	}else{
 		if(window_width < resize_threshold1){

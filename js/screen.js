@@ -130,7 +130,7 @@ function rebuild_menu_bar(){
 				//console.log("window 3")
 				//var num_menu_items = $this.find(".menu_item").length;
 				var num_rows = Math.ceil(num_menu_items/2);
-				var row_height = screen_width*0.03;
+				var row_height = screen_width*0.03;;				
 				var row_width = window_width;
 				var menu_bar_height = row_height*num_rows + 20;
 				var menu_bar_width = row_width;
@@ -190,6 +190,10 @@ function rebuild_menu_bar(){
 			var browser_height = isNaN(window.innerHeight) ? window.clientHeight : window.innerHeight;
 			var menu_width = $(".flap_header").width();//window_width;
 			var menu_height = screen_height - logo_box_fixed_height;//browser_height - logo_box_fixed_height;
+			if(is_mobile()){
+				menu_height *= 2.2;
+				$(".menu_item_anchor").css("font-size", "150%");
+			}
 			var menu_item_width = menu_width*1.05;
 			var menu_item_height = (menu_height/num_menu_items)-0;//To account for bottom border
 			var menu_item_anchor_width = menu_item_width;
