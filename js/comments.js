@@ -32,17 +32,20 @@ function statusChangeCallback(response, sender){
 $(document).ready(function(){
 	
 	//Add dummy image to image box
-	insert_image($("#add_comment_pic"), $("#add_comment_pic_box"), 1, 100);
+	//insert_image($("#add_comment_pic"), $("#add_comment_pic_box"), 1, 100);
+	$(".comment_pic").each(function(){
+		insert_image($(this), $(this).parent(), 1, 100);
+	});
 	
 	$("#add_comment_line").click(function(){
 
-		FB.getLoginStatus(function(response) {//Called after the JS SDK has been initialized.
+		/*FB.getLoginStatus(function(response) {//Called after the JS SDK has been initialized.
 			statusChangeCallback(response, "click");//Returns the login status.
-		});
+		});*/
 		
-		//$("#add_comment_form").show();
-		//$(this).css("cursor", "default");
-		//$(this).hide();
+		$("#add_comment_form").show();
+		$(this).css("cursor", "default");
+		$(this).hide();
 	});
 	
 });

@@ -3,6 +3,7 @@
 	font-size:120%;
 	line-height:1.2;
 	color: #404040;
+	margin-top:10px;
 }
 
 #add_comment_box{
@@ -60,7 +61,8 @@
 }
 
 
-#add_comment_box #add_comment_form_container #add_comment_form .form_input{
+/*#add_comment_box #add_comment_form_container #add_comment_form .form_input{*/
+.form_input{	
 	box-sizing: border-box;
 	width:100%;
 	margin-top:10px;
@@ -72,7 +74,8 @@
 	/*color:#bfbfbf;*/
 }
 
-#add_comment_box #add_comment_form_container #add_comment_form .input_default{	
+/*#add_comment_box #add_comment_form_container #add_comment_form .input_default{*/	
+.input_default{
 	color:#bfbfbf;;
 }
 
@@ -80,12 +83,14 @@
 	color:red;
 }*/
 
-#add_comment_box #add_comment_form_container #add_comment_form .input_valid{
+/*#add_comment_box #add_comment_form_container #add_comment_form .input_valid{*/
+.input_valid{
 	color:green;
 }
 
 
-#add_comment_box #add_comment_form_container #add_comment_form .form_submit{
+/*#add_comment_box #add_comment_form_container #add_comment_form .form_submit{*/
+.form_submit{
 	/*display:block;*//*So it can be margined auto*/
 	float:right;
 	margin-top:5px;
@@ -98,16 +103,126 @@
 	background-color:rgb(255, 204, 0);
 }
 
-#add_comment_box #add_comment_form_container #add_comment_form .form_submit_non_ghosted:hover{
+/*#add_comment_box #add_comment_form_container #add_comment_form .form_submit_non_ghosted:hover{*/
+.form_submit_non_ghosted:hover{
 	background-color:rgb(186, 45, 139);
 }
 
-#add_comment_box #add_comment_form_container #add_comment_form .form_submit_non_ghosted{
+/*#add_comment_box #add_comment_form_container #add_comment_form .form_submit_non_ghosted{*/
+.form_submit_non_ghosted{
 	cursor:pointer;
 	opacity:1.0;
 }
 
-#add_comment_box #add_comment_form_container #add_comment_form .form_submit_ghosted{
+/*#add_comment_box #add_comment_form_container #add_comment_form .form_submit_ghosted{*/
+.form_submit_ghosted{	
 	cursor:arrow;
 	opacity:0.4;
+}
+
+
+#all_comments{
+	width:100%;
+	margin-left:auto;
+	margin-right:auto;
+	overflow:hidden;
+	margin-top:25px;
+	/*border:1px dotted red;*/
+}
+
+
+#all_comments .comment_box{
+	width:100%;
+	overflow-y:hidden;
+	margin-top:15px;
+	/*border:1px dotted blue;*/
+}
+
+
+#all_comments .comment_box .comment_pic_box_container{
+	float:left;
+	width:8%;
+	overflow:hidden;
+	/*border:1px dotted black;*/
+}
+	
+#all_comments .comment_box .comment_pic_box_container .comment_pic_box{
+	margin:auto;
+
+	border-radius:50%;
+	background:grey;
+	overflow:hidden;
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+	/*border:1px solid black;*/
+}
+
+#all_comments .comment_box .comment_pic_box_container .level0_comment_pic_box{
+	width:55px;
+	height:55px;	
+}
+
+#all_comments .comment_box .comment_pic_box_container .level1_comment_pic_box{
+	width:48px;
+	height:48px;	
+}
+
+#all_comments .comment_box .comment_pic_box img{
+	
+}
+
+
+#all_comments .comment_box .comment_container{
+	float:left;
+	margin-left:0px;
+	width:91%;
+	/*border: 1px dotted blue;*/
+}
+
+#all_comments .comment_box .comment_container .commenter_line{
+	margin-bottom:5px;
+}
+
+#all_comments .comment_box .comment_container .commenter_line .commenter{
+	font-size:90%;
+	font-weight:bold;
+	line-height:1.1;
+}
+
+#all_comments .comment_box .comment_container .commenter_line .comment_date{
+	margin-left:7px;
+	color: #404040;
+	font-size:80%;
+	line-height:1.1;
+}
+
+#all_comments .comment_box .comment_container .comment_line{
+	margin-bottom:9px;
+	overflow:hidden;
+	font-size:93%;
+	line-height:1.1;
+}
+
+#all_comments .comment_box .comment_container .level0_comment_form{
+	margin-bottom:9px;
+	display:none;
+	overflow:hidden;
+	/*border:2px dotted orange;*/
+}
+
+#all_comments .comment_box .comment_container .reply_button{
+	width:fit-content;   
+	display: flex;
+	align-items: center; /*fit content, flex, and align center collectively force div to shrink to fit content*/	
+	margin-bottom:9px;
+	font-size:93%;
+	line-height:1.1;
+	color:#595959;
+	cursor:pointer;
+	font-weight:bold;
+}
+
+#all_comments .comment_box .comment_container .view_replies, #all_comments .comment_box .comment_container .hide_replies{
+	margin-bottom:7px;
+	cursor:pointer;
+	color: #008fb3;
 }
