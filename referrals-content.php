@@ -1,14 +1,14 @@
-		<div class = "content content_faqs"> 
+		<div class = "content content_referrals"> 
 		
 			<div class = "content_banner">
-				<div class = "top_heading"><span>Frequently Asked Questions</span></div>
-				<div class = "bottom_heading"><span>Get Answers to All Your Questions</span></div>
+				<div class = "top_heading"><span>Referrals</span></div>
+				<div class = "bottom_heading"><span>Refer Friends, Family and Acquaintances</span></div>
 			</div>
 			
 			
-			<div id = "faqs_inner" class = "content_inner">
+			<div id = "referrals_inner" class = "content_inner">
 			
-				<div id = "no_faqs">Stay tuned. We will be posting content shortly.</div>
+				<div id = "no_referrals">Stay tuned. We will be posting content shortly.</div>
 				<div class = "dotted_line"></div>
 
 			</div>

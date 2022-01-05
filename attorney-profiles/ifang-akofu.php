@@ -7,5 +7,5 @@ Ifang graduated from Nova Southeastern University College of Law with a Juris Do
 </p>
 
 <p>
-Ifang is licensed in the State of Georgia and admitted to the Supreme Court of Georgia. He is also admitted to the U.S. District Court for the Northern District of Georgia. He is a member of the Atlanta Bar Association and the American Immigration Lawyers. 
+Ifang is licensed in the State of Georgia and admitted to the Supreme Court of Georgia. He is also admitted to the U.S. District Court for the Northern District of Georgia. He is a member of the Atlanta Bar Association and the American Immigration Lawyers Association. 
 </p>

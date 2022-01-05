@@ -2,7 +2,7 @@
 		
 			<div class = "content_banner">
 				<div class = "top_heading"><span>TESTIMONIALS</span></div>
-				<div class = "bottom_heading"><span>Some Eye Catching Title Inserted Here</span></div>
+				<div class = "bottom_heading"><span>What People Say About Us</span></div>
 			</div>
 			
 			<div id = "testimonials_bulletin" class = "content_inner">	

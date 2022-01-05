@@ -106,4 +106,4 @@ Pursuing the Highest Payout Possible
 We cannot guarantee your claim's outcome, be we can assure you that we will put forth every effort in 
 securing an outcome that is in your best interests. Our legal team offers a unique focus on slip and 
 fall accident claims that can’t be found just anywhere. If you believe you have a case, contact our 
-dedicated Orlando slip and fall lawyers for a consultation.
+dedicated Georgia slip and fall lawyers for a consultation.

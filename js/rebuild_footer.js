@@ -9,7 +9,7 @@ function rebuild_mission_statement_panel(){
 	
 	var footer_mission_statement_height;
 	if(is_mobile()){
-		footer_mission_statement_height = screen_width*1.1;
+		footer_mission_statement_height = screen_width*1.4;
 	}else{
 		footer_mission_statement_height = screen_width*0.25;
 	}

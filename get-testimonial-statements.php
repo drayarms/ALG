@@ -22,7 +22,7 @@
 	if ($result->num_rows > 0) {
 		while($row = $result->fetch_assoc()){
 			
-			array_push($testimonial_statements, array($row["name"], $row["website"], $row["comment"], $row["date_created"]));
+			array_push($testimonial_statements, array($row["name"], $row["website"], stripcslashes($row["comment"]), $row["date_created"]));
              
 		}
 	}

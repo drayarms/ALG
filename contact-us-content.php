@@ -2,7 +2,7 @@
 		
 			<div class = "content_banner">
 				<div class = "top_heading"><span>CONTACT US</span></div>
-				<div class = "bottom_heading"><span>Some Eye Catching Title Inserted Here</span></div>
+				<div class = "bottom_heading"><span>Contact Akofu Law Group</span></div>
 			</div>
 			
 			<div id = "contact_bulletin" class = "content_inner">	
@@ -10,8 +10,8 @@
 				<div id = "firm_title">Akofu Law Group</br></div>
 				
 				<p>
-				805 Pleasant Hill Rd Unit 201</br>
-				Lilburn GA, 30047</br>
+				2070 Sugarloaf Parkway Suite 700</br>
+				Lawrenceville GA, 30045</br>
 				Phone:<span class = "highlighted">(470)430-8035</span></br>
 				Email:<a class = "highlighted" href = "mailto:akofulawgroup@outlook.com">akofulawgroup@outlook.com</a></br>
 				</p>

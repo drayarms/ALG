@@ -104,12 +104,14 @@
 	if(document.readyState === "ready" || document.readyState === "complete") {
 		FB.getLoginStatus(function(response) {//Called after the JS SDK has been initialized.
 			statusChangeCallback(response, 'load');//Returns the login status.
+			//$(".comments_section").css("visibility", "visible");
 		});	
 	}else{
 		document.onreadystatechange = function () {
 			if(document.readyState == "complete") {
 				FB.getLoginStatus(function(response) {//Called after the JS SDK has been initialized.
 					statusChangeCallback(response, 'load');//Returns the login status.
+					//$(".comments_section").css("visibility", "visible");
 				});	
 			}
 		}
@@ -119,6 +121,8 @@
 	
 	
 <!--The html-->
+<div id = "comments_section">
+
 <div id = "comments_heading">0 Comments</div>
 	
 <div id = "add_comment_box">
@@ -218,4 +222,5 @@
 	
 	
 </div>
-	
+
+</div>	

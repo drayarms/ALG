@@ -2,7 +2,7 @@
 		
 			<div class = "content_banner">
 				<div class = "top_heading"><span>ABOUT US</span></div>
-				<div class = "bottom_heading"><span>Some Eye Catching Title Inserted Here</span></div>
+				<div class = "bottom_heading"><span>Akofu Law Group</span></div>
 			</div>
 			
 					 
@@ -13,69 +13,31 @@
 				</div>			
 			
 				<div id = "firm_info_text">
-					<p class = "firm_info_heading">Heading1</p>
+					<p class = "firm_info_heading">Our Firm</p>
 					<p>	
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-					non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-					non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.	
+						Akofu Law Group is a growing law firm located in Lawrenceville, Georgia. Our primary focus areas are Business Transactions, Immigration, Personal Injury, and Civil Litigation.	
 					</p>
 					
-					<p class = "firm_info_heading">Heading2</p>
+					<p class = "firm_info_heading">Our Approach</p>
 					<p>	
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-					non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-					non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.	
+						The lawyers at Akofu Law Group create, conceive, and implement solutions that address your needs.
+						<ul>
+							<li>
+							We understand the needs and priorities of our clients;
+							</li>
+							<li>
+							We communicate what outcomes may be reasonably expected; and  
+							</li>
+							<li>
+							We seek solutions that will be user-friendly, timely, certain, and cost-effective.
+							</li>
+						</ul>
+						We apply a comprehensive team approach to your issue. By sharing expertise and ideas, we apply the full extent of our knowledge to resolving your situation cost-effectively and safely.
+						Legal problems often require the expertise of other professionals such as accountants, physicians, engineers, and immigration experts. We have strong, established relationships with competent professionals throughout the State of Georgia and beyond.
+						We apply a client-centered approach to our work on your behalf. 	
 					</p>
 
-					<p class = "firm_info_heading">Heading3</p>
-					<p>	
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-					non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-					non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.	
-					</p>
-
-					<p class = "firm_info_heading">Heading4</p>
-					<p>	
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-					non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-					non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.	
-					</p>					
+				
 
 				</div>
 

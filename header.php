@@ -5,7 +5,7 @@
 		<title><?php echo $page_title ?></title>
 		
 		<script type="text/javascript" src="js/my_map.js"></script>
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0jEqqhyL06LDapKILcS8iL2Vb7Aondqw&callback=my_map" async></script>	
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBA8PP7W4r2j45ibkjjRSBtDimNkRHHnQU&callback=my_map" async></script>	
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -39,6 +39,14 @@
 			if($page_index == 8){
 				echo '<link type="text/css" rel="stylesheet" href="css/article-styles.css"/>
 					<link type="text/css" rel="stylesheet" href="css/comments-styles.css"/>
+				';
+			}
+			if($page_index == 9){
+				echo '<link type="text/css" rel="stylesheet" href="css/referrals-styles.css"/>
+				';
+			}	
+			if($page_index == 10){
+				echo '<link type="text/css" rel="stylesheet" href="css/maintenance-styles.css"/>
 				';
 			}			
 		?>
@@ -76,10 +84,11 @@
 		</div>
 		
 		<div class = "social_media_panel left_social_media_panel">
-			<a href="http://facebook.com" target="_blank" class="fa fa-facebook"></a>
-			<a href="http://twitter.com" target="_blank" class="fa fa-twitter"></a>
-			<a href="http://google.com" target="_blank" class="fa fa-google"></a>
-			<a href="http://linkedin.com" target="_blank" class="fa fa-linkedin"></a>		
+			<a href="http://facebook.com/karol.akofu" target="_blank" class="fa fa-facebook"></a>
+			<a href="http://twitter.com/akofu_ifang" target="_blank" class="fa fa-twitter"></a>
+			<!--<a href="http://google.com" target="_blank" class="fa fa-google"></a>-->
+			<a href="http://instagram.com/ndurut" target="_blank" class="fa fa-instagram"></a>
+			<a href="https://www.linkedin.com/company/akofu-law-group-llc" target="_blank" class="fa fa-linkedin"></a>		
 		</div>
 		
 		<div class = "screen"></div>
@@ -103,7 +112,7 @@
 				</div>
 		
 				<div class = "menu_bar flap_menu_bar" style = "">
-					<?php require "menu.php"; ?>
+					<?php if($page_index != 10){require "menu.php";} ?>
 				</div>
 								
 			</div>
@@ -112,6 +121,7 @@
 
 		<div class = "header top_header <?php if($page_index == 0){echo 'homepage_top_header';} ?>" id = ""  style = "">
 			<div class = "header_core top_header_core">
+
 				<div class = "logo_box top_logo_box">
 					<div class = "logo_circle">
 						<img class = "logo_image" src="images/logos/akofulawgroupllc3.jpg" alt="Logo">
@@ -121,6 +131,7 @@
 					<i class="fa fa-bars"></i>
 					<div class = "menu_label">Menu</div>
 				</div>
+	
 				<div class = "header_banner" style = "">
 					<div class = "header_banner_right_box">
 						<div class = "header_banner_text">Call us now for a free strategic session:</div>
@@ -129,7 +140,7 @@
 					</div>
 				</div>
 				<div class = "menu_bar top_menu_bar" style = "">
-					<?php require "menu.php"; ?>
+					<?php if($page_index != 10){require "menu.php";} ?>
 				</div>
 			</div>
 		

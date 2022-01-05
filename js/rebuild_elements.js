@@ -173,6 +173,7 @@ function rebuild(){
 	rebuild_content();
 	$(".content_banner").css("visibility", "visible");
 	$(".content_inner").css("visibility", "visible");
+	$(".attorney_bio_text").css("visibility", "visible");
 	//console.log("url '"+window.location.href+"'")
 	/*if (window.location.pathname == "/"){
 		console.log("root url")

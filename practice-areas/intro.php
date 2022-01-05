@@ -1,16 +1,6 @@
-					<p>	
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-					</p>
-					<p>
-					non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-					non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.	
-					</p>
+<p>
+Akofu Law Group based in the Atlanta Metro is a law firm by immigrants for immigrants. Aware of the difficulties and emotional struggles of immigrating to the United States, our team of immigration lawyers understand how to help you make your case for a hopeful future for you and your family. We are committed to protecting their interests during each and every case we take. 
+</p>
+<p>
+At Akofu Law Group, we pride ourselves on a client-centered approach. We toil and sweat while understanding the uniqueness of every case to represent our clients. Akofu Law Group also assists clients in various forms of business transactions, from business formation to business restructuring, to business acquisition, business succession, and personal estate matters. Akofu Law Group is aware of the vulnerabilities faced by immigrant businesses and advises on compliance and strategies for sustainable growth. We also represent business owners facing litigation. Akofu Law Group also serves clients in need of representation in personal injury matters.
+</p>

@@ -2,7 +2,7 @@
 		
 			<div class = "content_banner">
 				<div class = "top_heading"><span>Practice Areas</span></div>
-				<div class = "bottom_heading"><span>Some Eye Catching Title Inserted Here</span></div>
+				<div class = "bottom_heading"><span>Request a Case Evaluation Now</span></div>
 			</div>
 						
 			

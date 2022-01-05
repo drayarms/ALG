@@ -38,6 +38,7 @@
 	
 	$blog_folder_array = array();
 	get_blog_directories($blog_folder_array);
+
 	//Print subfolders and their files
 	//for($i = 0; $i < count($blog_folder_array); $i++){
 		//echo "Folder ".$blog_folder_array[$i]."<br>";
@@ -144,11 +145,11 @@
 			echo "<a href = 'blog.php?page=".$i."' class = ".$slot_class.">".$i."</a>";
 			
 		}		
-		/*if($num_pages <= $num_page_mark_slots){
+		//if($num_pages <= $num_page_mark_slots){
 
-		}else{//More pages than page mark slots
+		//}else{//More pages than page mark slots
 			
-		}*/
+		//}
 		
 		echo "
 			</div>

@@ -191,7 +191,7 @@ function rebuild_menu_bar(){
 			var menu_width = $(".flap_header").width();//window_width;
 			var menu_height = screen_height - logo_box_fixed_height;//browser_height - logo_box_fixed_height;
 			if(is_mobile()){
-				menu_height *= 2.2;
+				menu_height *= 2.7;
 				$(".menu_item_anchor").css("font-size", "150%");
 			}
 			var menu_item_width = menu_width*1.05;

@@ -3,6 +3,6 @@ Dalilian graduated from Nova Southeastern University College of Law with a Juris
 </p>
 
 <p>
-Ms. Gutierez is bilingual with proficient ability in written and spoken Spanish. Being an immigrant herself, she upholds the American dream and understands the importance of legal support in navigating the immigration system. She has dedicated her life’s work to helping other immigrants obtain legal status so that they are one step closer to that American dream.
+Ms. Gutierez is bilingual with a proficient ability in written and spoken Spanish. Being an immigrant herself, she upholds the American dream and understands the importance of legal support in navigating the immigration system. She has dedicated her life’s work to helping other immigrants obtain legal status so that they are one step closer to that American dream.
 Ms. Gutierez also has experience in personal injury, family law, and guardianship cases.
 </p>

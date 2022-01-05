@@ -34,6 +34,7 @@
 	line-height:1.7;
 	/*padding-left:15px;*/
 	/*border:1px dotted red;*/
+	visibility:hidden;
 }
 
 .content .attorneys_bio .attorney_bio .attorney_bio_text .attorney_name_title{

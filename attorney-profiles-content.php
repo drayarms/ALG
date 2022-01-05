@@ -2,13 +2,13 @@
 		
 			<div class = "content_banner">
 				<div class = "top_heading"><span>ATTORNEY PROFILES</span></div>
-				<div class = "bottom_heading"><span>Get to Know Our Attorneys</span></div>
+				<div class = "bottom_heading"><span>Get to Know Our Team</span></div>
 			</div>
 			
 			<div class = "attorneys_bio" class = "content_inner">
 				<div class = "attorney_bio">
 					<div class = "attorney_bio_image_container">
-						<img class = "attorney_bio_image" src="images/background_images/ifanglawyer1.jpeg" alt="Attorney">
+						<img class = "attorney_bio_image" src="images/background_images/ifang_reduced.jpeg" alt="Ifang">
 					</div>
 					<div class = "attorney_bio_text">
 						<p class = "attorney_name_title"> Ifang A. Akofu (Managing Attorney)</p>
@@ -17,9 +17,9 @@
 				</div>
 				
 				
-			<div class = "attorney_bio">
+				<div class = "attorney_bio">
 					<div class = "attorney_bio_image_container">
-						<img class = "attorney_bio_image" src="images/background_images/IMG_5116.JPG" alt="Attorney">
+						<img class = "attorney_bio_image" src="images/background_images/dalilian_reduced.JPG" alt="Dalilian">
 					</div>
 					<div class = "attorney_bio_text">
 						<p class = "attorney_name_title"> Dalilian Gutierrez, Of Counsel</p>
@@ -29,9 +29,9 @@
 
 
 
-			<div class = "attorney_bio">
+				<div class = "attorney_bio">
 					<div class = "attorney_bio_image_container">
-						<img class = "attorney_bio_image" src="images/background_images/FullSizeRender.jpeg" alt="Attorney">
+						<img class = "attorney_bio_image" src="images/background_images/karla_reduced.jpeg" alt="Karla">
 					</div>
 					<div class = "attorney_bio_text">
 						<p class = "attorney_name_title"> Karla Garcia, Of Counsel</p>

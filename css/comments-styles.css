@@ -1,9 +1,16 @@
+#comments_section{
+	margin-top:50px;
+	overflow-y:hidden;
+	border-top: 1px solid #cccccc;
+	/*visibility:hidden;*/
+}
+
 #comments_heading{
 	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
 	font-size:120%;
 	line-height:1.2;
 	color: #404040;
-	margin-top:10px;
+	margin-top:20px;
 }
 
 #add_comment_box{
